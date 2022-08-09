@@ -548,8 +548,8 @@ msgid "Customer Email:"
 msgstr "Email do cliente:"
 
 #: admin/licensing/class-eb-licensing-manager.php:169
-msgid "No responce from server edwiser.org."
-msgstr "Nenhuma resposta do servidor edwiser.org."
+msgid "No responce from server example.com."
+msgstr "Nenhuma resposta do servidor example.com."
 
 #: admin/licensing/class-eb-licensing-manager.php:415
 #, php-format

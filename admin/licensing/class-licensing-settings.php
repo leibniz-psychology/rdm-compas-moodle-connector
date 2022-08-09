@@ -2,7 +2,7 @@
 /**
  * EDW Licensing Management
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge
@@ -145,7 +145,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			} elseif ( ! is_plugin_active( $plugin['path'] ) ) {
 				$action = 'activate_plugin';
 				?>
-					<a href="https://edwiser.org/my-account/"  class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></a>
+					<a href="https://example.com/my-account/"  class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></a>
 					<button class="button-primary eb-activate-plugin" name="activate_plugin" type='submit' value="<?php echo esc_attr( $plugin['path'] ); ?>"><?php esc_attr_e( 'Activate Plugin', 'edwiser-bridge' ); ?></button>
 				<?php
 			} else {
@@ -191,7 +191,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			} else {
 				$action = 'activate_license';
 				?>
-					<a href="https://edwiser.org/my-account/" class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></a>
+					<a href="https://example.com/my-account/" class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></a>
 					<input type="submit" class="button-primary activate_license" name="activate_license" value="<?php esc_attr_e( 'Activate License', 'edwiser-bridge' ); ?>"/>
 					<?php
 			}
@@ -269,7 +269,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			$plugin_data['license']    = $l_key;
 			update_option( $l_key_name, $l_key );
 			if ( empty( $plugin_data['license'] ) ) {
-				$get_l_key_link = '<a href="https://edwiser.org/bridge/#downloadfree">' . __( 'Click here', 'edwiser-bridge' ) . '</a>';
+				$get_l_key_link = '<a href="https://example.com/bridge/#downloadfree">' . __( 'Click here', 'edwiser-bridge' ) . '</a>';
 				$resp['msg']    = __( 'License key cannot be empty, Please enter the valid license key.', 'edwiser-bridge' ) . $get_l_key_link . __( ' to get the license key.', 'edwiser-bridge' );
 				return $resp;
 			}
@@ -421,17 +421,17 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 				<ul>
 					<li class="eb_get_license">
 						<?php esc_html_e( 'If you already own a license then click here', 'edwiser-bridge' ); ?>
-						<a href="https://edwiser.org/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Get License', 'edwiser-bridge' ); ?> </a>
+						<a href="https://example.com/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Get License', 'edwiser-bridge' ); ?> </a>
 					</li>
 
 					<li class="eb_buy_license">
 						<?php esc_html_e( 'If you wish to purchase Edwiser Bridge PRO then click here', 'edwiser-bridge' ); ?>
-						<a href="https://edwiser.org/bridge/?utm_source=bridge%20plugin&utm_medium=in%20product&utm_campaign=upgrade#downloadfree" target="_blank" class="button-primary"> <?php esc_html_e( 'Buy License', 'edwiser-bridge' ); ?> </a>
+						<a href="https://example.com/bridge/?utm_source=bridge%20plugin&utm_medium=in%20product&utm_campaign=upgrade#downloadfree" target="_blank" class="button-primary"> <?php esc_html_e( 'Buy License', 'edwiser-bridge' ); ?> </a>
 					</li>
 
 					<li class="eb_upgrade_license">
 						<?php esc_html_e( 'If you already own one of the extensions, then click here to upgrade to Edwiser Bridge PRO', 'edwiser-bridge' ); ?>
-						<a href="https://edwiser.org/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Upgrade License', 'edwiser-bridge' ); ?> </a>
+						<a href="https://example.com/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Upgrade License', 'edwiser-bridge' ); ?> </a>
 					</li>
 				</ul>
 			</div>

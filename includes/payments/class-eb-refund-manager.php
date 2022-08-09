@@ -2,7 +2,7 @@
 /**
  * This class defines all code necessary to manage paypal refund feature.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.2.1
  * @package    Edwiser Bridge
  */

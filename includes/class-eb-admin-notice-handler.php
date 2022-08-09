@@ -4,7 +4,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.3.4
  * @package    Edwiser Bridge
  */
@@ -116,11 +116,11 @@ class Eb_Admin_Notice_Handler {
 
 								<div class="eb_update_notice_content">
 									' . esc_html__( 'Thanks for updating to the latest version of Edwiser Bridge plugin, please make sure you have also installed our associated Moodle Plugin to avoid any malfunctioning.', 'edwiser-bridge' ) . '
-									<a href="https://edwiser.org/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'edwiser-bridge' ) . '</a>
+									<a href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'edwiser-bridge' ) . '</a>
 									' . esc_html__( ' to download Moodle plugin.', 'edwiser-bridge' ) . '
 
 										' . esc_html__( 'For setup assistance check our ', 'edwiser-bridge' ) . '
-										<a href="https://edwiser.org/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'edwiser-bridge' ) . '</a>.
+										<a href="https://example.com/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'edwiser-bridge' ) . '</a>.
 								</div>
 								
 								<div class="eb_update_notice_dismiss_wrap">
@@ -142,11 +142,11 @@ class Eb_Admin_Notice_Handler {
 
 								<div class="eb_update_notice_content">
 									' . esc_html__( 'Thanks for updating or installing Edwiser Bridge plugin, please update Moodle Plugin to avoid any malfunctioning.', 'edwiser-bridge' ) . '
-									<a href="https://edwiser.org/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'edwiser-bridge' ) . '</a>
+									<a href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'edwiser-bridge' ) . '</a>
 									' . esc_html__( ' to download Moodle plugin.', 'edwiser-bridge' ) . '
 
 										' . esc_html__( 'For setup assistance check our ', 'edwiser-bridge' ) . '
-										<a href="https://edwiser.org/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'edwiser-bridge' ) . '</a>.
+										<a href="https://example.com/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'edwiser-bridge' ) . '</a>.
 								</div>
 								
 								<div class="eb_update_notice_dismiss_wrap">
@@ -208,7 +208,7 @@ class Eb_Admin_Notice_Handler {
 								</div>
 							</div>
 							<div>
-								<a class="eb_admin_discount_offer_btn" href="https://edwiser.org/edwiser-lifetime-kit/?utm_source=WordPress&utm_medium=notif&utm_campaign=inbridge"  target="_blank">' . esc_html__( 'Avail Offer Now!', 'edwiser-bridge' ) . '</a>
+								<a class="eb_admin_discount_offer_btn" href="https://example.com/edwiser-lifetime-kit/?utm_source=WordPress&utm_medium=notif&utm_campaign=inbridge"  target="_blank">' . esc_html__( 'Avail Offer Now!', 'edwiser-bridge' ) . '</a>
 							</div>
 						</div>
 						<div class="eb_admin_discount_dismiss_notice_message">
@@ -299,7 +299,7 @@ class Eb_Admin_Notice_Handler {
 							<b> Edwiser Bridge </b>' . esc_html__( 'templates previously then please make sure that your templates are made compatible with the ', 'edwiser-bridge' ) . ' <b>NEW Edwiser Bridge</b>
 							' . esc_html__( 'template. It may cause CSS breaks if not done.', 'edwiser-bridge' ) . '
 							<div class="">
-								' . esc_html__( 'Please refer to', 'edwiser-bridge' ) . '<a href="https://edwiser.org/blog/how-to-make-edwiser-bridge-compatible-with-your-theme/" target="_blank"> <b>' . esc_html__( ' this ', 'edwiser-bridge' ) . '</b> </a>' . esc_html__( ' article for theme compatibility', 'edwiser-bridge' ) . '
+								' . esc_html__( 'Please refer to', 'edwiser-bridge' ) . '<a href="https://example.com/blog/how-to-make-edwiser-bridge-compatible-with-your-theme/" target="_blank"> <b>' . esc_html__( ' this ', 'edwiser-bridge' ) . '</b> </a>' . esc_html__( ' article for theme compatibility', 'edwiser-bridge' ) . '
 							</div>
 						</div>
 						<div class="eb_admin_templ_dismiss_notice_message">
@@ -343,7 +343,7 @@ class Eb_Admin_Notice_Handler {
 <p>
     <strong><?php echo esc_html__( 'Important Update Notice:', 'edwiser-bridge' ); ?></strong>
     <?php echo esc_html__( 'Please download and update associated edwiserbridge Moodle plugin.', 'edwiser-bridge' ); ?>
-    <a href="https://edwiser.org/bridge/"><?php echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?></a>
+    <a href="https://example.com/bridge/"><?php echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?></a>
     <?php echo esc_html__( ' to download', 'edwiser-bridge' ); ?>
 
 </p>

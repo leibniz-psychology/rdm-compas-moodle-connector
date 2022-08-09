@@ -5,7 +5,7 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-specific stylesheet and JavaScript.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge

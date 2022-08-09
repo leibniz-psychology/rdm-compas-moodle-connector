@@ -1396,13 +1396,13 @@ msgid "Hong Kong Dollar (HKD)"
 msgstr "Hongkong-Dollar (HKD)"
 
 #. Author URI of the plugin
-msgid "https://edwiser.org"
+msgid "https://example.com"
 msgstr ""
-"https://edwiser.org\n"
+"https://example.com\n"
 
 #. URI of the plugin
-msgid "https://edwiser.org/bridge/"
-msgstr "https://edwiser.org/bridge/"
+msgid "https://example.com/bridge/"
+msgstr "https://example.com/bridge/"
 
 #: public/templates/account/form-login.php:124
 msgid "I agree to the "
@@ -1759,7 +1759,7 @@ msgstr ""
 "Datensätze zum Abmelden aus\n"
 
 #: admin/licensing/class-eb-licensing-manager.php:169
-msgid "No responce from server edwiser.org."
+msgid "No responce from server example.com."
 msgstr ""
 
 #: includes/payments/class-eb-refund-manager.php:83

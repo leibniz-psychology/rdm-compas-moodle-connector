@@ -17,26 +17,26 @@ $extensions_details = apply_filters(
 		'woo-int'         => array(
 			'name'   => 'Woocommerce Integration',
 			'path'   => 'woocommerce-integration/bridge-woocommerce.php',
-			'doc'    => 'https://edwiser.org/documentation/edwiser-bridge-woocommerce-integration/',
-			'rating' => 'https://edwiser.org/bridge/extensions/woocommerce-integration/documentation/',
+			'doc'    => 'https://example.com/documentation/edwiser-bridge-woocommerce-integration/',
+			'rating' => 'https://example.com/bridge/extensions/woocommerce-integration/documentation/',
 		),
 		'sso'             => array(
 			'name'   => 'Single Sign On',
 			'path'   => 'edwiser-bridge-sso/sso.php',
-			'doc'    => 'https://edwiser.org/documentation/single-sign-on/',
-			'rating' => 'https://edwiser.org/bridge/extensions/woocommerce-integration/documentation/',
+			'doc'    => 'https://example.com/documentation/single-sign-on/',
+			'rating' => 'https://example.com/bridge/extensions/woocommerce-integration/documentation/',
 		),
 		'bulk-purchase'   => array(
 			'name'   => 'Bulk Purchase',
 			'path'   => 'edwiser-multiple-users-course-purchase/edwiser-multiple-users-course-purchase.php',
-			'doc'    => 'https://edwiser.org/documentation/bulk-purchase/',
-			'rating' => 'https://edwiser.org/bridge/extensions/woocommerce-integration/documentation/',
+			'doc'    => 'https://example.com/documentation/bulk-purchase/',
+			'rating' => 'https://example.com/bridge/extensions/woocommerce-integration/documentation/',
 		),
 		'selective-synch' => array(
 			'name'   => 'Selective Synchronization',
 			'path'   => 'selective-synchronization/selective-synchronization.php',
-			'doc'    => 'https://edwiser.org/documentation/selective-synchronization/',
-			'rating' => 'https://edwiser.org/bridge/extensions/woocommerce-integration/documentation/',
+			'doc'    => 'https://example.com/documentation/selective-synchronization/',
+			'rating' => 'https://example.com/bridge/extensions/woocommerce-integration/documentation/',
 		),
 	)
 );
@@ -93,7 +93,7 @@ foreach ( $extensions_details as $key => $value ) {
 <!--					<div>-->
 <!--						<ol>-->
 <!--							<li>-->
-<!--								<a href="https://edwiser.org/bridge/documentation/" target="_blank"> --><?php //echo esc_html__( 'Edwiser Bridge', 'edwiser-bridge' ); ?><!--</a>-->
+<!--								<a href="https://example.com/bridge/documentation/" target="_blank"> --><?php //echo esc_html__( 'Edwiser Bridge', 'edwiser-bridge' ); ?><!--</a>-->
 <!--							</li>-->
 <!--						--><?php //echo wp_kses_post( $documentation ); ?>
 <!--						</ol>-->
@@ -107,7 +107,7 @@ foreach ( $extensions_details as $key => $value ) {
 <!---->
 <!--					<h4 class='eb_setting_help_h4'>--><?php //echo esc_html__( 'Contact Us', 'edwiser-bridge' ); ?><!--</h4>-->
 <!--					<div>-->
-<!--						<a href="https://edwiser.org/bridge/" target="_blank"> --><?php //echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?><!--  </a> --><?php //echo esc_html__( 'to chat with us.', 'edwiser-bridge' ); ?>
+<!--						<a href="https://example.com/bridge/" target="_blank"> --><?php //echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?><!--  </a> --><?php //echo esc_html__( 'to chat with us.', 'edwiser-bridge' ); ?>
 <!--					</div>-->
 <!--				</div>-->
 <!--			</div>-->

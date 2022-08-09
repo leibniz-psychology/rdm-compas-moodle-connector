@@ -29,7 +29,7 @@ if ( ! class_exists( 'Eb_Get_Plugin_Data' ) ) {
 		 * @param array $plugin_slug Plugin slug name.
 		 * @param bool  $cache cache value info.
 		 */
-		public static function get_data_from_db( $plugin_slug, $cache = true ) {
+		public static function get_data_from_db( $plugin_slug, $cache = false ) {
 
 			if ( null !== self::$response_data && true === $cache ) {
 				return self::$response_data;
@@ -40,7 +40,8 @@ if ( ! class_exists( 'Eb_Get_Plugin_Data' ) ) {
 			$plugin_data = Eb_Licensing_Manager::get_plugin_data( $plugin_slug );
 			$plugin_name = $plugin_data['plugin_name'];
 			$plugin_slug = $plugin_data['plugin_slug'];
-			$store_url   = Eb_Licensing_Manager::$store_url;
+//			$store_url   = Eb_Licensing_Manager::$store_url;
+            $store_url = '';
 
 			$license_transient = get_transient( 'wdm_' . $plugin_slug . '_license_trans' );
 

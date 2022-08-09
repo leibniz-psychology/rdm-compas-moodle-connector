@@ -75,15 +75,16 @@ if ( ! class_exists( 'Eb_Plugin_Updater' ) ) {
 				include_once plugin_dir_path( __FILE__ ) . 'class-eb-licensing-manager.php';
 			}
 			$plugin_data    = Eb_Licensing_Manager::get_plugin_data( $plugin_slug );
-			$this->api_url  = trailingslashit( Eb_Licensing_Manager::$store_url );
+//			$this->api_url  = trailingslashit( Eb_Licensing_Manager::$store_url );
+            $this->api_url = '';
 			$this->api_data = urlencode_deep( $plugin_data );
 			$this->name     = plugin_basename( $plugin_file );
 			$this->slug     = basename( $plugin_file, '.php' );
 			$this->version  = wdm_get_plugin_version( $plugin_data['path'] );
 
-			add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'set_site_transient_update' ) );
-			add_filter( 'pre_set_transient_update_plugins', array( $this, 'set_site_transient_update' ) );
-			add_filter( 'plugins_api', array( $this, 'plugins_api_filter' ), 10, 3 );
+//			add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'set_site_transient_update' ) );
+//			add_filter( 'pre_set_transient_update_plugins', array( $this, 'set_site_transient_update' ) );
+//			add_filter( 'plugins_api', array( $this, 'plugins_api_filter' ), 10, 3 );
 		}
 
 		/**

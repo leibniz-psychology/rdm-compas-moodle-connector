@@ -2,7 +2,7 @@
 /**
  * This class defines all code necessary to manage user's moodle & WP account'.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwioser Bridge.
  */

@@ -2,7 +2,7 @@
 /**
  * Handles template related dependncies
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge.
  */
@@ -136,7 +136,7 @@ class Eb_Template_Functions {
 //					$course_options['course_closed_url'] : '#';
 //			$short_description = ( isset( $course_options['course_short_description'] ) ) ?
 //					$course_options['course_short_description'] : '';
-            $course_date_created = $course_options['moodle_course_date_created'] ?? null;
+            $course_date_modified = $course_options['moodle_course_date_modified'] ?? null;
             $course_format =  $course_options['moodle_course_format'] ?? __('Lesson', 'edwiser-bridge');
             $course_target_group = $course_options['moodle_course_target_group'] ?? __('All', 'edwiser-bridge');
             $course_discipline = $course_options['moodle_course_discipline'] ?? __('General', 'edwiser-bridge');
@@ -192,7 +192,7 @@ class Eb_Template_Functions {
 //			'expiry_date_time'          => $expiry_date_time,
 			'categories'                => $categories,
 //			'suspended'                 => $is_user_suspended,
-            'course_date_created'       => $course_date_created,
+            'course_date_modified'      => $course_date_modified,
             'course_format'             => $course_format,
             'course_target_group'       => $course_target_group,
             'course_discipline'         => $course_discipline,

@@ -2,7 +2,7 @@
 /**
  * This class is responsible to get course progress from Moodle
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.4
  * @package    Edwiser Bridge
  */

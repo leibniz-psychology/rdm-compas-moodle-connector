@@ -2,7 +2,7 @@
 /**
  * This class defines all code necessary manage purchase of courses & payment handling.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge
  */

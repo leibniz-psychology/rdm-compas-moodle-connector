@@ -2,7 +2,7 @@
 /**
  * Edwiser Bridge user help page
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge
@@ -62,7 +62,7 @@ if ( ! class_exists( 'Eb_Settings_Help' ) ) :
 				exit;
 			} else {
 				// process subscription.
-				$plugin_author_email = 'bharat.pareek@edwiser.org';
+				$plugin_author_email = 'bharat.pareek@example.com';
 
 				$admin_email = filter_input( INPUT_POST, 'eb_sub_admin_email', FILTER_VALIDATE_EMAIL );
 

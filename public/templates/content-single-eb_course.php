@@ -54,7 +54,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 //            echo '<p><strong>' . __('Institution', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_institution'] . '</p>';
             echo '<p><strong>' . __('Discipline', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
             echo '<p><strong>' . __('License', 'edwiser-bridge') . '</strong>: ' . getCCLicense('CC BY 4.0') . '</p>';
-            echo '<p><strong>' . __('Created', 'edwiser-bridge') . '</strong>: ' . date('F j, Y', intval($single_course_data['course_date_created'])) . '</p>';
+            echo '<p><strong>' . __('Last modified', 'edwiser-bridge') . '</strong>: ' . date('F j, Y', intval($single_course_data['course_date_modified'])) . '</p>';
             ?>
             <!-- Entry title wrap -->
             <!--				<h1 class="entry-title eb_single_course_title">-->

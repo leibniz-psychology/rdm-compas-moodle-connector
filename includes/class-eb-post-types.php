@@ -2,7 +2,7 @@
 /**
  * The post type registration functionality of the plugin.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge
  */
@@ -425,9 +425,9 @@ class Eb_Post_Types
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
-                'moodle_course_date_created' => array( //moodle timecreated
-                    'label' => __('Date Created', 'edwiser-bridge'),
-                    'description' => __('Date Created', 'edwiser-bridge'),
+                'moodle_course_date_modified' => array( //moodle timemodified
+                    'label' => __('Date Modified', 'edwiser-bridge'),
+                    'description' => __('Date Modified', 'edwiser-bridge'),
                     'type' => 'date',
                     'placeholder' => '',
                     'attr' => 'readonly',

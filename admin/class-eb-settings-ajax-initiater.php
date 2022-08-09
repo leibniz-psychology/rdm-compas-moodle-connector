@@ -2,7 +2,7 @@
 /**
  * This class contains functionality to handle actions of custom buttons implemented in settings page
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge

@@ -2,7 +2,7 @@
 /**
  * This class works as a connection helper to connect with Moodle webservice API.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge.
  */

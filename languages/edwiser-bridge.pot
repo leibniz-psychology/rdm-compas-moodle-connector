@@ -521,7 +521,7 @@ msgid "Customer Email:"
 msgstr ""
 
 #: admin/licensing/class-eb-licensing-manager.php:169
-msgid "No responce from server edwiser.org."
+msgid "No responce from server example.com."
 msgstr ""
 
 #: admin/licensing/class-eb-licensing-manager.php:415

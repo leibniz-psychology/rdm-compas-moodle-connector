@@ -2,7 +2,7 @@
 /**
  * EDW Licensing Management
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge
@@ -61,7 +61,8 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		 * @param string $plugin_path Plugin file path.
 		 */
 		private function get_edwiser_envirment( $plugin_path ) {
-			$response   = wp_remote_get( 'https://edwiser.org/edwiserdemoimporter/bridge-free-plugin-info.json' );
+//			$response   = wp_remote_get( 'https://example.com/edwiserdemoimporter/bridge-free-plugin-info.json' );
+            $response   = wp_remote_get( '' );
 			$fetch_data = false;
 			if ( isset( $_GET['fetch_data'] ) && 'true' === $_GET['fetch_data'] ) { // WPCS: CSRF ok, input var ok. @codingStandardsIgnoreLine
 				$fetch_data = true;
@@ -162,6 +163,8 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		 * @param string $version_info installed plugin version numbers.
 		 */
 		private function show_plugin_version( $remote_data, $version_info = false ) {
+//            TODO fix update notice. this is a temporary fix
+            $version_info = false;
 			ob_start();
 			if ( ! $version_info ) {
 				?>

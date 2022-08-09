@@ -5,7 +5,7 @@
  * This is used to define internationalization, admin-specific hooks, and
  * public-facing site hooks.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * Also maintains the unique identifier of this plugin as well as the current
@@ -108,7 +108,7 @@ class EdwiserBridge {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'edwiserbridge';
-		$this->version     = '2.1.7';
+		$this->version     = '2.1.6';
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_plugin_hooks();

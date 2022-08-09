@@ -6,7 +6,7 @@
  *
  * Adapted from code in edd.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge
@@ -244,7 +244,7 @@ class Eb_Welcome {
 				</p>
 
 				<p class="eb_welcome_mdl_dwnld_btn_wrap">
-					<a class="eb_welcome_mdl_dwnld_btn" href="https://edwiser.org/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip"> <?php echo esc_html__( 'Download Moodle Plugin', 'edwiser-bridge' ); ?> </a>
+<!--					<a class="eb_welcome_mdl_dwnld_btn" href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip"> --><?php //echo esc_html__( 'Download Moodle Plugin', 'edwiser-bridge' ); ?><!-- </a>-->
 				</p>
 
 				<div class="changelog prompt-subscribe-wrap">
@@ -289,7 +289,7 @@ class Eb_Welcome {
 
 			<div class="eb-actions">
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=eb-settings' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Skip to Settings', 'edwiser-bridge' ); ?></a>
-				<a href="<?php echo esc_url( 'https://edwiser.org/bridge/documentation/' ); ?>" target="_blank" class="docs button button-primary"><?php esc_html_e( 'Docs', 'edwiser-bridge' ); ?></a>
+<!--				<a href="--><?php //echo esc_url( 'https://example.com/bridge/documentation/' ); ?><!--" target="_blank" class="docs button button-primary">--><?php //esc_html_e( 'Docs', 'edwiser-bridge' ); ?><!--</a>-->
 			</div>
 		</div>
 		<?php

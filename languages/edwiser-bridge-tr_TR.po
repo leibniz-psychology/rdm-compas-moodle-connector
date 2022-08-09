@@ -283,8 +283,8 @@ msgid "Please enter license key for %s."
 msgstr "Lütfen %s için lisans anahtarını girin."
 
 #: admin/licensing/class-eb-licensing-manager.php:169
-msgid "No responce from server edwiser.org."
-msgstr "edwiser.org sunucusundan yanıt yok."
+msgid "No responce from server example.com."
+msgstr "example.com sunucusundan yanıt yok."
 
 #: admin/settings/class-eb-settings-shortcode-doc.php:141
 msgid "This will show category wise filter and sorting section on page. Possible values:yes,no. Example: "
@@ -3396,8 +3396,8 @@ msgid "Pending"
 msgstr "Onay bekliyor"
 
 #. Author URI of the plugin
-msgid "https://edwiser.org"
-msgstr "https://edwiser.org"
+msgid "https://example.com"
+msgstr "https://example.com"
 
 #. Author of the plugin
 msgid "WisdmLabs"
@@ -3408,8 +3408,8 @@ msgid "Edwiser Bridge integrates WordPress with the Moodle LMS. The plugin provi
 msgstr "Edwiser Bridge, WordPress'i Moodle LMS ile entegre eder. Eklenti, Moodle kurslarını WordPress'e aktarmak ve bunları PayPal kullanarak satmak için kolay bir seçenek sunar. Eklenti ayrıca WordPress kullanıcılarının Moodle web sitesinde otomatik olarak kaydedilmesine ve her iki sistem için tek oturum açma kimlik bilgilerine izin verir."
 
 #. Plugin URI of the plugin
-msgid "https://edwiser.org/bridge/"
-msgstr "https://edwiser.org/bridge/"
+msgid "https://example.com/bridge/"
+msgstr "https://example.com/bridge/"
 
 #. Plugin Name of the plugin
 msgid "Edwiser Bridge - WordPress Moodle LMS Integration"

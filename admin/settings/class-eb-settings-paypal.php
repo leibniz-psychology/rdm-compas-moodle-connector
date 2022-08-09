@@ -2,7 +2,7 @@
 /**
  * EDW PayPal settings page
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge

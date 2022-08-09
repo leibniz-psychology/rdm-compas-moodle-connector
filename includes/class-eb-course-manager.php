@@ -2,7 +2,7 @@
 /**
  * This class defines all code necessary for moodle course synchronization.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge
  */
@@ -1034,7 +1034,7 @@ class Eb_Course_Manager
         }
         // add course id on moodle in course meta on WP.
         return array('moodle_course_id' => $course_data->id,
-            'moodle_course_date_created' => $course_data->timecreated,
+            'moodle_course_date_modified' => $course_data->timemodified,
             'moodle_course_format' => $custom_fields['course_format'],
             'moodle_course_target_group' => $custom_fields['target_group'],
             'moodle_course_discipline' => $custom_fields['discipline'],

@@ -2,7 +2,7 @@
 /**
  * This class defines all code necessary to manage user's course orders'.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser bridge.
  */

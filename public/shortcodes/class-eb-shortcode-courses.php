@@ -2,7 +2,7 @@
 /**
  * Shortcode eb_courses.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.2.0
  * @package    Edwiser Bridge
  */

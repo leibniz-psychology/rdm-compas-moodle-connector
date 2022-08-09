@@ -51,14 +51,16 @@ if ( ! class_exists( 'Eb_Licensing_Manager' ) ) {
 		 *
 		 * @var string  $store_url Stores the URL of store.
 		 */
-		public static $store_url = 'https://edwiser.org/check-update';
+//		public static $store_url = 'https://example.com/check-update';
+        public static $store_url = '';
 
 		/**
 		 * Plugin author name.
 		 *
 		 * @var string  $author_name Name of the Author.
 		 */
-		public $author_name = 'WisdmLabs';
+//		public $author_name = 'WisdmLabs';
+        public $author_name = '';
 
 		/**
 		 * Initializing the key to empty string.
@@ -166,7 +168,7 @@ if ( ! class_exists( 'Eb_Licensing_Manager' ) ) {
 			if ( false !== $resp_data['status'] ) {
 				$is_data_avlb = $this->check_if_no_data( $resp_data['data'], $resp_data['status'] );
 				if ( $is_data_avlb ) {
-					$resp_data['data']   = __( 'No responce from server edwiser.org.', 'edwiser-bridge' );
+					$resp_data['data']   = __( 'No responce from server example.com.', 'edwiser-bridge' );
 					$resp_data['status'] = false;
 				}
 			}

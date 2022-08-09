@@ -1321,11 +1321,11 @@ msgid "Hong Kong Dollar (HKD)"
 msgstr "Hong Kong Dollar (HKD)"
 
 #. Author URI of the plugin
-msgid "https://edwiser.org"
-msgstr "https://edwiser.org"
+msgid "https://example.com"
+msgstr "https://example.com"
 
 #. URI of the plugin
-msgid "https://edwiser.org/bridge/"
+msgid "https://example.com/bridge/"
 msgstr ""
 
 #: public/templates/account/form-login.php:124
@@ -1671,7 +1671,7 @@ msgid ""
 msgstr ""
 
 #: admin/licensing/class-eb-licensing-manager.php:169
-msgid "No responce from server edwiser.org."
+msgid "No responce from server example.com."
 msgstr ""
 
 #: includes/payments/class-eb-refund-manager.php:83

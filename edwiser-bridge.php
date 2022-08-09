@@ -2,17 +2,17 @@
 /**
  * The plugin bootstrap file
  *
- * @link    https://edwiser.org
+ * @link
  * @since   1.0.0
  * @package Edwiser Bridge
  *
  * @WordPress-plugin
- * Plugin Name:       Edwiser Bridge - WordPress Moodle LMS Integration
- * Plugin URI:        https://edwiser.org/bridge/
- * Description:       Edwiser Bridge integrates WordPress with the Moodle LMS. The plugin provides an easy option to import Moodle courses to WordPress and sell them using PayPal. The plugin also allows automatic registration of WordPress users on the Moodle website along with single login credentials for both the systems.
- * Version:           2.1.7
- * Author:            WisdmLabs
- * Author URI:        https://edwiser.org
+ * Plugin Name:       RDM Compas Training Center connector - WordPress Moodle LMS Integration
+ * Plugin URI:
+ * Description:       Wordpress plugin to connect rdm-compas.org with RDM Compas Training Center (trainingcenter.rdm-compas.org).
+ * Version:           2.1.6
+ * Author:            leibniz-psychology.org
+ * Author URI:
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       edwiser-bridge
@@ -77,28 +77,28 @@ function wdm_add_settings_action_link( $links ) {
 /*
  * Show row meta on the plugin screen, custom docs link added.
  */
-add_filter( 'plugin_row_meta', '\app\wisdmlabs\edwiserBridge\wdm_plugin_row_meta', 10, 2 );
-
-/**
- * Row meta.
- *
- * @param text $links links.
- * @param text $file file.
- */
-function wdm_plugin_row_meta( $links, $file ) {
-	if ( plugin_basename( __FILE__ ) === $file ) {
-		$row_meta = array(
-			'docs' => '<a href="https://edwiser.org/bridge/documentation/" target="_blank"
-						title="' . esc_attr( esc_html__( 'Edwiser Bridge Documentation', 'edwiser-bridge' ) ) . '">' .
-			esc_html__( 'Documentation', 'edwiser-bridge' ) .
-			'</a>',
-		);
-
-		return array_merge( $links, $row_meta );
-	}
-
-	return (array) $links;
-}
+//add_filter( 'plugin_row_meta', '\app\wisdmlabs\edwiserBridge\wdm_plugin_row_meta', 10, 2 );
+//
+///**
+// * Row meta.
+// *
+// * @param text $links links.
+// * @param text $file file.
+// */
+//function wdm_plugin_row_meta( $links, $file ) {
+//	if ( plugin_basename( __FILE__ ) === $file ) {
+//		$row_meta = array(
+//			'docs' => '<a href="https://example.com/bridge/documentation/" target="_blank"
+//						title="' . esc_attr( esc_html__( 'Edwiser Bridge Documentation', 'edwiser-bridge' ) ) . '">' .
+//			esc_html__( 'Documentation', 'edwiser-bridge' ) .
+//			'</a>',
+//		);
+//
+//		return array_merge( $links, $row_meta );
+//	}
+//
+//	return (array) $links;
+//}
 
 
 

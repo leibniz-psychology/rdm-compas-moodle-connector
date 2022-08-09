@@ -4,7 +4,7 @@
  *
  * Adapted from code in woocommerce 2.3
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge

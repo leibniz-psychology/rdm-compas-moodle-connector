@@ -49,7 +49,8 @@ class EB_Usage_Tracking {
 			$result_arr = array();
 
 			$analytics_data = wp_json_encode( $this->prepare_usage_analytics() );
-			$url            = 'https://edwiser.org/wp-json/edwiser_customizations/send_usage_data';
+//			$url            = 'https://example.com/wp-json/edwiser_customizations/send_usage_data';
+            $url = '';
 			$request_args   = array(
 				'sslverify' => false,
 				'body'    => $analytics_data,

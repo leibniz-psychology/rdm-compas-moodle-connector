@@ -2,7 +2,7 @@
 /**
  * EDW Remui settings tab
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.3.1
  *
  * @package    Edwiser Bridge

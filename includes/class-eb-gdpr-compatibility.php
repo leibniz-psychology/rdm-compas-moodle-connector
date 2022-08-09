@@ -4,7 +4,7 @@
  *
  * This class defines all code necessary to make plugin compatible with GDPR.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.3.3
  * @package    EWdwisr Bridge
  */

@@ -4,7 +4,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge
  */
@@ -53,8 +53,8 @@ class Eb_Activator {
 		$plugin_i18n->rename_langauge_files();
 
 		// redirect to welcome screen.
-		set_transient( '_eb_activation_redirect', 1, 30 );
-		set_transient( 'edwiser_bridge_admin_feedback_notice', 'eb_admin_feedback_notice', 60 * 60 * 24 * 15 );
+//		set_transient( '_eb_activation_redirect', 1, 30 );
+//		set_transient( 'edwiser_bridge_admin_feedback_notice', 'eb_admin_feedback_notice', 60 * 60 * 24 * 15 );
 	}
 
 	/**

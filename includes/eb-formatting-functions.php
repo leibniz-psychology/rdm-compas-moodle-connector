@@ -2,7 +2,7 @@
 /**
  * Formatting FUnctions.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  *
  * @package    Edwiser Bridge

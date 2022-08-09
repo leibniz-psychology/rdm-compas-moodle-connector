@@ -2,7 +2,7 @@
 /**
  * Common functions.
  *
- * @link       https://edwiser.org
+ * @link       https://example.com
  * @since      1.0.0
  * @package    Edwiser Bridge
  */
@@ -879,7 +879,8 @@ if ( ! function_exists( 'wdm_request_edwiser' ) ) {
 	 * @return array array of the status and data.
 	 */
 	function wdm_request_edwiser( $api_params ) {
-		$store_url            = 'https://edwiser.org/check-update';
+//		$store_url            = 'https://example.com/check-update';
+        $store_url            = '';
 		$api_params['author'] = 'WisdmLabs';
 		$resp_data            = array(
 			'status' => false,
