@@ -53,7 +53,7 @@ get_template_part('template-parts/breadcrumb'); ?>
             <h1 class="intro__title"><?php echo $term->name; ?></h1>
         </div>
     </div>
-    <div id="curse-cat-<?php echo $term->term_id ?>" class="rdmc-container-page-sidebar">
+    <div id="curse-cat-<?php echo $term->term_id ?>" class="training-center-page rdmc-container-page-sidebar">
         <button type="button" class="sidebar-toggle show-medium" onclick="sidebarToggle()">
             <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Navigation', 'rdm-compas-theme') ?>
         </button>
@@ -62,7 +62,7 @@ get_template_part('template-parts/breadcrumb'); ?>
         </div>
         <div>
             <!--        Description-->
-            <h2><?php echo __('Description', 'edwiser-bridge'); ?></h2>
+<!--            <h2>--><?php //echo __('Description', 'edwiser-bridge'); ?><!--</h2>-->
             <p><?php echo $term->description; ?></p>
             <!--        Courses list-->
             <h2><?php echo __('Training Units', 'edwiser-bridge'); ?></h2>

@@ -31,23 +31,23 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 
     <!-- Course summary wrapper -->
     <div class="rdm-tc-course-overview">
-        <h4><?php echo __("Training Unit Overview", 'edwiser-bridge') ?></h4>
+        <h4><?php echo __("Overview", 'edwiser-bridge') ?></h4>
         <?php
 
         if (!is_search()) {
-
-            if (count($single_course_data['categories'])) {
-                ?>
-                <div class="eb-cat-wrapper-new ">
-						<span>
-							<strong>
-								<?php esc_html_e('CATEGORY: ', 'edwiser-bridge'); ?>
-							</strong>
-							<?php echo wp_kses(implode(', ', $single_course_data['categories']), \app\wisdmlabs\edwiserBridge\wdm_eb_sinlge_course_get_allowed_html_tags()); ?>
-						</span>
-                </div>
-                <?php
-            }
+//
+//            if (count($single_course_data['categories'])) {
+//                ?>
+            <!--                <div class="eb-cat-wrapper-new ">-->
+            <!--						<span>-->
+            <!--							<strong>-->
+            <!--								--><?php //esc_html_e('CATEGORY: ', 'edwiser-bridge'); ?>
+            <!--							</strong>-->
+            <!--							--><?php //echo wp_kses(implode(', ', $single_course_data['categories']), \app\wisdmlabs\edwiserBridge\wdm_eb_sinlge_course_get_allowed_html_tags()); ?>
+            <!--						</span>-->
+            <!--                </div>-->
+            <!--                --><?php
+//            }
             echo '<p><strong>' . __('Format', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_format'] . '</p>';
             echo '<p><strong>' . __('Target', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_target_group'] . '</p>';
             echo '<p><strong>' . __('Duration', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
@@ -116,18 +116,19 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 <!--Course summary wrapper-->
 <div class="eb-course-desc-wrapper rdm-tc-course-summary">
     <!--         Course image wrapper-->
-<!--    <div class="eb-course-img-wrapper">-->
-    <div>
-        <div>
-            <?php
-            if (has_post_thumbnail()) {
-                the_post_thumbnail('course_single');
-            } else {
-                echo '<img src="' . esc_html($single_course_data['eb_plugin_url']) . 'images/no-image.jpg" />';
-            }
-            ?>
-        </div>
-    </div>
+    <!--    <div class="eb-course-img-wrapper">-->
+    <!--    <div>-->
+    <!--        <div>-->
+    <!--            --><?php
+    //            if (has_post_thumbnail()) {
+    //                the_post_thumbnail();
+    //            } else {
+    //                echo '<img src="' . esc_html($single_course_data['eb_plugin_url']) . 'images/no-image.jpg" />';
+    //            }
+    //
+    ?>
+    <!--        </div>-->
+    <!--    </div>-->
     <?php
     if (is_search()) {
         ?>
@@ -139,11 +140,15 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
         <?php
     } else {
         ?>
-        <h4><?php esc_html_e('Course Overview', 'edwiser-bridge'); ?></h4>
+        <h4><?php esc_html_e('Summary', 'edwiser-bridge'); ?></h4>
         <?php
         the_content();
-    }
-    ?>
+    } ?>
+    <div class="rdm-tc-course-button">
+        <a class="rdm-tc-button rdm-tc-button-blue" href="https://trainingcenter.rdm-compas.org/" target="_blank"
+           rel="noopener"><?php echo __('Start course', 'edwiser-bridge'); ?></a>
+    </div>
+<!--    ?>-->
 </div>
 <!--</article>-->
 <!-- #post -->

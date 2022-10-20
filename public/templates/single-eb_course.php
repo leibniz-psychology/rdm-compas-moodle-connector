@@ -48,16 +48,18 @@ if (have_posts()) {
     the_post();
     get_template_part('template-parts/breadcrumb'); ?>
     <!--intro-->
+    <div style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), '16:9_xl'); ?> );">
     <div class="intro intro__top topic-training-center">
         <div class="intro__inner-container">
             <h1 class="intro__title"><?php the_title(); ?></h1>
         </div>
     </div>
-    <div id="course-<?php the_ID(); ?>" class="rdmc-container-page-sidebar" style="column-gap:2em;justify-content: space-between;">
-    <button type="button" class="sidebar-toggle show-medium" onclick="sidebarToggle()">
-        <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Category', 'rdm-compas-theme') ?>
-    </button>
-    <div id="rdmc-sidebar">
+    </div>
+    <div id="course-<?php the_ID(); ?>" class="training-center-page rdmc-container-page-sidebar" style="column-gap:2em;justify-content: space-between;">
+<!--    <button type="button" class="sidebar-toggle show-medium" onclick="sidebarToggle()">-->
+<!--        <i class="fa fa-bars" aria-hidden="true"></i> --><?php //echo __('Category', 'rdm-compas-theme') ?>
+<!--    </button>-->
+    <div id="rdm-tc-sidebar">
         <?php $template_loader->wp_get_template_part( 'course-category', 'sidebar'); ?>
     </div>
     <!--content-->

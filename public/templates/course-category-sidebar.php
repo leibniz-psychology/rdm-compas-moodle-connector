@@ -7,12 +7,12 @@
 // Variables.
 global $post;
 $categories = get_the_terms($post->ID, 'eb_course_cat'); ?>
-<div class="kb-nav__container">
+<div class="rdm-tc-nav__container">
     <?php foreach ($categories as $category) { ?>
         <h3><a href="<?php echo esc_url(get_category_link($category->term_id)) ?>"><?php echo $category->name; ?></a>
         </h3>
-        <p><?php echo $category->category_description; ?></p>
-        <h4><?php echo __('Other Training Units in this Category', 'edwiser-bridge'); ?></h4>
+        <p><?php echo $category->description; ?></p>
+        <p><strong><?php echo __('In this Category:', 'edwiser-bridge'); ?></strong></p>
         <?php
         $courses = get_posts(array(
             'post_type' => 'eb_course',
@@ -25,7 +25,7 @@ $categories = get_the_terms($post->ID, 'eb_course_cat'); ?>
                 )
             )
         )); ?>
-        <ul>
+        <ul class="rdm-tc-sidebar-list">
             <?php foreach ($courses as $course) {
 //                if ($course->ID === $post->ID) {
 //                    continue;

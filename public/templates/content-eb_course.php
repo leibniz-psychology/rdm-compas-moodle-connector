@@ -32,7 +32,7 @@ $course_data      = apply_filters( 'eb_content_course_before', $post->ID, $attr,
 			<div class="wdm-course-thumbnail">
 				<!-- Course card image container -->
 				<div class="wdm-course-image">
-					<img src="<?php echo esc_url( $course_data['thumb_url'] ); ?>"/>
+					<img class="rdm-tc_course_thumbnail" src="<?php echo esc_url( $course_data['thumb_url'] ); ?>"/>
 				</div>
 				<div class="wdm-caption">
 
@@ -80,7 +80,7 @@ $course_data      = apply_filters( 'eb_content_course_before', $post->ID, $attr,
 						<?php
 					}
 					?>
-					<img src="<?php echo esc_url( $course_data['thumb_url'] ); ?>"/>
+					<img class="rdm-tc_course_thumbnail" src="<?php echo esc_url( $course_data['thumb_url'] ); ?>"/>
 				</div>
 
 				<div class="wdm-caption">

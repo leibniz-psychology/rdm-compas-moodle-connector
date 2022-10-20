@@ -3,24 +3,41 @@
     background-color: #f5f5f5;
     border-radius: 0.3em;
     padding: 2em;
-    margin: 1em;
-    width: -moz-fit-content;
-    width: fit-content;
+    margin: 1em 2em;
 }
-@media screen and (min-width: 25.875em) {
+
+@media screen and (min-width: 64em) {
     .rdm-tc-course-overview-wrapper {
-        order: 2;
-        width: 25%;
+        order: 3;
+        max-width: 35%;
         margin-top: 2em;
 
+    }
+
+    .rdm-tc-course-summary {
+        order: 2;
+        padding: 0!important;
+        max-width: 45%;
+        /*margin: 0 1em;*/
+    }
+
+    .rdm-tc-course-overview {
+        margin: 1em;
+    }
+
+    #rdm-tc-sidebar {
+        order: 1!important;
+        max-width: 25%;
+    }
+
+    .intro__top.topic-training-center {
+        padding: 2em 0!important;
     }
 }
 
 .rdm-tc-course-summary {
-    max-width: 50em;
-    padding: 2em;
-    margin: 0 1em;
-    object-fit: contain
+    padding: 0 2em;
+    /*margin: 0 1em;*/
 }
 
 .rdm-tc-course-card-buttons {
@@ -34,19 +51,41 @@
     text-decoration: none;
     padding: 0.3em 0.5em;
     border-radius: 5px;
+    transition: all .2s ease-out;
 }
+
 .rdm-tc-button-blue {
     color: white;
     background-color: #0090c1;
 }
 
+.rdm-tc-button-blue:hover {
+    background-color: #006a8e;
+}
+
 .rdm-tc-button-gray {
     color: #393c47;
     background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
 }
-.rdm-sidebar-nav{
+
+.rdm-tc-button-gray:hover {
+    background-color: #494d5b;
+    color: #f5f5f5;
+}
+
+.rdm-tc-course-button {
+    display: flex;
+}
+
+.rdm-tc-course-button.rdm-tc-button {
+    text-align: center;
+    width: 100%;
+}
+.rdm-sidebar-nav {
     text-decoration: none;
 }
+
 .rdm-tc-block {
     display: block;
     width: 100%;
@@ -58,8 +97,33 @@
     cursor: pointer;
     text-align: center;
     margin-top: 2em;
-  }
-  .rdm-tc-overview{
+}
+
+.rdm-tc-overview {
     margin-top: 1em;
     margin-bottom: 2em;
-  }
+}
+
+.rdm-tc_course_thumbnail {
+    object-fit: cover;
+}
+
+#rdm-tc-sidebar {
+    background-color: #F5F5F5;
+    padding: 0 2em;
+    order: 3;
+}
+
+.rdm-tc-sidebar-list{
+    padding: 0;
+}
+.rdm-tc-sidebar-list li {
+    padding-left: 0;
+}
+
+.intro__top.topic-training-center {
+    background-color: rgba(255,179,100,0.6);
+    backdrop-filter: blur(5px);
+    color: #444444;
+    padding: 4em 0;
+}
