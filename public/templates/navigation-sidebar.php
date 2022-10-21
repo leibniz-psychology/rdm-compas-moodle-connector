@@ -25,7 +25,8 @@ $term = $wp_query->get_queried_object();
         if ($top_category->name === 'Uncategorized') {
             continue;
         }
-        echo '<li class="cat-item cat-item-' . $top_category->cat_ID . ' top-cat-item"><a href="' . get_category_link($top_category->cat_ID) . '">' . $top_category->name . '</a></li>';
+        $current_cat = $top_category->cat_ID === $term->term_id ? ' current-cat' : '';
+        echo '<li class="cat-item cat-item-' . $top_category->cat_ID . $current_cat . ' top-cat-item"><a href="' . get_category_link($top_category->cat_ID) . '">' . $top_category->name . '</a></li>';
         $child_categories = get_categories('hide_empty=0&parent=' . $top_category->cat_ID);
         if ($child_categories) {
             usort($child_categories, function ($a, $b) {
@@ -55,12 +56,6 @@ $term = $wp_query->get_queried_object();
                         }
                         echo '</ul>';
                     }
-//                    if (in_array($child->cat_ID, $current_categories_id)) {
-//                        //                print list of posts
-//                        echo '<li class="cat-item cat-item-' . $child->cat_ID . ' current-cat"><a href=' . get_permalink($first_article[0]->ID) . '>' . $child->name . '</a></li>';
-//                    } else {
-//                        echo '<li class="cat-item cat-item-' . $child->cat_ID . '"><a href=' . get_permalink($first_article[0]->ID) . '>' . $child->name . '</a></li>';
-//                    }
                 } ?>
             </ul>
         <?php }

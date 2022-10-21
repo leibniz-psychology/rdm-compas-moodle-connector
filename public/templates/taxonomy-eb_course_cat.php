@@ -61,11 +61,12 @@ get_template_part('template-parts/breadcrumb'); ?>
             <?php $template_loader->wp_get_template_part('navigation', 'sidebar'); ?>
         </div>
         <div>
+<!--            <h2>--><?php //echo $term->name; ?><!--</h2>-->
             <!--        Description-->
 <!--            <h2>--><?php //echo __('Description', 'edwiser-bridge'); ?><!--</h2>-->
             <p><?php echo $term->description; ?></p>
             <!--        Courses list-->
-            <h2><?php echo __('Training Units', 'edwiser-bridge'); ?></h2>
+            <h4><?php echo __('Training Units', 'edwiser-bridge'); ?></h4>
             <?php
             if ($wp_query->have_posts()) {
                 while ($wp_query->have_posts()) :
@@ -77,8 +78,18 @@ get_template_part('template-parts/breadcrumb'); ?>
             }
             wp_reset_postdata(); ?>
             <!--        Related articles in KB-->
-            <h2><?php echo __('Related Knowledge Base Articles', 'edwiser-bridge'); ?></h2>
-            
+            <?php
+            $kb_articles = get_field("linked_knowledge_base_articles", "category_" . $term->term_id);
+            if($kb_articles) {
+                echo '<h4>'.__('Related Knowledge Base Articles', 'edwiser-bridge') .'</h4>';
+                foreach ($kb_articles as $kb_article) {
+                    global $kb_article;
+                    $template_loader->wp_get_template_part('kb-article', 'card');
+                }
+            }
+
+
+            ?>
         </div>
     </div>
     <?php
