@@ -58,6 +58,7 @@ get_template_part('template-parts/breadcrumb'); ?>
             <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Navigation', 'rdm-compas-theme') ?>
         </button>
         <div id="rdmc-sidebar">
+            <?php $template_loader->wp_get_template_part('navigation', 'back-button'); ?>
             <?php $template_loader->wp_get_template_part('navigation', 'sidebar'); ?>
         </div>
         <div>

@@ -9,10 +9,12 @@ global $post;
 $categories = get_the_terms($post->ID, 'eb_course_cat'); ?>
 <div class="rdm-tc-nav__container">
     <?php foreach ($categories as $category) { ?>
-        <h3><a href="<?php echo esc_url(get_category_link($category->term_id)) ?>"><?php echo $category->name; ?></a>
-        </h3>
+<!--        <span class="rdm-tc-label">--><?php //echo __('Category', 'edwiser-bridge'); ?><!--</span>-->
+        <h4 class="rdm-tc-sidebar-category">
+            <a href="<?php echo esc_url(get_category_link($category->term_id)) ?>"><?php echo $category->name; ?></a>
+        </h4>
         <p><?php echo $category->description; ?></p>
-        <p><strong><?php echo __('In this Category:', 'edwiser-bridge'); ?></strong></p>
+        <span class="rdm-tc-label rdm-tc-label-small"><?php echo __('Courses', 'edwiser-bridge'); ?></span>
         <?php
         $courses = get_posts(array(
             'post_type' => 'eb_course',

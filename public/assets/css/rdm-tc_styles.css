@@ -122,6 +122,7 @@
 
 .rdm-tc-sidebar-list{
     padding: 0;
+    margin: 0 0 0.5em 0;
 }
 .rdm-tc-sidebar-list li {
     padding-left: 0;
@@ -152,4 +153,12 @@
 
 .rdm-tc_article-excerpt {
     font-size: 0.8em;
+}
+
+.rdm-tc-sidebar-category a {
+    text-decoration: none;
+}
+
+.rdm-tc-label {
+    font-weight: bold;
 }

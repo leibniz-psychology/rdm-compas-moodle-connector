@@ -60,6 +60,7 @@ if (have_posts()) {
 <!--        <i class="fa fa-bars" aria-hidden="true"></i> --><?php //echo __('Category', 'rdm-compas-theme') ?>
 <!--    </button>-->
     <div id="rdm-tc-sidebar">
+        <?php $template_loader->wp_get_template_part('navigation', 'back-button'); ?>
         <?php $template_loader->wp_get_template_part( 'course-category', 'sidebar'); ?>
     </div>
     <!--content-->
