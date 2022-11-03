@@ -1033,14 +1033,21 @@ class Eb_Course_Manager
             }
         }
         // add course id on moodle in course meta on WP.
-        return array('moodle_course_id' => $course_data->id,
-            'moodle_course_date_modified' => $course_data->timemodified,
-            'moodle_course_format' => $custom_fields['course_format'],
-            'moodle_course_target_group' => $custom_fields['target_group'],
-            'moodle_course_discipline' => $custom_fields['discipline'],
-            'moodle_course_duration' => $custom_fields['duration'],
-            'moodle_course_required_material' => esc_html($custom_fields['required_material']),
-            'moodle_course_license' => $custom_fields['license'],
+        // get course metadata
+        return array(
+            'moodle_course_id'                  => $course_data->id,
+            'moodle_course_institution'         => $custom_fields['institution'],
+            'moodle_course_contact_person'      => array($custom_fields['contact_person_name'],$custom_fields['contact_person_email']),
+            'moodle_course_date_start'          => $course_data->startdate,
+            'moodle_course_date_modified'       => $course_data->timemodified,
+            'moodle_course_format'              => $custom_fields['course_format'],
+            'moodle_course_target_group'        => $custom_fields['target_group'],
+            'moodle_course_discipline'          => $custom_fields['discipline'],
+            'moodle_course_number_participants' => $custom_fields['number_participants'],
+            'moodle_course_duration'            => $custom_fields['duration'],
+            'moodle_course_required_material'   => esc_html($custom_fields['required_material']),
+            'moodle_course_persistent_identifier' => $custom_fields['persistent_identifier'],
+            'moodle_course_license'             => $custom_fields['license'],
         );
     }
 

@@ -144,7 +144,7 @@ class Eb_Post_Types
                         'hierarchical' => false, // Hierarchical causes memory issues - WP loads all records!
                         'rewrite' => array('slug' => 'courses'),
                         'query_var' => true,
-                        'supports' => array('title', 'editor', 'thumbnail', 'comments'),
+                        'supports' => array('title', 'editor', 'thumbnail'),//, 'comments'),
                         'has_archive' => $show_archive,
                         'show_in_nav_menus' => true,
                         'taxonomies' => array('eb_course_cat'),
@@ -153,48 +153,6 @@ class Eb_Post_Types
             );
             flush_rewrite_rules(true);
         }
-
-//		if ( ! post_type_exists( 'eb_order' ) ) {
-//			register_post_type(
-//				'eb_order',
-//				apply_filters(
-//					'eb_register_post_type_order',
-//					array(
-//						'labels'            => array(
-//							'name'               => __( 'Orders', 'edwiser-bridge' ),
-//							'singular_name'      => __( 'Order', 'edwiser-bridge' ),
-//							'menu_name'          => _x( 'Orders', 'Admin menu name', 'edwiser-bridge' ),
-//							'add_new'            => __( 'Add Order', 'edwiser-bridge' ),
-//							'add_new_item'       => __( 'Add New Order', 'edwiser-bridge' ),
-//							'edit'               => __( 'Edit', 'edwiser-bridge' ),
-//							'edit_item'          => __( 'Edit Order', 'edwiser-bridge' ),
-//							'new_item'           => __( 'New Order', 'edwiser-bridge' ),
-//							'view'               => __( 'View Order', 'edwiser-bridge' ),
-//							'view_item'          => __( 'View Order', 'edwiser-bridge' ),
-//							'search_items'       => __( 'Search Orders', 'edwiser-bridge' ),
-//							'not_found'          => __( 'No orders found', 'edwiser-bridge' ),
-//							'not_found_in_trash' => __( 'No orders found in trash', 'edwiser-bridge' ),
-//						),
-//						'description'       => __( 'This is where you can see course orders.', 'edwiser-bridge' ),
-//						'public'            => false,
-//						'capability_type'   => 'post',
-//						'capabilities'      => array(
-//							'create_posts' => true,
-//						),
-//						'map_meta_cap'      => true,
-//						'show_ui'           => true,
-//						'show_in_menu'      => false,
-//						'menu_position'     => 80,
-//						'hierarchical'      => false, // Hierarchical causes memory issues - WP loads all records!
-//						'rewrite'           => array( 'slug' => 'orders' ),
-//						'query_var'         => true,
-//						'supports'          => array( 'title' ),
-//						'has_archive'       => false,
-//						'show_in_nav_menus' => false,
-//					)
-//				)
-//			);
-//		}
 
         do_action('eb_after_register_post_type');
     }
@@ -219,25 +177,14 @@ class Eb_Post_Types
 
         // register metabox for recommended course section on single course page.
         add_meta_box(
-            'eb_recommended_course_options',
-            __('Recommended Course Settings', 'edwiser-bridge'),
+            'eb_blended_course_options',
+            __('Blended Course Settings', 'edwiser-bridge'),
             array($this, 'post_options_callback'),
             'eb_course',
             'advanced',
             'default',
             array('post_type' => 'eb_course')
         );
-
-        // register metabox for moodle Order post type options.
-//		add_meta_box(
-//			'eb_order_options',
-//			__( 'Order Details', 'edwiser-bridge' ),
-//			array( $this, 'post_options_callback' ),
-//			'eb_order',
-//			'advanced',
-//			'default',
-//			array( 'post_type' => 'eb_order' )
-//		);
     }
 
     /**
@@ -253,7 +200,7 @@ class Eb_Post_Types
         $post;
         // get fields for a specific post type.
 
-        if ('eb_recommended_course_options' === $args['id']) {
+        if ('eb_blended_course_options' === $args['id']) {
             $fields = $this->populate_metabox_fields($args['id']);
         } else {
             $fields = $this->populate_metabox_fields($args['args']['post_type']);
@@ -311,6 +258,13 @@ class Eb_Post_Types
 
         $args_array = array(
             'eb_course' => array(
+                'moodle_course_format' => array( //moodle custom field
+                    'label' => __('Course Format', 'edwiser-bridge'),
+                    'description' => __('Course Format', 'edwiser-bridge'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
                 'moodle_course_id' => array(
                     'label' => __('Moodle Course ID', 'edwiser-bridge'),
                     'description' => __('This field is disabled. Do not change the course id this will affect the course access for the existing enrollment.', 'edwiser-bridge'),
@@ -320,73 +274,17 @@ class Eb_Post_Types
                     'default' => '0',
                     'note' => isset($deletion_status) && !empty($deletion_status) ? '<span style="color:red;">' . __('This course is deleted on Moodle', 'edwiser-bridge') . '</span>' : '',
                 ),
-//				'course_price_type'        => array(
-//					'label'       => __( 'Course Price Type', 'edwiser-bridge' ),
-//					'description' => __( 'Is it free to join or one time purchase?', 'edwiser-bridge' ),
-//					'type'        => 'select',
-//					'options'     => array(
-//						'free'   => __( 'Free', 'edwiser-bridge' ),
-//						'paid'   => __( 'Paid', 'edwiser-bridge' ),
-//						'closed' => __( 'Closed', 'edwiser-bridge' ),
-//					),
-//					'default'     => array( 'free' ),
-//				),
-//				'course_price'             => array(
-//					'label'       => __( 'Course Price', 'edwiser-bridge' ),
-//					'description' => __( 'Course price in currency as defined in settings.', 'edwiser-bridge' ),
-//					'type'        => 'text',
-//					'placeholder' => __( 'Enter course price', 'edwiser-bridge' ),
-//					'default'     => '',
-//				),
-//				'course_closed_url'        => array(
-//					'label'       => __( 'Optional URL', 'edwiser-bridge' ),
-//					'description' => __( 'Optional url to redirect user on click of take this course button.', 'edwiser-bridge' ),
-//					'type'        => 'text',
-//					'placeholder' => __( 'Optional URL', 'edwiser-bridge' ),
-//					'default'     => '',
-//				),
-//				'course_expirey'           => array(
-//					'label'       => __( 'Expire Access', 'edwiser-bridge' ),
-//					'description' => __( 'Leave this field unchecked if access never expires. Expire access will work with Woocommerce integration and not with Edwiser Bulk purchase plugin.', 'edwiser-bridge' ),
-//					'default'     => 'no',
-//					'type'        => 'checkbox',
-//					'autoload'    => false,
-//				),
-//				'course_expiry_action'     => array(
-//					'label'       => __( 'On Course Expiration', 'edwiser-bridge' ),
-//					'description' => __( 'Select an action to perform on course access expiration.', 'edwiser-bridge' ),
-//					'type'        => 'select',
-//					'options'     => array(
-//						'unenroll'   => __( 'Unenroll', 'edwiser-bridge' ),
-//						'suspend'    => __( 'Suspend', 'edwiser-bridge' ),
-//						'do-nothing' => __( 'Do nothing', 'edwiser-bridge' ),
-//					),
-//					'default'     => array( 'unenroll' ),
-//				),
-//				'num_days_course_access'   => array(
-//					'label'       => __( 'Expire Access After (days)', 'edwiser-bridge' ),
-//					'description' => __( 'Number of days the course is accessible', 'edwiser-bridge' ),
-//					'type'        => 'number',
-//					'default'     => '',
-//				),
-//                'moodle_course_short_description' => array( //moodle summary
-//                    'label' => __('Short Description', 'edwiser-bridge'),
-//                    'description' => __('Short description of course.', 'edwiser-bridge'),
-//                    'type' => 'textarea',
-//                    'placeholder' => '',
-//                    'default' => '',
-//                ),
-//                'moodle_course_author_institution' => array( //moodle custom field
-//                    'label' => __('Author Institution', 'edwiser-bridge'),
-//                    'description' => __('Author Institution', 'edwiser-bridge'),
-//                    'type' => 'text',
-//                    'placeholder' => '',
-//                    'attr' => 'readonly',
-//                ),
-                'moodle_course_format' => array( //moodle custom field
-                    'label' => __('Course Format', 'edwiser-bridge'),
-                    'description' => __('Course Format', 'edwiser-bridge'),
+                'moodle_course_institution' => array( //moodle custom field
+                    'label' => __('Institution', 'edwiser-bridge'),
+                    'description' => __('Institution', 'edwiser-bridge'),
                     'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
+                'moodle_course_date_modified' => array( //moodle timemodified
+                    'label' => __('Date Modified', 'edwiser-bridge'),
+                    'description' => __('Date Modified', 'edwiser-bridge'),
+                    'type' => 'date',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
@@ -400,6 +298,13 @@ class Eb_Post_Types
                 'moodle_course_discipline' => array( //moodle custom field
                     'label' => __('Discipline', 'edwiser-bridge'),
                     'description' => __('Discipline', 'edwiser-bridge'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
+                'moodle_course_number_participants' => array( //moodle custom field
+                    'label' => __('Number of participants', 'edwiser-bridge'),
+                    'description' => __('Number of participants', 'edwiser-bridge'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
@@ -418,6 +323,13 @@ class Eb_Post_Types
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
+                'moodle_course_persistent_identifier' => array( //moodle custom field
+                    'label' => __('Persistent Identifier', 'edwiser-bridge'),
+                    'description' => __('Persistent Identifier', 'edwiser-bridge'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
                 'moodle_course_license' => array( //moodle custom field
                     'label' => __('License', 'edwiser-bridge'),
                     'description' => __('License', 'edwiser-bridge'),
@@ -425,51 +337,51 @@ class Eb_Post_Types
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
-                'moodle_course_date_modified' => array( //moodle timemodified
-                    'label' => __('Date Modified', 'edwiser-bridge'),
-                    'description' => __('Date Modified', 'edwiser-bridge'),
+            ),
+            'eb_blended_course_options' => array(
+                'moodle_course_contact_person' => array( //moodle custom field
+                    'label' => __('Contact person', 'edwiser-bridge'),
+                    'description' => __('Contact person', 'edwiser-bridge'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
+                'moodle_course_date_start' => array( //moodle custom field
+                    'label' => __('Start date', 'edwiser-bridge'),
+                    'description' => __('Start date', 'edwiser-bridge'),
                     'type' => 'date',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
-            ),
-            'eb_recommended_course_options' => array(
-                'enable_recmnd_courses' => array(
-                    'label' => __('Show Recommended Courses', 'edwiser-bridge'),
-                    'description' => __('Show recommended courses on single course page.', 'edwiser-bridge'),
-                    'default' => 'no',
-                    'type' => 'checkbox',
-                    'autoload' => false,
+                'moodle_course_number_participants' => array( //moodle custom field
+                    'label' => __('Number of participants', 'edwiser-bridge'),
+                    'description' => __('Number of participants', 'edwiser-bridge'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
                 ),
-                'show_default_recmnd_course' => array(
-                    'label' => __('Show Category Wise Recommended Courses', 'edwiser-bridge'),
-                    'description' => __('Show category wise selected recommended courses on single course page.', 'edwiser-bridge'),
-                    'default' => 'no',
-                    'type' => 'checkbox',
-                    'autoload' => false,
-                ),
-                'enable_recmnd_courses_single_course' => array(
-                    'label' => __('Select Courses', 'edwiser-bridge'),
-                    'description' => __('Select courses to show in custom courses in recommended course section.', 'edwiser-bridge'),
-                    'type' => 'select_multi',
-                    'options' => isset($post->ID) ? \app\wisdmlabs\edwiserBridge\wdm_eb_get_all_eb_sourses($post->ID) : array(),
-                    'default' => array('pending'),
-                ),
-            ),
-//            'eb_order' => array(
-//                'order_status' => array(
-//                    'label' => __('Order Status', 'edwiser-bridge'),
-//                    'description' => __('Status of Order', 'edwiser-bridge'),
-//                    'type' => 'select',
-//                    'options' => array(
-//                        'pending' => __('Pending', 'edwiser-bridge'),
-//                        'completed' => __('Completed', 'edwiser-bridge'),
-//                        'failed' => __('Failed', 'edwiser-bridge'),
-//                        'refunded' => __('Refunded', 'edwiser-bridge'),
-//                    ),
+//                'enable_recmnd_courses' => array(
+//                    'label' => __('Show Recommended Courses', 'edwiser-bridge'),
+//                    'description' => __('Show recommended courses on single course page.', 'edwiser-bridge'),
+//                    'default' => 'no',
+//                    'type' => 'checkbox',
+//                    'autoload' => false,
+//                ),
+//                'show_default_recmnd_course' => array(
+//                    'label' => __('Show Category Wise Recommended Courses', 'edwiser-bridge'),
+//                    'description' => __('Show category wise selected recommended courses on single course page.', 'edwiser-bridge'),
+//                    'default' => 'no',
+//                    'type' => 'checkbox',
+//                    'autoload' => false,
+//                ),
+//                'enable_recmnd_courses_single_course' => array(
+//                    'label' => __('Select Courses', 'edwiser-bridge'),
+//                    'description' => __('Select courses to show in custom courses in recommended course section.', 'edwiser-bridge'),
+//                    'type' => 'select_multi',
+//                    'options' => isset($post->ID) ? \app\wisdmlabs\edwiserBridge\wdm_eb_get_all_eb_sourses($post->ID) : array(),
 //                    'default' => array('pending'),
 //                ),
-//            ),
+            ),
         );
 
         $args_array = apply_filters('eb_post_options', $args_array);

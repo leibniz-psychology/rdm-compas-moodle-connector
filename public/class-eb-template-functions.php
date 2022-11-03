@@ -118,88 +118,38 @@ class Eb_Template_Functions {
 		$post_id       = $post->ID; // @codingStandardsIgnoreLine.
 		$eb_plugin_url = \app\wisdmlabs\edwiserBridge\wdm_edwiser_bridge_plugin_url();
 
-		// get currency.
-//		$payment_options = get_option( 'eb_paypal' );
-//		$currency        = isset( $payment_options['eb_paypal_currency'] ) ? $payment_options['eb_paypal_currency'] : 'USD';
-
-//		$course_price_type = 'free';
-//		$course_price      = 0;
-//		$short_description = '';
-
+        $categories = \app\wisdmlabs\edwiserBridge\wdm_eb_course_terms( $post_id );
 		$course_options = get_post_meta( $post_id, 'eb_course_options', true );
-		if ( is_array( $course_options ) ) {
-//			$course_price_type = ( isset( $course_options['course_price_type'] ) ) ? $course_options['course_price_type'] : 'free';
-//			$course_price      = ( isset( $course_options['course_price'] ) &&
-//					is_numeric( $course_options['course_price'] ) ) ?
-//					$course_options['course_price'] : 0;
-//			$course_closed_url = ( isset( $course_options['course_closed_url'] ) ) ?
-//					$course_options['course_closed_url'] : '#';
-//			$short_description = ( isset( $course_options['course_short_description'] ) ) ?
-//					$course_options['course_short_description'] : '';
-            $course_date_modified = $course_options['moodle_course_date_modified'] ?? null;
-            $course_format =  $course_options['moodle_course_format'] ?? __('Lesson', 'edwiser-bridge');
-            $course_target_group = $course_options['moodle_course_target_group'] ?? __('All', 'edwiser-bridge');
-            $course_discipline = $course_options['moodle_course_discipline'] ?? __('General', 'edwiser-bridge');
-            $course_duration = $course_options['moodle_course_duration'] ?? null;
-            $course_required_material = $course_options['moodle_course_required_material'] ?? null;
-            $course_license = $course_options['moodle_course_license'] ?? null;
-		}
 
-//		if ( is_numeric( $course_price ) ) {
-//			if ( 'USD' === $currency ) {
-//				$course_price_formatted = '$' . $course_price;
-//			} else {
-//				$course_price_formatted = $currency . ' ' . $course_price;
-//			}
-//
-//			if ( 0 === $course_price ) {
-//				$course_price_formatted = __( 'Free', 'edwiser-bridge' );
-//			}
-//		}
+        $course_institution         = $course_options['moodle_course_institution']      ?? null;
+        $course_contact_person      = $course_options['moodle_course_contact_person']   ?? null;
+        $course_date_start          = $course_options['moodle_course_date_start']       ?? __('Start now!', 'edwiser-bridge');;
+        $course_date_modified       = $course_options['moodle_course_date_modified']    ?? null;
+        $course_format              = $course_options['moodle_course_format']           ?? __('Lesson', 'edwiser-bridge');
+        $course_target_group        = $course_options['moodle_course_target_group']     ?? __('All', 'edwiser-bridge');
+        $course_discipline          = $course_options['moodle_course_discipline']       ?? __('General', 'edwiser-bridge');
+        $course_number_participants = $course_options['moodle_course_number_participants'] ?? null;
+        $course_duration            = $course_options['moodle_course_duration']         ?? null;
+        $course_required_material   = $course_options['moodle_course_required_material'] ?? null;
+        $course_persistent_identifier   = $course_options['moodle_course_persistent_identifier'] ?? null;
+        $course_license             = $course_options['moodle_course_license']          ?? null;
 
-		$course_class = null;
-		$user_id      = get_current_user_id();
-		$logged_in    = ! empty( $user_id );
-		$has_access   = edwiser_bridge_instance()->enrollment_manager()->user_has_course_access( $user_id, $post->ID );
-
-		$categories = \app\wisdmlabs\edwiserBridge\wdm_eb_course_terms( $post_id );
-
-		/*
-		 * Check is course has expiry date
-		 */
-//		$expiry_date_time = '<span><strong>' . __( 'Course Access: ', 'edwiser-bridge' ) . '</strong>' . __( 'Lifetime ', 'edwiser-bridge' ) . '</span>';
-//		if ( isset( $course_options['course_expirey'] ) && 'yes' === $course_options['course_expirey'] && '' !== $course_options['num_days_course_access'] ) {
-//			$remaining_access = Eb_Enrollment_Manager::access_remianing( $user_id, $post->ID );
-//
-//			if ( is_user_logged_in() && $has_access && '0000-00-00 00:00:00' !== $remaining_access ) {
-//				$expiry_date_time = '<span><strong>' . __( 'Remaining Access: ', 'edwiser-bridge' ) . '</strong>' . $remaining_access . ' ' . __( ' days access remaining', 'edwiser-bridge' ) . '</span>';
-//			} else {
-//				$expiry_date_time = '<span><strong>' . __( 'Course Access:  ', 'edwiser-bridge' ) . ' </strong>' . $course_options['num_days_course_access'] . __( ' days access', 'edwiser-bridge' ) . ' </span>';
-//			}
-//		}
-
-//		// Check if course is suspended for user then add suspended in the course access section.
-//		$is_user_suspended = \app\wisdmlabs\edwiserBridge\wdm_eb_get_user_suspended_status( $user_id, $post->ID );
-//		if ( $is_user_suspended ) {
-//			$expiry_date_time = '<span><strong>' . __( 'Course Access: ', 'edwiser-bridge' ) . '</strong>' . __( 'Suspended ', 'edwiser-bridge' ) . '</span>';
-//		}
-
-		return array(
+		return [
 			'eb_plugin_url'             => $eb_plugin_url,
-			'has_access'                => $has_access,
-//			'course_price_type'         => $course_price_type,
-//			'course_price_formatted'    => $course_price_formatted,
-//			'expiry_date_time'          => $expiry_date_time,
 			'categories'                => $categories,
-//			'suspended'                 => $is_user_suspended,
+            'course_institution'        => $course_institution,
+            'course_contact_person'     => $course_contact_person, //for blended learning, contains name and email
+            'course_date_start'         => $course_date_start, //for blended learning
             'course_date_modified'      => $course_date_modified,
             'course_format'             => $course_format,
             'course_target_group'       => $course_target_group,
             'course_discipline'         => $course_discipline,
+            'course_number_participants'=> $course_number_participants, //for blended learning
             'course_duration'           => $course_duration,
             'course_required_material'  => $course_required_material,
+            'course_persistent_identifier' => $course_persistent_identifier,
             'course_license'            => $course_license
-		);
+        ];
 	}
 
 
