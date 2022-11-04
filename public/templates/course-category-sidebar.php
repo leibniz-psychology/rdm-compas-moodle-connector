@@ -9,7 +9,7 @@ global $post;
 $categories = get_the_terms($post->ID, 'eb_course_cat'); ?>
 <div class="rdm-tc-nav__container">
     <?php foreach ($categories as $category) { ?>
-<!--        <span class="rdm-tc-label">--><?php //echo __('Category', 'edwiser-bridge'); ?><!--</span>-->
+        <span class="rdm-tc-label"><?php echo __('Category', 'edwiser-bridge'); ?></span>
         <h4 class="rdm-tc-sidebar-category">
             <a href="<?php echo esc_url(get_category_link($category->term_id)) ?>"><?php echo $category->name; ?></a>
         </h4>

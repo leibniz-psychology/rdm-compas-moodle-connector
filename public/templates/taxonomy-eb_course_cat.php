@@ -57,14 +57,11 @@ get_template_part('template-parts/breadcrumb'); ?>
         <button type="button" class="sidebar-toggle show-medium" onclick="sidebarToggle()">
             <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Navigation', 'rdm-compas-theme') ?>
         </button>
-        <div id="rdmc-sidebar">
+        <div id="rdm-tc-sidebar">
             <?php $template_loader->wp_get_template_part('navigation', 'back-button'); ?>
             <?php $template_loader->wp_get_template_part('navigation', 'sidebar'); ?>
         </div>
-        <div>
-<!--            <h2>--><?php //echo $term->name; ?><!--</h2>-->
-            <!--        Description-->
-<!--            <h2>--><?php //echo __('Description', 'edwiser-bridge'); ?><!--</h2>-->
+        <div class="rdm-tc-category-wrapper">
             <p><?php echo $term->description; ?></p>
             <!--        Courses list-->
             <h4><?php echo __('Training Units', 'edwiser-bridge'); ?></h4>
@@ -81,8 +78,8 @@ get_template_part('template-parts/breadcrumb'); ?>
             <!--        Related articles in KB-->
             <?php
             $kb_articles = get_field("linked_knowledge_base_articles", "category_" . $term->term_id);
-            if($kb_articles) {
-                echo '<h4>'.__('Related Knowledge Base Articles', 'edwiser-bridge') .'</h4>';
+            if ($kb_articles) {
+                echo '<h4>' . __('Related Knowledge Base Articles', 'edwiser-bridge') . '</h4>';
                 foreach ($kb_articles as $kb_article) {
                     global $kb_article;
                     $template_loader->wp_get_template_part('kb-article', 'card');

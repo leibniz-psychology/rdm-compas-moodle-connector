@@ -19,7 +19,7 @@ usort($top_categories, function ($a, $b) {
 global $wp_query;
 $term = $wp_query->get_queried_object();
 ?>
-<div class="kb-nav__container">
+<div class="rdm-tc-nav__container">
     <?php
     foreach ($top_categories as $top_category) {
         if ($top_category->name === 'Uncategorized') {

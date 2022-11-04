@@ -41,7 +41,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 <!-- Curse details wrapper. -->
 <div class="rdm-tc-course-overview-wrapper">
 
-    <!-- Course summary wrapper -->
+    <!-- Course overview wrapper -->
     <div class="rdm-tc-course-overview">
         <h4><?php echo __("Overview", 'edwiser-bridge') ?></h4>
         <?php
@@ -65,6 +65,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 </div>
 <!--Course summary wrapper-->
 <div class="eb-course-desc-wrapper rdm-tc-course-summary">
+    <h1 class="intro__title"><?php the_title(); ?></h1>
     <!--         Course image wrapper-->
     <!--    <div class="eb-course-img-wrapper">-->
     <!--    <div>-->
@@ -76,7 +77,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
     //                echo '<img src="' . esc_html($single_course_data['eb_plugin_url']) . 'images/no-image.jpg" />';
     //            }
     //
-    ?>
+//    ?>
     <!--        </div>-->
     <!--    </div>-->
     <?php
@@ -112,5 +113,3 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
         </div>
     <?php } ?>
 </div>
-<!--</article>-->
-<!-- #post -->

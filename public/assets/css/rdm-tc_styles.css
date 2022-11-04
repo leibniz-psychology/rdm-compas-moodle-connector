@@ -15,7 +15,7 @@
         order: 3;
         max-width: 35%;
         min-width: 25%;
-        margin-top: 2em;
+        margin-top: 0;
 
     }
 
@@ -120,6 +120,10 @@
     order: 3;
 }
 
+#rdm-tc-nav__container {
+
+}
+
 .rdm-tc-sidebar-list{
     padding: 0;
     margin: 0 0 0.5em 0;
@@ -136,10 +140,12 @@
 }
 
 .rdm-tc_article-container {
-    padding: 2em;
+    padding: 1em 2em;
+    margin-bottom: 1em;
     border: 1px solid #e5e5e5;
     border-radius: 3px;
     margin-top: 1em;
+    max-width: 75%;
 }
 
 .rdm-tc_article-container:hover {
@@ -152,13 +158,23 @@
 }
 
 .rdm-tc_article-excerpt {
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
+.rdm-tc-sidebar-category {
+    margin: 0;
+}
 .rdm-tc-sidebar-category a {
     text-decoration: none;
+
 }
 
 .rdm-tc-label {
     font-weight: bold;
+    font-variant: all-small-caps;
+}
+
+.rdm-tc-category-wrapper {
+    order: 2;
+    max-width: 75%;
 }

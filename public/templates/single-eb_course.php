@@ -48,13 +48,7 @@ if (have_posts()) {
     the_post();
     get_template_part('template-parts/breadcrumb'); ?>
     <!--intro-->
-    <div style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), '16:9_xl'); ?> );">
-    <div class="intro intro__top topic-training-center">
-        <div class="intro__inner-container">
-            <h1 class="intro__title"><?php the_title(); ?></h1>
-        </div>
-    </div>
-    </div>
+    <div style="padding-bottom: 1em; background-color: rgba(255,179,100,0.6)"></div>
     <div id="course-<?php the_ID(); ?>" class="training-center-page rdmc-container-page-sidebar" style="column-gap:2em;justify-content: space-between;">
 <!--    <button type="button" class="sidebar-toggle show-medium" onclick="sidebarToggle()">-->
 <!--        <i class="fa fa-bars" aria-hidden="true"></i> --><?php //echo __('Category', 'rdm-compas-theme') ?>
@@ -64,23 +58,7 @@ if (have_posts()) {
         <?php $template_loader->wp_get_template_part( 'course-category', 'sidebar'); ?>
     </div>
     <!--content-->
-<!--    <div>-->
-<!--        <h2>--><?php //echo __("Training Unit Overview", "rdm-compas-theme") ?><!--</h2>-->
-<!--        --><?php //get_template_part("template-parts/training-unit-metadata"); ?>
 <?php        $template_loader->wp_get_template_part( 'content-single', get_post_type() ); ?>
-<!--        <h2>--><?php //echo __("Summary", "rdm-compas-theme") ?><!--</h2>-->
-<!--        --><?php //the_content(); ?>
-
-
-        <!--        --><?php //if (comments_open()) { ?>
-        <!---->
-        <!--            <section class="section">-->
-        <!--                <div class="section__inner-container container">-->
-        <!--                    --><?php //comments_template(); ?>
-        <!--                </div>-->
-        <!--            </section>-->
-        <!---->
-        <!--        --><?php //} ?>
         <!---->
         <!--        --><?php //if (is_singular('post') && (get_previous_post_link() || get_next_post_link())) { ?>
         <!---->
