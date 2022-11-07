@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.4
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;

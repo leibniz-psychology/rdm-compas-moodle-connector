@@ -2,7 +2,7 @@
 /**
  * The template for displaying course archive content.
  *
- * @package Edwiser Bridge.
+ * @package RDM Compas Moodle Connector.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,8 +51,8 @@ $course_data      = apply_filters( 'eb_content_course_before', $post->ID, $attr,
 						</p>
 					</div>
                     <div class="rdm-tc-course-card-buttons">
-                        <a class="rdm-tc-button rdm-tc-button-blue" href="https://trainingcenter.rdm-compas.org/" target="_blank" rel="noopener"><?php echo __('Start course', 'edwiser-bridge'); ?></a>
-                        <a class="rdm-tc-button rdm-tc-button-gray" href="<?php echo esc_url( $course_data['course_url'] ); ?>" rel="bookmark"><?php echo __('Show more', 'edwiser-bridge'); ?></a>
+                        <a class="rdm-tc-button rdm-tc-button-blue" href="https://trainingcenter.rdm-compas.org/" target="_blank" rel="noopener"><?php echo __('Start course', 'rdmcompas-moodle-connector'); ?></a>
+                        <a class="rdm-tc-button rdm-tc-button-gray" href="<?php echo esc_url( $course_data['course_url'] ); ?>" rel="bookmark"><?php echo __('Show more', 'rdmcompas-moodle-connector'); ?></a>
                     </div>
 
 					<?php
@@ -76,7 +76,7 @@ $course_data      = apply_filters( 'eb_content_course_before', $post->ID, $attr,
 					<?php
 					if ( isset( $attr ) && isset( $attr['completed'] ) && $attr['completed'] ) {
 						?>
-						<span class="eb_courses_completed_tag"> <?php esc_html_e( 'Completed', 'edwiser-bridge' ); ?> </span>
+						<span class="eb_courses_completed_tag"> <?php esc_html_e( 'Completed', 'rdmcompas-moodle-connector' ); ?> </span>
 						<?php
 					}
 					?>

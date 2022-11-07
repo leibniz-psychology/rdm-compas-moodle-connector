@@ -6,7 +6,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -48,7 +48,7 @@ class Eb_Activator {
 		self::create_files();
 
 		//rename translation files.
-		require_once WP_PLUGIN_DIR . '/edwiser-bridge/includes/class-eb-i18n.php';
+		require_once WP_PLUGIN_DIR . '/rdmcompas-moodle-connector/includes/class-eb-i18n.php';
 		$plugin_i18n = new Eb_I18n();
 		$plugin_i18n->rename_langauge_files();
 
@@ -68,7 +68,7 @@ class Eb_Activator {
 			'selective_sync'          => array( 'selective-synchronization/selective-synchronization.php', '1.0.0' ),
 			'woocommerce_integration' => array( 'woocommerce-integration/bridge-woocommerce.php', '1.0.4' ),
 			'single_signon'           => array(
-				'edwiser-bridge-sso/sso.php',
+				'rdmcompas-moodle-connector-sso/sso.php',
 				'1.0.0',
 			),
 		);
@@ -238,26 +238,26 @@ class Eb_Activator {
 			'eb_create_default_pages',
 			array(
 				'thankyou'    => array(
-					'name'       => esc_html_x( 'thank-you-for-purchase', 'Page slug', 'edwiser-bridge' ),
-					'title'      => esc_html_x( 'Thank You for Purchase', 'Page title', 'edwiser-bridge' ),
-					'content'    => esc_html__( 'Thanks for purchasing the course, your order will be processed shortly.', 'edwiser-bridge' ),
+					'name'       => esc_html_x( 'thank-you-for-purchase', 'Page slug', 'rdmcompas-moodle-connector' ),
+					'title'      => esc_html_x( 'Thank You for Purchase', 'Page title', 'rdmcompas-moodle-connector' ),
+					'content'    => esc_html__( 'Thanks for purchasing the course, your order will be processed shortly.', 'rdmcompas-moodle-connector' ),
 					'option_key' => '',
 				),
 				'useraccount' => array(
-					'name'       => esc_html_x( 'user-account', 'Page slug', 'edwiser-bridge' ),
-					'title'      => esc_html_x( 'User Account', 'Page title', 'edwiser-bridge' ),
+					'name'       => esc_html_x( 'user-account', 'Page slug', 'rdmcompas-moodle-connector' ),
+					'title'      => esc_html_x( 'User Account', 'Page title', 'rdmcompas-moodle-connector' ),
 					'content'    => '[' . apply_filters( 'eb_user_account_shortcode_tag', 'eb_user_account' ) . ']',
 					'option_key' => 'eb_useraccount_page_id',
 				),
 				'mycourses'   => array(
-					'name'       => esc_html_x( 'eb-my-courses', 'Page slug', 'edwiser-bridge' ),
-					'title'      => esc_html_x( 'My Courses', 'Page title', 'edwiser-bridge' ),
+					'name'       => esc_html_x( 'eb-my-courses', 'Page slug', 'rdmcompas-moodle-connector' ),
+					'title'      => esc_html_x( 'My Courses', 'Page title', 'rdmcompas-moodle-connector' ),
 					'content'    => $page_content['eb_my_courses'],
 					'option_key' => 'eb_my_courses_page_id',
 				),
 				'courses'     => array(
-					'name'       => esc_html_x( 'eb-courses', 'Page slug', 'edwiser-bridge' ),
-					'title'      => esc_html_x( 'Courses', 'Page title', 'edwiser-bridge' ),
+					'name'       => esc_html_x( 'eb-courses', 'Page slug', 'rdmcompas-moodle-connector' ),
+					'title'      => esc_html_x( 'Courses', 'Page title', 'rdmcompas-moodle-connector' ),
 					'content'    => $page_content['eb_courses'],
 					'option_key' => 'eb_courses_page_id',
 				),

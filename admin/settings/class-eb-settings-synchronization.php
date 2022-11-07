@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 		 */
 		public function __construct() {
 			$this->_id   = 'synchronization';
-			$this->label = __( 'Synchronization', 'edwiser-bridge' );
+			$this->label = __( 'Synchronization', 'rdmcompas-moodle-connector' );
 
 			add_filter( 'eb_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'eb_settings_' . $this->_id, array( $this, 'output' ) );
@@ -44,8 +44,8 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 		 */
 		public function get_sections() {
 			$sections = array(
-				''          => __( 'Courses', 'edwiser-bridge' ),
-				'user_data' => __( 'Users', 'edwiser-bridge' ),
+				''          => __( 'Courses', 'rdmcompas-moodle-connector' ),
+				'user_data' => __( 'Users', 'rdmcompas-moodle-connector' ),
 			);
 
 			$new_sections = apply_filters( 'eb_get_sections_' . $this->_id, $sections );
@@ -103,13 +103,13 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 					'eb_user_synchronization_settings',
 					array(
 						array(
-							'title' => __( 'Synchronize User Data', 'edwiser-bridge' ),
+							'title' => __( 'Synchronize User Data', 'rdmcompas-moodle-connector' ),
 							'type'  => 'title',
 							'id'    => 'user_synchronization_options',
 						),
 						array(
-							'title'           => __( 'Synchronization Options', 'edwiser-bridge' ),
-							'desc'            => __( 'Update user\'s course enrollment status', 'edwiser-bridge' ),
+							'title'           => __( 'Synchronization Options', 'rdmcompas-moodle-connector' ),
+							'desc'            => __( 'Update user\'s course enrollment status', 'rdmcompas-moodle-connector' ),
 							'id'              => 'eb_synchronize_user_courses',
 							'default'         => 'no',
 							'type'            => 'checkbox',
@@ -118,7 +118,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 							'autoload'        => false,
 						),
 						array(
-							'desc'            => __( 'Link user\'s account to moodle', 'edwiser-bridge' ),
+							'desc'            => __( 'Link user\'s account to moodle', 'rdmcompas-moodle-connector' ),
 							'id'              => 'eb_link_users_to_moodle',
 							'default'         => 'no',
 							'type'            => 'checkbox',
@@ -130,7 +130,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 							'title' => '',
 							'type'  => 'title',
 							'id'    => 'user_sync_email_notice',
-							'desc'  => '<div class="user_sync_email_notice">' . __( 'Note: Performing user synchronization will email all the users with their login credentials. To disable the same you may deactivate', 'edwiser-bridge' ) . '<b>' . __( '"Link WP user account to moodle and Create new moodle account"', 'edwiser-bridge' ) . '</b>' . __( 'from Manage email templates.', 'edwiser-bridge' ) . '</div>',
+							'desc'  => '<div class="user_sync_email_notice">' . __( 'Note: Performing user synchronization will email all the users with their login credentials. To disable the same you may deactivate', 'rdmcompas-moodle-connector' ) . '<b>' . __( '"Link WP user account to moodle and Create new moodle account"', 'rdmcompas-moodle-connector' ) . '</b>' . __( 'from Manage email templates.', 'rdmcompas-moodle-connector' ) . '</div>',
 						),
 						array(
 							'type' => 'sectionend',
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 							'title'    => '',
 							'desc'     => '',
 							'id'       => 'eb_synchronize_users_button',
-							'default'  => __( 'Start Synchronization', 'edwiser-bridge' ),
+							'default'  => __( 'Start Synchronization', 'rdmcompas-moodle-connector' ),
 							'type'     => 'button',
 							'desc_tip' => false,
 							'class'    => 'button secondary',
@@ -158,13 +158,13 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 					'eb_course_synchronization_settings',
 					array(
 						array(
-							'title' => __( 'Synchronize Courses', 'edwiser-bridge' ),
+							'title' => __( 'Synchronize Courses', 'rdmcompas-moodle-connector' ),
 							'type'  => 'title',
 							'id'    => 'course_synchronization_options',
 						),
 						array(
-							'title'           => __( 'Synchronization Options', 'edwiser-bridge' ),
-							'desc'            => __( 'Synchronize course categories', 'edwiser-bridge' ),
+							'title'           => __( 'Synchronization Options', 'rdmcompas-moodle-connector' ),
+							'desc'            => __( 'Synchronize course categories', 'rdmcompas-moodle-connector' ),
 							'id'              => 'eb_synchronize_categories',
 							'default'         => 'no',
 							'type'            => 'checkbox',
@@ -173,7 +173,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 							'autoload'        => false,
 						),
 						array(
-							'desc'            => __( 'Update previously synchronized courses', 'edwiser-bridge' ),
+							'desc'            => __( 'Update previously synchronized courses', 'rdmcompas-moodle-connector' ),
 							'id'              => 'eb_synchronize_previous',
 							'default'         => 'no',
 							'type'            => 'checkbox',
@@ -183,7 +183,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 						),
 
 						array(
-							'desc'            => __( 'Keep synchronized courses as draft', 'edwiser-bridge' ),
+							'desc'            => __( 'Keep synchronized courses as draft', 'rdmcompas-moodle-connector' ),
 							'id'              => 'eb_synchronize_draft',
 							'default'         => 'yes',
 							'type'            => 'checkbox',
@@ -196,7 +196,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 							'title' => '',
 							'type'  => 'title',
 							'id'    => 'course_draft_notice',
-							'desc'  => '<div class="user_sync_email_notice">' . __( 'Note: Courses in the draft will not reflect on the learners "My Courses" page!', 'edwiser-bridge' ) . '</div>',
+							'desc'  => '<div class="user_sync_email_notice">' . __( 'Note: Courses in the draft will not reflect on the learners "My Courses" page!', 'rdmcompas-moodle-connector' ) . '</div>',
 						),
 						array(
 							'type' => 'sectionend',
@@ -207,7 +207,7 @@ if ( ! class_exists( 'Eb_Settings_Synchronization' ) ) {
 							'title'    => '',
 							'desc'     => '',
 							'id'       => 'eb_synchronize_courses_button',
-							'default'  => __( 'Start Synchronization', 'edwiser-bridge' ),
+							'default'  => __( 'Start Synchronization', 'rdmcompas-moodle-connector' ),
 							'type'     => 'button',
 							'desc_tip' => false,
 							'class'    => 'button secondary',

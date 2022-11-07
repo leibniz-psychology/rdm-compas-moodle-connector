@@ -74,7 +74,7 @@ class EB_Usage_Tracking {
 		// Suppressing all the errors here, just in case the setting does not exists, to avoid many if statements.
 		$analytics_data = array(
 			'siteurl'           => $this->detect_site_type() . preg_replace( '#^https?://#', '', rtrim( get_site_url(), '/' ) ), // replace protocol and trailing slash.
-			'product_name'      => 'Edwiser Bridge',
+			'product_name'      => 'RDM Compas Moodle Connector',
 			'product_settings'  => $this->get_plugin_settings( 'edwiser_bridge' ), // all settings in json, of current product which you are tracking.
 			'active_theme'      => get_option( 'stylesheet' ),
 			'total_courses'     => $this->eb_get_course_count(), // Include only with format type remuicourseformat.
@@ -179,7 +179,7 @@ class EB_Usage_Tracking {
 		$settings                              = array();
 		$settings['edwiser_bridge']['general'] = get_option( 'eb_general' );
 
-		if ( is_plugin_active( 'edwiser-bridge-sso/sso.php' ) ) {
+		if ( is_plugin_active( 'rdmcompas-moodle-connector-sso/sso.php' ) ) {
 			$settings['sso_settings']['general'] = get_option( 'eb_sso_settings_general' );
 			$settings['sso_settings']['general'] = get_option( 'eb_sso_settings_redirection' );
 		}

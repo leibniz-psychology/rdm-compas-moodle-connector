@@ -2,7 +2,7 @@
 /**
  * Email Footer.
  *
- * @package Edwiser Bridge
+ * @package RDM Compas Moodle Connector
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

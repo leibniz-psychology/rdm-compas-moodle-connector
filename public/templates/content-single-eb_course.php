@@ -2,7 +2,7 @@
 /**
  * The template for displaying single course content.
  *
- * This template can be overridden by copying it to yourtheme/edwiser-bridge/
+ * This template can be overridden by copying it to yourtheme/rdmcompas-moodle-connector/
  *
  * @version     1.2.0
  * @package     eb_course
@@ -43,22 +43,22 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 
     <!-- Course overview wrapper -->
     <div class="rdm-tc-course-overview">
-        <h4><?php echo __("Overview", 'edwiser-bridge') ?></h4>
+        <h4><?php echo __("Overview", 'rdmcompas-moodle-connector') ?></h4>
         <?php
 
         if (!is_search()) {
-            echo '<p><strong>' . __('Target', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_target_group'] . '</p>';
-            echo '<p><strong>' . __('Discipline', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
-            echo '<p><strong>' . __('Duration', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
-            echo '<p><strong>' . __('License', 'edwiser-bridge') . '</strong>: ' . getCCLicense('CC BY 4.0') . '</p>';
+            echo '<p><strong>' . __('Target', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_target_group'] . '</p>';
+            echo '<p><strong>' . __('Discipline', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
+            echo '<p><strong>' . __('Duration', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
+            echo '<p><strong>' . __('License', 'rdmcompas-moodle-connector') . '</strong>: ' . getCCLicense('CC BY 4.0') . '</p>';
             if ($single_course_data['course_required_material']) {
-                echo '<p><strong>' . __('Required Material', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_required_material'] . '</p>';
+                echo '<p><strong>' . __('Required Material', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_required_material'] . '</p>';
             }
             if ($single_course_data['course_persistent_identifier']) {
-                echo '<p><strong>' . __('Persistent Identifier', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_persistent_identifier'] . '</p>';
+                echo '<p><strong>' . __('Persistent Identifier', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_persistent_identifier'] . '</p>';
             }
-            echo '<p><strong>' . __('Duration', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
-            echo '<p><strong>' . __('Last modified', 'edwiser-bridge') . '</strong>: ' . date('F j, Y', intval($single_course_data['course_date_modified'])) . '</p>';
+            echo '<p><strong>' . __('Duration', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
+            echo '<p><strong>' . __('Last modified', 'rdmcompas-moodle-connector') . '</strong>: ' . date('F j, Y', intval($single_course_data['course_date_modified'])) . '</p>';
         }
         ?>
     </div>
@@ -91,11 +91,11 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
         <?php
     } else {
         ?>
-        <h4><?php esc_html_e('Summary', 'edwiser-bridge'); ?></h4>
+        <h4><?php esc_html_e('Summary', 'rdmcompas-moodle-connector'); ?></h4>
         <?php
         the_content();
     } ?>
-    <p> <?php __('This course is offered by','edwiser-bridge') . $single_course_data['course_institution']; ?> </p>
+    <p> <?php __('This course is offered by','rdmcompas-moodle-connector') . $single_course_data['course_institution']; ?> </p>
     <?php if ($single_course_data['course_format'] == "Webinar blended-learning") { ?>
         <div class="eb-validity-wrapper">
             <div>
@@ -104,12 +104,12 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
             <div>
                 <?php echo $single_course_data['course_date_start']; ?>
             </div> ?>
-            <?php echo '<p><strong>' . __('Contact person', 'edwiser-bridge') . '</strong>: ' . $single_course_data['course_contact_person'][0] . '</p>'; ?>
+            <?php echo '<p><strong>' . __('Contact person', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_contact_person'][0] . '</p>'; ?>
         </div>
     <?php } else { ?>
         <div class="rdm-tc-course-button">
             <a class="rdm-tc-button rdm-tc-button-blue" href="https://trainingcenter.rdm-compas.org/" target="_blank"
-               rel="noopener"><?php echo __('Start now!', 'edwiser-bridge'); ?></a>
+               rel="noopener"><?php echo __('Start now!', 'rdmcompas-moodle-connector'); ?></a>
         </div>
     <?php } ?>
 </div>

@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -75,7 +75,7 @@ class Eb_Course_Manager
      */
     public function __clone()
     {
-        _doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&#8217; huh?', 'edwiser-bridge'), '1.0.0');
+        _doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&#8217; huh?', 'rdmcompas-moodle-connector'), '1.0.0');
     }
 
     /**
@@ -85,7 +85,7 @@ class Eb_Course_Manager
      */
     public function __wakeup()
     {
-        _doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&#8217; huh?', 'edwiser-bridge'), '1.0.0');
+        _doing_it_wrong(__FUNCTION__, esc_html__('Cheatin&#8217; huh?', 'rdmcompas-moodle-connector'), '1.0.0');
     }
 
     /**
@@ -201,7 +201,7 @@ class Eb_Course_Manager
                 if ($error_course_count) {
                     $response_array['course_success'] = 0;
                     // push course response in array.
-                    $response_array['course_response_message'] = esc_html__('Unable to create/update a few courses, since they might have already being synced by a third-party plugin. Please check complete error ', 'edwiser-bridge') . '<a target="_blank" href="https://edwiser.helpscoutdocs.com/article/235-courses-do-not-synchronize-from-moodle-to-wordpress">' . esc_html__(' here', 'edwiser-bridge') . '</a>';
+                    $response_array['course_response_message'] = esc_html__('Unable to create/update a few courses, since they might have already being synced by a third-party plugin. Please check complete error ', 'rdmcompas-moodle-connector') . '<a target="_blank" href="https://edwiser.helpscoutdocs.com/article/235-courses-do-not-synchronize-from-moodle-to-wordpress">' . esc_html__(' here', 'rdmcompas-moodle-connector') . '</a>';
                 }
             }
 
@@ -758,10 +758,10 @@ class Eb_Course_Manager
 
         foreach ($columns as $key => $value) {
             if ('title' === $key) {
-                $new_columns[$key] = esc_html__('Course Title', 'edwiser-bridge');
-                $new_columns['mdl_course_id'] = esc_html__('Moodle Course Id', 'edwiser-bridge');
-//                $new_columns['course_type'] = esc_html__('Course Type', 'edwiser-bridge');
-//                $new_columns['course_enrollment_method'] = esc_html__('Manual Enrollment', 'edwiser-bridge');
+                $new_columns[$key] = esc_html__('Course Title', 'rdmcompas-moodle-connector');
+                $new_columns['mdl_course_id'] = esc_html__('Moodle Course Id', 'rdmcompas-moodle-connector');
+//                $new_columns['course_type'] = esc_html__('Course Type', 'rdmcompas-moodle-connector');
+//                $new_columns['course_enrollment_method'] = esc_html__('Manual Enrollment', 'rdmcompas-moodle-connector');
             } else {
                 $new_columns[$key] = $value;
             }
@@ -787,9 +787,9 @@ class Eb_Course_Manager
         if ('course_type' === $column_name) {
             $status = Eb_Post_Types::get_post_options($post_id, 'course_price_type', 'eb_course');
             $options = array(
-                'free' => esc_html__('Free', 'edwiser-bridge'),
-                'paid' => esc_html__('Paid', 'edwiser-bridge'),
-                'closed' => esc_html__('Closed', 'edwiser-bridge'),
+                'free' => esc_html__('Free', 'rdmcompas-moodle-connector'),
+                'paid' => esc_html__('Paid', 'rdmcompas-moodle-connector'),
+                'closed' => esc_html__('Closed', 'rdmcompas-moodle-connector'),
             );
             $status = $status ? $status : 'free';
             echo esc_html(isset($options[$status]) ? $options[$status] : ucfirst($status));
@@ -797,7 +797,7 @@ class Eb_Course_Manager
             $mdl_course_id = Eb_Post_Types::get_post_options($post_id, 'moodle_course_id', 'eb_course');
             $mdl_course_deleted = Eb_Post_Types::get_post_options($post_id, 'mdl_course_deleted', 'eb_course');
 
-            echo !empty($mdl_course_deleted) ? '<span style="color:red;">' . esc_html__('Deleted', 'edwiser-bridge') . '<span>' : esc_html($mdl_course_id);
+            echo !empty($mdl_course_deleted) ? '<span style="color:red;">' . esc_html__('Deleted', 'rdmcompas-moodle-connector') . '<span>' : esc_html($mdl_course_id);
         } elseif ('course_enrollment_method' === $column_name) {
             //check if course is deleted
             $mdl_course_deleted = Eb_Post_Types::get_post_options($post_id, 'mdl_course_deleted', 'eb_course');
@@ -812,19 +812,19 @@ class Eb_Course_Manager
 
                 // If data is not synced show refresh icon to sync
                 // store status in DB.
-                // $html = '<span style="color:red;font-size:25px;" class="dashicons dashicons-warning"></span> ' . '<span data-courseid="'. $moodle_course_id .'" class="eb-enable-manual-enrolment"  style="color: #2271b1;cursor: pointer;">' . esc_html__( 'Enable', 'edwiser-bridge' );
+                // $html = '<span style="color:red;font-size:25px;" class="dashicons dashicons-warning"></span> ' . '<span data-courseid="'. $moodle_course_id .'" class="eb-enable-manual-enrolment"  style="color: #2271b1;cursor: pointer;">' . esc_html__( 'Enable', 'rdmcompas-moodle-connector' );
                 // if ( $enrolment_enabled ) {
                 // 	// $html = '<span style="color:green;font-size:30px;" class="dashicons dashicons-yes"></span>';
-                // 	$html = '<span style="color:green;font-size:30px;" class="dashicons dashicons-yes"></span>' /*. esc_html__( 'Enabled', 'edwiser-bridge' )*/;
+                // 	$html = '<span style="color:green;font-size:30px;" class="dashicons dashicons-yes"></span>' /*. esc_html__( 'Enabled', 'rdmcompas-moodle-connector' )*/;
                 // }
                 // $html .= ' <span data-courseid="'. $post_id .'"  style="padding-left: 10px;padding-top: 5px;color: #392ee1;cursor: pointer;" class="dashicons dashicons-update eb-reload-enrolment-method"></span>';
                 if ($enrolment_enabled) {
-                    $html = '<span style="color:green;font-size:30px;" class="dashicons dashicons-yes"></span>' /*. esc_html__( 'Enabled', 'edwiser-bridge' )*/
+                    $html = '<span style="color:green;font-size:30px;" class="dashicons dashicons-yes"></span>' /*. esc_html__( 'Enabled', 'rdmcompas-moodle-connector' )*/
                     ;
                 } elseif ("" == $enrolment_enabled) {
-                    $html = '<span style="color:#2271b1;font-size:20px;" class="dashicons dashicons-update"></span> ' . '<span data-courseid="' . $moodle_course_id . '" class="eb-enable-manual-enrolment"  style="color: #2271b1;cursor: pointer;">' . esc_html__('Sync', 'edwiser-bridge');
+                    $html = '<span style="color:#2271b1;font-size:20px;" class="dashicons dashicons-update"></span> ' . '<span data-courseid="' . $moodle_course_id . '" class="eb-enable-manual-enrolment"  style="color: #2271b1;cursor: pointer;">' . esc_html__('Sync', 'rdmcompas-moodle-connector');
                 } else {
-                    $html = '<span style="color:red;font-size:25px;" class="dashicons dashicons-warning"></span> ' . '<span data-courseid="' . $moodle_course_id . '" class="eb-enable-manual-enrolment"  style="color: #2271b1;cursor: pointer;">' . esc_html__('Enable', 'edwiser-bridge');
+                    $html = '<span style="color:red;font-size:25px;" class="dashicons dashicons-warning"></span> ' . '<span data-courseid="' . $moodle_course_id . '" class="eb-enable-manual-enrolment"  style="color: #2271b1;cursor: pointer;">' . esc_html__('Enable', 'rdmcompas-moodle-connector');
                 }
             }
             echo $html;
@@ -841,8 +841,8 @@ class Eb_Course_Manager
      */
     public function add_custom_bulk_action($bulk_actions)
     {
-        $bulk_actions['sync_enrollment'] = __('Sync Enrollment Method', 'edwiser-bridge');
-        $bulk_actions['enable_manual_enrollment'] = __('Enable Enrollment Method', 'edwiser-bridge');
+        $bulk_actions['sync_enrollment'] = __('Sync Enrollment Method', 'rdmcompas-moodle-connector');
+        $bulk_actions['enable_manual_enrollment'] = __('Enable Enrollment Method', 'rdmcompas-moodle-connector');
         return $bulk_actions;
     }
 
@@ -908,9 +908,9 @@ class Eb_Course_Manager
             $course_data = $this->edwiserbridge_local_update_course_enrollment_method(array('courseid' => $mdl_course_ids));
             if (isset($course_data['success']) && 0 === $course_data['success']) { //CHANGE YET TO COMMIT
                 if ($course_data['response_message'] == "Class 'enrol_manual_plugin' not found") {
-                    $data = esc_html__("Manual Enrollment Plugin is not enabled/installed on moodle site.", 'edwiser-bridge');
+                    $data = esc_html__("Manual Enrollment Plugin is not enabled/installed on moodle site.", 'rdmcompas-moodle-connector');
                 } else {
-                    $data = esc_html__($course_data['response_message'], 'edwiser-bridge');
+                    $data = esc_html__($course_data['response_message'], 'rdmcompas-moodle-connector');
                 }
             } else {
                 $data = "success";
@@ -949,9 +949,9 @@ class Eb_Course_Manager
                 $count = ($count != '') ? $count : 0;
                 $message = isset($_REQUEST['message1']) ? $_REQUEST['message1'] : '';
                 if ($message == "success") {
-                    $message = "<div class='updated'><p>" . sprintf(esc_html__('Manual enrollment status synced for' . ' %s ' . "courses", 'edwiser-bridge'), number_format_i18n(sanitize_text_field(wp_unslash($count)))) . "</p></div>";
+                    $message = "<div class='updated'><p>" . sprintf(esc_html__('Manual enrollment status synced for' . ' %s ' . "courses", 'rdmcompas-moodle-connector'), number_format_i18n(sanitize_text_field(wp_unslash($count)))) . "</p></div>";
                 } else {
-                    $message = "<div class='notice notice-error'><p>" . esc_html__("Error in manual enrollment status sync", 'edwiser-bridge') . "</p></div>";
+                    $message = "<div class='notice notice-error'><p>" . esc_html__("Error in manual enrollment status sync", 'rdmcompas-moodle-connector') . "</p></div>";
                 }
                 echo $message;
             } elseif ('enable_manual_enrollment' == $action) {
@@ -959,9 +959,9 @@ class Eb_Course_Manager
                 $count = ($count != '') ? $count : 0;
                 $message = isset($_REQUEST['message1']) ? $_REQUEST['message1'] : '';
                 if ($message == "success") {
-                    $message = "<div class='updated'><p>" . sprintf(esc_html__('Manual enrollment enabled for' . ' %s ' . "courses", 'edwiser-bridge'), number_format_i18n(sanitize_text_field(wp_unslash($count)))) . "</p></div>";
+                    $message = "<div class='updated'><p>" . sprintf(esc_html__('Manual enrollment enabled for' . ' %s ' . "courses", 'rdmcompas-moodle-connector'), number_format_i18n(sanitize_text_field(wp_unslash($count)))) . "</p></div>";
                 } else {
-                    $message = "<div class='notice notice-error'><p>" . esc_html__('Please check if Course is deleted from Moodle or WordPress also check if Moodle Manual Enrollment is activate on Moodle ', 'edwiser-bridge') . "</p><p>" . esc_html__('Error Message  : ' . $message, 'edwiser-bridge') . "</p></div>";
+                    $message = "<div class='notice notice-error'><p>" . esc_html__('Please check if Course is deleted from Moodle or WordPress also check if Moodle Manual Enrollment is activate on Moodle ', 'rdmcompas-moodle-connector') . "</p><p>" . esc_html__('Error Message  : ' . $message, 'rdmcompas-moodle-connector') . "</p></div>";
                 }
                 echo $message;
             }
@@ -991,9 +991,9 @@ class Eb_Course_Manager
             $course_data = $this->edwiserbridge_local_update_course_enrollment_method(array('courseid' => array($course_id)));
             if (0 === $course_data['success']) {
                 if ($course_data['response_message'] == "Class 'enrol_manual_plugin' not found") {
-                    wp_send_json_error(array('message' => esc_html__("Manual Enrollment Plugin is not enabled/installed on moodle site.", 'edwiser-bridge')));
+                    wp_send_json_error(array('message' => esc_html__("Manual Enrollment Plugin is not enabled/installed on moodle site.", 'rdmcompas-moodle-connector')));
                 } else {
-                    wp_send_json_error(array('message' => esc_html__($course_data['response_message'], 'edwiser-bridge')));
+                    wp_send_json_error(array('message' => esc_html__($course_data['response_message'], 'rdmcompas-moodle-connector')));
                 }
             } else {
                 wp_send_json_success();
@@ -1014,7 +1014,7 @@ class Eb_Course_Manager
             $eb_access_url = wdm_edwiser_bridge_plugin_get_access_url();
             $mdl_course_id = $this->get_moodle_course_id($post->ID);
             $course_url = $eb_access_url . '/course/view.php?id=' . $mdl_course_id;
-            $actions['moodle_link'] = "<a href='{$course_url}' title='' target='_blank' rel='permalink'>" . __('View on Moodle', 'edwiser-bridge') . '</a>';
+            $actions['moodle_link'] = "<a href='{$course_url}' title='' target='_blank' rel='permalink'>" . __('View on Moodle', 'rdmcompas-moodle-connector') . '</a>';
         }
         return $actions;
     }

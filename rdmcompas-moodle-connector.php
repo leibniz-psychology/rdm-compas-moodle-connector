@@ -4,7 +4,7 @@
  *
  * @link
  * @since   1.0.0
- * @package Edwiser Bridge
+ * @package RDM Compas Moodle Connector
  *
  * @WordPress-plugin
  * Plugin Name:       RDM Compas Training Center connector - WordPress Moodle LMS Integration
@@ -15,7 +15,7 @@
  * Author URI:
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       edwiser-bridge
+ * Text Domain:       rdmcompas-moodle-connector
  * Domain Path:       /languages
  */
 
@@ -68,7 +68,7 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), '\app\wisdmlab
  */
 function wdm_add_settings_action_link( $links ) {
 	$plugin_links = array(
-		'<a href="' . admin_url( '/admin.php?page=eb-settings' ) . '">' . esc_html__( 'Settings', 'edwiser-bridge' ) . '</a>',
+		'<a href="' . admin_url( '/admin.php?page=eb-settings' ) . '">' . esc_html__( 'Settings', 'rdmcompas-moodle-connector' ) . '</a>',
 	);
 
 	return array_merge( $links, $plugin_links );
@@ -89,8 +89,8 @@ function wdm_add_settings_action_link( $links ) {
 //	if ( plugin_basename( __FILE__ ) === $file ) {
 //		$row_meta = array(
 //			'docs' => '<a href="https://example.com/bridge/documentation/" target="_blank"
-//						title="' . esc_attr( esc_html__( 'Edwiser Bridge Documentation', 'edwiser-bridge' ) ) . '">' .
-//			esc_html__( 'Documentation', 'edwiser-bridge' ) .
+//						title="' . esc_attr( esc_html__( 'RDM Compas Moodle Connector Documentation', 'rdmcompas-moodle-connector' ) ) . '">' .
+//			esc_html__( 'Documentation', 'rdmcompas-moodle-connector' ) .
 //			'</a>',
 //		);
 //
@@ -117,7 +117,7 @@ function wdm_show_legacy_extensions() {
 	$extensions = array(
 		'selective_sync'          => array( 'selective-synchronization/selective-synchronization.php', '1.0.0' ),
 		'woocommerce_integration' => array( 'woocommerce-integration/bridge-woocommerce.php', '1.0.4' ),
-		'single_signon'           => array( 'edwiser-bridge-sso/sso.php', '1.0.0' ),
+		'single_signon'           => array( 'rdmcompas-moodle-connector-sso/sso.php', '1.0.0' ),
 	);
 
 	// legacy extensions.
@@ -142,8 +142,8 @@ function wdm_show_legacy_extensions_notices() {
 		<p>
 			<?php
 			printf(
-				esc_html__( 'Please update all ', 'edwiser-bridge' ) . '%s' . esc_html__( ' extensions to latest version.', 'edwiser-bridge' ),
-				'<strong>' . esc_html__( 'Edwiser Bridge', 'edwiser-bridge' ) . '</strong>'
+				esc_html__( 'Please update all ', 'rdmcompas-moodle-connector' ) . '%s' . esc_html__( ' extensions to latest version.', 'rdmcompas-moodle-connector' ),
+				'<strong>' . esc_html__( 'RDM Compas Moodle Connector', 'rdmcompas-moodle-connector' ) . '</strong>'
 			);
 			?>
 		</p>
@@ -176,7 +176,7 @@ function process_upgrade() {
 		update_option( 'eb_mdl_plugin_update_notice_dismissed', false );
 
 		//rename files
-		require_once WP_PLUGIN_DIR . '/edwiser-bridge/includes/class-eb-i18n.php';
+		require_once WP_PLUGIN_DIR . '/rdmcompas-moodle-connector/includes/class-eb-i18n.php';
 		$plugin_i18n = new Eb_I18n();
 		$plugin_i18n->rename_langauge_files();
 	}

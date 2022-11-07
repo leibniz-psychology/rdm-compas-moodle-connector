@@ -1,12 +1,12 @@
 <?php
 /**
- * Edwiser Bridge Email template page
+ * RDM Compas Moodle Connector Email template page
  *
  * @link  https://example.com
  * @since 1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -44,21 +44,21 @@ class EBAdminEmailTemplate {
 	 * @return array of the email tempalte list.
 	 */
 	public function eb_add_email_list( $email_list ) {
-		$email_list['eb_emailtmpl_create_user']                         = esc_html__( 'New User Account Details', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_linked_existing_wp_user']             = esc_html__( 'Link WP user account to moodle', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_linked_existing_wp_new_moodle_user']  = esc_html__( 'Create new moodle account', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_order_completed']                     = esc_html__( 'Course Order Completion', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_course_access_expir']                 = esc_html__( 'Course access expired', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_refund_completion_notifier_to_user']  = esc_html__( 'Refund Success mail to customer', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_refund_completion_notifier_to_admin'] = esc_html__( 'Refund Success mail to admin or specified email', 'edwiser-bridge' );
+		$email_list['eb_emailtmpl_create_user']                         = esc_html__( 'New User Account Details', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_linked_existing_wp_user']             = esc_html__( 'Link WP user account to moodle', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_linked_existing_wp_new_moodle_user']  = esc_html__( 'Create new moodle account', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_order_completed']                     = esc_html__( 'Course Order Completion', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_course_access_expir']                 = esc_html__( 'Course access expired', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_refund_completion_notifier_to_user']  = esc_html__( 'Refund Success mail to customer', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_refund_completion_notifier_to_admin'] = esc_html__( 'Refund Success mail to admin or specified email', 'rdmcompas-moodle-connector' );
 
 		/**
 		 *   Two way synch.
 		 */
 
-		$email_list['eb_emailtmpl_mdl_enrollment_trigger']    = esc_html__( 'Moodle Course Enrollment', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_mdl_un_enrollment_trigger'] = esc_html__( 'Moodle Course Un-Enrollment', 'edwiser-bridge' );
-		$email_list['eb_emailtmpl_mdl_user_deletion_trigger'] = esc_html__( 'User Account Deleted', 'edwiser-bridge' );
+		$email_list['eb_emailtmpl_mdl_enrollment_trigger']    = esc_html__( 'Moodle Course Enrollment', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_mdl_un_enrollment_trigger'] = esc_html__( 'Moodle Course Un-Enrollment', 'rdmcompas-moodle-connector' );
+		$email_list['eb_emailtmpl_mdl_user_deletion_trigger'] = esc_html__( 'User Account Deleted', 'rdmcompas-moodle-connector' );
 		return $email_list;
 	}
 
@@ -99,7 +99,7 @@ class EBAdminEmailTemplate {
 		$tmpl_content = apply_filters( 'eb_email_template_data', $tmpl_data );
 		?>
 		<div class="wrap">
-			<h1 class="wp-heading-inline eb-emailtemp-head"><?php esc_html_e( 'Manage Email Templates', 'edwiser-bridge' ); ?></h1>
+			<h1 class="wp-heading-inline eb-emailtemp-head"><?php esc_html_e( 'Manage Email Templates', 'rdmcompas-moodle-connector' ); ?></h1>
 			<div class="eb-email-template-wrap">
 				<div class="eb-template-edit-form">
 					<h3 id="eb-email-template-name"><?php echo esc_html( $tmpl_name ); ?></h3>
@@ -111,30 +111,30 @@ class EBAdminEmailTemplate {
 								?>
 						<table>
 							<tr>
-								<td class="eb-email-lable"><?php esc_html_e( 'From Name', 'edwiser-bridge' ); ?></td>
+								<td class="eb-email-lable"><?php esc_html_e( 'From Name', 'rdmcompas-moodle-connector' ); ?></td>
 								<td>
-									<input type="text" name="eb_email_from_name" id="eb_email_from_name" value="<?php echo esc_html( $from_name ); ?>" class="eb-email-input" title="<?php esc_html_e( 'Enter name here to use as the form name in email sent from site using Edwisaer plugins', 'edwiser-bridge' ); ?>" placeholder="<?php esc_attr_e( 'Enter from name', 'edwiser-bridge' ); ?>"/>
+									<input type="text" name="eb_email_from_name" id="eb_email_from_name" value="<?php echo esc_html( $from_name ); ?>" class="eb-email-input" title="<?php esc_html_e( 'Enter name here to use as the form name in email sent from site using Edwisaer plugins', 'rdmcompas-moodle-connector' ); ?>" placeholder="<?php esc_attr_e( 'Enter from name', 'rdmcompas-moodle-connector' ); ?>"/>
 								</td>
 							</tr>
 
 							<tr>
-								<td class="eb-email-lable"><?php esc_html_e( 'Subject', 'edwiser-bridge' ); ?></td>
+								<td class="eb-email-lable"><?php esc_html_e( 'Subject', 'rdmcompas-moodle-connector' ); ?></td>
 								<td>
-									<input type="text" name="eb_email_subject" id="eb_email_subject" value="<?php echo esc_attr( $tmpl_content['subject'] ); ?>" class="eb-email-input" title="<?php esc_html_e( 'Enter the subject for the current email template. Current template will use the entered subject to send email from the site', 'edwiser-bridge' ); ?>" placeholder="<?php esc_html_e( 'Enter email subject', 'edwiser-bridge' ); ?>"/>
+									<input type="text" name="eb_email_subject" id="eb_email_subject" value="<?php echo esc_attr( $tmpl_content['subject'] ); ?>" class="eb-email-input" title="<?php esc_html_e( 'Enter the subject for the current email template. Current template will use the entered subject to send email from the site', 'rdmcompas-moodle-connector' ); ?>" placeholder="<?php esc_html_e( 'Enter email subject', 'rdmcompas-moodle-connector' ); ?>"/>
 								</td>
 							</tr>
 
 							<tr>
-								<td class="eb-email-lable"><?php esc_html_e( 'Send email notification to the user?', 'edwiser-bridge' ); ?></td>
+								<td class="eb-email-lable"><?php esc_html_e( 'Send email notification to the user?', 'rdmcompas-moodle-connector' ); ?></td>
 								<td>
-									<input type="checkbox" name="eb_email_notification_on" id="eb_email_notification_on" value="ON" <?php echo checked( $notif_on, 'ON' ); ?> class="eb-email-input" title="<?php esc_html_e( 'Check the option to notify the user using selected template on action', 'edwiser-bridge' ); ?>" />
+									<input type="checkbox" name="eb_email_notification_on" id="eb_email_notification_on" value="ON" <?php echo checked( $notif_on, 'ON' ); ?> class="eb-email-input" title="<?php esc_html_e( 'Check the option to notify the user using selected template on action', 'rdmcompas-moodle-connector' ); ?>" />
 								</td>
 							</tr>
 
 
 							<tr>
 								<td class="eb-email-lable">
-									<?php esc_html_e( 'BCC in email', 'edwiser-bridge' ); ?>
+									<?php esc_html_e( 'BCC in email', 'rdmcompas-moodle-connector' ); ?>
 								</td>
 								<td>
 									<input type="text" value="<?php echo esc_html( $bcc_email ); ?>" name="eb_bcc_email" id="eb_bcc_email" class="eb-email-input"/>
@@ -155,8 +155,8 @@ class EBAdminEmailTemplate {
 							<tr>
 								<td>
 									<input name="eb-mail-tpl-submit" type="hidden" id="eb-mail-tpl-submit" value="eb-mail-tpl-save-changes" />
-									<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'edwiser-bridge' ); ?>" name="eb_save_tmpl" title="<?php esc_html_e( 'Save changes', 'edwiser-bridge' ); ?>"/>
-									<input type="button" class="button-primary" value="<?php esc_html_e( 'Restore template content', 'edwiser-bridge' ); ?>" id="eb_email_reset_template" name="eb_email_reset_template" />
+									<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'rdmcompas-moodle-connector' ); ?>" name="eb_save_tmpl" title="<?php esc_html_e( 'Save changes', 'rdmcompas-moodle-connector' ); ?>"/>
+									<input type="button" class="button-primary" value="<?php esc_html_e( 'Restore template content', 'rdmcompas-moodle-connector' ); ?>" id="eb_email_reset_template" name="eb_email_reset_template" />
 									<input type="hidden" id="current_selected_email_tmpl_key" name="current_selected_email_tmpl_key" value="<?php echo esc_html( $tmpl_key ); ?>" />
 									<input type="hidden" id="current-tmpl-name" name="current_selected_email_tmpl_name" value="<?php echo esc_attr( $tmpl_content['subject'] ); ?>" />
 								</td>
@@ -164,25 +164,25 @@ class EBAdminEmailTemplate {
 						</table>
 					</form>
 					<div class="eb-email-testmail-wrap">
-						<h3><?php esc_html_e( 'Send a test email of the selected template', 'edwiser-bridge' ); ?></h3>
+						<h3><?php esc_html_e( 'Send a test email of the selected template', 'rdmcompas-moodle-connector' ); ?></h3>
 						<div class="eb-email-temp-test-mail-wrap">
-							<label class="eb-email-lable"><?php esc_html_e( 'To', 'edwiser-bridge' ); ?> : </label>
+							<label class="eb-email-lable"><?php esc_html_e( 'To', 'rdmcompas-moodle-connector' ); ?> : </label>
 							<?php wp_nonce_field( 'eb_send_testmail_sec', 'eb_send_testmail_sec_filed' ); ?>
-							<input type="email" name="eb_test_email_add" id="eb_test_email_add_txt" value="" title="<?php esc_html_e( 'Type an email address here and then click Send Test to generate a test email using current selected template', 'edwiser-bridge' ); ?>." placeholder="<?php esc_html_e( 'Enter email address', 'edwiser-bridge' ); ?>"/>
-							<input type="button" class="button-primary" value="<?php esc_html_e( 'Send Test', 'edwiser-bridge' ); ?>" name="eb_send_test_email" id="eb_send_test_email" title="<?php esc_html_e( 'Send sample email with current selected template', 'edwiser-bridge' ); ?>"/>
+							<input type="email" name="eb_test_email_add" id="eb_test_email_add_txt" value="" title="<?php esc_html_e( 'Type an email address here and then click Send Test to generate a test email using current selected template', 'rdmcompas-moodle-connector' ); ?>." placeholder="<?php esc_html_e( 'Enter email address', 'rdmcompas-moodle-connector' ); ?>"/>
+							<input type="button" class="button-primary" value="<?php esc_html_e( 'Send Test', 'rdmcompas-moodle-connector' ); ?>" name="eb_send_test_email" id="eb_send_test_email" title="<?php esc_html_e( 'Send sample email with current selected template', 'rdmcompas-moodle-connector' ); ?>"/>
 							<span class="load-response">
-								<img alt="<?php esc_html__( 'Sorry, unable to load the image', 'edwiser-bridge' ); ?>" src="<?php echo esc_url( $eb_plugin_url . '/images/loader.gif' ); ?>" height="20" width="20">
+								<img alt="<?php esc_html__( 'Sorry, unable to load the image', 'rdmcompas-moodle-connector' ); ?>" src="<?php echo esc_url( $eb_plugin_url . '/images/loader.gif' ); ?>" height="20" width="20">
 							</span>
 							<div class="response-box">
 							</div>
 						</div>
-						<span class="eb-email-note"><strong><?php esc_html_e( 'Note', 'edwiser-bridge' ); ?>:-</strong> <?php esc_html_e( 'Some of the constants in these emails would be replaced by demo content', 'edwiser-bridge' ); ?>.</span>
+						<span class="eb-email-note"><strong><?php esc_html_e( 'Note', 'rdmcompas-moodle-connector' ); ?>:-</strong> <?php esc_html_e( 'Some of the constants in these emails would be replaced by demo content', 'rdmcompas-moodle-connector' ); ?>.</span>
 
 					</div>
 				</div>
 				<div class="eb-edit-email-template-aside">
 					<div class="eb-email-templates-list">
-						<h3><?php esc_attr_e( 'Email Templates', 'edwiser-bridge' ); ?></h3>
+						<h3><?php esc_attr_e( 'Email Templates', 'rdmcompas-moodle-connector' ); ?></h3>
 						<ul id="eb_email_templates_list">
 				<?php
 				foreach ( $tmpl_list as $tmpl_id => $tmpl_name ) {
@@ -198,7 +198,7 @@ class EBAdminEmailTemplate {
 						</ul>
 					</div>
 					<div class="eb-email-templates-const-wrap">
-						<h3><?php esc_html_e( 'Template Constants', 'edwiser-bridge' ); ?></h3>
+						<h3><?php esc_html_e( 'Template Constants', 'rdmcompas-moodle-connector' ); ?></h3>
 						<div class="eb-emiltemp-const-wrap">
 		<?php
 		foreach ( $const_sec as $sec_name => $tmpl_const ) {
@@ -347,41 +347,41 @@ class EBAdminEmailTemplate {
 		/**
 		 * Genral constants.
 		 */
-		$genral['{USER_NAME}']              = __( 'The display name of the user.', 'edwiser-bridge' );
-		$genral['{FIRST_NAME}']             = __( 'The first name of the user.', 'edwiser-bridge' );
-		$genral['{LAST_NAME}']              = __( 'The last name of the user.', 'edwiser-bridge' );
-		$genral['{SITE_NAME}']              = __( 'The name of the website.', 'edwiser-bridge' );
-		$genral['{SITE_URL}']               = __( 'The URL of the website.', 'edwiser-bridge' );
-		$genral['{COURSES_PAGE_LINK}']      = __( 'The link to the courses archive page.', 'edwiser-bridge' );
-		$genral['{MY_COURSES_PAGE_LINK}']   = __( 'The link to the my courses page.', 'edwiser-bridge' );
-		$genral['{USER_ACCOUNT_PAGE_LINK}'] = __( 'The WordPress user account page link.', 'edwiser-bridge' );
-		$genral['{WP_LOGIN_PAGE_LINK}']     = __( 'The WordPress login page link.', 'edwiser-bridge' );
-		$genral['{MOODLE_URL}']             = __( 'The moodle site url entered in the connection.', 'edwiser-bridge' );
+		$genral['{USER_NAME}']              = __( 'The display name of the user.', 'rdmcompas-moodle-connector' );
+		$genral['{FIRST_NAME}']             = __( 'The first name of the user.', 'rdmcompas-moodle-connector' );
+		$genral['{LAST_NAME}']              = __( 'The last name of the user.', 'rdmcompas-moodle-connector' );
+		$genral['{SITE_NAME}']              = __( 'The name of the website.', 'rdmcompas-moodle-connector' );
+		$genral['{SITE_URL}']               = __( 'The URL of the website.', 'rdmcompas-moodle-connector' );
+		$genral['{COURSES_PAGE_LINK}']      = __( 'The link to the courses archive page.', 'rdmcompas-moodle-connector' );
+		$genral['{MY_COURSES_PAGE_LINK}']   = __( 'The link to the my courses page.', 'rdmcompas-moodle-connector' );
+		$genral['{USER_ACCOUNT_PAGE_LINK}'] = __( 'The WordPress user account page link.', 'rdmcompas-moodle-connector' );
+		$genral['{WP_LOGIN_PAGE_LINK}']     = __( 'The WordPress login page link.', 'rdmcompas-moodle-connector' );
+		$genral['{MOODLE_URL}']             = __( 'The moodle site url entered in the connection.', 'rdmcompas-moodle-connector' );
 		/**
 		 * New account and link account constants
 		 */
-		$account['{USER_PASSWORD}'] = __( 'The user accounts password.', 'edwiser-bridge' );
+		$account['{USER_PASSWORD}'] = __( 'The user accounts password.', 'rdmcompas-moodle-connector' );
 		/**
 		 * Course order template constants
 		 */
-		$order['{COURSE_NAME}'] = __( 'The title of the course.', 'edwiser-bridge' );
-		$order['{ORDER_ID}']    = __( 'The order id of the purchased order completed.', 'edwiser-bridge' );
+		$order['{COURSE_NAME}'] = __( 'The title of the course.', 'rdmcompas-moodle-connector' );
+		$order['{ORDER_ID}']    = __( 'The order id of the purchased order completed.', 'rdmcompas-moodle-connector' );
 
 		/*
 		*Refund Order template constants
 		*/
-		$refund['{ORDER_ID}']                = __( 'Refund order id.', 'edwiser-bridge' );
-		$refund['{CUSTOMER_DETAILS}']        = __( 'This will get replaced by the customer details.', 'edwiser-bridge' );
-		$refund['{ORDER_ITEM}']              = __( 'Order associated item list.', 'edwiser-bridge' );
-		$refund['{TOTAL_AMOUNT_PAID}']       = __( 'Amount paid at the time of order placed.', 'edwiser-bridge' );
-		$refund['{CURRENT_REFUNDED_AMOUNT}'] = __( 'Currantly refunded amount.', 'edwiser-bridge' );
-		$refund['{TOTAL_REFUNDED_AMOUNT}']   = __( 'Total amount refunded till the time.', 'edwiser-bridge' );
-		$refund['{ORDER_REFUND_STATUS}']     = __( 'Order refund status transaction.', 'edwiser-bridge' );
+		$refund['{ORDER_ID}']                = __( 'Refund order id.', 'rdmcompas-moodle-connector' );
+		$refund['{CUSTOMER_DETAILS}']        = __( 'This will get replaced by the customer details.', 'rdmcompas-moodle-connector' );
+		$refund['{ORDER_ITEM}']              = __( 'Order associated item list.', 'rdmcompas-moodle-connector' );
+		$refund['{TOTAL_AMOUNT_PAID}']       = __( 'Amount paid at the time of order placed.', 'rdmcompas-moodle-connector' );
+		$refund['{CURRENT_REFUNDED_AMOUNT}'] = __( 'Currantly refunded amount.', 'rdmcompas-moodle-connector' );
+		$refund['{TOTAL_REFUNDED_AMOUNT}']   = __( 'Total amount refunded till the time.', 'rdmcompas-moodle-connector' );
+		$refund['{ORDER_REFUND_STATUS}']     = __( 'Order refund status transaction.', 'rdmcompas-moodle-connector' );
 
 		/**
 		 * Course unenrollment alert constants
 		 */
-		$unenrollment['{WP_COURSE_PAGE_LINK}'] = __( 'The current course page link.', 'edwiser-bridge' );
+		$unenrollment['{WP_COURSE_PAGE_LINK}'] = __( 'The current course page link.', 'rdmcompas-moodle-connector' );
 
 		$constants['General constants']       = $genral;
 		$constants['New moodle user account'] = $account;
@@ -471,9 +471,9 @@ class EBAdminEmailTemplate {
 			$this->set_notify_allow( $tmpl_name, $notify_allow );
 			$this->set_template_data( $tmpl_name, $data );
 			$this->set_bcc_email_address( $tmpl_name, $bcc_email );
-			$message = self::get_notice_html( __( 'Changes saved successfully!', 'edwiser-bridge' ) );
+			$message = self::get_notice_html( __( 'Changes saved successfully!', 'rdmcompas-moodle-connector' ) );
 		} else {
-			$message = self::get_notice_html( __( 'Due to the security issue changes are not saved, Try to re-update it.', 'edwiser-bridge' ), 'error' );
+			$message = self::get_notice_html( __( 'Due to the security issue changes are not saved, Try to re-update it.', 'rdmcompas-moodle-connector' ), 'error' );
 		}
 	}
 
@@ -688,7 +688,7 @@ class EBAdminEmailTemplate {
 	 */
 	public function reset_email_template_content() {
 		$responce = array(
-			'data'   => __( 'Failed to reset email template', 'edwiser-bridge' ),
+			'data'   => __( 'Failed to reset email template', 'rdmcompas-moodle-connector' ),
 			'status' => 'failed',
 		);
 		if ( isset( $_POST['action'] ) && isset( $_POST['tmpl_name'] ) && 'wdm_eb_email_tmpl_restore_content' === $_POST['action'] && isset( $_POST['admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['admin_nonce'] ) ), 'eb_admin_nonce' ) ) {
@@ -700,7 +700,7 @@ class EBAdminEmailTemplate {
 				)
 			);
 			if ( true === $args['is_restored'] ) {
-				$responce['data']   = __( 'Template restored successfully', 'edwiser-bridge' );
+				$responce['data']   = __( 'Template restored successfully', 'rdmcompas-moodle-connector' );
 				$responce['status'] = 'success';
 				wp_send_json_success( $responce );
 			} else {

@@ -645,7 +645,7 @@
                     modal: true,
                     closeOnEscape: true,
                     draggable: false,
-                    title: "Edwiser Bridge Usage Tracking Terms and Conditions",
+                    title: "RDM Compas Moodle Connector Usage Tracking Terms and Conditions",
                     buttons: {
                         Accept: function () {
                             $(this).dialog("close");

@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 		 */
 		public function __construct() {
 			$this->_id   = 'paypal';
-			$this->label = __( 'PayPal', 'edwiser-bridge' );
+			$this->label = __( 'PayPal', 'rdmcompas-moodle-connector' );
 
 			add_filter( 'eb_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'eb_settings_' . $this->_id, array( $this, 'output' ) );
@@ -71,13 +71,13 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 				'eb_paypal_settings',
 				array(
 					array(
-						'title' => __( 'PayPal Settings', 'edwiser-bridge' ),
+						'title' => __( 'PayPal Settings', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'id'    => 'paypal_options',
 					),
 					array(
-						'title'             => __( 'PayPal Email', 'edwiser-bridge' ),
-						'desc'              => __( 'Enter your PayPal email here.', 'edwiser-bridge' ),
+						'title'             => __( 'PayPal Email', 'rdmcompas-moodle-connector' ),
+						'desc'              => __( 'Enter your PayPal email here.', 'rdmcompas-moodle-connector' ),
 						'id'                => 'eb_paypal_email',
 						'css'               => 'min-width:350px;',
 						'default'           => '',
@@ -86,32 +86,32 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'custom_attributes' => array( 'required' => 'required' ),
 					),
 					array(
-						'title'    => __( 'PayPal Currency', 'edwiser-bridge' ),
-						'desc'     => __( 'Select transaction currency code, Default is USD.', 'edwiser-bridge' ),
+						'title'    => __( 'PayPal Currency', 'rdmcompas-moodle-connector' ),
+						'desc'     => __( 'Select transaction currency code, Default is USD.', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_paypal_currency',
 						'css'      => 'min-width:350px;',
 						'default'  => '',
 						'type'     => 'select',
 						'desc_tip' => true,
 						'options'  => array(
-							'USD' => __( 'U.S. Dollar (USD)', 'edwiser-bridge' ),
-							'CAD' => __( 'Canadian Dollar (CAD)', 'edwiser-bridge' ),
-							'NZD' => __( 'New Zealand Dollar (NZD)', 'edwiser-bridge' ),
-							'HKD' => __( 'Hong Kong Dollar (HKD)', 'edwiser-bridge' ),
-							'EUR' => __( 'Euro (EUR)', 'edwiser-bridge' ),
-							'JPY' => __( 'Japanese Yen (JPY)', 'edwiser-bridge' ),
-							'MXN' => __( 'Mexican Peso (MXN)', 'edwiser-bridge' ),
-							'CHF' => __( 'Swiss Franc (CHF)', 'edwiser-bridge' ),
-							'GBP' => __( 'Pound Sterling (GBP)', 'edwiser-bridge' ),
-							'AUD' => __( 'Australian Dollar (AUD)', 'edwiser-bridge' ),
-							'PLN' => __( 'Polish Zloty (PLN)', 'edwiser-bridge' ),
-							'DKK' => __( 'Danish Krone (DKK)', 'edwiser-bridge' ),
-							'SGD' => __( 'Singapore Dollar (SGD)', 'edwiser-bridge' ),
+							'USD' => __( 'U.S. Dollar (USD)', 'rdmcompas-moodle-connector' ),
+							'CAD' => __( 'Canadian Dollar (CAD)', 'rdmcompas-moodle-connector' ),
+							'NZD' => __( 'New Zealand Dollar (NZD)', 'rdmcompas-moodle-connector' ),
+							'HKD' => __( 'Hong Kong Dollar (HKD)', 'rdmcompas-moodle-connector' ),
+							'EUR' => __( 'Euro (EUR)', 'rdmcompas-moodle-connector' ),
+							'JPY' => __( 'Japanese Yen (JPY)', 'rdmcompas-moodle-connector' ),
+							'MXN' => __( 'Mexican Peso (MXN)', 'rdmcompas-moodle-connector' ),
+							'CHF' => __( 'Swiss Franc (CHF)', 'rdmcompas-moodle-connector' ),
+							'GBP' => __( 'Pound Sterling (GBP)', 'rdmcompas-moodle-connector' ),
+							'AUD' => __( 'Australian Dollar (AUD)', 'rdmcompas-moodle-connector' ),
+							'PLN' => __( 'Polish Zloty (PLN)', 'rdmcompas-moodle-connector' ),
+							'DKK' => __( 'Danish Krone (DKK)', 'rdmcompas-moodle-connector' ),
+							'SGD' => __( 'Singapore Dollar (SGD)', 'rdmcompas-moodle-connector' ),
 						),
 					),
 					array(
-						'title'             => __( 'PayPal Country', 'edwiser-bridge' ),
-						'desc'              => __( 'Enter your country code here.', 'edwiser-bridge' ),
+						'title'             => __( 'PayPal Country', 'rdmcompas-moodle-connector' ),
+						'desc'              => __( 'Enter your country code here.', 'rdmcompas-moodle-connector' ),
 						'id'                => 'eb_paypal_country_code',
 						'css'               => 'min-width:350px;',
 						'default'           => 'US',
@@ -120,8 +120,8 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'custom_attributes' => array( 'required' => 'required' ),
 					),
 					array(
-						'title'             => __( 'PayPal Cancel URL', 'edwiser-bridge' ),
-						'desc'              => __( 'Enter the URL used for purchase cancellations.', 'edwiser-bridge' ),
+						'title'             => __( 'PayPal Cancel URL', 'rdmcompas-moodle-connector' ),
+						'desc'              => __( 'Enter the URL used for purchase cancellations.', 'rdmcompas-moodle-connector' ),
 						'id'                => 'eb_paypal_cancel_url',
 						'css'               => 'min-width:350px;',
 						'default'           => site_url(),
@@ -130,10 +130,10 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'custom_attributes' => array( 'required' => 'required' ),
 					),
 					array(
-						'title'             => __( 'PayPal Return URL', 'edwiser-bridge' ),
+						'title'             => __( 'PayPal Return URL', 'rdmcompas-moodle-connector' ),
 						'desc'              => __(
 							'Enter the URL used for completed purchases (a thank you page).',
-							'edwiser-bridge'
+							'rdmcompas-moodle-connector'
 						),
 						'id'                => 'eb_paypal_return_url',
 						'css'               => 'min-width:350px;',
@@ -143,8 +143,8 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'custom_attributes' => array( 'required' => 'required' ),
 					),
 					array(
-						'title'             => __( 'PayPal Notify URL', 'edwiser-bridge' ),
-						'desc'              => __( 'Enter the URL used for IPN notifications.', 'edwiser-bridge' ),
+						'title'             => __( 'PayPal Notify URL', 'rdmcompas-moodle-connector' ),
+						'desc'              => __( 'Enter the URL used for IPN notifications.', 'rdmcompas-moodle-connector' ),
 						'id'                => 'eb_paypal_notify_url',
 						'css'               => 'min-width:350px;',
 						'default'           => site_url( '/eb/paypal-notify' ),
@@ -153,8 +153,8 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'custom_attributes' => array( 'readonly' => 'readonly' ),
 					),
 					array(
-						'title'           => __( 'Use PayPal Sandbox', 'edwiser-bridge' ),
-						'desc'            => __( 'Check to enable the PayPal sandbox.', 'edwiser-bridge' ),
+						'title'           => __( 'Use PayPal Sandbox', 'rdmcompas-moodle-connector' ),
+						'desc'            => __( 'Check to enable the PayPal sandbox.', 'rdmcompas-moodle-connector' ),
 						'id'              => 'eb_paypal_sandbox',
 						'default'         => 'no',
 						'type'            => 'checkbox',
@@ -166,13 +166,13 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'id'   => 'paypal_options',
 					),
 					array(
-						'title' => __( 'PayPal API Credentials (Optional)', 'edwiser-bridge' ),
+						'title' => __( 'PayPal API Credentials (Optional)', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'id'    => 'paypal_api_options',
-						'desc'  => __( 'To use order refunds following fields are mandatory.', 'edwiser-bridge' ),
+						'desc'  => __( 'To use order refunds following fields are mandatory.', 'rdmcompas-moodle-connector' ),
 					),
 					array(
-						'title'    => __( 'API username', 'edwiser-bridge' ),
+						'title'    => __( 'API username', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_api_username',
 						'css'      => 'min-width:350px;',
 						'default'  => '',
@@ -180,7 +180,7 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'API password', 'edwiser-bridge' ),
+						'title'    => __( 'API password', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_api_password',
 						'css'      => 'min-width:350px;',
 						'default'  => '',
@@ -188,7 +188,7 @@ if ( ! class_exists( 'Eb_Settings_PayPal' ) ) :
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'API signature', 'edwiser-bridge' ),
+						'title'    => __( 'API signature', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_api_signature',
 						'css'      => 'min-width:350px;',
 						'default'  => '',

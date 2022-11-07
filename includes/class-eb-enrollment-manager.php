@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -73,7 +73,7 @@ class Eb_Enrollment_Manager {
 	 * @since   1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -82,7 +82,7 @@ class Eb_Enrollment_Manager {
 	 * @since   1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**

@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single moodle courses.
  *
- * @package Edwiser Bridge.
+ * @package RDM Compas Moodle Connector.
  */
 
 /**

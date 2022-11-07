@@ -5,7 +5,7 @@
  * @link       https://example.com
  * @since      1.0.2
  * @deprecated 1.2.0 Use shortcode eb_user_account
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -134,11 +134,11 @@ class Eb_Shortcode_User_Profile {
 					if ( self::update_moodle_profile( $posted_data ) ) {
 						self::update_wordpress_profile( $posted_data );
 
-						$_SESSION[ 'eb_msgs_' . $user->ID ] = '<p class="eb-success">' . __( 'Account details saved successfully.', 'edwiser-bridge' ) . '</p>';
+						$_SESSION[ 'eb_msgs_' . $user->ID ] = '<p class="eb-success">' . __( 'Account details saved successfully.', 'rdmcompas-moodle-connector' ) . '</p>';
 
 						do_action( 'eb_save_account_details', $user->ID );
 					} else {
-						$_SESSION[ 'eb_msgs_' . $user->ID ] = '<p class="eb-error">' . __( 'Couldn\'t update your profile! This might be because wrong data sent to Moodle site or a Connection Error.', 'edwiser-bridge' ) . '</p>';
+						$_SESSION[ 'eb_msgs_' . $user->ID ] = '<p class="eb-error">' . __( 'Couldn\'t update your profile! This might be because wrong data sent to Moodle site or a Connection Error.', 'rdmcompas-moodle-connector' ) . '</p>';
 					}
 				}
 			}
@@ -228,31 +228,31 @@ class Eb_Shortcode_User_Profile {
 		$required_fields = apply_filters(
 			'eb_save_account_details_required_fields',
 			array(
-				'username' => __( 'Username', 'edwiser-bridge' ),
-				'email'    => __( 'Email Address', 'edwiser-bridge' ),
+				'username' => __( 'Username', 'rdmcompas-moodle-connector' ),
+				'email'    => __( 'Email Address', 'rdmcompas-moodle-connector' ),
 			)
 		);
 
 		foreach ( $required_fields as $field_key => $field_name ) {
 			if ( empty( $posted_data[ $field_key ] ) ) {
 				/* Translators 1: field name */
-				$errors[] = sprintf( __( '%$1s is required field.', 'edwiser-bridge' ), '<strong>' . $field_name . '</strong>' );
+				$errors[] = sprintf( __( '%$1s is required field.', 'rdmcompas-moodle-connector' ), '<strong>' . $field_name . '</strong>' );
 			}
 		}
 
 		$email = sanitize_email( $posted_data['email'] );
 		if ( ! is_email( $email ) ) {
 			/* Translators 1: email */
-			$errors[] = sprintf( __( '%$1s is invalid email.', 'edwiser-bridge' ), '<strong>' . $email . '</strong>' );
+			$errors[] = sprintf( __( '%$1s is invalid email.', 'rdmcompas-moodle-connector' ), '<strong>' . $email . '</strong>' );
 		} elseif ( email_exists( $email ) && $email !== $current_user->user_email ) {
 			/* Translators 1: email */
-			$errors[] = sprintf( __( '%$1s is already exists.', 'edwiser-bridge' ), '<strong>' . $email . '</strong>' );
+			$errors[] = sprintf( __( '%$1s is already exists.', 'rdmcompas-moodle-connector' ), '<strong>' . $email . '</strong>' );
 		}
 
 		$username = sanitize_user( $posted_data['username'] );
 		if ( username_exists( $username ) && $username !== $current_user->user_login ) {
 			/* Translators 1: User name */
-			$errors[] = sprintf( __( '%$1s is already exists.', 'edwiser-bridge' ), '<strong>' . $username . '</strong>' );
+			$errors[] = sprintf( __( '%$1s is already exists.', 'rdmcompas-moodle-connector' ), '<strong>' . $username . '</strong>' );
 		}
 
 		return $errors;

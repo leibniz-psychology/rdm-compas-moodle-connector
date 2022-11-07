@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 		 */
 		public function __construct() {
 			$this->_id   = 'general';
-			$this->label = __( 'General', 'edwiser-bridge' );
+			$this->label = __( 'General', 'rdmcompas-moodle-connector' );
 
 			add_filter( 'eb_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'eb_settings_' . $this->_id, array( $this, 'output' ) );
@@ -45,18 +45,18 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 			/*
 			* translators: the user account page url will go here
 			*/
-			$user_acc_desc = sprintf( __( 'Select user account page here. Default page is %s ', 'edwiser-bridge' ), '<a href="' . esc_url( site_url( '/user-account' ) ) . '">' . __( 'User Account', 'edwiser-bridge' ) . '</a>' );
+			$user_acc_desc = sprintf( __( 'Select user account page here. Default page is %s ', 'rdmcompas-moodle-connector' ), '<a href="' . esc_url( site_url( '/user-account' ) ) . '">' . __( 'User Account', 'rdmcompas-moodle-connector' ) . '</a>' );
 
 			/*
 			* translators: select courses page here
 			*/
-			$courses_page_desc = sprintf( __( 'Select courses page here. Default page is %s ', 'edwiser-bridge' ), '<a href="' . esc_url( site_url( '/eb_courses' ) ) . '">' . __( 'Courses page', 'edwiser-bridge' ) . '</a>' );
+			$courses_page_desc = sprintf( __( 'Select courses page here. Default page is %s ', 'rdmcompas-moodle-connector' ), '<a href="' . esc_url( site_url( '/eb_courses' ) ) . '">' . __( 'Courses page', 'rdmcompas-moodle-connector' ) . '</a>' );
 
 			/*
 			* translators: My Courses page setting description.
 			*/
-			$redirect_desc     = sprintf( __( 'Redirect user to the My Courses page on %1$s from the %2$s page.', 'edwiser-bridge' ), '<strong>' . __( 'Login / Registration', 'edwiser-bridge' ) . '</strong>', '<a href="' . esc_url( site_url( '/user-account' ) ) . '">' . __( 'User Account', 'edwiser-bridge' ) . '</a>' );
-			$courses_arch_desc = sprintf( __( 'Controlls whether to Show/Hide courses archive page. ', 'edwiser-bridge' ) . '%s', '<a href="' . esc_url( site_url( '/courses' ) ) . '">' . __( 'Courses', 'edwiser-bridge' ) . '</a>' );
+			$redirect_desc     = sprintf( __( 'Redirect user to the My Courses page on %1$s from the %2$s page.', 'rdmcompas-moodle-connector' ), '<strong>' . __( 'Login / Registration', 'rdmcompas-moodle-connector' ) . '</strong>', '<a href="' . esc_url( site_url( '/user-account' ) ) . '">' . __( 'User Account', 'rdmcompas-moodle-connector' ) . '</a>' );
+			$courses_arch_desc = sprintf( __( 'Controlls whether to Show/Hide courses archive page. ', 'rdmcompas-moodle-connector' ) . '%s', '<a href="' . esc_url( site_url( '/courses' ) ) . '">' . __( 'Courses', 'rdmcompas-moodle-connector' ) . '</a>' );
 
 
 
@@ -64,68 +64,68 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 				'eb_general_settings',
 				array(
 					array(
-						'title' => __( 'General Options', 'edwiser-bridge' ),
+						'title' => __( 'General Options', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'desc'  => '',
 						'id'    => 'general_options',
 					),
 					array(
-						'title'    => __( 'Enable Registration', 'edwiser-bridge' ),
-						'desc'     => __( 'Enable user registration on user-account page.', 'edwiser-bridge' ),
+						'title'    => __( 'Enable Registration', 'rdmcompas-moodle-connector' ),
+						'desc'     => __( 'Enable user registration on user-account page.', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_enable_registration',
 						'default'  => 'no',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'User Account Page', 'edwiser-bridge' ),
+						'title'    => __( 'User Account Page', 'rdmcompas-moodle-connector' ),
 						'desc'     => '<br/>' . $user_acc_desc,
 						'id'       => 'eb_useraccount_page_id',
 						'type'     => 'single_select_page',
 						'default'  => '',
 						'css'      => 'min-width:300px;',
 						'args'     => array(
-							'show_option_none'  => __( 'Select a page', 'edwiser-bridge' ),
+							'show_option_none'  => __( 'Select a page', 'rdmcompas-moodle-connector' ),
 							'option_none_value' => '',
 						),
-						'desc_tip' => __( 'This sets the user account page, where user can see his/her purchase history.', 'edwiser-bridge' ),
+						'desc_tip' => __( 'This sets the user account page, where user can see his/her purchase history.', 'rdmcompas-moodle-connector' ),
 					),
 					array(
-						'title'    => __( 'Select Role', 'edwiser-bridge' ),
+						'title'    => __( 'Select Role', 'rdmcompas-moodle-connector' ),
 						'desc'     => '<br/>' .
-							__( 'Select WordPress default user role for users on registration from User Account Page.', 'edwiser-bridge' ),
+							__( 'Select WordPress default user role for users on registration from User Account Page.', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_default_role',
 						'type'     => 'select',
-						'default'  => __( 'Select Role', 'edwiser-bridge' ),
+						'default'  => __( 'Select Role', 'rdmcompas-moodle-connector' ),
 						'css'      => 'min-width:300px;',
 						'options'  => \app\wisdmlabs\edwiserBridge\wdm_eb_get_all_wp_roles(),
-						'desc_tip' => __( 'Select default role for users on registration from User Account Page.', 'edwiser-bridge' ),
+						'desc_tip' => __( 'Select default role for users on registration from User Account Page.', 'rdmcompas-moodle-connector' ),
 					),
 					array(
-						'title'    => __( 'Moodle User Role ID', 'edwiser-bridge' ),
-						'desc'     => '<br/>' . __( 'Moodle user role can be found here ', 'edwiser-bridge' ) . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/admin/roles/manage.php',
+						'title'    => __( 'Moodle User Role ID', 'rdmcompas-moodle-connector' ),
+						'desc'     => '<br/>' . __( 'Moodle user role can be found here ', 'rdmcompas-moodle-connector' ) . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/admin/roles/manage.php',
 						'id'       => 'eb_moodle_role_id',
 						'default'  => '5',
 						'type'     => 'text',
 						'css'      => 'min-width:300px;',
-						'desc_tip' => __( 'Generally users enrolled in default student role whose role id is 5 but if the default user role id is changed then user must enter new user role id here.', 'edwiser-bridge' ),
+						'desc_tip' => __( 'Generally users enrolled in default student role whose role id is 5 but if the default user role id is changed then user must enter new user role id here.', 'rdmcompas-moodle-connector' ),
 					),
 					array(
-						'title'    => __( 'Courses page', 'edwiser-bridge' ),
+						'title'    => __( 'Courses page', 'rdmcompas-moodle-connector' ),
 						'desc'     => '<br/>' . $courses_page_desc,
 						'id'       => 'eb_courses_page_id',
 						'type'     => 'single_select_page',
 						'default'  => '',
 						'css'      => 'min-width:300px;',
 						'args'     => array(
-							'show_option_none'  => __( 'Select a page', 'edwiser-bridge' ),
+							'show_option_none'  => __( 'Select a page', 'rdmcompas-moodle-connector' ),
 							'option_none_value' => '',
 						),
-						'desc_tip' => __( 'This sets the courses page, where user can see courses page.', 'edwiser-bridge' ),
+						'desc_tip' => __( 'This sets the courses page, where user can see courses page.', 'rdmcompas-moodle-connector' ),
 					),
 					array(
-						'title'    => __( 'Moodle Language Code', 'edwiser-bridge' ),
-						'desc'     => '<br>' . __( 'Enter language code which you get from moodle language settings. You can check language code in Moodle ', 'edwiser-bridge' ) . '<a href="' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/local/edwiserbridge/edwiserbridge.php?tab=summary" >' . __( ' here ', 'edwiser-bridge' ) . ' </a>' ,
+						'title'    => __( 'Moodle Language Code', 'rdmcompas-moodle-connector' ),
+						'desc'     => '<br>' . __( 'Enter language code which you get from moodle language settings. You can check language code in Moodle ', 'rdmcompas-moodle-connector' ) . '<a href="' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/local/edwiserbridge/edwiserbridge.php?tab=summary" >' . __( ' here ', 'rdmcompas-moodle-connector' ) . ' </a>' ,
 						'id'       => 'eb_language_code',
 						'default'  => 'en',
 						'type'     => 'text',
@@ -133,15 +133,15 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 						// 'desc_tip' => true,
 					),
 					array(
-						'title'    => __( 'Disable SSL certificate check', 'edwiser-bridge' ),
-						'desc'     => __( 'This option will try to ignore errors regariding SSL certificate.', 'edwiser-bridge' ),
+						'title'    => __( 'Disable SSL certificate check', 'rdmcompas-moodle-connector' ),
+						'desc'     => __( 'This option will try to ignore errors regariding SSL certificate.', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_ignore_ssl',
 						'default'  => 'yes',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'Show Courses Archive page', 'edwiser-bridge' ),
+						'title'    => __( 'Show Courses Archive page', 'rdmcompas-moodle-connector' ),
 						'desc'     => $courses_arch_desc,
 						'id'       => 'eb_show_archive',
 						'default'  => 'yes',
@@ -149,43 +149,43 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 						'autoload' => true,
 					),
 					array(
-						'title'    => __( 'Redirect to My Courses', 'edwiser-bridge' ),
+						'title'    => __( 'Redirect to My Courses', 'rdmcompas-moodle-connector' ),
 						'desc'     => sprintf(
 							/**
 							* Translators: My Courses page setting description.
 							*/
-							__( 'Redirect user to the My Courses page on ', 'edwiser-bridge' ) . '%s' . __( ' from the ', 'edwiser-bridge' ) . '%s' . __( ' page.', 'edwiser-bridge' ),
-							'<strong>' . __( 'Login / Registration', 'edwiser-bridge' ) . '</strong>',
-							'<a href="' . esc_url( site_url( '/user-account' ) ) . '">' . __( 'User Account', 'edwiser-bridge' ) . '</a>'
+							__( 'Redirect user to the My Courses page on ', 'rdmcompas-moodle-connector' ) . '%s' . __( ' from the ', 'rdmcompas-moodle-connector' ) . '%s' . __( ' page.', 'rdmcompas-moodle-connector' ),
+							'<strong>' . __( 'Login / Registration', 'rdmcompas-moodle-connector' ) . '</strong>',
+							'<a href="' . esc_url( site_url( '/user-account' ) ) . '">' . __( 'User Account', 'rdmcompas-moodle-connector' ) . '</a>'
 						),
-						__( 'Redirect user to the My Courses page after login and registration', 'edwiser-bridge' ),
+						__( 'Redirect user to the My Courses page after login and registration', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_enable_my_courses',
 						'default'  => 'no',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'My Courses Page', 'edwiser-bridge' ),
+						'title'    => __( 'My Courses Page', 'rdmcompas-moodle-connector' ),
 						'desc'     => '<br/>' . sprintf(
 							/**
 							* Translators: My Courses page setting description.
 							*/
-							__( 'Select my courses page here. Default page is', 'edwiser-bridge' ) . ' %s ',
-							'<a href="' . esc_url( site_url( '/eb-my-courses' ) ) . '">' . __( 'My Courses', 'edwiser-bridge' ) . '</a>'
+							__( 'Select my courses page here. Default page is', 'rdmcompas-moodle-connector' ) . ' %s ',
+							'<a href="' . esc_url( site_url( '/eb-my-courses' ) ) . '">' . __( 'My Courses', 'rdmcompas-moodle-connector' ) . '</a>'
 						),
 						'id'       => 'eb_my_courses_page_id',
 						'type'     => 'single_select_page',
 						'default'  => '',
 						'css'      => 'min-width:300px;',
 						'args'     => array(
-							'show_option_none'  => __( 'Select a page', 'edwiser-bridge' ),
+							'show_option_none'  => __( 'Select a page', 'rdmcompas-moodle-connector' ),
 							'option_none_value' => '',
 						),
-						'desc_tip' => __( "This sets 'My Courses' page, where the user can see all his purchased courses and access them directly. You have to use this shortcode [eb_my_courses] to create this page.", 'edwiser-bridge' ),
+						'desc_tip' => __( "This sets 'My Courses' page, where the user can see all his purchased courses and access them directly. You have to use this shortcode [eb_my_courses] to create this page.", 'rdmcompas-moodle-connector' ),
 					),
 					array(
-						'title'    => __( 'Empty My courses Page Redirect Link', 'edwiser-bridge' ),
-						'desc'     => __( 'Enter the link to where you want to redirect user from My Courses page when no course is enrolled if empty then will be redirected to the courses page', 'edwiser-bridge' ),
+						'title'    => __( 'Empty My courses Page Redirect Link', 'rdmcompas-moodle-connector' ),
+						'desc'     => __( 'Enter the link to where you want to redirect user from My Courses page when no course is enrolled if empty then will be redirected to the courses page', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_my_course_link',
 						'default'  => '',
 						'type'     => 'text',
@@ -193,8 +193,8 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 						'desc_tip' => true,
 					),
 					array(
-						'title'    => __( 'Erase associated Moodle data from Moodle site', 'edwiser-bridge' ),
-						'desc'     => __( 'Erase associated Moodle data from Moodle site on erase personal data of wordpress site', 'edwiser-bridge' ),
+						'title'    => __( 'Erase associated Moodle data from Moodle site', 'rdmcompas-moodle-connector' ),
+						'desc'     => __( 'Erase associated Moodle data from Moodle site on erase personal data of wordpress site', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_erase_moodle_data',
 						'default'  => 'no',
 						'type'     => 'checkbox',
@@ -205,24 +205,24 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 						'id'   => 'general_options',
 					),
 					array(
-						'title' => __( 'Privacy Policy', 'edwiser-bridge' ),
+						'title' => __( 'Privacy Policy', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'desc'  => '',
 						'id'    => 'general_privacy_policy',
 					),
 					array(
-						'title'    => __( 'Enable terms and conditions', 'edwiser-bridge' ),
-						'desc'     => __( 'Check this to use terms and conditions checkbox on the user-account page.', 'edwiser-bridge' ),
+						'title'    => __( 'Enable terms and conditions', 'rdmcompas-moodle-connector' ),
+						'desc'     => __( 'Check this to use terms and conditions checkbox on the user-account page.', 'rdmcompas-moodle-connector' ),
 						'id'       => 'eb_enable_terms_and_cond',
 						'default'  => 'no',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'Terms and Conditions', 'edwiser-bridge' ),
+						'title'    => __( 'Terms and Conditions', 'rdmcompas-moodle-connector' ),
 						'desc'     => __(
 							'Please enter the Terms and Conditions you want to show on user-account page.',
-							'edwiser-bridge'
+							'rdmcompas-moodle-connector'
 						),
 						'id'       => 'eb_terms_and_cond',
 						'default'  => '',
@@ -235,30 +235,30 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 						'id'   => 'general_privacy_policy',
 					),
 					array(
-						'title' => __( 'Recommended Courses Settings', 'edwiser-bridge' ),
+						'title' => __( 'Recommended Courses Settings', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'desc'  => '',
 						'id'    => 'general_recommended_options',
 					),
 					array(
-						'title'    => __( 'Show Recommended Courses', 'edwiser-bridge' ),
-						'desc'     => sprintf( __( 'Show recommended courses on eb-my-courses page.', 'edwiser-bridge' ) ),
+						'title'    => __( 'Show Recommended Courses', 'rdmcompas-moodle-connector' ),
+						'desc'     => sprintf( __( 'Show recommended courses on eb-my-courses page.', 'rdmcompas-moodle-connector' ) ),
 						'id'       => 'eb_enable_recmnd_courses',
 						'default'  => 'no',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'Show Default Recommended Courses', 'edwiser-bridge' ),
-						'desc'     => sprintf( __( 'Show category wise selected recommended courses on eb-my-courses page.', 'edwiser-bridge' ) ),
+						'title'    => __( 'Show Default Recommended Courses', 'rdmcompas-moodle-connector' ),
+						'desc'     => sprintf( __( 'Show category wise selected recommended courses on eb-my-courses page.', 'rdmcompas-moodle-connector' ) ),
 						'id'       => 'eb_show_default_recmnd_courses',
 						'default'  => 'yes',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'Select Courses', 'edwiser-bridge' ),
-						'desc'     => '<br/>' . sprintf( __( 'Select courses to show in custom courses in recommended course section.', 'edwiser-bridge' ) ),
+						'title'    => __( 'Select Courses', 'rdmcompas-moodle-connector' ),
+						'desc'     => '<br/>' . sprintf( __( 'Select courses to show in custom courses in recommended course section.', 'rdmcompas-moodle-connector' ) ),
 						'id'       => 'eb_recmnd_courses',
 						'type'     => 'multiselect',
 						'default'  => '',
@@ -270,40 +270,40 @@ if ( ! class_exists( 'Eb_Settings_General' ) ) :
 						'id'   => 'general_recommended_options',
 					),
 					array(
-						'title' => __( 'Refund Notification Settings', 'edwiser-bridge' ),
+						'title' => __( 'Refund Notification Settings', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'desc'  => '',
 						'id'    => 'refund_options',
 					),
 					array(
-						'title'    => __( 'Notify Admin', 'edwiser-bridge' ),
-						'desc'     => sprintf( __( 'Notify admin users on refund.', 'edwiser-bridge' ) ),
+						'title'    => __( 'Notify Admin', 'rdmcompas-moodle-connector' ),
+						'desc'     => sprintf( __( 'Notify admin users on refund.', 'rdmcompas-moodle-connector' ) ),
 						'id'       => 'eb_refund_mail_to_admin',
 						'default'  => 'yes',
 						'type'     => 'checkbox',
 						'autoload' => false,
 					),
 					array(
-						'title'    => __( 'Notification Email', 'edwiser-bridge' ),
-						'desc'     => '<br/>' . sprintf( __( 'Email address to send refund notification.', 'edwiser-bridge' ) ),
+						'title'    => __( 'Notification Email', 'rdmcompas-moodle-connector' ),
+						'desc'     => '<br/>' . sprintf( __( 'Email address to send refund notification.', 'rdmcompas-moodle-connector' ) ),
 						'id'       => 'eb_refund_mail',
 						'type'     => 'text',
 						'default'  => '',
-						'desc_tip' => __( 'Specify email address to send refund notification, otherwise keep it blank.', 'edwiser-bridge' ),
+						'desc_tip' => __( 'Specify email address to send refund notification, otherwise keep it blank.', 'rdmcompas-moodle-connector' ),
 					),
 					array(
 						'type' => 'sectionend',
 						'id'   => 'refund_options',
 					),
 					array(
-						'title' => __( 'Usage Tracking', 'edwiser-bridge' ),
+						'title' => __( 'Usage Tracking', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'desc'  => '',
 						'id'    => 'refund_options',
 					),
 					array(
-						'title'    => __( 'Allow Usage Tracking', 'edwiser-bridge' ),
-						'desc'     => sprintf( __( 'This will help us in building more useful functionalities for you.', 'edwiser-bridge' ) ),
+						'title'    => __( 'Allow Usage Tracking', 'rdmcompas-moodle-connector' ),
+						'desc'     => sprintf( __( 'This will help us in building more useful functionalities for you.', 'rdmcompas-moodle-connector' ) ),
 						'id'       => 'eb_usage_tracking',
 						'default'  => 'no',
 						'type'     => 'checkbox',

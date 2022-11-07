@@ -5,7 +5,7 @@
  * @link       https://example.com
  * @since      1.0.2
  * @deprecated 1.2.0 Use shortcode eb_user_account
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="eb-user-data">
 		<?php
 		/* translators 1: display name 2: display name 3: a tag opening string 4: a tag closing */
-		printf( esc_attr__( 'Hello', 'edwiser-bridge' ) . ' <strong>%s</strong> (' . esc_attr__( 'not', 'edwiser-bridge' ) . ' <strong>%s</strong>? %s ' . esc_attr__( 'Sign out ', 'edwiser-bridge' ) . '%s)', esc_html( $user->display_name ), esc_html( $user->display_name ), '<a href="' . esc_url( wp_logout_url( get_permalink() ) ) . '">', '</a>' );
+		printf( esc_attr__( 'Hello', 'rdmcompas-moodle-connector' ) . ' <strong>%s</strong> (' . esc_attr__( 'not', 'rdmcompas-moodle-connector' ) . ' <strong>%s</strong>? %s ' . esc_attr__( 'Sign out ', 'rdmcompas-moodle-connector' ) . '%s)', esc_html( $user->display_name ), esc_html( $user->display_name ), '<a href="' . esc_url( wp_logout_url( get_permalink() ) ) . '">', '</a>' );
 		?>
 		<div>
 			<?php

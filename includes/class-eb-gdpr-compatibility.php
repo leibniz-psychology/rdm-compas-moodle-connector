@@ -31,8 +31,8 @@ class Eb_Gdpr_Compatibility {
 		$enrolled_courses = $this->get_enrolled_courses_with_date( $user->ID );
 		$data             = array(
 			array(
-				'name'  => esc_html__( 'Course Name', 'edwiser-bridge' ),
-				'value' => esc_html__( 'Enrollment Date and Time', 'edwiser-bridge' ),
+				'name'  => esc_html__( 'Course Name', 'rdmcompas-moodle-connector' ),
+				'value' => esc_html__( 'Enrollment Date and Time', 'rdmcompas-moodle-connector' ),
 			),
 		);
 
@@ -50,7 +50,7 @@ class Eb_Gdpr_Compatibility {
 		if ( $moodle_user_id ) {
 			$export_items[] = array(
 				'group_id'    => 'eb_user_meta',
-				'group_label' => esc_html__( 'User enrollment data', 'edwiser-bridge' ),
+				'group_label' => esc_html__( 'User enrollment data', 'rdmcompas-moodle-connector' ),
 				'item_id'     => 'eb_user_meta',
 				'data'        => $data,
 			);
@@ -63,12 +63,12 @@ class Eb_Gdpr_Compatibility {
 		} else {
 			$export_items[] = array(
 				'group_id'    => 'eb_user_meta',
-				'group_label' => esc_html__( 'User enrollment data', 'edwiser-bridge' ),
+				'group_label' => esc_html__( 'User enrollment data', 'rdmcompas-moodle-connector' ),
 				'item_id'     => 'eb_user_meta',
 				'data'        => array(
 					array(
-						'name'  => esc_html__( 'Enrollment data', 'edwiser-bridge' ),
-						'value' => esc_html__( 'Not Available (Not linked to the Moodle LMS site)', 'edwiser-bridge' ),
+						'name'  => esc_html__( 'Enrollment data', 'rdmcompas-moodle-connector' ),
+						'value' => esc_html__( 'Not Available (Not linked to the Moodle LMS site)', 'rdmcompas-moodle-connector' ),
 					),
 				),
 			);
@@ -130,8 +130,8 @@ class Eb_Gdpr_Compatibility {
 	 * @param  text $exporters exporters.
 	 */
 	public function eb_register_my_plugin_exporter( $exporters ) {
-		$exporters['edwiser-bridge'] = array(
-			'exporter_friendly_name' => esc_html__( 'Edwiser Bridge Plugin', 'edwiser-bridge' ),
+		$exporters['rdmcompas-moodle-connector'] = array(
+			'exporter_friendly_name' => esc_html__( 'RDM Compas Moodle Connector Plugin', 'rdmcompas-moodle-connector' ),
 			'callback'               => array( $this, 'eb_data_exporter' ),
 		);
 		return $exporters;
@@ -165,13 +165,13 @@ class Eb_Gdpr_Compatibility {
 				}
 			}
 			if ( $unenrolled ) {
-				array_push( $msg, esc_html__( 'Deleted Courses related data from the Moodle site', 'edwiser-bridge' ) );
+				array_push( $msg, esc_html__( 'Deleted Courses related data from the Moodle site', 'rdmcompas-moodle-connector' ) );
 			}
 
 			$wpdb->get_results( $wpdb->prepare( 'DELETE FROM  {$wpdb->prefix}moodle_enrollment  WHERE user_id = %d', $user->ID ) ); // @codingStandardsIgnoreLine
-			array_push( $msg, esc_html__( 'Deleted Courses related data from the WordPress site', 'edwiser-bridge' ) );
+			array_push( $msg, esc_html__( 'Deleted Courses related data from the WordPress site', 'rdmcompas-moodle-connector' ) );
 			delete_user_meta( $user->ID, 'moodle_user_id' );
-			array_push( $msg, esc_html__( 'Deleted Moodle user ID', 'edwiser-bridge' ) );
+			array_push( $msg, esc_html__( 'Deleted Moodle user ID', 'rdmcompas-moodle-connector' ) );
 		}
 
 		return array(
@@ -189,8 +189,8 @@ class Eb_Gdpr_Compatibility {
 	 * @param  text $erasers erasers.
 	 */
 	public function eb_register_plugin_eraser( $erasers ) {
-		$erasers['edwiser-bridge'] = array(
-			'eraser_friendly_name' => esc_html__( 'Edwiser Bridge Plugin', 'edwiser-bridge' ),
+		$erasers['rdmcompas-moodle-connector'] = array(
+			'eraser_friendly_name' => esc_html__( 'RDM Compas Moodle Connector Plugin', 'rdmcompas-moodle-connector' ),
 			'callback'             => array( $this, 'eb_plugin_data_eraser' ),
 		);
 		return $erasers;
@@ -203,7 +203,7 @@ class Eb_Gdpr_Compatibility {
 		$content = apply_filters( 'eb_privacy_policy_content', $this->eb_privacy_policy_content() );
 
 		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
-			wp_add_privacy_policy_content( 'Edwiser Bridge', $content );
+			wp_add_privacy_policy_content( 'RDM Compas Moodle Connector', $content );
 		}
 	}
 
@@ -212,23 +212,23 @@ class Eb_Gdpr_Compatibility {
 	 * Functionality to merge all the sections data which we want to show on the privacy policy page
 	 */
 	public function eb_privacy_policy_content() {
-		$sections = array( esc_html__( 'User Account Creation', 'edwiser-bridge' ) => $this->eb_user_account_creation_policy() );
+		$sections = array( esc_html__( 'User Account Creation', 'rdmcompas-moodle-connector' ) => $this->eb_user_account_creation_policy() );
 
-		$sections[ esc_html__( 'Payments', 'edwiser-bridge' ) ] = $this->eb_payment_policy();
+		$sections[ esc_html__( 'Payments', 'rdmcompas-moodle-connector' ) ] = $this->eb_payment_policy();
 		$active_plugins                                        = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
-		if ( in_array( 'edwiser-bridge-sso/sso.php', $active_plugins, true ) ) {
-			$sections[ esc_html__( 'User’s Simultaneous login and logout', 'edwiser-bridge' ) ] = $this->eb_sso_policy();
+		if ( in_array( 'rdmcompas-moodle-connector-sso/sso.php', $active_plugins, true ) ) {
+			$sections[ esc_html__( 'User’s Simultaneous login and logout', 'rdmcompas-moodle-connector' ) ] = $this->eb_sso_policy();
 		}
 		$sections = apply_filters( 'eb_policy_sections', $sections );
 		apply_filters_deprecated( 'eb-policy-sections', array( $sections ), '2.0.1', 'eb_policy_sections' );
 		$html = "<div class= 'wp-suggested-text'>
 					<div>
-						<h2>" . esc_html__( 'Edwiser', 'edwiser-bridge' ) . '</h2>
+						<h2>" . esc_html__( 'Edwiser', 'rdmcompas-moodle-connector' ) . '</h2>
 						<p>
-							' . esc_html__( 'This sample language includes the basics of what personal data our site is using to integrate our site with the Moodle LMS site.', 'edwiser-bridge' ) . '
+							' . esc_html__( 'This sample language includes the basics of what personal data our site is using to integrate our site with the Moodle LMS site.', 'rdmcompas-moodle-connector' ) . '
 						</p>
 						<p>
-							' . esc_html__( 'We collect information about you and process them for the following purposes.', 'edwiser-bridge' ) . '
+							' . esc_html__( 'We collect information about you and process them for the following purposes.', 'rdmcompas-moodle-connector' ) . '
 						</p>
 					</div>';
 		foreach ( $sections as $key => $value ) {
@@ -250,32 +250,32 @@ class Eb_Gdpr_Compatibility {
 		$eb_access_url  = \app\wisdmlabs\edwiserBridge\wdm_edwiser_bridge_plugin_get_access_url();
 
 		$content = '<p>
-						' . esc_html__( 'We enroll the user in the course in Moodle for which we need to create an account in Moodle below are the ways by which we create users in Moodle.', 'edwiser-bridge' ) . '
+						' . esc_html__( 'We enroll the user in the course in Moodle for which we need to create an account in Moodle below are the ways by which we create users in Moodle.', 'rdmcompas-moodle-connector' ) . '
 					</p>
 					<p>
-						' . esc_html__( 'When you purchase from us through courses page, we’ll ask you to provide information including your first name, last name and email and creates username and password for the user. We’ll use this information for purposes, such as, to:', 'edwiser-bridge' ) . '
+						' . esc_html__( 'When you purchase from us through courses page, we’ll ask you to provide information including your first name, last name and email and creates username and password for the user. We’ll use this information for purposes, such as, to:', 'rdmcompas-moodle-connector' ) . '
 						<ul>
-							<li>' . esc_html__( 'Create a user on the ', 'edwiser-bridge' ) . '<a href = ' . $eb_access_url . '>' . esc_html__( 'Moodle site', 'edwiser-bridge' ) . '</a></li>
-							<li>' . esc_html__( 'Enroll the same user into the course.', 'edwiser-bridge' ) . '</li>
+							<li>' . esc_html__( 'Create a user on the ', 'rdmcompas-moodle-connector' ) . '<a href = ' . $eb_access_url . '>' . esc_html__( 'Moodle site', 'rdmcompas-moodle-connector' ) . '</a></li>
+							<li>' . esc_html__( 'Enroll the same user into the course.', 'rdmcompas-moodle-connector' ) . '</li>
 						</ul>
 					</p>';
 
 		if ( in_array( 'woocommerce-integration/bridge-woocommerce.php', $active_plugins, true ) ) {
 			$content .= '<p>
-							' . esc_html__( 'We collect user information whenever you submit a checkout form on woocommerce store. When you submit woocommerce checkout form, we will use following information to create the user account on the Moodle site:', 'edwiser-bridge' ) . '
+							' . esc_html__( 'We collect user information whenever you submit a checkout form on woocommerce store. When you submit woocommerce checkout form, we will use following information to create the user account on the Moodle site:', 'rdmcompas-moodle-connector' ) . '
 
 							<ul>
-								<li>' . esc_html__( 'First Name', 'edwiser-bridge' ) . '</li>
-								<li>' . esc_html__( 'Last Name', 'edwiser-bridge' ) . '</li>
-								<li>' . esc_html__( 'Email', 'edwiser-bridge' ) . '</li>
-								<li>' . esc_html__( 'Username', 'edwiser-bridge' ) . '</li>
-								<li>' . esc_html__( 'Password', 'edwiser-bridge' ) . '</li>
+								<li>' . esc_html__( 'First Name', 'rdmcompas-moodle-connector' ) . '</li>
+								<li>' . esc_html__( 'Last Name', 'rdmcompas-moodle-connector' ) . '</li>
+								<li>' . esc_html__( 'Email', 'rdmcompas-moodle-connector' ) . '</li>
+								<li>' . esc_html__( 'Username', 'rdmcompas-moodle-connector' ) . '</li>
+								<li>' . esc_html__( 'Password', 'rdmcompas-moodle-connector' ) . '</li>
 							</ul>
 						</p>
 						<p>
-							' . esc_html__( 'The collected information will be used to:', 'edwiser-bridge' ) . '
+							' . esc_html__( 'The collected information will be used to:', 'rdmcompas-moodle-connector' ) . '
 							<ul>
-								' . esc_html__( 'Enroll user in the specified course.', 'edwiser-bridge' ) . '
+								' . esc_html__( 'Enroll user in the specified course.', 'rdmcompas-moodle-connector' ) . '
 							</ul>
 						</p>';
 		}
@@ -288,13 +288,13 @@ class Eb_Gdpr_Compatibility {
 	 */
 	public function eb_payment_policy() {
 		$content = '<p>
-						' . esc_html__( 'We accept payments through PayPal. When processing payments, some of your data will be passed to PayPal, including information required to process or support the payment, such as the purchase total and billing information.', 'edwiser-bridge' ) . '
+						' . esc_html__( 'We accept payments through PayPal. When processing payments, some of your data will be passed to PayPal, including information required to process or support the payment, such as the purchase total and billing information.', 'rdmcompas-moodle-connector' ) . '
 					</p>
 					<p>
-						' . esc_html__( 'Please see the', 'edwiser-bridge' ) . ' <a href = "https://www.paypal.com/us/webapps/mpp/ua/privacy-full"> ' . esc_html__( 'PayPal Privacy Policy', 'edwiser-bridge' ) . ' </a> ' . esc_html__( 'for more details.', 'edwiser-bridge' ) . '
+						' . esc_html__( 'Please see the', 'rdmcompas-moodle-connector' ) . ' <a href = "https://www.paypal.com/us/webapps/mpp/ua/privacy-full"> ' . esc_html__( 'PayPal Privacy Policy', 'rdmcompas-moodle-connector' ) . ' </a> ' . esc_html__( 'for more details.', 'rdmcompas-moodle-connector' ) . '
 					</p>
 					<p>
-						' . esc_html__( 'For more details you could read our Privacy Policy and Terms and Conditions for better understanding of our product and services.', 'edwiser-bridge' ) . '
+						' . esc_html__( 'For more details you could read our Privacy Policy and Terms and Conditions for better understanding of our product and services.', 'rdmcompas-moodle-connector' ) . '
 					</p>';
 		apply_filters( 'eb_privacy_policy_payments_section', $content );
 		return apply_filters_deprecated( 'eb-privacy-policy-payments-section', array( $content ), '2.0.1', 'eb_privacy_policy_payments_section' );

@@ -94,9 +94,9 @@ if ( ! class_exists( 'Eb_Licensing_Manager' ) ) {
 				'single_sign_on'          => array(
 					'slug'            => 'single_sign_on',
 					'current_version' => '1.4.0',
-					'item_name'       => 'Edwiser Bridge Single Sign On',
+					'item_name'       => 'RDM Compas Moodle Connector Single Sign On',
 					'key'             => 'edd_single_sign_on_license_key',
-					'path'            => 'edwiser-bridge-sso/sso.php',
+					'path'            => 'rdmcompas-moodle-connector-sso/sso.php',
 				),
 				'woocommerce_integration' => array(
 					'slug'            => 'woocommerce_integration',
@@ -168,7 +168,7 @@ if ( ! class_exists( 'Eb_Licensing_Manager' ) ) {
 			if ( false !== $resp_data['status'] ) {
 				$is_data_avlb = $this->check_if_no_data( $resp_data['data'], $resp_data['status'] );
 				if ( $is_data_avlb ) {
-					$resp_data['data']   = __( 'No responce from server example.com.', 'edwiser-bridge' );
+					$resp_data['data']   = __( 'No responce from server example.com.', 'rdmcompas-moodle-connector' );
 					$resp_data['status'] = false;
 				}
 			}

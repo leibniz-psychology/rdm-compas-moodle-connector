@@ -2,7 +2,7 @@
 /**
  * The template for displaying moodle course archive page.
  *
- * @package Edwiser Bridge.
+ * @package RDM Compas Moodle Connector.
  */
 
 /**
@@ -54,7 +54,7 @@ $template_loader = new \app\wisdmlabs\edwiserBridge\EbTemplateLoader(
 ?>
 
 	<?php if ( apply_filters( 'eb_show_page_title', true ) ) : ?>
-		<h1 class="page-title"><?php esc_html_e( 'Courses', 'edwiser-bridge' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Courses', 'rdmcompas-moodle-connector' ); ?></h1>
 		<?php
 
 	endif;
@@ -77,10 +77,10 @@ $template_loader = new \app\wisdmlabs\edwiserBridge\EbTemplateLoader(
 		// Previous/next page navigation.
 		the_posts_pagination(
 			array(
-				'prev_text'          => '<span class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit">' . __( ' Prev', 'edwiser-bridge' ) . '</span>',
-				'next_text'          => '<span class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit"> ' . __( 'Next ', 'edwiser-bridge' ) . '</span>',
+				'prev_text'          => '<span class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit">' . __( ' Prev', 'rdmcompas-moodle-connector' ) . '</span>',
+				'next_text'          => '<span class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit"> ' . __( 'Next ', 'rdmcompas-moodle-connector' ) . '</span>',
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' .
-				esc_html__( 'Page', 'edwiser-bridge' ) . ' </span>',
+				esc_html__( 'Page', 'rdmcompas-moodle-connector' ) . ' </span>',
 			)
 		);
 	} else {

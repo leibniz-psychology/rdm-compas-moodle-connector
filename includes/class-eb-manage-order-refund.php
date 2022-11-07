@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -58,7 +58,7 @@ class Eb_Manage_Order_Refund {
 		$refund_status = array(
 			'amt'    => $amt,
 			'status' => false,
-			'msg'    => esc_html__( 'Failed to initiate refund for order #', 'edwiser-bridge' ) . $order_id,
+			'msg'    => esc_html__( 'Failed to initiate refund for order #', 'rdmcompas-moodle-connector' ) . $order_id,
 		);
 		$refund_type   = $this->get_refund_type( $order_id, $amt );
 		edwiser_bridge_instance()->logger()->add( 'refund', "Initaiting $refund_type refund for order ID: ['$order_id'], Refund amount: $amt and refund note: $note" );

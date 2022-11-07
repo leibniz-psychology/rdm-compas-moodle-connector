@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -34,7 +34,7 @@ class Eb_Moodle_Link_Unlink {
 	 * @return [array]         returning array by adding our column in it
 	 */
 	public function adding_moodle_account_column( $column ) {
-		$column['moodle_Account'] = sprintf( __( 'Moodle Account', 'edwiser-bridge' ) );
+		$column['moodle_Account'] = sprintf( __( 'Moodle Account', 'rdmcompas-moodle-connector' ) );
 		return $column;
 	}
 
@@ -56,8 +56,8 @@ class Eb_Moodle_Link_Unlink {
 		}
 		if ( 'moodle_Account' === $column_name ) {
 			$val = '<div id="' . $user_id . '" class="wdm-wpcwn-type">
-				<label class="link-unlink" id="' . $user_id . '-link" title="Link user with Moodle account" class="link-unlink link" style="display:' . $unchecked . ';">' . sprintf( esc_html__( 'Link User', 'edwiser-bridge' ) ) . '</label>
-				<label class="link-unlink" id="' . $user_id . '-unlink" title="Unlink user with moodle account." class="link-unlink unlink" style="display:' . $checked . ';">' . sprintf( esc_html__( 'Unlink User', 'edwiser-bridge' ) ) . '</label>
+				<label class="link-unlink" id="' . $user_id . '-link" title="Link user with Moodle account" class="link-unlink link" style="display:' . $unchecked . ';">' . sprintf( esc_html__( 'Link User', 'rdmcompas-moodle-connector' ) ) . '</label>
+				<label class="link-unlink" id="' . $user_id . '-unlink" title="Unlink user with moodle account." class="link-unlink unlink" style="display:' . $checked . ';">' . sprintf( esc_html__( 'Unlink User', 'rdmcompas-moodle-connector' ) ) . '</label>
 				</div>
 			';
 		}

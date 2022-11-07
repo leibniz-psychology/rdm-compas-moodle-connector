@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -42,7 +42,7 @@ class Eb_Frontend_Form_Handler {
 				if ( $validation_error->get_error_code() ) {
 					throw new \Exception(
 						'<strong>' .
-						esc_html__( 'Error', 'edwiser-bridge' ) .
+						esc_html__( 'Error', 'rdmcompas-moodle-connector' ) .
 						':</strong> ' .
 						$validation_error->get_error_message()
 					);
@@ -51,18 +51,18 @@ class Eb_Frontend_Form_Handler {
 				if ( empty( $_POST['wdm_username'] ) ) {
 					throw new \Exception(
 						'<strong>' .
-						esc_html__( 'Error', 'edwiser-bridge' ) .
+						esc_html__( 'Error', 'rdmcompas-moodle-connector' ) .
 						':</strong> ' .
-						esc_html__( 'Username is required.', 'edwiser-bridge' )
+						esc_html__( 'Username is required.', 'rdmcompas-moodle-connector' )
 					);
 				}
 
 				if ( empty( $_POST['wdm_password'] ) ) {
 					throw new \Exception(
 						'<strong>' .
-						esc_html__( 'Error', 'edwiser-bridge' ) .
+						esc_html__( 'Error', 'rdmcompas-moodle-connector' ) .
 						':</strong> ' .
-						esc_html__( 'Password is required.', 'edwiser-bridge' )
+						esc_html__( 'Password is required.', 'rdmcompas-moodle-connector' )
 					);
 				}
 
@@ -143,10 +143,10 @@ class Eb_Frontend_Form_Handler {
 					$email
 				);
 				if ( empty( $user_psw ) || empty( $conf_user_psw ) ) {
-					throw new \Exception( __( 'Password fields can not be empty.', 'edwiser-bridge' ) );
+					throw new \Exception( __( 'Password fields can not be empty.', 'rdmcompas-moodle-connector' ) );
 				}
 				if ( ! empty( $user_psw ) && $user_psw !== $conf_user_psw ) {
-					throw new \Exception( __( 'Password are not matching.', 'edwiser-bridge' ) );
+					throw new \Exception( __( 'Password are not matching.', 'rdmcompas-moodle-connector' ) );
 				}
 				if ( $validation_error->get_error_code() ) {
 					throw new \Exception( $validation_error->get_error_message() );
@@ -154,7 +154,7 @@ class Eb_Frontend_Form_Handler {
 
 				/* Anti-spam trap */
 				if ( ! empty( $_POST['email_2'] ) ) {
-					throw new \Exception( __( 'Anti-spam field was filled in.', 'edwiser-bridge' ) );
+					throw new \Exception( __( 'Anti-spam field was filled in.', 'rdmcompas-moodle-connector' ) );
 				}
 
 				// added afyter.

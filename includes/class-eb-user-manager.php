@@ -69,7 +69,7 @@ class EBUserManager {
 	 * @since   1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -78,7 +78,7 @@ class EBUserManager {
 	 * @since   1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -200,7 +200,7 @@ class EBUserManager {
 					// Push user's id to separate array,
 					// if there is a problem in fetching his/her courses from moodle.
 					$response_array['user_with_error'][]  = $value['user_id'];
-					$response_array['user_with_error'][] .= '<strong>' . esc_html__( 'User ID:', 'edwiser-bridge' ) . ' </strong>' . $value['user_id'];
+					$response_array['user_with_error'][] .= '<strong>' . esc_html__( 'User ID:', 'rdmcompas-moodle-connector' ) . ' </strong>' . $value['user_id'];
 					$response_array['user_with_error'][] .= '</p><br/>';
 				}
 
@@ -391,13 +391,13 @@ class EBUserManager {
 		$uc_status = '';
 		// Check the e-mail address.
 		if ( ! empty( $email ) && is_email( $email ) ) {
-			$uc_status = new \WP_Error( 'registration-error', esc_html__( 'Please provide a valid email address.', 'edwiser-bridge' ) );
+			$uc_status = new \WP_Error( 'registration-error', esc_html__( 'Please provide a valid email address.', 'rdmcompas-moodle-connector' ) );
 			if ( email_exists( $email ) ) {
 				$login_link = '<a href="' . esc_url( \app\wisdmlabs\edwiserBridge\wdm_eb_user_account_url( array( $redirect_to ) ) ) . '">Please login</a>';
 				$uc_status  = new \WP_Error(
 					'registration-error',
 					/* translators: %s: $login_link Login link. */
-					sprintf( __( 'An account is already registered with your email address, %s.', 'edwiser-bridge' ), $login_link ),
+					sprintf( __( 'An account is already registered with your email address, %s.', 'rdmcompas-moodle-connector' ), $login_link ),
 					'eb_email_exists'
 				);
 			} else {
@@ -446,10 +446,10 @@ class EBUserManager {
 					if ( is_wp_error( $user_id ) ) {
 						$uc_status = new \WP_Error(
 							'registration-error',
-							'<strong>' . esc_html__( 'ERROR', 'edwiser-bridge' ) . '</strong>: ' .
+							'<strong>' . esc_html__( 'ERROR', 'rdmcompas-moodle-connector' ) . '</strong>: ' .
 							esc_html__(
 								'Couldn&#8217;t register you&hellip; please contact us if you continue to have problems.',
-								'edwiser-bridge'
+								'rdmcompas-moodle-connector'
 							)
 						);
 					} else {
@@ -885,16 +885,16 @@ class EBUserManager {
 			<script type="text/javascript">
 				jQuery(document).ready(function () {
 					jQuery('<option>').val('link_moodle')
-							.text('<?php esc_html_e( 'Link Moodle Account', 'edwiser-bridge' ); ?>')
+							.text('<?php esc_html_e( 'Link Moodle Account', 'rdmcompas-moodle-connector' ); ?>')
 							.appendTo("select[name='action']");
 					jQuery('<option>').val('link_moodle')
-							.text('<?php esc_html_e( 'Link Moodle Account', 'edwiser-bridge' ); ?>')
+							.text('<?php esc_html_e( 'Link Moodle Account', 'rdmcompas-moodle-connector' ); ?>')
 							.appendTo("select[name='action2']");
 					jQuery('<option>').val('unlink_moodle')
-							.text('<?php esc_html_e( 'Unlink Moodle Account', 'edwiser-bridge' ); ?>')
+							.text('<?php esc_html_e( 'Unlink Moodle Account', 'rdmcompas-moodle-connector' ); ?>')
 							.appendTo("select[name='action']");
 					jQuery('<option>').val('unlink_moodle')
-							.text('<?php esc_html_e( 'Unlink Moodle Account', 'edwiser-bridge' ); ?>')
+							.text('<?php esc_html_e( 'Unlink Moodle Account', 'rdmcompas-moodle-connector' ); ?>')
 							.appendTo("select[name='action2']");
 				});
 			</script>
@@ -1006,16 +1006,16 @@ class EBUserManager {
 
 		if ( 'users.php' === $pagenow ) {
 			if ( isset( $_REQUEST['unlinked'] ) && 1 === (int) trim( sanitize_text_field( wp_unslash( $_REQUEST['unlinked'] ) ) ) ) {
-				$message = sprintf( '%s' . esc_html__( ' User Unlinked.', 'edwiser-bridge' ), number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['unlinked'] ) ) ) );
+				$message = sprintf( '%s' . esc_html__( ' User Unlinked.', 'rdmcompas-moodle-connector' ), number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['unlinked'] ) ) ) );
 			} elseif ( isset( $_REQUEST['unlinked'] ) && (int) $_REQUEST['unlinked'] > 1 ) {
 				$message = sprintf(
-					'%s' . esc_html__( ' Users Unlinked.', 'edwiser-bridge' ),
+					'%s' . esc_html__( ' Users Unlinked.', 'rdmcompas-moodle-connector' ),
 					number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['unlinked'] ) ) )
 				);
 			} elseif ( isset( $_REQUEST['linked'] ) && 1 === (int) trim( sanitize_text_field( wp_unslash( $_REQUEST['linked'] ) ) ) ) {
-				$message = sprintf( '%s' . esc_html__( 'User Linked.', 'edwiser-bridge' ), number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['linked'] ) ) ) );
+				$message = sprintf( '%s' . esc_html__( 'User Linked.', 'rdmcompas-moodle-connector' ), number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['linked'] ) ) ) );
 			} elseif ( isset( $_REQUEST['linked'] ) && (int) $_REQUEST['linked'] > 1 ) {
-				$message = sprintf( '%s ' . esc_html__( 'Users Linked.', 'edwiser-bridge' ), number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['linked'] ) ) ) );
+				$message = sprintf( '%s ' . esc_html__( 'Users Linked.', 'rdmcompas-moodle-connector' ), number_format_i18n( sanitize_text_field( wp_unslash( $_REQUEST['linked'] ) ) ) );
 			}
 
 			if ( isset( $message ) ) {
@@ -1131,7 +1131,7 @@ class EBUserManager {
 					wp_nonce_field( 'eb_mdl_course_enrollment', 'eb_mdl_course_enrollment' );
 					?>
 
-					<th><h3><?php esc_html_e( 'Enrolled Courses', 'edwiser-bridge' ); ?></h3></th>
+					<th><h3><?php esc_html_e( 'Enrolled Courses', 'rdmcompas-moodle-connector' ); ?></h3></th>
 					<td>
 						<ol>
 							<?php
@@ -1152,10 +1152,10 @@ class EBUserManager {
 				if ( current_user_can( 'manage_options' ) ) {
 					?>
 					<tr>
-						<th><h3><?php esc_html_e( 'Enroll a Course', 'edwiser-bridge' ); ?></h3></th>
+						<th><h3><?php esc_html_e( 'Enroll a Course', 'rdmcompas-moodle-connector' ); ?></h3></th>
 						<td>
 							<select name="enroll_course">
-								<option value=''><?php esc_html_e( '-- Select a Course --', 'edwiser-bridge' ); ?></option>
+								<option value=''><?php esc_html_e( '-- Select a Course --', 'rdmcompas-moodle-connector' ); ?></option>
 								<?php
 								foreach ( $notenrolled_courses as $course ) {
 									echo "<option value='" . esc_html( $course->ID ) . "'>" . esc_html( $course->post_title ) . '</option>';
@@ -1165,10 +1165,10 @@ class EBUserManager {
 						</td>
 					</tr>
 					<tr>
-						<th><h3><?php esc_html_e( 'Unenroll a Course', 'edwiser-bridge' ); ?></h3></th>
+						<th><h3><?php esc_html_e( 'Unenroll a Course', 'rdmcompas-moodle-connector' ); ?></h3></th>
 						<td>
 							<select name="unenroll_course">
-								<option value=''><?php esc_html_e( '-- Select a Course --', 'edwiser-bridge' ); ?></option>
+								<option value=''><?php esc_html_e( '-- Select a Course --', 'rdmcompas-moodle-connector' ); ?></option>
 								<?php
 								foreach ( $enrolled_courses as $course ) {
 									echo "<option value='" . esc_html( $course->ID ) . "'>" . esc_html( $course->post_title ) . '</option>';
@@ -1325,19 +1325,19 @@ class EBUserManager {
 			if ( sanitize_text_field( wp_unslash( $_POST['link_user'] ) ) ) {
 				$flag = $this->link_moodle_user( $user_object );
 				if ( ! $flag ) {
-					$responce['msg'] = esc_html__( 'Failed to process the request.', 'edwiser-bridge' );
+					$responce['msg'] = esc_html__( 'Failed to process the request.', 'rdmcompas-moodle-connector' );
 				} else {
 					$responce['code'] = 'success';
-					$responce['msg']  = sprintf( "%s'" . esc_html__( 's account has been linked successfully.', 'edwiser-bridge' ), $user_object->user_login );
+					$responce['msg']  = sprintf( "%s'" . esc_html__( 's account has been linked successfully.', 'rdmcompas-moodle-connector' ), $user_object->user_login );
 				}
 			} else {
 				$deleted = ( delete_user_meta( sanitize_text_field( wp_unslash( $_POST['user_id'] ) ), 'moodle_user_id' ) );
 				delete_user_meta( sanitize_text_field( wp_unslash( $_POST['user_id'] ) ), 'eb_user_password' );
 				$responce['code'] = 'success';
-				$responce['msg']  = sprintf( "%s'" . esc_html__( 's account has been unlinked successfully.', 'edwiser-bridge' ), $user_object->user_login );
+				$responce['msg']  = sprintf( "%s'" . esc_html__( 's account has been unlinked successfully.', 'rdmcompas-moodle-connector' ), $user_object->user_login );
 			}
 		} else {
-			$responce['msg'] = esc_html__( 'Invalid ajax request.', 'edwiser-bridge' );
+			$responce['msg'] = esc_html__( 'Invalid ajax request.', 'rdmcompas-moodle-connector' );
 		}
 		echo wp_json_encode( $responce );
 		die();

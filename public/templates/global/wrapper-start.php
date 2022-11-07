@@ -2,7 +2,7 @@
 /**
  * Primary wrapper starting HTML content.
  *
- * @package Edwiser Bridge
+ * @package RDM Compas Moodle Connector
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

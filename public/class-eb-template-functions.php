@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -62,7 +62,7 @@ class Eb_Template_Functions {
 
 //		if ( is_numeric( $course_price ) ) {
 //			$currency_sym           = 'USD' === $currency ? '$' : $currency;
-//			$course_price_formatted = '0' === $course_price ? __( 'Free', 'edwiser-bridge' ) : $currency_sym . ' ' . $course_price;
+//			$course_price_formatted = '0' === $course_price ? __( 'Free', 'rdmcompas-moodle-connector' ) : $currency_sym . ' ' . $course_price;
 //		}
 
 		// Course associated Categories.
@@ -74,11 +74,11 @@ class Eb_Template_Functions {
 
 		$course_class = 'no-access';
 		/* Translators 1: title */
-		$h_title = sprintf( esc_html__( 'Click to read more about', 'edwiser-bridge' ) . ' %s' . esc_html__( ' course', 'edwiser-bridge' ), get_the_title( get_the_ID() ) );
+		$h_title = sprintf( esc_html__( 'Click to read more about', 'rdmcompas-moodle-connector' ) . ' %s' . esc_html__( ' course', 'rdmcompas-moodle-connector' ), get_the_title( get_the_ID() ) );
 		if ( $has_access ) {
 			$course_class = 'has-access';
 			/* Translators 1: title */
-			$h_title = sprintf( esc_html__( 'Click to access', 'edwiser-bridge' ) . ' %s' . esc_html__( ' course', 'edwiser-bridge' ), get_the_title( get_the_ID() ) );
+			$h_title = sprintf( esc_html__( 'Click to access', 'rdmcompas-moodle-connector' ) . ' %s' . esc_html__( ' course', 'rdmcompas-moodle-connector' ), get_the_title( get_the_ID() ) );
 		}
 
 		// Shortcode eb_my_courses.
@@ -123,11 +123,11 @@ class Eb_Template_Functions {
 
         $course_institution         = $course_options['moodle_course_institution']      ?? null;
         $course_contact_person      = $course_options['moodle_course_contact_person']   ?? null;
-        $course_date_start          = $course_options['moodle_course_date_start']       ?? __('Start now!', 'edwiser-bridge');;
+        $course_date_start          = $course_options['moodle_course_date_start']       ?? __('Start now!', 'rdmcompas-moodle-connector');;
         $course_date_modified       = $course_options['moodle_course_date_modified']    ?? null;
-        $course_format              = $course_options['moodle_course_format']           ?? __('Lesson', 'edwiser-bridge');
-        $course_target_group        = $course_options['moodle_course_target_group']     ?? __('All', 'edwiser-bridge');
-        $course_discipline          = $course_options['moodle_course_discipline']       ?? __('General', 'edwiser-bridge');
+        $course_format              = $course_options['moodle_course_format']           ?? __('Lesson', 'rdmcompas-moodle-connector');
+        $course_target_group        = $course_options['moodle_course_target_group']     ?? __('All', 'rdmcompas-moodle-connector');
+        $course_discipline          = $course_options['moodle_course_discipline']       ?? __('General', 'rdmcompas-moodle-connector');
         $course_number_participants = $course_options['moodle_course_number_participants'] ?? null;
         $course_duration            = $course_options['moodle_course_duration']         ?? null;
         $course_required_material   = $course_options['moodle_course_required_material'] ?? null;

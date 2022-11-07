@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -92,7 +92,7 @@ class Eb_Payment_Manager {
 
 					$access_button = '<div class="eb_join_button">
 					<a class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit" href="' . $access_course_url . '" id="wdm-btn">' .
-					esc_html__( 'Access Course', 'edwiser-bridge' ) . '</a></div>';
+					esc_html__( 'Access Course', 'rdmcompas-moodle-connector' ) . '</a></div>';
 				}
 
 				$access_params = array(
@@ -216,7 +216,7 @@ class Eb_Payment_Manager {
 						}
 						$take_course_button = '<div class="eb_join_button">
 						<a class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit" href="' . $closed_button_url . '" id="wdm-btn">' .
-						esc_html__( 'Take this Course', 'edwiser-bridge' ) . '</a></div>';
+						esc_html__( 'Take this Course', 'rdmcompas-moodle-connector' ) . '</a></div>';
 					}
 					$closed_params      = array(
 						'closed_button_url' => $closed_button_url,
@@ -231,7 +231,7 @@ class Eb_Payment_Manager {
 					$login_url          = \app\wisdmlabs\edwiserBridge\wdm_eb_user_account_url( $url_args );
 					$take_course_button = '<div class="eb_join_button">
 					<a class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit" href="' . $login_url . '" id="wdm-btn">' .
-					esc_html__( 'Take this Course', 'edwiser-bridge' ) . '</a></div>';
+					esc_html__( 'Take this Course', 'rdmcompas-moodle-connector' ) . '</a></div>';
 
 					$take_course_button = apply_filters( 'eb_course_login_button', $take_course_button, $login_url );
 				} else {
@@ -257,7 +257,7 @@ class Eb_Payment_Manager {
 								}
 								$take_course_button = '<div class="eb_join_button">
 								<a class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit" href="' . $closed_button_url . '" id="wdm-btn">' .
-								esc_html__( 'Take this Course', 'edwiser-bridge' ) . '</a></div>';
+								esc_html__( 'Take this Course', 'rdmcompas-moodle-connector' ) . '</a></div>';
 							}
 							$closed_params      = array(
 								'closed_button_url' => $closed_button_url,
@@ -269,7 +269,7 @@ class Eb_Payment_Manager {
 							$take_course_button = '<div class="eb_join_button"><form method="post">
 											<input type="hidden" value="' . $course->ID . '" name="course_id">
 											<input type="submit"
-											value="' . esc_html__( 'Take this Course', 'edwiser-bridge' ) . '"
+											value="' . esc_html__( 'Take this Course', 'rdmcompas-moodle-connector' ) . '"
 											name="course_join" class="wdm-btn eb_primary_btn button button-primary et_pb_button et_pb_contact_submit" id="wdm-btn">
 								
 											' . wp_nonce_field( 'eb_course_payment_nonce', 'eb_course_payment_nonce' ) . '
@@ -294,7 +294,7 @@ class Eb_Payment_Manager {
 										returnurl='{$paypal_returnurl}'
 										scriptcode='scriptcode' imagewidth='100px'
 										pagestyle='paypal' lc='{$paypal_country}'
-										cbt='" . esc_html__( 'Complete Your Purchase', 'edwiser-bridge' ) .
+										cbt='" . esc_html__( 'Complete Your Purchase', 'rdmcompas-moodle-connector' ) .
 												"' custom='" . $user_id . "']"
 									)
 								);
@@ -313,7 +313,7 @@ class Eb_Payment_Manager {
 					} else {
 						$not_purchasable    = apply_filters(
 							'eb_course_not_purchasable_notice',
-							esc_html__( 'Course Not Available', 'edwiser-bridge' )
+							esc_html__( 'Course Not Available', 'rdmcompas-moodle-connector' )
 						);
 						$take_course_button = '<div class="eb_join_button course-not-available"><p>' . $not_purchasable . '</p></div>';
 					}

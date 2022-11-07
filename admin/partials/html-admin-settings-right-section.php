@@ -2,7 +2,7 @@
 /**
  * Partial: Page - right section.
  *
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,12 +17,12 @@ $extensions_details = apply_filters(
 		'woo-int'         => array(
 			'name'   => 'Woocommerce Integration',
 			'path'   => 'woocommerce-integration/bridge-woocommerce.php',
-			'doc'    => 'https://example.com/documentation/edwiser-bridge-woocommerce-integration/',
+			'doc'    => 'https://example.com/documentation/rdmcompas-moodle-connector-woocommerce-integration/',
 			'rating' => 'https://example.com/bridge/extensions/woocommerce-integration/documentation/',
 		),
 		'sso'             => array(
 			'name'   => 'Single Sign On',
-			'path'   => 'edwiser-bridge-sso/sso.php',
+			'path'   => 'rdmcompas-moodle-connector-sso/sso.php',
 			'doc'    => 'https://example.com/documentation/single-sign-on/',
 			'rating' => 'https://example.com/bridge/extensions/woocommerce-integration/documentation/',
 		),
@@ -57,26 +57,26 @@ foreach ( $extensions_details as $key => $value ) {
 //	if ( $show_banner ) {
 //		?>
 <!--			<div class='eb-set-as'>-->
-<!--			<h3>Edwiser Bridge PRO</h3>-->
+<!--			<h3>RDM Compas Moodle Connector PRO</h3>-->
 <!--			<div class="eb-set-as-desc">-->
-<!--				<p>Automate your course selling experience with Edwiser Bridge PRO.</p>-->
+<!--				<p>Automate your course selling experience with RDM Compas Moodle Connector PRO.</p>-->
 <!--				<ul>-->
 <!--					<li>4 Noteworthy Course Selling Extensions.</li>-->
 <!--					<li>Power of WooCommerce</li>-->
 <!--					<li>165+ Payment Gateways Unlocked</li>-->
 <!--					<li>10x eLearning Profits</li>-->
 <!--				</ul>-->
-<!--				<a href="https://bit.ly/2NAJ7OW">Check out Edwiser Bridge PRO</a>-->
+<!--				<a href="https://bit.ly/2NAJ7OW">Check out RDM Compas Moodle Connector PRO</a>-->
 <!--				<p>Rated <span class="dashicons dashicons-star-filled"></span>4.5</br>Trusted By <i>5000+</i> happy customers.</p>-->
 <!--			</div>-->
 <!--		</div>-->
 <!--		--><?php //} ?>
 <!--		<div class="eb_settings_help_btn_wrap">-->
-<!--			<button class='eb_open_btn'> --><?php //echo esc_html__( 'Get Help', 'edwiser-bridge' ); ?><!--</button>-->
+<!--			<button class='eb_open_btn'> --><?php //echo esc_html__( 'Get Help', 'rdmcompas-moodle-connector' ); ?><!--</button>-->
 <!--		</div>-->
 <!--		<div class="eb_settings_rate_btn_wrap">-->
-<!--			<a class="eb_open_btn" target="_blank" href="https://wordpress.org/support/plugin/edwiser-bridge/reviews/">-->
-<!--				--><?php //echo esc_html__( 'Rate Us', 'edwiser-bridge' ); ?>
+<!--			<a class="eb_open_btn" target="_blank" href="https://wordpress.org/support/plugin/rdmcompas-moodle-connector/reviews/">-->
+<!--				--><?php //echo esc_html__( 'Rate Us', 'rdmcompas-moodle-connector' ); ?>
 <!--			</a>-->
 <!--		</div>-->
 <!--	</div>-->
@@ -93,21 +93,21 @@ foreach ( $extensions_details as $key => $value ) {
 <!--					<div>-->
 <!--						<ol>-->
 <!--							<li>-->
-<!--								<a href="https://example.com/bridge/documentation/" target="_blank"> --><?php //echo esc_html__( 'Edwiser Bridge', 'edwiser-bridge' ); ?><!--</a>-->
+<!--								<a href="https://example.com/bridge/documentation/" target="_blank"> --><?php //echo esc_html__( 'RDM Compas Moodle Connector', 'rdmcompas-moodle-connector' ); ?><!--</a>-->
 <!--							</li>-->
 <!--						--><?php //echo wp_kses_post( $documentation ); ?>
 <!--						</ol>-->
 <!--					</div>-->
 <!---->
-<!--					<h4 class='eb_setting_help_h4'>--><?php //echo esc_html__( 'FAQs', 'edwiser-bridge' ); ?><!--</h4>-->
+<!--					<h4 class='eb_setting_help_h4'>--><?php //echo esc_html__( 'FAQs', 'rdmcompas-moodle-connector' ); ?><!--</h4>-->
 <!--					<div>-->
-<!--						<a href="https://edwiser.helpscoutdocs.com/collection/85-edwiser-bridge-plugin" target="_blank"> --><?php //echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?><!--  </a>-->
-<!--						--><?php //echo esc_html__( 'to check frequently asked questions.', 'edwiser-bridge' ); ?>
+<!--						<a href="https://edwiser.helpscoutdocs.com/collection/85-rdmcompas-moodle-connector-plugin" target="_blank"> --><?php //echo esc_html__( 'Click here ', 'rdmcompas-moodle-connector' ); ?><!--  </a>-->
+<!--						--><?php //echo esc_html__( 'to check frequently asked questions.', 'rdmcompas-moodle-connector' ); ?>
 <!--					</div>-->
 <!---->
-<!--					<h4 class='eb_setting_help_h4'>--><?php //echo esc_html__( 'Contact Us', 'edwiser-bridge' ); ?><!--</h4>-->
+<!--					<h4 class='eb_setting_help_h4'>--><?php //echo esc_html__( 'Contact Us', 'rdmcompas-moodle-connector' ); ?><!--</h4>-->
 <!--					<div>-->
-<!--						<a href="https://example.com/bridge/" target="_blank"> --><?php //echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?><!--  </a> --><?php //echo esc_html__( 'to chat with us.', 'edwiser-bridge' ); ?>
+<!--						<a href="https://example.com/bridge/" target="_blank"> --><?php //echo esc_html__( 'Click here ', 'rdmcompas-moodle-connector' ); ?><!--  </a> --><?php //echo esc_html__( 'to chat with us.', 'rdmcompas-moodle-connector' ); ?>
 <!--					</div>-->
 <!--				</div>-->
 <!--			</div>-->

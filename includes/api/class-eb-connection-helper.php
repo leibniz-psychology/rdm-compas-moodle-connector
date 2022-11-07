@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -72,7 +72,7 @@ class EBConnectionHelper {
 	 * @since   1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -81,7 +81,7 @@ class EBConnectionHelper {
 	 * @since   1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -174,7 +174,7 @@ class EBConnectionHelper {
 				$success          = 0;
 				$response_message = $this->create_response_message(
 					$request_url,
-					__( 'Please check moodle web service configuration, Got invalid JSON,Check moodle web summary ', 'edwiser-bridge' ) . $url_link
+					__( 'Please check moodle web service configuration, Got invalid JSON,Check moodle web summary ', 'rdmcompas-moodle-connector' ) . $url_link
 				);
 
 			} elseif ( ! empty( $body->exception ) ) {
@@ -192,7 +192,7 @@ class EBConnectionHelper {
 			}
 		} else {
 			$success          = 0;
-				$response_message = $this->create_response_message( $request_url, esc_html__( 'Please check Moodle URL or Moodle plugin configuration !', 'edwiser-bridge' ) );
+				$response_message = $this->create_response_message( $request_url, esc_html__( 'Please check Moodle URL or Moodle plugin configuration !', 'rdmcompas-moodle-connector' ) );
 
 		}
 
@@ -215,18 +215,18 @@ class EBConnectionHelper {
 		$success          = 1;
 		$response_message = '<div>';
 
-		$response_message .= '<div>' . esc_html__( 'Below are the functions which don\'t have access to the web service you created. This is due to :', 'edwiser-bridge' ) . '</div>
+		$response_message .= '<div>' . esc_html__( 'Below are the functions which don\'t have access to the web service you created. This is due to :', 'rdmcompas-moodle-connector' ) . '</div>
 								<div>
 									<div>
 										<ol>
-											<li>' . esc_html__( 'Function is not added to the web service', 'edwiser-bridge' ) . '</li>
-											<li>' . esc_html__( 'Authorised user don\'t have enough capabilities i.e he is not admin', 'edwiser-bridge' ) . '</li>
-											<li>' . esc_html__( 'Edwiser Moodle extensions are not installed or have the lower version', 'edwiser-bridge' ) . '</li>
+											<li>' . esc_html__( 'Function is not added to the web service', 'rdmcompas-moodle-connector' ) . '</li>
+											<li>' . esc_html__( 'Authorised user don\'t have enough capabilities i.e he is not admin', 'rdmcompas-moodle-connector' ) . '</li>
+											<li>' . esc_html__( 'Edwiser Moodle extensions are not installed or have the lower version', 'rdmcompas-moodle-connector' ) . '</li>
 										</ol>
 									</div>
 								</div>
 								<div>
-									<div>' . esc_html__( 'Services:', 'edwiser-bridge' ) . '</div>
+									<div>' . esc_html__( 'Services:', 'rdmcompas-moodle-connector' ) . '</div>
 									<div>
 										';
 
@@ -264,7 +264,7 @@ class EBConnectionHelper {
 									</div>';
 			// Add new message here.
 
-			$response_message .= esc_html__( 'You can check added webservice here ', 'edwiser-bridge' ) . '<a href="' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/admin/settings.php?section=externalservices">' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/admin/settings.php?section=externalservices</a>' . esc_html__( ' or you can directly create new token and webservice in our Moodle edwiser settings here ', 'edwiser-bridge' ) . '<a href="' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . 'local/edwiserbridge/edwiserbridge.php?tab=service">' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . 'local/edwiserbridge/edwiserbridge.php?tab=service</a>';
+			$response_message .= esc_html__( 'You can check added webservice here ', 'rdmcompas-moodle-connector' ) . '<a href="' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/admin/settings.php?section=externalservices">' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . '/admin/settings.php?section=externalservices</a>' . esc_html__( ' or you can directly create new token and webservice in our Moodle edwiser settings here ', 'rdmcompas-moodle-connector' ) . '<a href="' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . 'local/edwiserbridge/edwiserbridge.php?tab=service">' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_moodle_url() . 'local/edwiserbridge/edwiserbridge.php?tab=service</a>';
 
 			$response_message .= '</div>';
 		}
@@ -283,23 +283,23 @@ class EBConnectionHelper {
 	public function create_response_message( $url, $message ) {
 		$msg = '<div>
                         <div class="eb_connection_short_msg">
-                            ' . esc_html__( 'Test Connection failed, To check more information about issue click', 'edwiser-bridge' ) . ' <span class="eb_test_connection_log_open"> ' . esc_html__( 'here', 'edwiser-bridge') . ' </span>.
+                            ' . esc_html__( 'Test Connection failed, To check more information about issue click', 'rdmcompas-moodle-connector' ) . ' <span class="eb_test_connection_log_open"> ' . esc_html__( 'here', 'rdmcompas-moodle-connector') . ' </span>.
                         </div>
 
                         <div class="eb_test_connection_log">
                         	<div style="display:flex;">
 	                            <div class="eb_connection_err_response">
-	                                <h4> ' . esc_html__( 'An issue is detected.', 'edwiser-bridge' ) . ' </h4>
+	                                <h4> ' . esc_html__( 'An issue is detected.', 'rdmcompas-moodle-connector' ) . ' </h4>
 	                                <div style="display:flex;">
-	                                	<div> <b>' . esc_html__( 'Status : ', 'edwiser-bridge' ) . '</b></div>
-	                                	<div>' . esc_html__( 'Connection Failed', 'edwiser-bridge' ) . ' </div>
+	                                	<div> <b>' . esc_html__( 'Status : ', 'rdmcompas-moodle-connector' ) . '</b></div>
+	                                	<div>' . esc_html__( 'Connection Failed', 'rdmcompas-moodle-connector' ) . ' </div>
 	                                </div>
 	                                <div>
-	                                	<div><b>' . esc_html__( 'Url : ', 'edwiser-bridge' ) . '</b></div>
+	                                	<div><b>' . esc_html__( 'Url : ', 'rdmcompas-moodle-connector' ) . '</b></div>
 	                                	<div class="eb_test_conct_log_url">' . $url .'</div>
 	                                </div>
 	                                <div>
-	                                	<div><b>' . esc_html__( 'Response : ', 'edwiser-bridge' ) . '</b></div>
+	                                	<div><b>' . esc_html__( 'Response : ', 'rdmcompas-moodle-connector' ) . '</b></div>
 	                                	<div>' . $message .'</div>
 	                                </div>
 	                            </div>
@@ -380,7 +380,7 @@ class EBConnectionHelper {
 			}
 		} else {
 			$success          = 0;
-			$response_message = esc_html__( 'Please check Moodle connection details.', 'edwiser-bridge' );
+			$response_message = esc_html__( 'Please check Moodle connection details.', 'rdmcompas-moodle-connector' );
 		}
 
 		return array(
@@ -463,7 +463,7 @@ class EBConnectionHelper {
 			}
 		} else {
 			$success          = 0;
-			$response_message = esc_html__( 'Please check Moodle URL !', 'edwiser-bridge' );
+			$response_message = esc_html__( 'Please check Moodle URL !', 'rdmcompas-moodle-connector' );
 		}
 
 		return array(

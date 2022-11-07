@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/public
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/public
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -50,7 +50,7 @@ class Eb_Shortcodes {
 		$function,
 		$atts = array(),
 		$wrapper = array(
-			'class'  => 'edwiser-bridge',
+			'class'  => 'rdmcompas-moodle-connector',
 			'before' => null,
 			'after'  => null,
 		)

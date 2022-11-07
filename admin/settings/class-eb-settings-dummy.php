@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Eb_Settings_Dummy' ) ) {
 			if ( ! is_plugin_active( 'selective-synchronization/selective-synchronization.php' ) ) {
 				new Eb_Settings_Dummy_Sel_Sync();
 			}
-			if ( ! is_plugin_active( 'edwiser-bridge-sso/sso.php' ) ) {
+			if ( ! is_plugin_active( 'rdmcompas-moodle-connector-sso/sso.php' ) ) {
 				new Eb_Settings_Dummy_SSO();
 			}
 		}
@@ -44,7 +44,7 @@ if ( ! class_exists( 'Eb_Settings_Dummy' ) ) {
 		public static function disp_setting_img( $data ) {
 			?>
 			<div class="eb-dummy-settings">
-				<img alt="<?php echo esc_html( $data['img_alt_text'] ); ?>" src="<?php echo esc_url( plugins_url( 'edwiser-bridge/admin/assets/images/' . $data['img_name'] ) ); ?>"/>
+				<img alt="<?php echo esc_html( $data['img_alt_text'] ); ?>" src="<?php echo esc_url( plugins_url( 'rdmcompas-moodle-connector/admin/assets/images/' . $data['img_name'] ) ); ?>"/>
 				<div class="eb-dummy-set-wrap">
 					<div class="eb-dummy-set-cta">
 						<h3><?php echo esc_html( $data['cta_msg'] ); ?></h3>
@@ -78,15 +78,15 @@ if ( ! class_exists( 'Eb_Settings_Dummy_Woo_Int' ) ) {
 		 */
 		public function __construct() {
 			$this->setting_data = array(
-				'img_alt_text' => __( 'Woo Integration setting image not found', 'edwiser-bridge' ),
+				'img_alt_text' => __( 'Woo Integration setting image not found', 'rdmcompas-moodle-connector' ),
 				'img_name'     => 'woo_int.png',
 				'go_to_url'    => 'https://bit.ly/2YWsjEj',
-				'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-				'cta_msg'      => __( 'Sell Moodle Courses via 160+ Payment Gateways with WooCommerce.', 'edwiser-bridge' ),
+				'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+				'cta_msg'      => __( 'Sell Moodle Courses via 160+ Payment Gateways with WooCommerce.', 'rdmcompas-moodle-connector' ),
 			);
 
 			$this->_id   = 'woo_int_dummy';
-			$this->label = __( 'Woo Integration', 'edwiser-bridge' );
+			$this->label = __( 'Woo Integration', 'rdmcompas-moodle-connector' );
 			add_filter( 'eb_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'eb_settings_' . $this->_id, array( $this, 'output' ) );
 			add_filter( 'eb_get_sections_synchronization', array( $this, 'prod_sections' ), 10, 1 );
@@ -106,12 +106,12 @@ if ( ! class_exists( 'Eb_Settings_Dummy_Woo_Int' ) ) {
 				$result = array_merge(
 					array_slice( $section, 0, 1 ),
 					array(
-						'product_data_dummy' => __( 'Products', 'edwiser-bridge' ),
+						'product_data_dummy' => __( 'Products', 'rdmcompas-moodle-connector' ),
 					),
 					array_slice( $section, 1, null )
 				);
 			} else {
-				$result = array( 'product_data_dummy' => __( 'Products', 'edwiser-bridge' ) );
+				$result = array( 'product_data_dummy' => __( 'Products', 'rdmcompas-moodle-connector' ) );
 			}
 			return $result;
 		}
@@ -129,11 +129,11 @@ if ( ! class_exists( 'Eb_Settings_Dummy_Woo_Int' ) ) {
 		public function prod_sync_setting( $settings, $current_section ) {
 			if ( 'product_data_dummy' === $current_section ) {
 				$data     = array(
-					'img_alt_text' => __( 'Woo Integration setting not found', 'edwiser-bridge' ),
+					'img_alt_text' => __( 'Woo Integration setting not found', 'rdmcompas-moodle-connector' ),
 					'img_name'     => 'woo_int_prod_sync.png',
 					'go_to_url'    => 'https://bit.ly/2YWsjEj',
-					'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-					'cta_msg'      => __( 'Sell Moodle Courses via 160+ Payment Gateways with WooCommerce.', 'edwiser-bridge' ),
+					'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+					'cta_msg'      => __( 'Sell Moodle Courses via 160+ Payment Gateways with WooCommerce.', 'rdmcompas-moodle-connector' ),
 				);
 				$settings = apply_filters(
 					'bridge_woo_product_synchronization_settings',
@@ -204,15 +204,15 @@ if ( ! class_exists( 'Eb_Settings_Dummy_Sel_Sync' ) ) {
 		 */
 		public function __construct() {
 			$this->setting_data = array(
-				'img_alt_text' => __( 'Selective Sync setting not found', 'edwiser-bridge' ),
+				'img_alt_text' => __( 'Selective Sync setting not found', 'rdmcompas-moodle-connector' ),
 				'img_name'     => 'selective-synch.png',
 				'go_to_url'    => 'https://bit.ly/3tNRmrJ',
-				'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-				'cta_msg'      => __( 'PICK and CHOOSE the courses and users to synchronize from Moodle to WordPress.', 'edwiser-bridge' ),
+				'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+				'cta_msg'      => __( 'PICK and CHOOSE the courses and users to synchronize from Moodle to WordPress.', 'rdmcompas-moodle-connector' ),
 			);
 
 			$this->_id   = 'sel_sync_dummy';
-			$this->label = __( 'Selective Sync', 'edwiser-bridge' );
+			$this->label = __( 'Selective Sync', 'rdmcompas-moodle-connector' );
 			add_filter( 'eb_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'eb_settings_' . $this->_id, array( $this, 'output' ) );
 			add_action( 'eb_sections_' . $this->_id, array( $this, 'output_sections' ) );
@@ -245,19 +245,19 @@ if ( ! class_exists( 'Eb_Settings_Dummy_Sel_Sync' ) ) {
 		public function get_settings( $current_section = '' ) {
 			if ( 'users' === $current_section ) {
 				$this->setting_data = array(
-					'img_alt_text' => __( 'Selective Sync user synchronisation setting not found', 'edwiser-bridge' ),
+					'img_alt_text' => __( 'Selective Sync user synchronisation setting not found', 'rdmcompas-moodle-connector' ),
 					'img_name'     => 'selective_users.png',
 					'go_to_url'    => 'https://bit.ly/3tNRmrJ',
-					'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-					'cta_msg'      => __( 'PICK and CHOOSE the courses and users to synchronize from Moodle to WordPress.', 'edwiser-bridge' ),
+					'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+					'cta_msg'      => __( 'PICK and CHOOSE the courses and users to synchronize from Moodle to WordPress.', 'rdmcompas-moodle-connector' ),
 				);
 			} else {
 				$this->setting_data = array(
-					'img_alt_text' => __( 'Selective Sync Course synchronisation setting not found', 'edwiser-bridge' ),
+					'img_alt_text' => __( 'Selective Sync Course synchronisation setting not found', 'rdmcompas-moodle-connector' ),
 					'img_name'     => 'selective_sync.png',
 					'go_to_url'    => 'https://bit.ly/3tNRmrJ',
-					'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-					'cta_msg'      => __( 'PICK and CHOOSE the courses and users to synchronize from Moodle to WordPress.', 'edwiser-bridge' ),
+					'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+					'cta_msg'      => __( 'PICK and CHOOSE the courses and users to synchronize from Moodle to WordPress.', 'rdmcompas-moodle-connector' ),
 				);
 			}
 			$settings = apply_filters(
@@ -281,8 +281,8 @@ if ( ! class_exists( 'Eb_Settings_Dummy_Sel_Sync' ) ) {
 		 */
 		public function get_sections() {
 			$sections = array(
-				''      => __( 'Courses', 'edwiser-bridge' ),
-				'users' => __( 'Users', 'edwiser-bridge' ),
+				''      => __( 'Courses', 'rdmcompas-moodle-connector' ),
+				'users' => __( 'Users', 'rdmcompas-moodle-connector' ),
 			);
 
 			$new_sections = apply_filters( 'eb_get_sections_' . $this->_id, $sections );
@@ -316,14 +316,14 @@ if ( ! class_exists( 'Eb_Settings_Dummy_SSO' ) ) {
 		 */
 		public function __construct() {
 			$this->setting_data = array(
-				'img_alt_text' => __( 'Single Sign On setting not found', 'edwiser-bridge' ),
+				'img_alt_text' => __( 'Single Sign On setting not found', 'rdmcompas-moodle-connector' ),
 				'img_name'     => 'sso.png',
 				'go_to_url'    => 'https://bit.ly/3tICgDx',
-				'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-				'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'edwiser-bridge' ),
+				'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+				'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'rdmcompas-moodle-connector' ),
 			);
 			$this->_id          = 'sso-dummy';
-			$this->label        = __( 'Single Sign On', 'edwiser-bridge' );
+			$this->label        = __( 'Single Sign On', 'rdmcompas-moodle-connector' );
 			add_filter( 'eb_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'eb_settings_' . $this->_id, array( $this, 'output' ) );
 			add_action( 'eb_sections_' . $this->_id, array( $this, 'output_sections' ) );
@@ -356,27 +356,27 @@ if ( ! class_exists( 'Eb_Settings_Dummy_SSO' ) ) {
 		public function get_settings( $current_section = '' ) {
 			if ( 'redirection' === $current_section ) {
 				$this->setting_data = array(
-					'img_alt_text' => __( 'Single Sign On setting not found', 'edwiser-bridge' ),
+					'img_alt_text' => __( 'Single Sign On setting not found', 'rdmcompas-moodle-connector' ),
 					'img_name'     => 'sso_redirection.png',
 					'go_to_url'    => 'https://bit.ly/3tICgDx',
-					'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-					'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'edwiser-bridge' ),
+					'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+					'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'rdmcompas-moodle-connector' ),
 				);
 			} elseif ( 'social_login' === $current_section ) {
 				$this->setting_data = array(
-					'img_alt_text' => __( 'Single Sign On setting not found', 'edwiser-bridge' ),
+					'img_alt_text' => __( 'Single Sign On setting not found', 'rdmcompas-moodle-connector' ),
 					'img_name'     => 'sso_social.png',
 					'go_to_url'    => 'https://bit.ly/3tICgDx',
-					'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-					'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'edwiser-bridge' ),
+					'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+					'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'rdmcompas-moodle-connector' ),
 				);
 			} else {
 				$this->setting_data = array(
-					'img_alt_text' => __( 'Single Sign On setting not found', 'edwiser-bridge' ),
+					'img_alt_text' => __( 'Single Sign On setting not found', 'rdmcompas-moodle-connector' ),
 					'img_name'     => 'sso.png',
 					'go_to_url'    => 'https://bit.ly/3tICgDx',
-					'btn_text'     => __( 'View Details', 'edwiser-bridge' ),
-					'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'edwiser-bridge' ),
+					'btn_text'     => __( 'View Details', 'rdmcompas-moodle-connector' ),
+					'cta_msg'      => __( 'Moodle WordPress Single Sign-On for quick & easy login.', 'rdmcompas-moodle-connector' ),
 				);
 			}
 			$settings = apply_filters(
@@ -400,9 +400,9 @@ if ( ! class_exists( 'Eb_Settings_Dummy_SSO' ) ) {
 		 */
 		public function get_sections() {
 			$sections = array(
-				''             => __( 'General', 'edwiser-bridge' ),
-				'redirection'  => __( 'Redirection', 'edwiser-bridge' ),
-				'social_login' => __( 'Social Login', 'edwiser-bridge' ),
+				''             => __( 'General', 'rdmcompas-moodle-connector' ),
+				'redirection'  => __( 'Redirection', 'rdmcompas-moodle-connector' ),
+				'social_login' => __( 'Social Login', 'rdmcompas-moodle-connector' ),
 			);
 
 			$new_sections = apply_filters( 'eb_get_sections_' . $this->_id, $sections );

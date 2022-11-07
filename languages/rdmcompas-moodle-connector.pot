@@ -1,9 +1,9 @@
-# Copyright (C) 2019 Edwiser Bridge - WordPress Moodle LMS Integration
-# This file is distributed under the same license as the Edwiser Bridge - WordPress Moodle LMS Integration package.
+# Copyright (C) 2019 RDM Compas Moodle Connector - WordPress Moodle LMS Integration
+# This file is distributed under the same license as the RDM Compas Moodle Connector - WordPress Moodle LMS Integration package.
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Edwiser Bridge - WordPress Moodle LMS Integration\n"
+"Project-Id-Version: RDM Compas Moodle Connector - WordPress Moodle LMS Integration\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-21 13:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.5.2; wp-5.7.2\n"
-"X-Domain: edwiser-bridge"
+"X-Domain: rdmcompas-moodle-connector"
 
 
 #: admin/class-eb-admin-menus.php:45 admin/class-eb-admin-menus.php:46
@@ -26,7 +26,7 @@ msgid "Orders"
 msgstr ""
 
 #: admin/class-eb-admin-menus.php:60 admin/class-eb-admin-menus.php:61
-#: edwiser-bridge.php:71
+#: rdmcompas-moodle-connector.php:71
 msgid "Settings"
 msgstr ""
 
@@ -444,11 +444,11 @@ msgid "Unlink User"
 msgstr ""
 
 #: admin/class-eb-welcome.php:49
-msgid "About Edwiser Bridge"
+msgid "About RDM Compas Moodle Connector"
 msgstr ""
 
 #: admin/class-eb-welcome.php:50 admin/class-eb-welcome.php:215
-msgid "Welcome to Edwiser Bridge"
+msgid "Welcome to RDM Compas Moodle Connector"
 msgstr ""
 
 #: admin/class-eb-welcome.php:222
@@ -458,7 +458,7 @@ msgstr ""
 
 #: admin/class-eb-welcome.php:242
 msgid ""
-"Thanks for installing Edwiser Bridge! Integrating WordPress with Moodle has "
+"Thanks for installing RDM Compas Moodle Connector! Integrating WordPress with Moodle has "
 "never been so simple. We hope you enjoy using it."
 msgstr ""
 
@@ -467,12 +467,12 @@ msgid "Download Moodle Plugin"
 msgstr ""
 
 #: admin/class-eb-welcome.php:252
-msgid "Get the latest updates on Edwiser Bridge in Your Inbox!"
+msgid "Get the latest updates on RDM Compas Moodle Connector in Your Inbox!"
 msgstr ""
 
 #: admin/class-eb-welcome.php:257
 msgid ""
-"Stay updated with the latest features in Edwiser Bridge and receive early-"
+"Stay updated with the latest features in RDM Compas Moodle Connector and receive early-"
 "bird discounts on upcoming premium add ons."
 msgstr ""
 
@@ -485,7 +485,7 @@ msgid "Subscribe"
 msgstr ""
 
 #: admin/class-eb-welcome.php:275
-msgid "Thanks for subscribing to Edwiser Bridge Updates & Notifications."
+msgid "Thanks for subscribing to RDM Compas Moodle Connector Updates & Notifications."
 msgstr ""
 
 #: admin/class-eb-welcome.php:281
@@ -505,11 +505,11 @@ msgid "Sorry, there is a problem!"
 msgstr ""
 
 #: admin/class-eb-welcome.php:342 admin/settings/class-eb-settings-help.php:72
-msgid "Edwiser Bridge Plugin Subscription Notification"
+msgid "RDM Compas Moodle Connector Plugin Subscription Notification"
 msgstr ""
 
 #: admin/class-eb-welcome.php:345
-msgid "Edwiser Bridge subscription user details:"
+msgid "RDM Compas Moodle Connector subscription user details:"
 msgstr ""
 
 #: admin/class-eb-welcome.php:346
@@ -701,7 +701,7 @@ msgid "Get License"
 msgstr ""
 
 #: admin/licensing/class-licensing-settings.php:428
-msgid "If you wish to purchase Edwiser Bridge PRO then click here"
+msgid "If you wish to purchase RDM Compas Moodle Connector PRO then click here"
 msgstr ""
 
 #: admin/licensing/class-licensing-settings.php:429
@@ -711,7 +711,7 @@ msgstr ""
 #: admin/licensing/class-licensing-settings.php:433
 msgid ""
 "If you already own one of the extensions, then click here to upgrade to "
-"Edwiser Bridge PRO"
+"RDM Compas Moodle Connector PRO"
 msgstr ""
 
 #: admin/licensing/class-licensing-settings.php:434
@@ -736,13 +736,13 @@ msgid "Rate Us"
 msgstr ""
 
 #: admin/partials/html-admin-settings-right-section.php:92
-#: edwiser-bridge.php:93
+#: rdmcompas-moodle-connector.php:93
 msgid "Documentation"
 msgstr ""
 
 #: admin/partials/html-admin-settings-right-section.php:96
-#: edwiser-bridge.php:146
-msgid "Edwiser Bridge"
+#: rdmcompas-moodle-connector.php:146
+msgid "RDM Compas Moodle Connector"
 msgstr ""
 
 #: admin/partials/html-admin-settings-right-section.php:102
@@ -776,7 +776,7 @@ msgid "Wordpress Plugins"
 msgstr ""
 
 #: admin/settings/class-eb-bridge-summary.php:87
-msgid "Edwiser Bridge :"
+msgid "RDM Compas Moodle Connector :"
 msgstr ""
 
 #: admin/settings/class-eb-bridge-summary.php:111
@@ -784,7 +784,7 @@ msgid "Moodle Plugins"
 msgstr ""
 
 #: admin/settings/class-eb-bridge-summary.php:116
-msgid "Moodle Edwiser Bridge :"
+msgid "Moodle RDM Compas Moodle Connector :"
 msgstr ""
 
 #: admin/settings/class-eb-bridge-summary.php:121
@@ -800,7 +800,7 @@ msgid "Check update again"
 msgstr ""
 
 #: admin/settings/class-eb-bridge-summary.php:135
-msgid "Edwiser Bridge Plugin Summary"
+msgid "RDM Compas Moodle Connector Plugin Summary"
 msgstr ""
 
 #: admin/settings/class-eb-bridge-summary.php:136
@@ -1435,7 +1435,7 @@ msgid "Shortcodes"
 msgstr ""
 
 #: admin/settings/class-eb-settings-shortcode-doc.php:58
-msgid "Edwiser Bridge Shortcodes"
+msgid "RDM Compas Moodle Connector Shortcodes"
 msgstr ""
 
 #: admin/settings/class-eb-settings-shortcode-doc.php:61
@@ -1457,7 +1457,7 @@ msgstr ""
 
 #: admin/settings/class-eb-settings-shortcode-doc.php:75
 msgid ""
-"This shortcode shows the list of the edwiser bridge courses. You can use "
+"This shortcode shows the list of the RDM Compas Moodle Connector courses. You can use "
 "this shortcode on any page. This shortcode can take following parameters:"
 msgstr ""
 
@@ -1592,15 +1592,15 @@ msgid ""
 "page!"
 msgstr ""
 
-#: edwiser-bridge.php:92
-msgid "Edwiser Bridge Documentation"
+#: rdmcompas-moodle-connector.php:92
+msgid "RDM Compas Moodle Connector Documentation"
 msgstr ""
 
-#: edwiser-bridge.php:145
+#: rdmcompas-moodle-connector.php:145
 msgid "Please update all "
 msgstr ""
 
-#: edwiser-bridge.php:145
+#: rdmcompas-moodle-connector.php:145
 msgid " extensions to latest version."
 msgstr ""
 
@@ -1761,7 +1761,7 @@ msgstr ""
 
 #: includes/class-eb-admin-notice-handler.php:118
 msgid ""
-"Thanks for updating to the latest version of Edwiser Bridge plugin, please "
+"Thanks for updating to the latest version of RDM Compas Moodle Connector plugin, please "
 "make sure you have also installed our associated Moodle Plugin to avoid any "
 "malfunctioning."
 msgstr ""
@@ -1793,7 +1793,7 @@ msgstr ""
 
 #: includes/class-eb-admin-notice-handler.php:144
 msgid ""
-"Thanks for updating or installing Edwiser Bridge plugin, please update "
+"Thanks for updating or installing RDM Compas Moodle Connector plugin, please update "
 "Moodle Plugin to avoid any malfunctioning."
 msgstr ""
 
@@ -1810,7 +1810,7 @@ msgid "Avail Offer Now!"
 msgstr ""
 
 #: includes/class-eb-admin-notice-handler.php:252
-msgid "Enjoying Edwiser bridge, Please  "
+msgid "Enjoying RDM Compas Moodle Connector, Please  "
 msgstr ""
 
 #: includes/class-eb-admin-notice-handler.php:254
@@ -1831,9 +1831,9 @@ msgstr ""
 
 #: includes/class-eb-admin-notice-handler.php:294
 msgid ""
-"If you have overridden the standard Edwiser Bridge templates previously then "
+"If you have overridden the standard RDM Compas Moodle Connector templates previously then "
 "please make sure that your templates are made compatible with the NEW "
-"Edwiser Bridge template. It may cause CSS breaks if not done. "
+"RDM Compas Moodle Connector template. It may cause CSS breaks if not done. "
 msgstr ""
 
 #: includes/class-eb-admin-notice-handler.php:298
@@ -2280,7 +2280,7 @@ msgstr ""
 
 #: includes/class-eb-gdpr-compatibility.php:134
 #: includes/class-eb-gdpr-compatibility.php:193
-msgid "Edwiser Bridge Plugin"
+msgid "RDM Compas Moodle Connector Plugin"
 msgstr ""
 
 #: includes/class-eb-gdpr-compatibility.php:168
@@ -2641,7 +2641,7 @@ msgstr ""
 
 #: includes/class-eb-post-types.php:112
 msgctxt "Admin menu name"
-msgid "Edwiser Bridge"
+msgid "RDM Compas Moodle Connector"
 msgstr ""
 
 #: includes/class-eb-post-types.php:114

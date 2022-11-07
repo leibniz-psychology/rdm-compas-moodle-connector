@@ -7,7 +7,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -67,12 +67,12 @@ class Eb_I18n {
 		$notice_dismissed = get_option( 'eb_rename_file_notice_dismissed' );
 		if ( 'false' == $notice_dismissed ) {
 			$eb_renamed_lang_files = get_option('eb_renamed_lang_files');
-			if($eb_renamed_lang_files != 'true' && 'edwiser-bridge' === $domain && is_admin()) {
+			if($eb_renamed_lang_files != 'true' && 'rdmcompas-moodle-connector' === $domain && is_admin()) {
 				$this->rename_langauge_files();
 			}
 		}
 
-		if ( 'edwiser-bridge' === $domain && 0 === strpos( $mofile, WP_LANG_DIR . '/plugins/' ) && ! file_exists( $mofile ) ) {
+		if ( 'rdmcompas-moodle-connector' === $domain && 0 === strpos( $mofile, WP_LANG_DIR . '/plugins/' ) && ! file_exists( $mofile ) ) {
 			$mofile = dirname( $mofile ) . DIRECTORY_SEPARATOR . str_replace( $domain, 'eb-textdomain', basename( $mofile ) );
 		}
 
@@ -115,13 +115,13 @@ class Eb_I18n {
 			foreach($fileinfo as $dir=>$files) {
 				$msg .= '<li>Go to <strong>' . $dir . '</strong> directory and rename the following files : <br>';
 				foreach($files as $file) {
-					$msg .= 'rename from ' . $file . ' to ' . str_replace('eb-textdomain', 'edwiser-bridge', $file) . '<br>';
+					$msg .= 'rename from ' . $file . ' to ' . str_replace('eb-textdomain', 'rdmcompas-moodle-connector', $file) . '<br>';
 				}
 				$msg .= '</li>';
 			}
 			$redirection = add_query_arg( 'eb-rename-lang-notice-dismissed', true );
 			$class = 'notice notice-error ';
-			$message = '<h3>Edwiser Bridge is unable to rename translation files. please rename files manually</h3>
+			$message = '<h3>RDM Compas Moodle Connector is unable to rename translation files. please rename files manually</h3>
 			<p> Please rename the following files manually:</p>
 			<ul>
 				'.$msg.'
@@ -134,7 +134,7 @@ class Eb_I18n {
 	}
 
 	/*
-	 * scan langauge/loco directory and rename all files with eb-textdomain to edwiser-bridge
+	 * scan langauge/loco directory and rename all files with eb-textdomain to rdmcompas-moodle-connector
 	 *
 	 * @since    2.1.6
 	 */
@@ -146,7 +146,7 @@ class Eb_I18n {
 
 		$lang_dir = WP_LANG_DIR . DIRECTORY_SEPARATOR . 'plugins';
 		$loco_dir = WP_LANG_DIR . DIRECTORY_SEPARATOR . 'loco' . DIRECTORY_SEPARATOR . 'language';
-		$plugin_dir = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'edwiser-bridge' . DIRECTORY_SEPARATOR . 'languages';
+		$plugin_dir = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'rdmcompas-moodle-connector' . DIRECTORY_SEPARATOR . 'languages';
 
 		$files = array();
 		if(file_exists($lang_dir)) {
@@ -177,7 +177,7 @@ class Eb_I18n {
 		$failed_files = array();
 		foreach ($files as $file) {
 			if(strpos($file, 'eb-textdomain') !== false){
-				$new_file = str_replace('eb-textdomain', 'edwiser-bridge', $file);
+				$new_file = str_replace('eb-textdomain', 'rdmcompas-moodle-connector', $file);
 				try {
 					if(is_writable($file)) {
 						rename($file, $new_file);

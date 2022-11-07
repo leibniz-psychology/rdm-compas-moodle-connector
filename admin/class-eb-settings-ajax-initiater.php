@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -135,7 +135,7 @@ class Eb_Settings_Ajax_Initiater {
 		$response          = $connection_helper->connection_test_helper( $url, $token );
 
 		if ( 0 === $response['success'] ) {
-			// $response['response_message'] .= esc_html__( ' : to know more about this error', 'edwiser-bridge' ) . "<a href='https://edwiser.helpscoutdocs.com/collection/85-edwiser-bridge-plugin' target='_blank'>" . esc_html__( ' click here', 'edwiser-bridge' ) . '</a>';
+			// $response['response_message'] .= esc_html__( ' : to know more about this error', 'rdmcompas-moodle-connector' ) . "<a href='https://edwiser.helpscoutdocs.com/collection/85-rdmcompas-moodle-connector-plugin' target='_blank'>" . esc_html__( ' click here', 'rdmcompas-moodle-connector' ) . '</a>';
 		}
 
 		echo wp_json_encode( $response );

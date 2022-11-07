@@ -8,8 +8,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/public
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/public
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -155,7 +155,7 @@ class Eb_Public {
 			$this->plugin_name . '-edit-user-profile',
 			'ebEditProfile',
 			array(
-				'default' => __( '- Select Country -', 'edwiser-bridge' ),
+				'default' => __( '- Select Country -', 'rdmcompas-moodle-connector' ),
 			)
 		);
 
@@ -172,12 +172,12 @@ class Eb_Public {
 			array(
 				'ajaxurl'          => admin_url( 'admin-ajax.php' ),
 				'nonce'            => $nonce,
-				'msg_val_fn'       => __( "The field 'First Name' cannot be left blank", 'edwiser-bridge' ),
-				'msg_val_ln'       => __( "The field 'Last Name' cannot be left blank", 'edwiser-bridge' ),
-				'msg_val_mail'     => __( "The field 'Email' cannot be left blank", 'edwiser-bridge' ),
-				'msg_ordr_pro_err' => __( 'Problems in processing your order, Please try later.', 'edwiser-bridge' ),
-				'msg_processing'   => __( 'Processing...', 'edwiser-bridge' ),
-				'access_course'    => __( 'Access Course', 'edwiser-bridge' ),
+				'msg_val_fn'       => __( "The field 'First Name' cannot be left blank", 'rdmcompas-moodle-connector' ),
+				'msg_val_ln'       => __( "The field 'Last Name' cannot be left blank", 'rdmcompas-moodle-connector' ),
+				'msg_val_mail'     => __( "The field 'Email' cannot be left blank", 'rdmcompas-moodle-connector' ),
+				'msg_ordr_pro_err' => __( 'Problems in processing your order, Please try later.', 'rdmcompas-moodle-connector' ),
+				'msg_processing'   => __( 'Processing...', 'rdmcompas-moodle-connector' ),
+				'access_course'    => __( 'Access Course', 'rdmcompas-moodle-connector' ),
 			)
 		);
 
@@ -186,25 +186,25 @@ class Eb_Public {
 			$this->plugin_name,
 			'ebDataTable',
 			array(
-				'search'          => __( 'Search:', 'edwiser-bridge' ),
-				'all'             => __( 'All', 'edwiser-bridge' ),
-				'sEmptyTable'     => __( 'No data available in table', 'edwiser-bridge' ),
-				'sLoadingRecords' => __( 'Loading...', 'edwiser-bridge' ),
-				'sSearch'         => __( 'Search', 'edwiser-bridge' ),
-				'sZeroRecords'    => __( 'No matching records found', 'edwiser-bridge' ),
-				'sProcessing'     => __( 'Processing...', 'edwiser-bridge' ),
-				'sInfo'           => __( 'Showing _START_ to _END_ of _TOTAL_ entries', 'edwiser-bridge' ),
-				'sInfoEmpty'      => __( 'Showing 0 to 0 of 0 entries', 'edwiser-bridge' ),
-				'sInfoFiltered'   => __( 'filtered from _MAX_ total entries', 'edwiser-bridge' ),
+				'search'          => __( 'Search:', 'rdmcompas-moodle-connector' ),
+				'all'             => __( 'All', 'rdmcompas-moodle-connector' ),
+				'sEmptyTable'     => __( 'No data available in table', 'rdmcompas-moodle-connector' ),
+				'sLoadingRecords' => __( 'Loading...', 'rdmcompas-moodle-connector' ),
+				'sSearch'         => __( 'Search', 'rdmcompas-moodle-connector' ),
+				'sZeroRecords'    => __( 'No matching records found', 'rdmcompas-moodle-connector' ),
+				'sProcessing'     => __( 'Processing...', 'rdmcompas-moodle-connector' ),
+				'sInfo'           => __( 'Showing _START_ to _END_ of _TOTAL_ entries', 'rdmcompas-moodle-connector' ),
+				'sInfoEmpty'      => __( 'Showing 0 to 0 of 0 entries', 'rdmcompas-moodle-connector' ),
+				'sInfoFiltered'   => __( 'filtered from _MAX_ total entries', 'rdmcompas-moodle-connector' ),
 				'sInfoPostFix'    => '',
-				'sInfoThousands'  => __( ',', 'edwiser-bridge' ),
-				'sLengthMenu'     => __( 'Show _MENU_ entries', 'edwiser-bridge' ),
-				'sFirst'          => __( 'First', 'edwiser-bridge' ),
-				'sLast'           => __( 'Last', 'edwiser-bridge' ),
-				'sNext'           => __( 'Next', 'edwiser-bridge' ),
-				'sPrevious'       => __( 'Previous', 'edwiser-bridge' ),
-				'sSortAscending'  => __( ': activate to sort column ascending', 'edwiser-bridge' ),
-				'sSortDescending' => __( ': activate to sort column descending', 'edwiser-bridge' ),
+				'sInfoThousands'  => __( ',', 'rdmcompas-moodle-connector' ),
+				'sLengthMenu'     => __( 'Show _MENU_ entries', 'rdmcompas-moodle-connector' ),
+				'sFirst'          => __( 'First', 'rdmcompas-moodle-connector' ),
+				'sLast'           => __( 'Last', 'rdmcompas-moodle-connector' ),
+				'sNext'           => __( 'Next', 'rdmcompas-moodle-connector' ),
+				'sPrevious'       => __( 'Previous', 'rdmcompas-moodle-connector' ),
+				'sSortAscending'  => __( ': activate to sort column ascending', 'rdmcompas-moodle-connector' ),
+				'sSortDescending' => __( ': activate to sort column descending', 'rdmcompas-moodle-connector' ),
 			)
 		);
 

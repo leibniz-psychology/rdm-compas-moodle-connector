@@ -2,7 +2,7 @@
 /**
  * Partial: Page - Extensions.
  *
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  * @var object
  */
 

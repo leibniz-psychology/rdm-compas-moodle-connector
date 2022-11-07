@@ -11,13 +11,13 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
 
 /**
- * Edwiser Bridge.
+ * RDM Compas Moodle Connector.
  */
 class EdwiserBridge {
 
@@ -85,7 +85,7 @@ class EdwiserBridge {
 	 * @since   1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -94,7 +94,7 @@ class EdwiserBridge {
 	 * @since   1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'edwiser-bridge' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'rdmcompas-moodle-connector' ), '1.0.0' );
 	}
 
 	/**
@@ -371,11 +371,11 @@ class EdwiserBridge {
 	 */
 	private function set_locale() {
 		$plugin_i18n = new Eb_I18n();
-		$plugin_i18n->set_domain( 'edwiser-bridge' );
+		$plugin_i18n->set_domain( 'rdmcompas-moodle-connector' );
 
 		$this->loader->eb_add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
-		//compatibility with edwiser-bridge textdomain.
+		//compatibility with rdmcompas-moodle-connector textdomain.
 		$this->loader->eb_add_filter( 'load_textdomain_mofile', $plugin_i18n, 'load_edwiser_bridge_textdomain', 10, 2 );
 
 		//hook to check file renaming after admin user login.
@@ -632,7 +632,7 @@ class EdwiserBridge {
 			'eb_admin_template_notice'
 		);
 
-		$hook = 'in_plugin_update_message-edwiser-bridge/edwiser-bridge.php';
+		$hook = 'in_plugin_update_message-rdmcompas-moodle-connector/rdmcompas-moodle-connector.php';
 		$this->loader->eb_add_action(
 			$hook,
 			$admin_notice_handler,

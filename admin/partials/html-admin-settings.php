@@ -2,7 +2,7 @@
 /**
  * Admin View: Settings.
  *
- *  @package    Edwiser Bridge
+ *  @package    RDM Compas Moodle Connector
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,7 +12,7 @@ $show_banner = true;
 $extensions  = array(
 	'woocommerce-integration/bridge-woocommerce.php',
 	'selective-synchronization/selective-synchronization.php',
-	'edwiser-bridge-sso/sso.php',
+	'rdmcompas-moodle-connector-sso/sso.php',
 	'edwiser-multiple-users-course-purchase/edwiser-multiple-users-course-purchase.php',
 );
 foreach ( $extensions as $plugin_path ) {
@@ -62,7 +62,7 @@ foreach ( $extensions as $plugin_path ) {
 				<p class="submit">
 					<?php if ( ! isset( $GLOBALS['hide_save_button'] ) ) : ?>
 						<input name="save" class="button-primary" type="submit"
-							value="<?php esc_html_e( 'Save changes', 'edwiser-bridge' ); ?>" />
+							value="<?php esc_html_e( 'Save changes', 'rdmcompas-moodle-connector' ); ?>" />
 					<?php endif; ?>
 					<input type="hidden" name="subtab" id="last_tab" />
 					<?php wp_nonce_field( 'eb-settings' ); ?>

@@ -2,7 +2,7 @@
 /**
  * Eb_courses pagination template.
  *
- * @package Edwiser Bridge.
+ * @package RDM Compas Moodle Connector.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ $prev_page    = 0;
 <nav class="eb-pagination">
 	<ul>
 		<?php if ( $current_page && $current_page > 1 ) : ?>
-			<li class="prev" ><?php previous_posts_link( esc_html__( 'Prev', 'edwiser-bridge' ) ); ?></li>
+			<li class="prev" ><?php previous_posts_link( esc_html__( 'Prev', 'rdmcompas-moodle-connector' ) ); ?></li>
 		<?php endif; ?>
 
 		<?php
@@ -40,7 +40,7 @@ $prev_page    = 0;
 		?>
 
 		<?php if ( $current_page && $current_page < $max_num_pages ) : ?>
-			<li class="next "><?php next_posts_link( esc_html__( 'Next', 'edwiser-bridge' ), $max_num_pages ); ?></li>
+			<li class="next "><?php next_posts_link( esc_html__( 'Next', 'rdmcompas-moodle-connector' ), $max_num_pages ); ?></li>
 		<?php endif; ?>
 	</ul>
 </nav>

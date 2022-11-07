@@ -6,7 +6,7 @@
  *
  * @link       https://example.com
  * @since      1.3.4
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -115,18 +115,18 @@ class Eb_Admin_Notice_Handler {
 							<div class="eb_admin_update_notice_message">
 
 								<div class="eb_update_notice_content">
-									' . esc_html__( 'Thanks for updating to the latest version of Edwiser Bridge plugin, please make sure you have also installed our associated Moodle Plugin to avoid any malfunctioning.', 'edwiser-bridge' ) . '
-									<a href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'edwiser-bridge' ) . '</a>
-									' . esc_html__( ' to download Moodle plugin.', 'edwiser-bridge' ) . '
+									' . esc_html__( 'Thanks for updating to the latest version of RDM Compas Moodle Connector plugin, please make sure you have also installed our associated Moodle Plugin to avoid any malfunctioning.', 'rdmcompas-moodle-connector' ) . '
+									<a href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'rdmcompas-moodle-connector' ) . '</a>
+									' . esc_html__( ' to download Moodle plugin.', 'rdmcompas-moodle-connector' ) . '
 
-										' . esc_html__( 'For setup assistance check our ', 'edwiser-bridge' ) . '
-										<a href="https://example.com/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'edwiser-bridge' ) . '</a>.
+										' . esc_html__( 'For setup assistance check our ', 'rdmcompas-moodle-connector' ) . '
+										<a href="https://example.com/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'rdmcompas-moodle-connector' ) . '</a>.
 								</div>
 								
 								<div class="eb_update_notice_dismiss_wrap">
 									<span style="padding-left: 5px;">
 										<a href="' . esc_html( $redirection ) . '">
-											' . esc_html__( ' Dismiss notice', 'edwiser-bridge' ) . '
+											' . esc_html__( ' Dismiss notice', 'rdmcompas-moodle-connector' ) . '
 										</a>
 									</span>
 								</div>
@@ -141,18 +141,18 @@ class Eb_Admin_Notice_Handler {
 							<div class="eb_admin_update_notice_message">
 
 								<div class="eb_update_notice_content">
-									' . esc_html__( 'Thanks for updating or installing Edwiser Bridge plugin, please update Moodle Plugin to avoid any malfunctioning.', 'edwiser-bridge' ) . '
-									<a href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'edwiser-bridge' ) . '</a>
-									' . esc_html__( ' to download Moodle plugin.', 'edwiser-bridge' ) . '
+									' . esc_html__( 'Thanks for updating or installing RDM Compas Moodle Connector plugin, please update Moodle Plugin to avoid any malfunctioning.', 'rdmcompas-moodle-connector' ) . '
+									<a href="https://example.com/wp-content/uploads/edd/2022/02/edwiserbridge-1.zip">' . esc_html__( ' Click here ', 'rdmcompas-moodle-connector' ) . '</a>
+									' . esc_html__( ' to download Moodle plugin.', 'rdmcompas-moodle-connector' ) . '
 
-										' . esc_html__( 'For setup assistance check our ', 'edwiser-bridge' ) . '
-										<a href="https://example.com/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'edwiser-bridge' ) . '</a>.
+										' . esc_html__( 'For setup assistance check our ', 'rdmcompas-moodle-connector' ) . '
+										<a href="https://example.com/bridge/documentation/#tab-b540a7a7-e59f-3">' . esc_html__( ' documentation', 'rdmcompas-moodle-connector' ) . '</a>.
 								</div>
 								
 								<div class="eb_update_notice_dismiss_wrap">
 									<span style="padding-left: 5px;">
 										<a href="' . esc_html( $redirection ) . '">
-											' . esc_html__( ' Dismiss notice', 'edwiser-bridge' ) . '
+											' . esc_html__( ' Dismiss notice', 'rdmcompas-moodle-connector' ) . '
 										</a>
 									</span>
 								</div>
@@ -199,16 +199,16 @@ class Eb_Admin_Notice_Handler {
 			echo '  <div class="notice  eb_admin_discount_notice_message">
 						<div class="eb_admin_discount_notice_message_cont">
 							<div class="eb_admin_discount_notice_content">
-								' . esc_html__( 'Get all Premium Edwiser Products at Flat 20% Off!', 'edwiser-bridge' ) . '
+								' . esc_html__( 'Get all Premium Edwiser Products at Flat 20% Off!', 'rdmcompas-moodle-connector' ) . '
 
 								<div style="font-size:13px; padding-top:4px;">
 									<a href="' . esc_html( $redirection ) . '">
-										' . esc_html__( ' Dismiss this notice', 'edwiser-bridge' ) . '
+										' . esc_html__( ' Dismiss this notice', 'rdmcompas-moodle-connector' ) . '
 									</a>
 								</div>
 							</div>
 							<div>
-								<a class="eb_admin_discount_offer_btn" href="https://example.com/edwiser-lifetime-kit/?utm_source=WordPress&utm_medium=notif&utm_campaign=inbridge"  target="_blank">' . esc_html__( 'Avail Offer Now!', 'edwiser-bridge' ) . '</a>
+								<a class="eb_admin_discount_offer_btn" href="https://example.com/edwiser-lifetime-kit/?utm_source=WordPress&utm_medium=notif&utm_campaign=inbridge"  target="_blank">' . esc_html__( 'Avail Offer Now!', 'rdmcompas-moodle-connector' ) . '</a>
 							</div>
 						</div>
 						<div class="eb_admin_discount_dismiss_notice_message">
@@ -249,20 +249,20 @@ class Eb_Admin_Notice_Handler {
 		if ( 'eb_admin_feedback_notice' !== get_transient( 'edwiser_bridge_admin_feedback_notice' ) && ( ! $feedback_usermeta || 'remind_me_later' !== $feedback_usermeta ) && 'dismiss_permanantly' !== $feedback_usermeta ) {
 				echo '  <div class="notice eb_admin_feedback_notice_message_cont">
 							<div class="eb_admin_feedback_notice_message">'
-								. esc_html__( 'Enjoying Edwiser bridge, Please  ', 'edwiser-bridge' ) . '
-								<a href="https://WordPress.org/plugins/edwiser-bridge/">'
-									. esc_html__( ' click here ', 'edwiser-bridge' ) .
+								. esc_html__( 'Enjoying RDM Compas Moodle Connector, Please  ', 'rdmcompas-moodle-connector' ) . '
+								<a href="https://WordPress.org/plugins/rdmcompas-moodle-connector/">'
+									. esc_html__( ' click here ', 'rdmcompas-moodle-connector' ) .
 								'</a>'
-								. esc_html__( ' to rate us.', 'edwiser-bridge' ) . '
+								. esc_html__( ' to rate us.', 'rdmcompas-moodle-connector' ) . '
 								<div style="padding-top:8px; font-size:13px;">
 									<span class="eb_feedback_rate_links">
 										<a href="' . esc_html( $redirection ) . '=remind_me_later">
-										' . esc_html__( 'Remind me Later!', 'edwiser-bridge' ) . '
+										' . esc_html__( 'Remind me Later!', 'rdmcompas-moodle-connector' ) . '
 										</a>
 									</span>
 									<span class="eb_feedback_rate_links">
 										<a href="' . esc_html( $redirection ) . '=dismiss_permanantly">
-										' . esc_html__( 'Dismiss Notice', 'edwiser-bridge' ) . '
+										' . esc_html__( 'Dismiss Notice', 'rdmcompas-moodle-connector' ) . '
 										</a>
 									</span>
 								</div>
@@ -291,15 +291,15 @@ class Eb_Admin_Notice_Handler {
 			$user_id        = get_current_user_id();
 			$templ_usermeta = get_user_meta( $user_id, 'eb_templ_compatibility_dismissed', true );
 			if ( empty( $templ_usermeta ) || ! $templ_usermeta ) {
-				$msg = esc_html__( 'If you have overridden the standard Edwiser Bridge templates previously then please make sure that your templates are made compatible with the NEW Edwiser Bridge template. It may cause CSS breaks if not done. ', 'edwiser-bridge' );
+				$msg = esc_html__( 'If you have overridden the standard RDM Compas Moodle Connector templates previously then please make sure that your templates are made compatible with the NEW RDM Compas Moodle Connector template. It may cause CSS breaks if not done. ', 'rdmcompas-moodle-connector' );
 
 				echo '<div class="notice notice-warning eb_template_notice_wrap"">
 						<div class="eb_template_notice">
-							' . esc_html__( 'If you have overridden the standard', 'edwiser-bridge' ) . '
-							<b> Edwiser Bridge </b>' . esc_html__( 'templates previously then please make sure that your templates are made compatible with the ', 'edwiser-bridge' ) . ' <b>NEW Edwiser Bridge</b>
-							' . esc_html__( 'template. It may cause CSS breaks if not done.', 'edwiser-bridge' ) . '
+							' . esc_html__( 'If you have overridden the standard', 'rdmcompas-moodle-connector' ) . '
+							<b> RDM Compas Moodle Connector </b>' . esc_html__( 'templates previously then please make sure that your templates are made compatible with the ', 'rdmcompas-moodle-connector' ) . ' <b>NEW RDM Compas Moodle Connector</b>
+							' . esc_html__( 'template. It may cause CSS breaks if not done.', 'rdmcompas-moodle-connector' ) . '
 							<div class="">
-								' . esc_html__( 'Please refer to', 'edwiser-bridge' ) . '<a href="https://example.com/blog/how-to-make-edwiser-bridge-compatible-with-your-theme/" target="_blank"> <b>' . esc_html__( ' this ', 'edwiser-bridge' ) . '</b> </a>' . esc_html__( ' article for theme compatibility', 'edwiser-bridge' ) . '
+								' . esc_html__( 'Please refer to', 'rdmcompas-moodle-connector' ) . '<a href="https://example.com/blog/how-to-make-rdmcompas-moodle-connector-compatible-with-your-theme/" target="_blank"> <b>' . esc_html__( ' this ', 'rdmcompas-moodle-connector' ) . '</b> </a>' . esc_html__( ' article for theme compatibility', 'rdmcompas-moodle-connector' ) . '
 							</div>
 						</div>
 						<div class="eb_admin_templ_dismiss_notice_message">
@@ -341,10 +341,10 @@ class Eb_Admin_Notice_Handler {
 		ob_start();
 		?>
 <p>
-    <strong><?php echo esc_html__( 'Important Update Notice:', 'edwiser-bridge' ); ?></strong>
-    <?php echo esc_html__( 'Please download and update associated edwiserbridge Moodle plugin.', 'edwiser-bridge' ); ?>
-    <a href="https://example.com/bridge/"><?php echo esc_html__( 'Click here ', 'edwiser-bridge' ); ?></a>
-    <?php echo esc_html__( ' to download', 'edwiser-bridge' ); ?>
+    <strong><?php echo esc_html__( 'Important Update Notice:', 'rdmcompas-moodle-connector' ); ?></strong>
+    <?php echo esc_html__( 'Please download and update associated edwiserbridge Moodle plugin.', 'rdmcompas-moodle-connector' ); ?>
+    <a href="https://example.com/bridge/"><?php echo esc_html__( 'Click here ', 'rdmcompas-moodle-connector' ); ?></a>
+    <?php echo esc_html__( ' to download', 'rdmcompas-moodle-connector' ); ?>
 
 </p>
 

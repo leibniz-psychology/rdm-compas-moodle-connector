@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -70,19 +70,19 @@ class Eb_Post_Types
                 'eb_taxonomy_args_eb_course_cat',
                 array(
                     'hierarchical' => true,
-                    'label' => __('Course Categories', 'edwiser-bridge'),
+                    'label' => __('Course Categories', 'rdmcompas-moodle-connector'),
                     'labels' => array(
-                        'name' => __('Course Categories', 'edwiser-bridge'),
-                        'singular_name' => __('Course Category', 'edwiser-bridge'),
-                        'menu_name' => _x('Course Categories', 'Admin menu name', 'edwiser-bridge'),
-                        'search_items' => __('Search Course Categories', 'edwiser-bridge'),
-                        'all_items' => __('All Course Categories', 'edwiser-bridge'),
-                        'parent_item' => __('Parent Course Categories', 'edwiser-bridge'),
-                        'parent_item_colon' => __('Parent Course Category:', 'edwiser-bridge'),
-                        'edit_item' => __('Edit Course Category', 'edwiser-bridge'),
-                        'update_item' => __('Update Course Category', 'edwiser-bridge'),
-                        'add_new_item' => __('Add New Course Category', 'edwiser-bridge'),
-                        'new_item_name' => __('New Course Category Name', 'edwiser-bridge'),
+                        'name' => __('Course Categories', 'rdmcompas-moodle-connector'),
+                        'singular_name' => __('Course Category', 'rdmcompas-moodle-connector'),
+                        'menu_name' => _x('Course Categories', 'Admin menu name', 'rdmcompas-moodle-connector'),
+                        'search_items' => __('Search Course Categories', 'rdmcompas-moodle-connector'),
+                        'all_items' => __('All Course Categories', 'rdmcompas-moodle-connector'),
+                        'parent_item' => __('Parent Course Categories', 'rdmcompas-moodle-connector'),
+                        'parent_item_colon' => __('Parent Course Category:', 'rdmcompas-moodle-connector'),
+                        'edit_item' => __('Edit Course Category', 'rdmcompas-moodle-connector'),
+                        'update_item' => __('Update Course Category', 'rdmcompas-moodle-connector'),
+                        'add_new_item' => __('Add New Course Category', 'rdmcompas-moodle-connector'),
+                        'new_item_name' => __('New Course Category Name', 'rdmcompas-moodle-connector'),
                     ),
                     'show_ui' => true,
                     'query_var' => true,
@@ -112,24 +112,24 @@ class Eb_Post_Types
                     'eb_register_post_type_courses',
                     array(
                         'labels' => array(
-                            'name' => __('Course', 'edwiser-bridge'),
-                            'singular_name' => __('Courses', 'edwiser-bridge'),
-                            'menu_name' => _x('Training Center', 'Admin menu name', 'edwiser-bridge'),
-                            'all_items' => __('Courses', 'edwiser-bridge'),
-                            'add_new' => __('Add Course', 'edwiser-bridge'),
-                            'add_new_item' => __('Add New Course', 'edwiser-bridge'),
-                            'edit' => __('Edit', 'edwiser-bridge'),
-                            'edit_item' => __('Edit Course', 'edwiser-bridge'),
-                            'new_item' => __('New Course', 'edwiser-bridge'),
-                            'view' => __('View Course', 'edwiser-bridge'),
-                            'view_item' => __('View Course', 'edwiser-bridge'),
-                            'search_items' => __('Search Courses', 'edwiser-bridge'),
-                            'not_found' => __('No Courses found', 'edwiser-bridge'),
-                            'not_found_in_trash' => __('No Courses found in trash', 'edwiser-bridge'),
+                            'name' => __('Course', 'rdmcompas-moodle-connector'),
+                            'singular_name' => __('Courses', 'rdmcompas-moodle-connector'),
+                            'menu_name' => _x('Training Center', 'Admin menu name', 'rdmcompas-moodle-connector'),
+                            'all_items' => __('Courses', 'rdmcompas-moodle-connector'),
+                            'add_new' => __('Add Course', 'rdmcompas-moodle-connector'),
+                            'add_new_item' => __('Add New Course', 'rdmcompas-moodle-connector'),
+                            'edit' => __('Edit', 'rdmcompas-moodle-connector'),
+                            'edit_item' => __('Edit Course', 'rdmcompas-moodle-connector'),
+                            'new_item' => __('New Course', 'rdmcompas-moodle-connector'),
+                            'view' => __('View Course', 'rdmcompas-moodle-connector'),
+                            'view_item' => __('View Course', 'rdmcompas-moodle-connector'),
+                            'search_items' => __('Search Courses', 'rdmcompas-moodle-connector'),
+                            'not_found' => __('No Courses found', 'rdmcompas-moodle-connector'),
+                            'not_found_in_trash' => __('No Courses found in trash', 'rdmcompas-moodle-connector'),
                         ),
                         'description' => __(
                             'This is where you can add new courses to your Moodle LMS.',
-                            'edwiser-bridge'
+                            'rdmcompas-moodle-connector'
                         ),
                         'public' => true,
                         'capability_type' => 'post',
@@ -167,7 +167,7 @@ class Eb_Post_Types
         // register metabox for course post type options.
         add_meta_box(
             'eb_course_options',
-            __('Course Options', 'edwiser-bridge'),
+            __('Course Options', 'rdmcompas-moodle-connector'),
             array($this, 'post_options_callback'),
             'eb_course',
             'advanced',
@@ -178,7 +178,7 @@ class Eb_Post_Types
         // register metabox for recommended course section on single course page.
         add_meta_box(
             'eb_blended_course_options',
-            __('Blended Course Settings', 'edwiser-bridge'),
+            __('Blended Course Settings', 'rdmcompas-moodle-connector'),
             array($this, 'post_options_callback'),
             'eb_course',
             'advanced',
@@ -211,7 +211,7 @@ class Eb_Post_Types
         if ('eb_order' === $args['args']['post_type']) {
             $css_class = 'eb-wdm-order-meta';
             echo '<strong>';
-            echo esc_html__('Order ', 'edwiser-bridge') . esc_html(printf('#%s ', get_the_id())) . esc_html__('Details ', 'edwiser-bridge');
+            echo esc_html__('Order ', 'rdmcompas-moodle-connector') . esc_html(printf('#%s ', get_the_id())) . esc_html__('Details ', 'rdmcompas-moodle-connector');
             echo '</strong>';
             echo "<div id='" . esc_html($args['args']['post_type']) . "'_options' class='post-options " . esc_html($css_class) . "'>";
         } else {
@@ -259,80 +259,80 @@ class Eb_Post_Types
         $args_array = array(
             'eb_course' => array(
                 'moodle_course_format' => array( //moodle custom field
-                    'label' => __('Course Format', 'edwiser-bridge'),
-                    'description' => __('Course Format', 'edwiser-bridge'),
+                    'label' => __('Course Format', 'rdmcompas-moodle-connector'),
+                    'description' => __('Course Format', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_id' => array(
-                    'label' => __('Moodle Course ID', 'edwiser-bridge'),
-                    'description' => __('This field is disabled. Do not change the course id this will affect the course access for the existing enrollment.', 'edwiser-bridge'),
+                    'label' => __('Moodle Course ID', 'rdmcompas-moodle-connector'),
+                    'description' => __('This field is disabled. Do not change the course id this will affect the course access for the existing enrollment.', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                     'default' => '0',
-                    'note' => isset($deletion_status) && !empty($deletion_status) ? '<span style="color:red;">' . __('This course is deleted on Moodle', 'edwiser-bridge') . '</span>' : '',
+                    'note' => isset($deletion_status) && !empty($deletion_status) ? '<span style="color:red;">' . __('This course is deleted on Moodle', 'rdmcompas-moodle-connector') . '</span>' : '',
                 ),
                 'moodle_course_institution' => array( //moodle custom field
-                    'label' => __('Institution', 'edwiser-bridge'),
-                    'description' => __('Institution', 'edwiser-bridge'),
+                    'label' => __('Institution', 'rdmcompas-moodle-connector'),
+                    'description' => __('Institution', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_date_modified' => array( //moodle timemodified
-                    'label' => __('Date Modified', 'edwiser-bridge'),
-                    'description' => __('Date Modified', 'edwiser-bridge'),
+                    'label' => __('Date Modified', 'rdmcompas-moodle-connector'),
+                    'description' => __('Date Modified', 'rdmcompas-moodle-connector'),
                     'type' => 'date',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_target_group' => array( //moodle custom field
-                    'label' => __('Target Group', 'edwiser-bridge'),
-                    'description' => __('Target Group', 'edwiser-bridge'),
+                    'label' => __('Target Group', 'rdmcompas-moodle-connector'),
+                    'description' => __('Target Group', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_discipline' => array( //moodle custom field
-                    'label' => __('Discipline', 'edwiser-bridge'),
-                    'description' => __('Discipline', 'edwiser-bridge'),
+                    'label' => __('Discipline', 'rdmcompas-moodle-connector'),
+                    'description' => __('Discipline', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_number_participants' => array( //moodle custom field
-                    'label' => __('Number of participants', 'edwiser-bridge'),
-                    'description' => __('Number of participants', 'edwiser-bridge'),
+                    'label' => __('Number of participants', 'rdmcompas-moodle-connector'),
+                    'description' => __('Number of participants', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_duration' => array( //moodle custom field
-                    'label' => __('Duration', 'edwiser-bridge'),
-                    'description' => __('Duration', 'edwiser-bridge'),
+                    'label' => __('Duration', 'rdmcompas-moodle-connector'),
+                    'description' => __('Duration', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_required_material' => array( //moodle custom field
-                    'label' => __('Required Material', 'edwiser-bridge'),
-                    'description' => __('Required Material', 'edwiser-bridge'),
+                    'label' => __('Required Material', 'rdmcompas-moodle-connector'),
+                    'description' => __('Required Material', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_persistent_identifier' => array( //moodle custom field
-                    'label' => __('Persistent Identifier', 'edwiser-bridge'),
-                    'description' => __('Persistent Identifier', 'edwiser-bridge'),
+                    'label' => __('Persistent Identifier', 'rdmcompas-moodle-connector'),
+                    'description' => __('Persistent Identifier', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_license' => array( //moodle custom field
-                    'label' => __('License', 'edwiser-bridge'),
-                    'description' => __('License', 'edwiser-bridge'),
+                    'label' => __('License', 'rdmcompas-moodle-connector'),
+                    'description' => __('License', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
@@ -340,43 +340,43 @@ class Eb_Post_Types
             ),
             'eb_blended_course_options' => array(
                 'moodle_course_contact_person' => array( //moodle custom field
-                    'label' => __('Contact person', 'edwiser-bridge'),
-                    'description' => __('Contact person', 'edwiser-bridge'),
+                    'label' => __('Contact person', 'rdmcompas-moodle-connector'),
+                    'description' => __('Contact person', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_date_start' => array( //moodle custom field
-                    'label' => __('Start date', 'edwiser-bridge'),
-                    'description' => __('Start date', 'edwiser-bridge'),
+                    'label' => __('Start date', 'rdmcompas-moodle-connector'),
+                    'description' => __('Start date', 'rdmcompas-moodle-connector'),
                     'type' => 'date',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
                 'moodle_course_number_participants' => array( //moodle custom field
-                    'label' => __('Number of participants', 'edwiser-bridge'),
-                    'description' => __('Number of participants', 'edwiser-bridge'),
+                    'label' => __('Number of participants', 'rdmcompas-moodle-connector'),
+                    'description' => __('Number of participants', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
 //                'enable_recmnd_courses' => array(
-//                    'label' => __('Show Recommended Courses', 'edwiser-bridge'),
-//                    'description' => __('Show recommended courses on single course page.', 'edwiser-bridge'),
+//                    'label' => __('Show Recommended Courses', 'rdmcompas-moodle-connector'),
+//                    'description' => __('Show recommended courses on single course page.', 'rdmcompas-moodle-connector'),
 //                    'default' => 'no',
 //                    'type' => 'checkbox',
 //                    'autoload' => false,
 //                ),
 //                'show_default_recmnd_course' => array(
-//                    'label' => __('Show Category Wise Recommended Courses', 'edwiser-bridge'),
-//                    'description' => __('Show category wise selected recommended courses on single course page.', 'edwiser-bridge'),
+//                    'label' => __('Show Category Wise Recommended Courses', 'rdmcompas-moodle-connector'),
+//                    'description' => __('Show category wise selected recommended courses on single course page.', 'rdmcompas-moodle-connector'),
 //                    'default' => 'no',
 //                    'type' => 'checkbox',
 //                    'autoload' => false,
 //                ),
 //                'enable_recmnd_courses_single_course' => array(
-//                    'label' => __('Select Courses', 'edwiser-bridge'),
-//                    'description' => __('Select courses to show in custom courses in recommended course section.', 'edwiser-bridge'),
+//                    'label' => __('Select Courses', 'rdmcompas-moodle-connector'),
+//                    'description' => __('Select courses to show in custom courses in recommended course section.', 'rdmcompas-moodle-connector'),
 //                    'type' => 'select_multi',
 //                    'options' => isset($post->ID) ? \app\wisdmlabs\edwiserBridge\wdm_eb_get_all_eb_sourses($post->ID) : array(),
 //                    'default' => array('pending'),
@@ -694,18 +694,18 @@ class Eb_Post_Types
         $messages[$post_type] = array(
             0 => '', // Unused. Messages start at index 1.
             1 => sprintf('%s', esc_attr($singular)) .
-                __(' updated.', 'edwiser-bridge') . '<a href="' . sprintf('%s" target="_blank">', esc_url(get_permalink($post_ID))) . __(' View ', 'edwiser-bridge') .
+                __(' updated.', 'rdmcompas-moodle-connector') . '<a href="' . sprintf('%s" target="_blank">', esc_url(get_permalink($post_ID))) . __(' View ', 'rdmcompas-moodle-connector') .
                 sprintf(
                     '%s</a>',
                     strtolower($singular)
                 ),
-            2 => __('Custom field updated.', 'edwiser-bridge'),
-            3 => __('Custom field deleted.', 'edwiser-bridge'),
-            4 => sprintf('%s ', esc_attr($singular)) . __('updated.', 'edwiser-bridge'),
+            2 => __('Custom field updated.', 'rdmcompas-moodle-connector'),
+            3 => __('Custom field deleted.', 'rdmcompas-moodle-connector'),
+            4 => sprintf('%s ', esc_attr($singular)) . __('updated.', 'rdmcompas-moodle-connector'),
             5 => isset($_GET['revision']) ? sprintf( // WPCS: input var ok, CSRF ok, sanitization ok.
                     '%s ',
                     wp_post_revision_title(filter_input(INPUT_GET, 'revision', FILTER_SANITIZE_NUMBER_INT), false)
-                ) . __('restored to revision from ', 'edwiser-bridge') . sprintf(
+                ) . __('restored to revision from ', 'rdmcompas-moodle-connector') . sprintf(
                     '%s ',
                     esc_attr($singular)
                 ) : false,
@@ -715,7 +715,7 @@ class Eb_Post_Types
                 esc_url(get_permalink($post_ID)),
                 strtolower($singular)
             ),
-            7 => sprintf('%s ', esc_attr($singular)) . __('saved.', 'edwiser-bridge'),
+            7 => sprintf('%s ', esc_attr($singular)) . __('saved.', 'rdmcompas-moodle-connector'),
             8 => sprintf(
                 '%1$s submitted. <a href="%2$s" target="_blank">Preview %3$s</a>',
                 $singular,
@@ -723,7 +723,7 @@ class Eb_Post_Types
                 strtolower($singular)
             ),
             9 => sprintf(
-                '%1$s' . __('scheduled for:  ', 'edwiser-bridge') . '<strong>' . '%2$s' . '</strong><a href="' . '%3$s' . '" target="_blank">' . __('Preview ', 'edwiser-bridge') . '%4$s</a>', // @codingStandardsIgnoreLine
+                '%1$s' . __('scheduled for:  ', 'rdmcompas-moodle-connector') . '<strong>' . '%2$s' . '</strong><a href="' . '%3$s' . '" target="_blank">' . __('Preview ', 'rdmcompas-moodle-connector') . '%4$s</a>', // @codingStandardsIgnoreLine
                 $singular,
                 date_i18n(
                     __('M j, Y @ G:i'),
@@ -735,7 +735,7 @@ class Eb_Post_Types
                 strtolower($singular)
             ),
             10 => sprintf(
-                '%1$s' . __(' draft updated. ', 'edwiser-bridge') . '<a href="' . '%2$s' . '" target="_blank">' . __('Preview ', 'edwiser-bridge') . '%3$s </a>', // @codingStandardsIgnoreLine
+                '%1$s' . __(' draft updated. ', 'rdmcompas-moodle-connector') . '<a href="' . '%2$s' . '" target="_blank">' . __('Preview ', 'rdmcompas-moodle-connector') . '%3$s </a>', // @codingStandardsIgnoreLine
                 $singular,
                 esc_url(add_query_arg('preview', 'true', get_permalink($post_ID))),
                 strtolower($singular)

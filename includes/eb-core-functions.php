@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -181,7 +181,7 @@ if ( ! function_exists( 'wdm_eb_user_redirect_url' ) ) {
 		$usr_ac_page_id = null;
 
 		/*
-		* Get the Edwiser Bridge genral settings.
+		* Get the RDM Compas Moodle Connector genral settings.
 		*/
 		$eb_settings = get_option( 'eb_general' );
 
@@ -248,8 +248,8 @@ if ( ! function_exists( 'wdm_eb_get_shortcode_page_content' ) ) {
 		$shortcodes = array(
 			'eb_my_courses' => array(
 				'user_id'                           => '',
-				'my_courses_wrapper_title'          => __( 'My Courses', 'edwiser-bridge' ),
-				'recommended_courses_wrapper_title' => __( 'Recommended Courses', 'edwiser-bridge' ),
+				'my_courses_wrapper_title'          => __( 'My Courses', 'rdmcompas-moodle-connector' ),
+				'recommended_courses_wrapper_title' => __( 'Recommended Courses', 'rdmcompas-moodle-connector' ),
 				'number_of_recommended_courses'     => 4,
 				'my_courses_progress'               => 1,
 			),
@@ -494,7 +494,7 @@ if ( ! function_exists( 'wdm_eb_get_all_web_service_functions' ) ) {
 					// 'wdm_manage_cohort_enrollment'
 				),
 				'woocommerce-integration/bridge-woocommerce.php' => array(),
-				'edwiser-bridge-sso/sso.php' => array(
+				'rdmcompas-moodle-connector-sso/sso.php' => array(
 					'wdm_sso_verify_token',
 				),
 				'selective-synchronization/selective-synchronization.php' => array(
@@ -759,7 +759,7 @@ if ( ! function_exists( 'wdm_eb_edwiser_sanitize_array' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_version' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge version.
+	 * Gwt RDM Compas Moodle Connector version.
 	 */
 	function wdm_edwiser_bridge_version() {
 		return '2.1.5';
@@ -771,7 +771,7 @@ if ( ! function_exists( 'wdm_edwiser_bridge_version' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_plugin_url' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge plugin url.
+	 * Gwt RDM Compas Moodle Connector plugin url.
 	 */
 	function wdm_edwiser_bridge_plugin_url() {
 		return plugin_dir_url( dirname( __FILE__ ) );
@@ -782,7 +782,7 @@ if ( ! function_exists( 'wdm_edwiser_bridge_plugin_url' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_plugin_dir' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge plugin url.
+	 * Gwt RDM Compas Moodle Connector plugin url.
 	 */
 	function wdm_edwiser_bridge_plugin_dir() {
 		return plugin_dir_path( dirname( __FILE__ ) );
@@ -793,7 +793,7 @@ if ( ! function_exists( 'wdm_edwiser_bridge_plugin_dir' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_plugin_template_path' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge plugin url.
+	 * Gwt RDM Compas Moodle Connector plugin url.
 	 */
 	function wdm_edwiser_bridge_plugin_template_path() {
 		return 'edwiserBridge/';
@@ -804,7 +804,7 @@ if ( ! function_exists( 'wdm_edwiser_bridge_plugin_template_path' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_plugin_get_access_token' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge plugin url.
+	 * Gwt RDM Compas Moodle Connector plugin url.
 	 */
 	function wdm_edwiser_bridge_plugin_get_access_token() {
 
@@ -824,7 +824,7 @@ if ( ! function_exists( 'wdm_edwiser_bridge_plugin_get_access_token' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_plugin_get_access_url' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge plugin url.
+	 * Gwt RDM Compas Moodle Connector plugin url.
 	 */
 	function wdm_edwiser_bridge_plugin_get_access_url() {
 
@@ -847,7 +847,7 @@ if ( ! function_exists( 'wdm_edwiser_bridge_plugin_get_access_url' ) ) {
 if ( ! function_exists( 'wdm_edwiser_bridge_plugin_log_dir' ) ) {
 
 	/**
-	 * Gwt edwiser Bridge plugin url.
+	 * Gwt RDM Compas Moodle Connector plugin url.
 	 */
 	function wdm_edwiser_bridge_plugin_log_dir() {
 
@@ -867,7 +867,7 @@ if ( ! function_exists( 'wdm_get_plugin_version' ) ) {
 		if ( file_exists( WP_PLUGIN_DIR . '/' . $path ) ) {
 			$plugin_info = get_plugin_data( WP_PLUGIN_DIR . '/' . $path );
 		}
-		return isset( $plugin_info['Version'] ) ? $plugin_info['Version'] : __( 'Plugin not installed', 'edwiser-bridge' );
+		return isset( $plugin_info['Version'] ) ? $plugin_info['Version'] : __( 'Plugin not installed', 'rdmcompas-moodle-connector' );
 	}
 }
 

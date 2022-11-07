@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.2.1
- * @package    Edwiser Bridge
+ * @package    RDM Compas Moodle Connector
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -80,7 +80,7 @@ class Eb_Paypal_Refund_Manager {
 					$status['msg'] = $response;
 				} elseif ( empty( $response['body'] ) ) {
 					$success       = 0;
-					$status['msg'] = esc_html__( 'No Response from PayPal', 'edwiser-bridge' );
+					$status['msg'] = esc_html__( 'No Response from PayPal', 'rdmcompas-moodle-connector' );
 				}
 				parse_str( $response['body'], $response );
 				edwiser_bridge_instance()->logger()->add( 'refund', 'PayPal refund responce: ' . serialize( $response ) ); // @codingStandardsIgnoreLine
@@ -89,10 +89,10 @@ class Eb_Paypal_Refund_Manager {
 			}
 			$resp_status = \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'ACK', false );
 			if ( 'Success' === $resp_status ) {
-				$status['msg'] = esc_html__( 'Refund for amount', 'edwiser-bridge' ) . sprintf( ' %s against the order #%s has been initiated successfully. Transaction id: %s', \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'GROSSREFUNDAMT' ), $order_id, \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'REFUNDTRANSACTIONID' ) );
+				$status['msg'] = esc_html__( 'Refund for amount', 'rdmcompas-moodle-connector' ) . sprintf( ' %s against the order #%s has been initiated successfully. Transaction id: %s', \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'GROSSREFUNDAMT' ), $order_id, \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'REFUNDTRANSACTIONID' ) );
 			} elseif ( 'Failure' === $resp_status ) {
 				$success       = 0;
-				$status['msg'] = '<strong>' . esc_html__( 'PayPal Responce: ', 'edwiser-bridge' ) . '</strong>' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'L_LONGMESSAGE0', '' );
+				$status['msg'] = '<strong>' . esc_html__( 'PayPal Responce: ', 'rdmcompas-moodle-connector' ) . '</strong>' . \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $response, 'L_LONGMESSAGE0', '' );
 			}
 		} else {
 			$success       = 0;
@@ -117,14 +117,14 @@ class Eb_Paypal_Refund_Manager {
 		$req_data = array();
 		if ( ! $txn_id ) {
 			$sucess           = 0;
-			$req_data['data'] = esc_html__( 'Sorry, can not process this request as this is invalid transaction.', 'edwiser-bridge' );
+			$req_data['data'] = esc_html__( 'Sorry, can not process this request as this is invalid transaction.', 'rdmcompas-moodle-connector' );
 		}
 
 		$api_details = $this->get_paypal_api_details();
 
 		if ( ! $api_details ) {
 			$sucess           = 0;
-			$req_data['data'] = esc_html__( 'Please update Paypal API details on edwiser paypal settings page.', 'edwiser-bridge' );
+			$req_data['data'] = esc_html__( 'Please update Paypal API details on edwiser paypal settings page.', 'rdmcompas-moodle-connector' );
 		}
 
 		if ( $sucess ) {

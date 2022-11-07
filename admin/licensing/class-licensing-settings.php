@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -42,7 +42,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 		public function __construct() {
 			$this->addon_licensing = array( 'licensing' );
 			$this->_id             = 'licensing';
-			$this->label           = __( 'Licenses', 'edwiser-bridge' );
+			$this->label           = __( 'Licenses', 'rdmcompas-moodle-connector' );
 			if ( ! class_exists( 'Eb_Licensing_Manager' ) ) {
 				include_once plugin_dir_path( __FILE__ ) . 'class-eb-licensing-manager.php';
 			}
@@ -96,17 +96,17 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 
 			if ( false !== $status_option && 'valid' === $status_option ) {
 				$class  = 'active';
-				$status = __( 'Active', 'edwiser-bridge' );
+				$status = __( 'Active', 'rdmcompas-moodle-connector' );
 			} elseif ( 'site_inactive' === $status_option ) {
-				$status = __( 'Not Active', 'edwiser-bridge' );
+				$status = __( 'Not Active', 'rdmcompas-moodle-connector' );
 			} elseif ( 'expired' === $status_option && ( ! empty( $display ) || '' !== $display ) ) {
-				$status = __( 'Expired', 'edwiser-bridge' );
+				$status = __( 'Expired', 'rdmcompas-moodle-connector' );
 			} elseif ( 'expired' === $status_option ) {
-				$status = __( 'Expired', 'edwiser-bridge' );
+				$status = __( 'Expired', 'rdmcompas-moodle-connector' );
 			} elseif ( 'invalid' === $status_option ) {
-				$status = __( 'Invalid Key', 'edwiser-bridge' );
+				$status = __( 'Invalid Key', 'rdmcompas-moodle-connector' );
 			} else {
-				$status = __( 'Not Active ', 'edwiser-bridge' );
+				$status = __( 'Not Active ', 'rdmcompas-moodle-connector' );
 			}
 			?>
 			<span class="eb_lic_status eb_lic_<?php echo esc_attr( $class ); ?>"><?php echo esc_attr( $status ); ?></span>
@@ -139,14 +139,14 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			if ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin['path'] ) ) {
 				$action = 'install_plugin';
 				?>
-				<span class="button-primary get_license_key wdm_eb_get_key_popup_btn"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></span>
-				<input class="button-primary install_plugin" type="submit"  name="install_plugin" value="<?php esc_attr_e( 'Install Plugin', 'edwiser-bridge' ); ?>">
+				<span class="button-primary get_license_key wdm_eb_get_key_popup_btn"><?php esc_attr_e( 'Get License Key', 'rdmcompas-moodle-connector' ); ?></span>
+				<input class="button-primary install_plugin" type="submit"  name="install_plugin" value="<?php esc_attr_e( 'Install Plugin', 'rdmcompas-moodle-connector' ); ?>">
 				<?php
 			} elseif ( ! is_plugin_active( $plugin['path'] ) ) {
 				$action = 'activate_plugin';
 				?>
-					<a href="https://example.com/my-account/"  class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></a>
-					<button class="button-primary eb-activate-plugin" name="activate_plugin" type='submit' value="<?php echo esc_attr( $plugin['path'] ); ?>"><?php esc_attr_e( 'Activate Plugin', 'edwiser-bridge' ); ?></button>
+					<a href="https://example.com/my-account/"  class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'rdmcompas-moodle-connector' ); ?></a>
+					<button class="button-primary eb-activate-plugin" name="activate_plugin" type='submit' value="<?php echo esc_attr( $plugin['path'] ); ?>"><?php esc_attr_e( 'Activate Plugin', 'rdmcompas-moodle-connector' ); ?></button>
 				<?php
 			} else {
 				$action = $this->get_license_status_button( $plugin_slug, $action );
@@ -174,25 +174,25 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			if ( false !== $status && 'valid' === $status ) {
 				$action = 'deactivate_license';
 				?>
-					<input type="submit" class="button-primary" name="deactivate_license" value="<?php esc_attr_e( 'Deactivate License', 'edwiser-bridge' ); ?>"/>
+					<input type="submit" class="button-primary" name="deactivate_license" value="<?php esc_attr_e( 'Deactivate License', 'rdmcompas-moodle-connector' ); ?>"/>
 					<?php
 			} elseif ( 'expired' === $status && ( ! empty( $display ) || '' !== $display ) ) {
 				$action = 'activate_license';
 				?>
-					<input type="submit" class="button-primary" name="deactivate_license" value="<?php esc_attr_e( 'Deactivate License', 'edwiser-bridge' ); ?>" />
-					<input type="button" class="button-primary" name="renew_license" value="<?php esc_attr_e( 'Renew License', 'edwiser-bridge' ); ?>" onclick="window.open( \'' . $renew_link . '\' )"/>
+					<input type="submit" class="button-primary" name="deactivate_license" value="<?php esc_attr_e( 'Deactivate License', 'rdmcompas-moodle-connector' ); ?>" />
+					<input type="button" class="button-primary" name="renew_license" value="<?php esc_attr_e( 'Renew License', 'rdmcompas-moodle-connector' ); ?>" onclick="window.open( \'' . $renew_link . '\' )"/>
 					<?php
 			} elseif ( 'expired' === $status ) {
 				$action = 'deactivate_license';
 				?>
-					<input type="submit" class="button-primary" name="deactivate_license" value="<?php esc_attr_e( 'Deactivate License', 'edwiser-bridge' ); ?>" />
-					<input type="button" class="button-primary" name="renew_license" value="<?php esc_attr_e( 'Renew License', 'edwiser-bridge' ); ?>" onclick="window.open( \'' . $renew_link . '\' )"/>
+					<input type="submit" class="button-primary" name="deactivate_license" value="<?php esc_attr_e( 'Deactivate License', 'rdmcompas-moodle-connector' ); ?>" />
+					<input type="button" class="button-primary" name="renew_license" value="<?php esc_attr_e( 'Renew License', 'rdmcompas-moodle-connector' ); ?>" onclick="window.open( \'' . $renew_link . '\' )"/>
 					<?php
 			} else {
 				$action = 'activate_license';
 				?>
-					<a href="https://example.com/my-account/" class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'edwiser-bridge' ); ?></a>
-					<input type="submit" class="button-primary activate_license" name="activate_license" value="<?php esc_attr_e( 'Activate License', 'edwiser-bridge' ); ?>"/>
+					<a href="https://example.com/my-account/" class="button-primary get_license_key" target="_blank"><?php esc_attr_e( 'Get License Key', 'rdmcompas-moodle-connector' ); ?></a>
+					<input type="submit" class="button-primary activate_license" name="activate_license" value="<?php esc_attr_e( 'Activate License', 'rdmcompas-moodle-connector' ); ?>"/>
 					<?php
 			}
 
@@ -205,7 +205,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 		private function license_form_submission_handler() {
 			$post_data = wp_unslash( $_POST );
 			$resp_data = array(
-				'msg'          => __( 'Security check failed.', 'edwiser-bridge' ),
+				'msg'          => __( 'Security check failed.', 'rdmcompas-moodle-connector' ),
 				'notice_class' => 'notice-error',
 			);
 			$action    = isset( $post_data['action'] ) ? sanitize_text_field( $post_data['action'] ) : false;
@@ -225,7 +225,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 						$resp_data = $this->wdm_install_plugin( $post_data );
 						break;
 					default:
-						$resp_data['msg'] = __( 'Invalid action.', 'edwiser-bridge' );
+						$resp_data['msg'] = __( 'Invalid action.', 'rdmcompas-moodle-connector' );
 						break;
 				}
 			}
@@ -269,8 +269,8 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			$plugin_data['license']    = $l_key;
 			update_option( $l_key_name, $l_key );
 			if ( empty( $plugin_data['license'] ) ) {
-				$get_l_key_link = '<a href="https://example.com/bridge/#downloadfree">' . __( 'Click here', 'edwiser-bridge' ) . '</a>';
-				$resp['msg']    = __( 'License key cannot be empty, Please enter the valid license key.', 'edwiser-bridge' ) . $get_l_key_link . __( ' to get the license key.', 'edwiser-bridge' );
+				$get_l_key_link = '<a href="https://example.com/bridge/#downloadfree">' . __( 'Click here', 'rdmcompas-moodle-connector' ) . '</a>';
+				$resp['msg']    = __( 'License key cannot be empty, Please enter the valid license key.', 'rdmcompas-moodle-connector' ) . $get_l_key_link . __( ' to get the license key.', 'rdmcompas-moodle-connector' );
 				return $resp;
 			}
 			$request = wp_remote_get(
@@ -293,15 +293,15 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 						/*if ( 'valid' === $status || 'expired' === $status ) {
 							$this->manage_license( $post_data, 'activate' );
 						}*/
-						$resp['msg']          = __( 'Plugin installed sucessfully.', 'edwiser-bridge' );
+						$resp['msg']          = __( 'Plugin installed sucessfully.', 'rdmcompas-moodle-connector' );
 						$resp['notice_class'] = 'notice-success';
 					} else {
-						$resp['msg'] = __( 'Plugin installation failed.', 'edwiser-bridge' );
+						$resp['msg'] = __( 'Plugin installation failed.', 'rdmcompas-moodle-connector' );
 					}
 				} elseif ( isset( $request->msg ) ) {
 					$resp['msg'] = $request->msg;
 				} else {
-					$resp['msg'] = __( 'Empty download link. Please check your license key or contact edwiser support for more detials.', 'edwiser-bridge' );
+					$resp['msg'] = __( 'Empty download link. Please check your license key or contact edwiser support for more detials.', 'rdmcompas-moodle-connector' );
 				}
 			}
 			return $resp;
@@ -316,9 +316,9 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 		private function check_plugin_dependancy( $slug ) {
 			$msg = false;
 			if ( 'bulk-purchase' === $slug && ! is_plugin_active( 'woocommerce-integration/bridge-woocommerce.php' ) ) {
-				$msg = __( 'Please installed and activate Edwiser WooCommerce Integration plugin first.', 'edwiser-bridge' );
+				$msg = __( 'Please installed and activate Edwiser WooCommerce Integration plugin first.', 'rdmcompas-moodle-connector' );
 			} elseif ( 'woocommerce_integration' === $slug && ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-				$msg = __( 'Please installed and activate WooCommerce plugin first.', 'edwiser-bridge' );
+				$msg = __( 'Please installed and activate WooCommerce plugin first.', 'rdmcompas-moodle-connector' );
 			}
 			return $msg;
 		}
@@ -381,7 +381,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 				if ( 'valid' !== get_option( 'edd_' . $data['action'] . '_license_status' ) ) {
 					$resp = $this->manage_license( $data, 'activate' );
 				}
-				$resp['msg']          = __( 'Plugin activated successfully.', 'edwiser-bridge' );
+				$resp['msg']          = __( 'Plugin activated successfully.', 'rdmcompas-moodle-connector' );
 				$resp['notice_class'] = 'notice-success';
 			}
 			return $resp;
@@ -399,7 +399,7 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 				'eb_licensing',
 				array(
 					array(
-						'title' => __( 'Licenses', 'edwiser-bridge' ),
+						'title' => __( 'Licenses', 'rdmcompas-moodle-connector' ),
 						'type'  => 'title',
 						'id'    => 'licensing_management',
 					),
@@ -420,18 +420,18 @@ if ( ! class_exists( 'Eb_Settings_Licensing' ) ) :
 			<div id="eb_get_license_key_dialog" style="display:none;">
 				<ul>
 					<li class="eb_get_license">
-						<?php esc_html_e( 'If you already own a license then click here', 'edwiser-bridge' ); ?>
-						<a href="https://example.com/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Get License', 'edwiser-bridge' ); ?> </a>
+						<?php esc_html_e( 'If you already own a license then click here', 'rdmcompas-moodle-connector' ); ?>
+						<a href="https://example.com/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Get License', 'rdmcompas-moodle-connector' ); ?> </a>
 					</li>
 
 					<li class="eb_buy_license">
-						<?php esc_html_e( 'If you wish to purchase Edwiser Bridge PRO then click here', 'edwiser-bridge' ); ?>
-						<a href="https://example.com/bridge/?utm_source=bridge%20plugin&utm_medium=in%20product&utm_campaign=upgrade#downloadfree" target="_blank" class="button-primary"> <?php esc_html_e( 'Buy License', 'edwiser-bridge' ); ?> </a>
+						<?php esc_html_e( 'If you wish to purchase RDM Compas Moodle Connector PRO then click here', 'rdmcompas-moodle-connector' ); ?>
+						<a href="https://example.com/bridge/?utm_source=bridge%20plugin&utm_medium=in%20product&utm_campaign=upgrade#downloadfree" target="_blank" class="button-primary"> <?php esc_html_e( 'Buy License', 'rdmcompas-moodle-connector' ); ?> </a>
 					</li>
 
 					<li class="eb_upgrade_license">
-						<?php esc_html_e( 'If you already own one of the extensions, then click here to upgrade to Edwiser Bridge PRO', 'edwiser-bridge' ); ?>
-						<a href="https://example.com/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Upgrade License', 'edwiser-bridge' ); ?> </a>
+						<?php esc_html_e( 'If you already own one of the extensions, then click here to upgrade to RDM Compas Moodle Connector PRO', 'rdmcompas-moodle-connector' ); ?>
+						<a href="https://example.com/my-account/" target="_blank" class="button-primary"> <?php esc_html_e( 'Upgrade License', 'rdmcompas-moodle-connector' ); ?> </a>
 					</li>
 				</ul>
 			</div>

@@ -4,7 +4,7 @@
  *
  * @link       https://example.com
  * @since      1.0.0
- * @package    Edwiser Bridge.
+ * @package    RDM Compas Moodle Connector.
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -52,8 +52,8 @@ class Eb_Order_Meta {
 	 */
 	public function add_eb_order_meta_boxes() {
 		$status_hit = new Eb_Order_History_Meta( $this->plugin_name, $this->version );
-		add_meta_box( 'eb_order_status_update_history_meta', __( 'Order status history', 'edwiser-bridge' ), array( $status_hit, 'add_order_status_history_meta' ), 'eb_order', 'side', 'default' );
-		add_meta_box( 'eb_order_refund_meta', __( 'Refund order', 'edwiser-bridge' ), array( $this, 'add_order_refund_meta' ), 'eb_order', 'advanced', 'default' );
+		add_meta_box( 'eb_order_status_update_history_meta', __( 'Order status history', 'rdmcompas-moodle-connector' ), array( $status_hit, 'add_order_status_history_meta' ), 'eb_order', 'side', 'default' );
+		add_meta_box( 'eb_order_refund_meta', __( 'Refund order', 'rdmcompas-moodle-connector' ), array( $this, 'add_order_refund_meta' ), 'eb_order', 'advanced', 'default' );
 	}
 
 	/**
@@ -63,7 +63,7 @@ class Eb_Order_Meta {
 		global $post;
 		$refundable = get_post_meta( $post->ID, 'eb_transaction_id', true );
 		if ( ! $refundable || empty( $refundable ) ) {
-			esc_html_e( 'Refund not available for this order', 'edwiser-bridge' );
+			esc_html_e( 'Refund not available for this order', 'rdmcompas-moodle-connector' );
 			return;
 		}
 		$currency       = \app\wisdmlabs\edwiserBridge\wdm_eb_get_current_paypal_currency_symb();
@@ -79,7 +79,7 @@ class Eb_Order_Meta {
 					<?php do_action( 'eb_before_order_refund_meta' ); ?>
 					<tr>
 						<td>
-							<?php esc_html_e( 'Suspend course enrollment?: ', 'edwiser-bridge' ); ?>
+							<?php esc_html_e( 'Suspend course enrollment?: ', 'rdmcompas-moodle-connector' ); ?>
 						</td>
 						<td>
 							<input type="checkbox" name="eb_order_meta_unenroll_user" id="eb_order_meta_unenroll_user" value="ON" />
@@ -87,7 +87,7 @@ class Eb_Order_Meta {
 					</tr>
 					<tr>
 						<td>
-							<?php esc_html_e( 'Purchase cost: ', 'edwiser-bridge' ); ?>
+							<?php esc_html_e( 'Purchase cost: ', 'rdmcompas-moodle-connector' ); ?>
 						</td>
 						<td>
 							<label class="eb-ord-cost"><?php echo esc_html( $currency . $price ); ?></label>
@@ -95,7 +95,7 @@ class Eb_Order_Meta {
 					</tr>
 					<tr>
 						<td>
-							<?php esc_html_e( 'Amount already refunded: ', 'edwiser-bridge' ); ?>
+							<?php esc_html_e( 'Amount already refunded: ', 'rdmcompas-moodle-connector' ); ?>
 						</td>
 						<td>
 							<label class="eb-ord-refunded-amt">- <?php echo esc_html( $currency . $refunded_amt ); ?></label>
@@ -103,7 +103,7 @@ class Eb_Order_Meta {
 					</tr>
 					<tr>
 						<td>
-							<?php esc_html_e( 'Total available to refund: ', 'edwiser-bridge' ); ?>
+							<?php esc_html_e( 'Total available to refund: ', 'rdmcompas-moodle-connector' ); ?>
 						</td>
 						<td>
 							<label class="eb-ord-avlb-refund-amt"><?php echo esc_html( $currency . $avl_refund_amt ); ?></label>
@@ -111,7 +111,7 @@ class Eb_Order_Meta {
 					</tr>
 					<tr>
 						<td>
-							<?php esc_html_e( 'Refund amount: ', 'edwiser-bridge' ); ?>
+							<?php esc_html_e( 'Refund amount: ', 'rdmcompas-moodle-connector' ); ?>
 						</td>
 						<td>
 							<input type="text" id="eb_ord_refund_amt" min="0" max="<?php echo esc_html( $avl_refund_amt ); ?>" name="eb_ord_refund_amt" placeholder="0.00"/>
@@ -119,7 +119,7 @@ class Eb_Order_Meta {
 					</tr>
 					<tr>
 						<td>
-							<?php esc_html_e( 'Reason for refund (optional): ', 'edwiser-bridge' ); ?>
+							<?php esc_html_e( 'Reason for refund (optional): ', 'rdmcompas-moodle-connector' ); ?>
 						</td>
 						<td>
 							<input type="text" id="eb_order_refund_note" name="eb_order_refund_note" />
@@ -131,7 +131,7 @@ class Eb_Order_Meta {
 			<div class="eb-ord-refund-btn-cont">
 				<?php do_action( 'eb_before_order_refund_meta_button' ); ?>
 				<button type="button" class="button-primary" id="eb_order_refund_btn" name="eb_order_refund_btn" >
-					<?php echo esc_html__( 'Refund', 'edwiser-bridge' ) . esc_html( ' ' . $currency . ' ' ); ?>
+					<?php echo esc_html__( 'Refund', 'rdmcompas-moodle-connector' ) . esc_html( ' ' . $currency . ' ' ); ?>
 					<span id="eb-ord-refund-amt-btn-txt">0.00</span>
 				</button>
 				<?php
@@ -183,7 +183,7 @@ class Eb_Order_Meta {
 				$currency  = \app\wisdmlabs\edwiserBridge\wdm_eb_get_value_from_array( $refund, 'currency' );
 				?>
 				<li>
-					<div class="eb-order-refund-hist-stmt"><?php esc_html__( 'Refunded by', 'edwiser-bridge' ) . printf( '%s ', esc_html( $refund_by ) ) . printf( ' on %s ', esc_attr( $time ) ); ?></div>
+					<div class="eb-order-refund-hist-stmt"><?php esc_html__( 'Refunded by', 'rdmcompas-moodle-connector' ) . printf( '%s ', esc_html( $refund_by ) ) . printf( ' on %s ', esc_attr( $time ) ); ?></div>
 					<div class="eb-order-refund-hist-amt"><?php echo esc_html( "$currency$amt" ); ?></div>
 				</li>
 				<?php
@@ -241,26 +241,26 @@ class Eb_Order_Meta {
 		?>
 		<div class='eb-order-meta-byer-details'>
 			<p>
-				<strong><?php esc_html_e( 'Buyer Details: ', 'edwiser-bridge' ); ?></strong>
+				<strong><?php esc_html_e( 'Buyer Details: ', 'rdmcompas-moodle-connector' ); ?></strong>
 			</p>
 			<?php
 			if ( isset( $buyer_details->user_email ) && ! empty( $buyer_details->user_email ) ) {
 				?>
 				<p>
-					<label><?php esc_html_e( 'Name: ', 'edwiser-bridge' ); ?></label>
+					<label><?php esc_html_e( 'Name: ', 'rdmcompas-moodle-connector' ); ?></label>
 					<?php echo esc_html( $buyer_details->user_login ); ?>
 				</p>
 
 				<p>
 
-					<label><?php esc_html_e( 'Email: ', 'edwiser-bridge' ); ?></label>
+					<label><?php esc_html_e( 'Email: ', 'rdmcompas-moodle-connector' ); ?></label>
 					<?php echo esc_html( $buyer_details->user_email ); ?>
 				</p>
 				<?php
 			} else {
 				?>
 				<p>
-					<label><?php esc_html_e( 'Name: ', 'edwiser-bridge' ); ?></label>
+					<label><?php esc_html_e( 'Name: ', 'rdmcompas-moodle-connector' ); ?></label>
 					<!-- <input type="select" name="eb_order_options[eb_order_username]"> -->
 					<div class='eb_order_meta_s2'>
 						<select id="eb_order_username" name="eb_order_options[eb_order_username]" required>
@@ -294,10 +294,10 @@ class Eb_Order_Meta {
 		?>
 		<div class='eb-order-meta-details'>
 			<p>
-				<strong><?php esc_html_e( 'Order Details: ', 'edwiser-bridge' ); ?></strong>
+				<strong><?php esc_html_e( 'Order Details: ', 'rdmcompas-moodle-connector' ); ?></strong>
 			</p>
 			<p>
-				<label><?php esc_html_e( 'Id: ', 'edwiser-bridge' ); ?></label>
+				<label><?php esc_html_e( 'Id: ', 'rdmcompas-moodle-connector' ); ?></label>
 				<?php echo esc_html( $order_id ); ?>
 			</p>
 
@@ -306,7 +306,7 @@ class Eb_Order_Meta {
 				?>
 
 				<p>
-					<label><?php esc_html_e( 'Course Name: ', 'edwiser-bridge' ); ?></label>
+					<label><?php esc_html_e( 'Course Name: ', 'rdmcompas-moodle-connector' ); ?></label>
 					<a href='<?php echo esc_html( get_permalink( $order_data['course_id'] ) ); ?>'>
 						<?php echo esc_html( get_the_title( $course_id ) ); ?>
 					</a>
@@ -316,7 +316,7 @@ class Eb_Order_Meta {
 			} else {
 				?>
 				<p>
-					<label><?php esc_html_e( 'Course Name: ', 'edwiser-bridge' ); ?></label>
+					<label><?php esc_html_e( 'Course Name: ', 'rdmcompas-moodle-connector' ); ?></label>
 					<!-- <input type="text" name="eb_order_options[eb_order_course]"> -->
 					<div class='eb_order_meta_s2'>
 						<select id="eb_order_course" name="eb_order_options[eb_order_course]" required>
@@ -332,7 +332,7 @@ class Eb_Order_Meta {
 			?>
 			<p>
 				<label>
-					<?php esc_html_e( 'Date: ', 'edwiser-bridge' ); ?>
+					<?php esc_html_e( 'Date: ', 'rdmcompas-moodle-connector' ); ?>
 				</label>
 				<?php echo get_the_date( 'Y-m-d H:i', $order_id ); ?>
 			</p>

@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single moodle courses.
  *
- * @package Edwiser Bridge.
+ * @package RDM Compas Moodle Connector.
  */
 
 /**
@@ -64,7 +64,7 @@ get_template_part('template-parts/breadcrumb'); ?>
         <div class="rdm-tc-category-wrapper">
             <p><?php echo $term->description; ?></p>
             <!--        Courses list-->
-            <h4><?php echo __('Training Units', 'edwiser-bridge'); ?></h4>
+            <h4><?php echo __('Training Units', 'rdmcompas-moodle-connector'); ?></h4>
             <?php
             if ($wp_query->have_posts()) {
                 while ($wp_query->have_posts()) :
@@ -79,7 +79,7 @@ get_template_part('template-parts/breadcrumb'); ?>
             <?php
             $kb_articles = get_field("linked_knowledge_base_articles", "category_" . $term->term_id);
             if ($kb_articles) {
-                echo '<h4>' . __('Related Knowledge Base Articles', 'edwiser-bridge') . '</h4>';
+                echo '<h4>' . __('Related Knowledge Base Articles', 'rdmcompas-moodle-connector') . '</h4>';
                 foreach ($kb_articles as $kb_article) {
                     global $kb_article;
                     $template_loader->wp_get_template_part('kb-article', 'card');

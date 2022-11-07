@@ -5,8 +5,8 @@
  * @link       https://example.com
  * @since      1.0.0
  *
- * @package    Edwiser Bridge
- * @subpackage Edwiser Bridge/admin
+ * @package    RDM Compas Moodle Connector
+ * @subpackage RDM Compas Moodle Connector/admin
  */
 
 namespace app\wisdmlabs\edwiserBridge;
@@ -42,8 +42,8 @@ class Eb_Admin_Menus {
 	public function admin_menu() {
 		add_submenu_page(
 			'edit.php?post_type=eb_course',
-			__( 'Orders', 'edwiser-bridge' ),
-			__( 'Orders', 'edwiser-bridge' ),
+			__( 'Orders', 'rdmcompas-moodle-connector' ),
+			__( 'Orders', 'rdmcompas-moodle-connector' ),
 			'manage_options',
 			'edit.php?post_type=eb_order'
 		);
@@ -57,8 +57,8 @@ class Eb_Admin_Menus {
 	public function settings_menu() {
 		add_submenu_page(
 			'edit.php?post_type=eb_course',
-			__( 'Settings', 'edwiser-bridge' ),
-			__( 'Settings', 'edwiser-bridge' ),
+			__( 'Settings', 'rdmcompas-moodle-connector' ),
+			__( 'Settings', 'rdmcompas-moodle-connector' ),
 			'manage_options',
 			'eb-settings',
 			array( $this, 'settings_page' )
@@ -73,8 +73,8 @@ class Eb_Admin_Menus {
 	public function manage_enrollment_menu() {
 		add_submenu_page(
 			'edit.php?post_type=eb_course',
-			__( 'User Enrollment', 'edwiser-bridge' ),
-			__( 'Manage Enrollment', 'edwiser-bridge' ),
+			__( 'User Enrollment', 'rdmcompas-moodle-connector' ),
+			__( 'Manage Enrollment', 'rdmcompas-moodle-connector' ),
 			'manage_options',
 			'mucp-manage-enrollment',
 			array( $this, 'manage_enrollment_content' )
@@ -89,8 +89,8 @@ class Eb_Admin_Menus {
 	public function email_template() {
 		add_submenu_page(
 			'edit.php?post_type=eb_course',
-			__( 'Manage Email Templates', 'edwiser-bridge' ),
-			__( 'Manage Email Templates', 'edwiser-bridge' ),
+			__( 'Manage Email Templates', 'rdmcompas-moodle-connector' ),
+			__( 'Manage Email Templates', 'rdmcompas-moodle-connector' ),
 			'manage_options',
 			'eb-email-template',
 			array( $this, 'email_template_page' )
