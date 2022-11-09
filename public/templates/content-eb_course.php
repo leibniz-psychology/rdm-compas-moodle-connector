@@ -12,13 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $post;
 
 /*
- * Filter to get all the initial infoe i.e all initial variables which will be used while showing each card of archive page.
+ * Filter to get all the initial infos i.e all initial variables which will be used while showing each card of archive page.
  *
  */
 $attr             = isset( $attr ) ? $attr : array();
 $is_eb_my_courses = isset( $is_eb_my_courses ) ? $is_eb_my_courses : 0;
 $course_data      = apply_filters( 'eb_content_course_before', $post->ID, $attr, $is_eb_my_courses );
-
 ?>
 
 <div id="<?php echo 'post-' . get_the_ID(); ?>" <?php post_class( 'wdm-col-3-2-1 eb-course-card eb-course-col wdm-course-grid-wrap ' . $course_data['course_class'] ); ?> title="<?php echo esc_html( $course_data['h_title'] ); ?>">
@@ -51,7 +50,7 @@ $course_data      = apply_filters( 'eb_content_course_before', $post->ID, $attr,
 						</p>
 					</div>
                     <div class="rdm-tc-course-card-buttons">
-                        <a class="rdm-tc-button rdm-tc-button-blue" href="https://trainingcenter.rdm-compas.org/" target="_blank" rel="noopener"><?php echo __('Start course', 'rdmcompas-moodle-connector'); ?></a>
+                        <a class="rdm-tc-button rdm-tc-button-blue" href="<?php echo esc_url( $course_data['moodle_course_url'] ); ?>" target="_blank" rel="noopener"><?php echo __('Start course', 'rdmcompas-moodle-connector'); ?></a>
                         <a class="rdm-tc-button rdm-tc-button-gray" href="<?php echo esc_url( $course_data['course_url'] ); ?>" rel="bookmark"><?php echo __('Show more', 'rdmcompas-moodle-connector'); ?></a>
                     </div>
 

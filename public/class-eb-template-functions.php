@@ -56,8 +56,9 @@ class Eb_Template_Functions {
 		if ( is_array( $course_options ) ) {
 //			$course_price_type = ( isset( $course_options['course_price_type'] ) ) ? $course_options['course_price_type'] : 'free';
 //			$course_price      = ( isset( $course_options['course_price'] ) && is_numeric( $course_options['course_price'] ) ) ? $course_options['course_price'] : '0';
-			$course_closed_url = ( isset( $course_options['course_closed_url'] ) ) ? $course_options['course_closed_url'] : '#';
-			$short_description = ( isset( $course_options['course_short_description'] ) ) ? $course_options['course_short_description'] : '';
+//			$course_closed_url = ( isset( $course_options['course_closed_url'] ) ) ? $course_options['course_closed_url'] : '#';
+            $moodle_course_url = 'https://trainingcenter.rdm-compas.org/course/view.php?id=' . $course_options['moodle_course_id'];
+            $short_description = ( isset( $course_options['course_short_description'] ) ) ? $course_options['course_short_description'] : '';
 		}
 
 //		if ( is_numeric( $course_price ) ) {
@@ -98,6 +99,7 @@ class Eb_Template_Functions {
 			'h_title'                => $h_title,
 			'thumb_url'              => $thumb_url,
 			'course_url'             => $course_url,
+            'moodle_course_url'      => $moodle_course_url,
 			'short_description'      => $short_description,
 //			'course_price_formatted' => $course_price_formatted,
 			'is_eb_my_courses'       => $is_eb_my_courses,
@@ -121,6 +123,7 @@ class Eb_Template_Functions {
         $categories = \app\wisdmlabs\edwiserBridge\wdm_eb_course_terms( $post_id );
 		$course_options = get_post_meta( $post_id, 'eb_course_options', true );
 
+        $moodle_course_url          = 'https://trainingcenter.rdm-compas.org/course/view.php?id=' . $course_options['moodle_course_id'];
         $course_institution         = $course_options['moodle_course_institution']      ?? null;
         $course_contact_person      = $course_options['moodle_course_contact_person']   ?? null;
         $course_date_start          = $course_options['moodle_course_date_start']       ?? __('Start now!', 'rdmcompas-moodle-connector');;
@@ -148,7 +151,8 @@ class Eb_Template_Functions {
             'course_duration'           => $course_duration,
             'course_required_material'  => $course_required_material,
             'course_persistent_identifier' => $course_persistent_identifier,
-            'course_license'            => $course_license
+            'course_license'            => $course_license,
+            'moodle_course_url'         => $moodle_course_url
         ];
 	}
 

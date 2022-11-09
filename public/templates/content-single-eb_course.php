@@ -36,6 +36,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
 //'course_required_material'
 //'course_persistent_identifier'
 //'course_license'
+//'moodle_course_url'
 ?>
 
 <!-- Curse details wrapper. -->
@@ -108,7 +109,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
         </div>
     <?php } else { ?>
         <div class="rdm-tc-course-button">
-            <a class="rdm-tc-button rdm-tc-button-blue" href="https://trainingcenter.rdm-compas.org/" target="_blank"
+            <a class="rdm-tc-button rdm-tc-button-blue" href="<?php echo esc_url( $single_course_data['moodle_course_url'] ); ?>" target="_blank"
                rel="noopener"><?php echo __('Start now!', 'rdmcompas-moodle-connector'); ?></a>
         </div>
     <?php } ?>
