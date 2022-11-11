@@ -59,7 +59,7 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
                 echo '<p><strong>' . __('Persistent Identifier', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_persistent_identifier'] . '</p>';
             }
             echo '<p><strong>' . __('Duration', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
-            echo '<p><strong>' . __('Last modified', 'rdmcompas-moodle-connector') . '</strong>: ' . date('F j, Y', intval($single_course_data['course_date_modified'])) . '</p>';
+            echo '<p><strong>' . __('Last modified', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_date_modified'] . '</p>';
         }
         ?>
     </div>

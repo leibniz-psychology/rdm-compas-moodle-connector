@@ -51,8 +51,8 @@ class Eb_Course_Manager
      *
      * Ensures only one instance of Eb_Course_Manager is loaded or can be loaded.
      *
-     * @param text $plugin_name plugin_name.
-     * @param text $version version.
+     * @param string $plugin_name plugin_name.
+     * @param string $version version.
      * @return Eb_Course_Manager - Main instance
      * @see Eb_Course_Manager()
      * @since 1.0.0
@@ -91,8 +91,8 @@ class Eb_Course_Manager
     /**
      * Main Eb_Course_Manager contsructor.
      *
-     * @param text $plugin_name plugin_name.
-     * @param text $version version.
+     * @param string $plugin_name plugin_name.
+     * @param string $version version.
      * @return Eb_Course_Manager - Main instance
      * @see Eb_Course_Manager()
      * @since 1.0.0
@@ -510,7 +510,7 @@ class Eb_Course_Manager
      * Create course on WordPress.
      *
      * @param array $course_data course data recieved from initiate_course_sync_process().
-     * @param text $sync_options sync_options.
+     * @param string $sync_options sync_options.
      * @return int returns id of course
      */
     public function create_course_on_wordpress($course_data, $sync_options = array())
@@ -1038,8 +1038,8 @@ class Eb_Course_Manager
             'moodle_course_id'                  => $course_data->id,
             'moodle_course_institution'         => $custom_fields['institution'],
             'moodle_course_contact_person'      => array($custom_fields['contact_person_name'],$custom_fields['contact_person_email']),
-            'moodle_course_date_start'          => $course_data->startdate,
-            'moodle_course_date_modified'       => $course_data->timemodified,
+            'moodle_course_date_start'          => date('M j, Y', intval($course_data->startdate)),
+            'moodle_course_date_modified'       => date('M j, Y', intval($course_data->timemodified)),
             'moodle_course_format'              => $custom_fields['course_format'],
             'moodle_course_target_group'        => $custom_fields['target_group'],
             'moodle_course_discipline'          => $custom_fields['discipline'],

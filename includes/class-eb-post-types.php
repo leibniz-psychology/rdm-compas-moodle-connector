@@ -284,7 +284,7 @@ class Eb_Post_Types
                 'moodle_course_date_modified' => array( //moodle timemodified
                     'label' => __('Date Modified', 'rdmcompas-moodle-connector'),
                     'description' => __('Date Modified', 'rdmcompas-moodle-connector'),
-                    'type' => 'date',
+                    'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
@@ -349,7 +349,7 @@ class Eb_Post_Types
                 'moodle_course_date_start' => array( //moodle custom field
                     'label' => __('Start date', 'rdmcompas-moodle-connector'),
                     'description' => __('Start date', 'rdmcompas-moodle-connector'),
-                    'type' => 'date',
+                    'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
@@ -748,10 +748,10 @@ class Eb_Post_Types
     /**
      * Get post option.
      *
-     * @param text $post_id post id.
-     * @param text $key key id.
-     * @param text $post_type post_type id.
-     * @param text $default default id.
+     * @param string $post_id post id.
+     * @param string $key key id.
+     * @param string $post_type post_type id.
+     * @param string $default default id.
      */
     public static function get_post_options($post_id, $key, $post_type, $default = false)
     {
