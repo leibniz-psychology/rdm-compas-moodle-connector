@@ -334,47 +334,6 @@ class EBUserManager {
 	}
 
 
-
-	/**
-	 * DEPRECATED FUNCTION
-	 * Initiate the process to link users to moodle, get user's who have not linked to moodle
-	 * and link them to moodle
-	 *
-	 * Called by users_link_to_moodle_synchronization() from class Eb_Settings_Ajax_Initiater
-	 *
-	 * @deprecated since 2.0.1 use user_link_to_moodle_handler( $sync_options, $offset ) insted.
-	 * @param array $sync_options    user sync options.
-	 * @param int   $offset LIMIT query offset for getting the resluts in chunk.
-	 *
-	 * @since   1.4.1
-	 *
-	 * @return array $response     array containing status & response message
-	 */
-	public function userLinkToMoodlenHandler( $sync_options = array(), $offset = 0 ) {
-		return $this->user_link_to_moodle_handler( $sync_options, $offset );
-	}
-
-
-
-
-	/**
-	 * DEPRECATED FUNATION.
-	 *
-	 * Create a new WordPress user.
-	 *
-	 * @deprecated since 2.0.1 use create_wordpress_user( $email, $firstname, $lastname, $role ) insted.
-	 * @param string $email email.
-	 * @param string $firstname firstname name.
-	 * @param string $lastname lastname.
-	 * @param string $role role.
-	 *
-	 * @return int|WP_Error on failure, Int (user ID) on success
-	 */
-	public function createWordpressUser( $email, $firstname, $lastname, $role = '' ) {
-		return $this->create_wordpress_user( $email, $firstname, $lastname, $role );
-	}
-
-
 	/**
 	 * Create a new WordPress user.
 	 *
@@ -529,24 +488,6 @@ class EBUserManager {
 		return $uc_status;
 	}
 
-
-	/**
-	 * DEPRECATED FUNCTION.
-	 * Will be used to check if a username is available on moodle
-	 * Used while creating a moodle account for a user.
-	 *
-	 * @deprecated since 2.0.1 use is_moodle_username_available( $username ) insted.
-	 * @param string $username username to be checked.
-	 *
-	 * @return bool returns true / false  [ return false in case of connection failure ]
-	 */
-	public function isMoodleUsernameAvailable( $username ) {
-		return $this->is_moodle_username_available( $username );
-	}
-
-
-
-
 	/**
 	 * Will be used to check if a username is available on moodle
 	 * Used while creating a moodle account for a user.
@@ -631,22 +572,6 @@ class EBUserManager {
 		}
 
 		return $user;
-	}
-
-	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * Create a new user on moodle with user data passed to it.
-	 * update an existing user whose moodle id is passed to the function.
-	 *
-	 * @deprecated since 2.0.1 use create_moodle_user( $user_data, $update ) insted.
-	 * @param array $user_data the user data used to create a new account or update existing one.
-	 * @param int   $update set update = 1 if you want to update an existing user on moodle.
-	 *
-	 * @return int returns id of new user created, on error returns false.
-	 */
-	public function createMoodleUser( $user_data, $update = 0 ) {
-		return $this->create_moodle_user( $user_data, $update );
 	}
 
 
@@ -753,29 +678,6 @@ class EBUserManager {
 
 		return $user;
 	}
-
-
-
-
-
-	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * Checks if a moodle account is already linked, or create account on moodle and links to WordPress.
-	 * Can also be executed on wp_login hook.
-	 *
-	 * @deprecated since 2.0.1 use link_moodle_user( $user ) insted.
-	 * a do_action is added that can be used to execute custom action if a new user is created on moodle
-	 * and linked to WordPress.
-	 *
-	 * @param object $user WordPress user object.
-	 */
-	public function linkMoodleUser( $user ) {
-		return $this->link_moodle_user( $user );
-	}
-
-
-
 
 
 	/**

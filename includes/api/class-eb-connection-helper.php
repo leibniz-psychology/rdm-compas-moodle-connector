@@ -111,23 +111,7 @@ class EBConnectionHelper {
 		return $time;
 	}
 
-	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * Sends an API request to moodle server based on the credentials entered by user.
-	 * returns response to ajax initiater.
-	 *
-	 * @since     1.0.0
-	 *
-	 * @deprecated since 2.0.1 use connection_test_helper( $url, $token ) insted.
-	 * @param string $url   moodle URL.
-	 * @param string $token moodle access token.
-	 *
-	 * @return array returns array containing the success & response message
-	 */
-	public function connectionTestHelper( $url, $token ) {
-		return $this->connection_test_helper( $url, $token );
-	}
+
 
 
 
@@ -313,25 +297,6 @@ class EBConnectionHelper {
         return $msg;
 	}
 
-	/**
-	 * DEPRECATED FUNCTION.
-	 *
-	 * Helper function, recieves request to fetch data from moodle.
-	 * accepts a paramtere for webservice function to be called on moodle.
-	 *
-	 * fetches data from moodle and returns response.
-	 *
-	 * @deprecated since 20.1 use connect_moodle_helper( $webservice_function ) insted.
-	 * @since  1.0.0
-	 *
-	 * @param string $webservice_function accepts webservice function as an argument.
-	 *
-	 * @return array returns response to caller function
-	 */
-	public function connectMoodleHelper( $webservice_function = null ) {
-		return $this->connect_moodle_helper( $webservice_function );
-	}
-
 
 
 
@@ -390,24 +355,6 @@ class EBConnectionHelper {
 		);
 	}
 
-
-	/**
-	 * Helper function, recieves request to fetch data from moodle.
-	 * accepts a paramtere for webservice function to be called on moodle.
-	 *
-	 * Fetches data from moodle and returns response.
-	 *
-	 * @deprecated since 2.0.1 use connect_moodle_with_args_helper( $webservice_function, $request_data ) insted.
-	 * @since  1.0.0
-	 *
-	 * @param string $webservice_function accepts webservice function as an argument.
-	 * @param string $request_data request_data.
-	 *
-	 * @return array returns response to caller function
-	 */
-	public function connectMoodleWithArgsHelper( $webservice_function, $request_data ) {
-		return $this->connect_moodle_with_args_helper( $webservice_function, $request_data );
-	}
 
 
 	/**

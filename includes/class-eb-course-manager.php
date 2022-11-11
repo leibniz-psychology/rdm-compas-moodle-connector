@@ -297,23 +297,6 @@ class Eb_Course_Manager
     }
 
 
-    /**
-     * DEPRECATED FUNCTION.
-     *
-     * Fetches the courses from moodle ( all courses or courses of a specfic user ).
-     *
-     * Uses connect_moodle_helper() and connect_moodle_with_args_helper()
-     *
-     * @param int $moodle_user_id moodle user_id of a WordPress user passed to connection helper.
-     *
-     * @return array stores moodle web service response.
-     * @deprecated since 2.0.1 use get_moodle_courses( $moodle_user_id ) insted.
-     */
-    public function getMoodleCourses($moodle_user_id = null)
-    {
-        return $this->get_moodle_courses($moodle_user_id);
-    }
-
 
     /**
      * Fetches the courses from moodle ( all courses or courses of a specfic user ).
@@ -347,23 +330,6 @@ class Eb_Course_Manager
         }
 
         return $response;
-    }
-
-
-    /**
-     * DEPRECATED FUNCTION
-     *
-     * Fetches the courses categories from moodle.
-     * uses connect_moodle_helper().
-     *
-     * @param string $webservice_function the webservice function passed to connection helper.
-     *
-     * @return array stores moodle web service response.
-     * @deprecated since 2.0.1 use get_moodle_course_categories( $webservice_function = null )  insted.
-     */
-    public function getMoodleCourseCategories($webservice_function = null)
-    {
-        return $this->get_moodle_course_categories($webservice_function);
     }
 
 
@@ -403,21 +369,6 @@ class Eb_Course_Manager
         return 0;
     }
 
-
-    /**
-     * DEPRECATED FUNCTION.
-     *
-     * Checks if a course is previously synced from moodle.
-     *
-     * @param int $course_id_on_moodle the id of course as on moodle.
-     *
-     * @return bool returns respective course id on WordPress if exist else returns null
-     * @deprecated since 2.0.1 use is_course_presynced( $course_id_on_moodle ) insted.
-     */
-    public function isCoursePresynced($course_id_on_moodle)
-    {
-        return $this->is_course_presynced($course_id_on_moodle);
-    }
 
 
     /**
@@ -460,19 +411,6 @@ class Eb_Course_Manager
      * @param int $course_id_on_wp the id of course synced on WordPress.
      *
      * @return int returns respective course id on moodle
-     * @deprecated since 2.0.1 use get_moodle_course_id( $course_id_on_wp ) insted.
-     */
-    public function getMoodleCourseId($course_id_on_wp)
-    {
-        return $this->get_moodle_course_id($course_id_on_wp);
-    }
-
-    /**
-     * Return the moodle id of a course using its WordPress id.
-     *
-     * @param int $course_id_on_wp the id of course synced on WordPress.
-     *
-     * @return int returns respective course id on moodle
      */
     public function get_moodle_course_id($course_id_on_wp)
     {
@@ -491,19 +429,6 @@ class Eb_Course_Manager
         return array($course_id_on_wp => get_post_meta($course_id_on_wp, 'moodle_course_id', true));
     }
 
-    /**
-     * Create course on WordPress.
-     *
-     * @param array $course_data course data received from initiate_course_sync_process().
-     * @param array $sync_options course sync options.
-     *
-     * @return int returns id of course
-     * @deprecated since 2.0.1 use create_course_on_wordpress( $course_data, $sync_options = array() ) insted.
-     */
-    public function createCourseOnWordpress($course_data, $sync_options = array())
-    {
-        return $this->create_course_on_wordpress($course_data, $sync_options);
-    }
 
 
     /**
@@ -565,23 +490,6 @@ class Eb_Course_Manager
         return $wp_course_id;
     }
 
-
-    /**
-     * DEPRECATED FUNCTION.
-     *
-     * Update previous synced course on WordPress.
-     *
-     * @param int $wp_course_id existing id of course on WordPress.
-     * @param array $course_data course data recieved from initiate_course_sync_process().
-     * @param array $sync_options sync_options.
-     *
-     * @return int returns id of course
-     * @deprecated since 2.0.1 use update_course_on_wordpress( $wp_course_id, $course_data, $sync_options ) insted.
-     */
-    public function updateCourseOnWordPress($wp_course_id, $course_data, $sync_options)
-    {
-        return $this->update_course_on_wordpress($wp_course_id, $course_data, $sync_options);
-    }
 
 
     /**
@@ -657,20 +565,6 @@ class Eb_Course_Manager
             // removing course from enrollment table.
             $wpdb->delete($wpdb->prefix . 'moodle_enrollment', array('course_id' => $course_id), array('%d')); // @codingStandardsIgnoreLine
         }
-    }
-
-    /**
-     * DEPRECATED FUNCTION.
-     *
-     * Uses the response recieved from get_eb_course_categories() function.
-     * craetes terms of eb_course_cat taxonomy.
-     *
-     * @param array $category_response accepts categories fetched from moodle.
-     * @deprecated since 2.0.1 use create_course_categories_on_wordpress( $category_response ) insted
-     */
-    public function createCourseCategoriesOnWordpress($category_response)
-    {
-        $this->create_course_categories_on_wordpress($category_response);
     }
 
 

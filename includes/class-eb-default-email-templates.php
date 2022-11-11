@@ -568,10 +568,10 @@ if ( ! class_exists( 'Eb_Default_Email_Template' ) ) {
 			ob_start();
 			?>
 			<div style="background-color: #efefef; width: 100%; padding: 70px 70px 70px 70px; margin: auto; height: auto;">
-				<table id="template_container" style="padding-bottom: 20px; box-shadow: 1px 2px 0px 1px #d0d0d0; border-radius: 6px !important; background-color: #dfdfdf; margin: auto;" border="0" width="600" cellspacing="0" cellpadding="0">
+				<table id="template_container" style="padding-bottom: 20px; box-shadow: 1px 2px 0 1px #d0d0d0; border-radius: 6px !important; background-color: #dfdfdf; margin: auto;" border="0" width="600" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>
-							<td style="background-color: #465c94; border-radius: 6px 6px 0px 0px; border-bottom: 0; font-family: Arial;">
+							<td style="background-color: #465c94; border-radius: 6px 6px 0 0; border-bottom: 0; font-family: Arial;">
 								<h1 style="color: white; margin: 0; padding: 28px 24px; text-shadow: 0 1px 0 0; display: block; font-family: Arial; font-size: 30px; font-weight: bold; text-align: left; line-height: 150%;">
 									<?php
 									printf( esc_html__( 'Your order ', 'rdmcompas-moodle-connector' ) . '%s ' . esc_html__( ' has been successfully refunded.', 'rdmcompas-moodle-connector' ), '{ORDER_ID}' );
@@ -659,10 +659,10 @@ if ( ! class_exists( 'Eb_Default_Email_Template' ) ) {
 			ob_start();
 			?>
 			<div style="background-color: #efefef; width: 100%; padding: 70px 70px 70px 70px; margin: auto; height: auto;">
-				<table id="template_container" style="padding-bottom: 20px; box-shadow: 1px 2px 0px 1px #d0d0d0; border-radius: 6px !important; background-color: #dfdfdf; margin: auto;" border="0" width="600" cellspacing="0" cellpadding="0">
+				<table id="template_container" style="padding-bottom: 20px; box-shadow: 1px 2px 0 1px #d0d0d0; border-radius: 6px !important; background-color: #dfdfdf; margin: auto;" border="0" width="600" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>
-							<td style="background-color: #465c94; border-radius: 6px 6px 0px 0px; border-bottom: 0; font-family: Arial;">
+							<td style="background-color: #465c94; border-radius: 6px 6px 0 0; border-bottom: 0; font-family: Arial;">
 								<h1 style="color: white; margin: 0; padding: 28px 24px; text-shadow: 0 1px 0 0; display: block; font-family: Arial; font-size: 30px; font-weight: bold; text-align: left; line-height: 150%;">
 								<?php printf( esc_html__( 'Refund notification for the order id: ', 'rdmcompas-moodle-connector' ) . '%s.', '{ORDER_ID}' ); ?>
 								</h1>

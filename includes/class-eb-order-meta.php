@@ -40,8 +40,8 @@ class Eb_Order_Meta {
 	/**
 	 * Contsructor.
 	 *
-	 * @param text $plugin_name plugin name.
-	 * @param text $version plugin version.
+	 * @param string $plugin_name plugin name.
+	 * @param string $version plugin version.
 	 */
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;

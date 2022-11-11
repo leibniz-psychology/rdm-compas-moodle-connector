@@ -495,22 +495,6 @@ class EBAdminEmailTemplate {
 
 
 	/**
-	 * DEPRECATED FUNCTION.
-	 *
-	 * Provides teh functioanlityto get the email tempalte constant.
-	 *
-	 * @deprecated since 2.0.1 use get_email_tmpl_content($tmpl_name) insted.
-	 * @param  string $tmpl_name template key.
-	 * @return string returns the template content associated with the template
-	 * kay othrewise emapty string
-	 */
-	public static function getEmailTmplContent( $tmpl_name ) {
-		return self::get_email_tmpl_content( $tmpl_name );
-	}
-
-
-
-	/**
 	 * Provides teh functioanlityto get the email tempalte constant
 	 *
 	 * @param  string $tmpl_name template key.
@@ -551,25 +535,6 @@ class EBAdminEmailTemplate {
 			wp_send_json_error( 'Invalid request' );
 		}
 	}
-
-
-	/**
-	 * DEPRECATED FUNCTION.
-	 *
-	 * Provides the funcationlity to send the email temaplte.
-	 *
-	 * @deprecated since 2.0.1 use send_emial( $mail_to, $args, $tmpl_data ) insted.
-	 * @param  text  $mail_to   email id to send the email id.
-	 * @param  array $args      the default email argument.
-	 * @param  html  $tmpl_data email template contetn.
-	 * @return boolean returns true if the email sent successfully othrewise false
-	 */
-	public function sendEmail( $mail_to, $args, $tmpl_data ) {
-		return $this->send_email( $mail_to, $args, $tmpl_data );
-	}
-
-
-
 
 	/**
 	 * Provides the funcationlity to send the email temaplte
@@ -631,17 +596,6 @@ class EBAdminEmailTemplate {
 		return $mail;
 	}
 
-	/**
-	 * Functioanlity to fetch the from email from database.
-	 *
-	 * @deprecated since 2.0.1 use wpb_sender_email( $email ) insted
-	 * @param string $email start the email send process.
-	 *
-	 * @return string returns from email.
-	 */
-	public function wpbSenderEmail( $email ) {
-		return $this->wpb_sender_email( $email );
-	}
 
 	/**
 	 * Functioanlity to fetch the from email from database.

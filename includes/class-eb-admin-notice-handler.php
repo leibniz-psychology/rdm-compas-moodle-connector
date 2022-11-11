@@ -169,59 +169,6 @@ class Eb_Admin_Notice_Handler {
 	}
 
 
-
-	/**
-	 * NOT USED FUNCTION
-	 * handle notice dismiss
-	 *
-	 * @deprecated since 2.0.1 discontinued.
-	 * @since 1.3.1
-	 */
-	public function eb_admin_discount_notice_dismiss_handler() {
-		if ( true === filter_input( INPUT_GET, 'eb-discount-notice-dismissed', FILTER_VALIDATE_BOOLEAN ) ) {
-			$user_id = get_current_user_id();
-			add_user_meta( $user_id, 'eb_discount_notice_dismissed', 'true', true );
-		}
-	}
-
-
-	/**
-	 * NOT USED FUNCTION
-	 * show admin feedback notice
-	 *
-	 * @since 1.3.1
-	 */
-	public function eb_admin_discount_notice() {
-		$redirection = add_query_arg( 'eb-discount-notice-dismissed', true );
-
-		$user_id = get_current_user_id();
-		if ( ! get_user_meta( $user_id, 'eb_discount_notice_dismissed' ) ) {
-			echo '  <div class="notice  eb_admin_discount_notice_message">
-						<div class="eb_admin_discount_notice_message_cont">
-							<div class="eb_admin_discount_notice_content">
-								' . esc_html__( 'Get all Premium Edwiser Products at Flat 20% Off!', 'rdmcompas-moodle-connector' ) . '
-
-								<div style="font-size:13px; padding-top:4px;">
-									<a href="' . esc_html( $redirection ) . '">
-										' . esc_html__( ' Dismiss this notice', 'rdmcompas-moodle-connector' ) . '
-									</a>
-								</div>
-							</div>
-							<div>
-								<a class="eb_admin_discount_offer_btn" href="https://example.com/edwiser-lifetime-kit/?utm_source=WordPress&utm_medium=notif&utm_campaign=inbridge"  target="_blank">' . esc_html__( 'Avail Offer Now!', 'rdmcompas-moodle-connector' ) . '</a>
-							</div>
-						</div>
-						<div class="eb_admin_discount_dismiss_notice_message">
-							<span class="dashicons dashicons-dismiss eb_admin_discount_notice_hide"></span>
-						</div>
-					</div>';
-		}
-	}
-
-
-
-
-
 	/**
 	 * Handle notice dismiss
 	 *
@@ -230,47 +177,6 @@ class Eb_Admin_Notice_Handler {
 	public function eb_admin_update_notice_dismiss_handler() {
 		if ( true === filter_input( INPUT_GET, 'eb-update-notice-dismissed', FILTER_VALIDATE_BOOLEAN ) ) {
 			update_option( 'eb_mdl_plugin_update_notice_dismissed', 'true', true );
-		}
-	}
-
-
-
-
-	/**
-	 * NOT USED FUNCTION
-	 * show admin feedback notice
-	 *
-	 * @since 1.3.1
-	 */
-	public function eb_admin_feedback_notice() {
-		$redirection       = add_query_arg( 'eb-feedback-notice-dismissed', true );
-		$user_id           = get_current_user_id();
-		$feedback_usermeta = get_user_meta( $user_id, 'eb_feedback_notice_dismissed', true );
-		if ( 'eb_admin_feedback_notice' !== get_transient( 'edwiser_bridge_admin_feedback_notice' ) && ( ! $feedback_usermeta || 'remind_me_later' !== $feedback_usermeta ) && 'dismiss_permanantly' !== $feedback_usermeta ) {
-				echo '  <div class="notice eb_admin_feedback_notice_message_cont">
-							<div class="eb_admin_feedback_notice_message">'
-								. esc_html__( 'Enjoying RDM Compas Moodle Connector, Please  ', 'rdmcompas-moodle-connector' ) . '
-								<a href="https://WordPress.org/plugins/rdmcompas-moodle-connector/">'
-									. esc_html__( ' click here ', 'rdmcompas-moodle-connector' ) .
-								'</a>'
-								. esc_html__( ' to rate us.', 'rdmcompas-moodle-connector' ) . '
-								<div style="padding-top:8px; font-size:13px;">
-									<span class="eb_feedback_rate_links">
-										<a href="' . esc_html( $redirection ) . '=remind_me_later">
-										' . esc_html__( 'Remind me Later!', 'rdmcompas-moodle-connector' ) . '
-										</a>
-									</span>
-									<span class="eb_feedback_rate_links">
-										<a href="' . esc_html( $redirection ) . '=dismiss_permanantly">
-										' . esc_html__( 'Dismiss Notice', 'rdmcompas-moodle-connector' ) . '
-										</a>
-									</span>
-								</div>
-							</div>
-							<div class="eb_admin_feedback_dismiss_notice_message">
-								<span class="dashicons dashicons-dismiss"></span>
-							</div>
-						</div>';
 		}
 	}
 

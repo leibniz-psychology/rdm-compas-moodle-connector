@@ -288,17 +288,5 @@ if ( ! class_exists( '\app\wisdmlabs\edwiserBridge\Eb_Manage_User_Enrollment' ) 
 			);
 			return $enrollment_manager->update_user_course_enrollment( $args );
 		}
-
-		/**
-		 * NOT USED FUNCTION
-		 *
-		 * @param type $moodle_course_id moodle_course_id.
-		 */
-		public function get_wp_post_id( $moodle_course_id ) {
-			global $wpdb;
-			$result = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM {$wpdb->prefix}postmeta WHERE meta_value=%s AND meta_key = 'moodle_course_id'", $moodle_course_id ) ); // @codingStandardsIgnoreLine
-
-			return $result;
-		}
 	}
 }

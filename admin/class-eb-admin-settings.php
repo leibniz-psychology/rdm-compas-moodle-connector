@@ -216,22 +216,6 @@ if ( ! class_exists( 'EbAdminSettings' ) ) {
 		}
 
 
-		/**
-		 * DEPRECATED FUNCTION
-		 *
-		 * Output admin fields.
-		 *
-		 * @deprecated since 2.0.1 use output_fields( $options ) insted.
-		 * Loops though the edw options array and outputs each field.
-		 *
-		 * @since  1.0.0
-		 *
-		 * @param array $options Opens array to output.
-		 */
-		public static function outputFields( $options ) {
-			self::output_fields( $options );
-		}
-
 
 
 		/**
@@ -659,23 +643,6 @@ if ( ! class_exists( 'EbAdminSettings' ) ) {
 			}
 		}
 
-		/**
-		 * DEPRECATED FUNCTION
-		 *
-		 * Save admin fields.
-		 *
-		 * Loops though the edw options array and outputs each field.
-		 *
-		 * @deprecated since 2.0.1 use save_fields( $options ) insted.
-		 * @since  1.0.0
-		 *
-		 * @param array $options Opens array to output.
-		 *
-		 * @return bool
-		 */
-		public static function saveFields( $options ) {
-			return self::save_fields( $options );
-		}
 
 		/**
 		 * Save admin fields.

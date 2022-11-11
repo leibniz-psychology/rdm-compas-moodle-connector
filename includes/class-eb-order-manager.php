@@ -87,24 +87,6 @@ class Eb_Order_Manager {
 		$this->version     = $version;
 	}
 
-	/**
-	 * NOT USED FUNCTION
-	 * get status of an order by order id.
-	 *
-	 * @since  1.0.0
-	 *
-	 * @param int $order_id id of an order.
-	 *
-	 * @return string $order_status   current status of an order
-	 */
-	public function get_order_status( $order_id ) {
-		// get previous status.
-		$plugin_post_types = new Eb_Post_Types( $this->plugin_name, $this->version );
-		$order_status      = $plugin_post_types->get_post_options( $order_id, 'order_status', 'eb_order' );
-
-		return $order_status;
-	}
-
 
 	/**
 	 * Update order status on saving an order from edit order page.

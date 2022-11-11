@@ -75,7 +75,7 @@ class Eb_Welcome {
 
 			.eb-about-wrap {
 				position: relative;
-				margin: 25px 40px 0px 20px;
+				margin: 25px 40px 0 20px;
 				/*margin:0 auto;*/
 				max-width: 100%;
 				font-size: 15px;
@@ -115,13 +115,13 @@ class Eb_Welcome {
 
 			.eb-version-badge{
 				position: absolute;
-				top: 0px;
-				right: 0px;
+				top: 0;
+				right: 0;
 				padding: 10px;
 				font-size: 13px;
 				color: #FFF;
 				border-radius: 3px;
-				background: rgb(0, 145, 205) none repeat scroll 0% 0%;
+				background: rgb(0, 145, 205) none repeat scroll 0 0;
 				font-weight: 600;
 				text-transform: uppercase;
 			}
@@ -131,9 +131,9 @@ class Eb_Welcome {
 				margin: 20px 0;
 				padding: 25px;
 				text-align:center;
-				-webkit-box-shadow: 0px 6px 12px -8px black;
-				-moz-box-shadow: 0px 6px 12px -8px black;
-				box-shadow: 0px 6px 12px -8px #000;
+				-webkit-box-shadow: 0 6px 12px -8px black;
+				-moz-box-shadow: 0 6px 12px -8px black;
+				box-shadow: 0 6px 12px -8px #000;
 				border-radius: 5px;
 			}
 
@@ -149,7 +149,7 @@ class Eb_Welcome {
 				border: medium none;
 				border-radius: 2px;
 				padding-left: 10px;
-				background: #E4E8EC none repeat scroll 0% 0%;
+				background: #E4E8EC none repeat scroll 0 0;
 			}
 
 			.subscribe-submit{
@@ -160,8 +160,8 @@ class Eb_Welcome {
 				transition: all 0.07s ease-in-out 0s;
 				color: #FFF;
 				border: medium none;
-				border-radius: 0px 3px 3px 0px;
-				background: #0091CD none repeat scroll 0% 0%;
+				border-radius: 0 3px 3px 0;
+				background: #0091CD none repeat scroll 0 0;
 				font-weight: 600;
 				text-transform: uppercase;
 				padding:0 10px;

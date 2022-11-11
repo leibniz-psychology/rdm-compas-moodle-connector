@@ -544,7 +544,7 @@ class Eb_Emailer {
 			blockquote,q {quotes: none;}blockquote:before,blockquote:after,q:before,
 			q:after {content: "";content: none;} blockquote {font-size: 24px;font-style:
 				italic;font-weight: 300;margin: 24px 40px;}
-			blockquote blockquote {margin-right: 0;}blockquote cite,blockquote
+			blockquote blockquote {margin-right: 0;}blockquote cite,blockquote,
 			 small {font-size: 14px;font-weight: normal;text-transform: uppercase;}' .
 				'cite {border-bottom: 0;}abbr[title] {border-bottom: 1px dotted;}
 			address {font-style: italic;margin: 0 0 24px;}' .

@@ -147,7 +147,7 @@
 }
 
 .eb_open_btn:hover {
-  box-shadow: 0px 1px 5px 1px #80808063;
+  box-shadow: 0 1px 5px 1px #80808063;
 }
 
 .closebtn {
@@ -163,7 +163,7 @@
 }
 
 .eb_setting_help_h4 {
-  border: 0px;
+  border: 0;
   background-color: white;
   color: #2e9aa6;
   border-bottom: solid 1px #80808052;
@@ -222,7 +222,7 @@
 }
 
 .eb-premium-top {
-  margin: 3% 2% 0% 2%;
+  margin: 3% 2% 0 2%;
   -webkit-transform: translateX(-100px);
   -ms-transform: translateX(-100px);
   transform: translateX(-100px);
@@ -240,9 +240,9 @@
   font-size: 16px;
   line-height: 1.8;
   color: #606060;
-  padding: 0% 2%;
+  padding: 0 2%;
   font-weight: 100;
-  font-family: "Lato";
+  font-family: "Lato", serif;
   text-align: left;
   margin-bottom: 2%;
 }
@@ -397,14 +397,14 @@
 }
 
 .eb_admin_terms_dialog {
-  padding: 0px 0px !important;
+  padding: 0 0 !important;
 }
 
 .eb_admin_terms_dialog .ui-dialog-titlebar {
   font-size: 1.2em !important;
   color: white !important;
   background-color: #1564ae !important;
-  border: 0px solid grey !important;
+  border: 0 solid grey !important;
 }
 
 .eb_admin_terms_dialog .ui-dialog-content {
@@ -421,7 +421,7 @@
 }
 
 .ui-dialog-buttonpane {
-  padding-bottom: 0px !important;
+  padding-bottom: 0 !important;
 }
 .eb_extensions_wrap .extensions li {
   float: left;
@@ -438,7 +438,7 @@
   display: block;
   min-height: 250px;
   overflow: hidden;
-  background: #f5f5f5 none repeat scroll 0% 0%;
+  background: #f5f5f5 none repeat scroll 0 0;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset,
     0 -1px 0 rgba(0, 0, 0, 0.1) inset;
 }
@@ -446,7 +446,7 @@
 .eb_extensions_wrap .extensions li a h3 {
   margin: 0 !important;
   padding: 20px !important;
-  background: #2e9aa6 none repeat scroll 0% 0%;
+  background: #2e9aa6 none repeat scroll 0 0;
   color: white;
 }
 
@@ -463,7 +463,7 @@
   padding: 17px 20px;
   display: block;
   margin: 0;
-  background: #fff none repeat scroll 0% 0%;
+  background: #fff none repeat scroll 0 0;
   border-right: 260px solid #fff;
 }
 
@@ -473,8 +473,8 @@
   color: #fff;
   text-decoration: none;
   border: medium none;
-  background: #0091cd none repeat scroll 0% 0%;
-  font-weight: 600px;
+  background: #0091cd none repeat scroll 0 0;
+  font-weight: 600;
   text-transform: uppercase;
   padding: 15px;
   border-radius: 4px;
@@ -496,7 +496,7 @@ a.browse-all:hover {
   /*position: absolute;*/
 }
 
-@media screen and (max-width: 640) {
+@media screen and (max-width: 640px) {
   .response-box {
     display: block;
     margin-left: 0;
@@ -716,7 +716,7 @@ span.eb-option-input .eb-option-div select {
 }
 
 .eb-template-edit-form table tr {
-  padding: 5px, 0px;
+  padding: 5px 0px;
 }
 
 .eb-email-template-wrap {
@@ -820,8 +820,7 @@ span.eb-option-input .eb-option-div select {
   padding: 8px 16px;
   text-decoration: none;
   cursor: pointer;
-  margin: unset;
-  margin-bottom: 1px;
+  margin: unset unset 1px;
 }
 .eb-emailtemp-active-item,
 .eb-emailtmpl-active,
@@ -892,7 +891,7 @@ span.eb-option-input .eb-option-div select {
 .eb-order-meta-details > div,
 .eb-order-meta-byer-details > div {
   /*display: inline-flex;*/
-  margin: 5px 0px;
+  margin: 5px 0;
 }
 .eb-order-meta-details label,
 .eb-order-meta-byer-details label {
@@ -981,7 +980,7 @@ span.eb-option-input .eb-option-div select {
 }
 
 .eb_table_cell_4 > .button-primary {
-  margin: 0px 5px;
+  margin: 0 5px;
 }
 .eb-shortcode-doc-wpra {
   background: white;
@@ -1025,7 +1024,7 @@ span.eb-option-input .eb-option-div select {
   float: left;
 }
 .eb-order-refund-hist-cont {
-  box-shadow: 0px 1px 0px #dddddd;
+  box-shadow: 0 1px 0 #dddddd;
   padding-bottom: 3px;
   overflow-y: auto;
   max-height: 150px;
@@ -1082,13 +1081,13 @@ span.eb-option-input .eb-option-div select {
 .eb-sso-hist-note:before {
   content: "";
   position: absolute;
-  height: 0px;
-  width: 0px;
+  height: 0;
+  width: 0;
   bottom: -10px;
   left: 15px;
   border-color: #e6e6fa transparent transparent transparent;
   border-style: solid;
-  border-width: 15px 10px 0px 0px;
+  border-width: 15px 10px 0 0;
 }
 
 .eb-sso-hist-note {
@@ -1152,7 +1151,7 @@ span.eb-option-input .eb-option-div select {
   border-radius: 5px;
   display: block;
   font-weight: 700;
-  box-shadow: 0px 4px 8px #808080;
+  box-shadow: 0 4px 8px #808080;
 }
 
 .eb_admin_discount_offer_btn:hover {
@@ -1260,7 +1259,7 @@ span.eb-option-input .eb-option-div select {
 
 /* Add section style Start. */
 .eb-set-as {
-  align-items: left;
+  align-items: normal;
   text-align: center;
   background-color: white;
   margin-top: 0.5rem;
@@ -1378,13 +1377,12 @@ a[href*="tab=sel_sync_dummy"].nav-tab::after {
   color: white;
   color: white;
   font-weight: bolder;
-  padding: 5px 15px 0px 0px;
   font-size: 10px;
   position: absolute;
   right: -20px;
   top: -7px;
   transform: rotate(45deg);
-  padding-left: 20px;
+  padding: 5px 15px 0 20px;
 }
 a[href*="tab=remui"].nav-tab,
 a[href*="tab=pfetures"].nav-tab {
@@ -1417,12 +1415,12 @@ a[href*="page=eb-settings"].nav-tab {
 }
 /* Licensing dialog styling */
 .eb_get_license_key_dialog{
-  padding: 0px;
+  padding: 0;
 }
 .eb_get_license_key_dialog .ui-dialog-titlebar, .eb_get_license_key_dialog.ui-dialog .ui-dialog-titlebar{
   background-color: white;
-  border: 0px;
-  border-radius: 0px;
+  border: 0;
+  border-radius: 0;
   padding: 15px 20px;
   border-bottom: 1px solid #cecece;
   font-size: 18px;
@@ -1432,12 +1430,12 @@ a[href*="page=eb-settings"].nav-tab {
   line-height: 20px;
 }
 .eb_get_license, .eb_buy_license, .eb_upgrade_license{
-  padding: 15px 0px;
+  padding: 15px 0;
 }
 
 #eb_get_license_key_dialog ul{
   list-style-type: initial;
-  padding: 0px 20px;
+  padding: 0 20px;
   font-size: 14px;
 }
 /*Licensing page styling end.*/
@@ -1445,10 +1443,9 @@ a[href*="page=eb-settings"].nav-tab {
   border-spacing: 0;
   width: 100%;
   clear: both;
-  margin: 0;
   background: white;
   border: 1px solid #ddd;
-  margin-top: 1rem;
+  margin: 1rem 0 0;
 }
 .wdm-table-status th {
   text-align: left;
@@ -1489,12 +1486,11 @@ a[href*="page=eb-settings"].nav-tab {
 }
 .eb-form-content-wrap .form-content .wrap {
   background: #fff;
-  border: 1px solid #c3c4c7;
-  border-left-width: 4px;
   box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
   margin: 5px 15px 2px;
   padding: 10px 12px;
-  border-left-color: #72aee6;
+  border: 1px solid #c3c4c7;
+  border-left: 4px #72aee6;
 }
 .eb-form-content-wrap .form-content .code {
   display: none;

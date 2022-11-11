@@ -392,20 +392,6 @@ class EdwiserBridge {
 	}
 
 
-
-	/**
-	 * DEPRECATED FUNCTION
-	 * Get User Manager class.
-	 *
-	 * @since    1.0.0
-	 * @deprecated since 2.0.1 use user_manager() insted.
-	 * @return EBUserManager
-	 */
-	public function userManager() {
-		return EBUserManager::instance( $this->get_plugin_name(), $this->get_version() );
-	}
-
-
 	/**
 	 * Get User Manager class.
 	 *
@@ -418,21 +404,6 @@ class EdwiserBridge {
 	}
 
 	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * Get Course Manager class.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @deprecated since 2.0.1 use course_manager() insted.
-	 * @return Eb_Course_Manager
-	 */
-	public function courseManager() {
-		return Eb_Course_Manager::instance( $this->get_plugin_name(), $this->get_version() );
-	}
-
-
-	/**
 	 * Get Course Manager class.
 	 *
 	 * @since    1.0.0
@@ -442,22 +413,6 @@ class EdwiserBridge {
 	public function course_manager() {
 		return Eb_Course_Manager::instance( $this->get_plugin_name(), $this->get_version() );
 	}
-
-
-	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * Get Enrollment Manager class.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @deprecated since 2.0.1 use enrollment_manager() insted.
-	 * @return Eb_Enrollment_Manager
-	 */
-	public function enrollmentManager() {
-		return Eb_Enrollment_Manager::instance( $this->get_plugin_name(), $this->get_version() );
-	}
-
 
 	/**
 	 * Get Enrollment Manager class.
@@ -471,22 +426,6 @@ class EdwiserBridge {
 	}
 
 
-
-	/**
-	 * DEPREACATED FUNCTION
-	 *
-	 * Get Order Manager class.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @deprecated since 2.0.1 use order_manager() insted.
-	 * @return Eb_Order_Manager
-	 */
-	public function orderManager() {
-		return Eb_Order_Manager::instance( $this->get_plugin_name(), $this->get_version() );
-	}
-
-
 	/**
 	 * Get Order Manager class.
 	 *
@@ -497,21 +436,6 @@ class EdwiserBridge {
 	public function order_manager() {
 		return Eb_Order_Manager::instance( $this->get_plugin_name(), $this->get_version() );
 	}
-
-	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * Get Connection Helper class.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @deprecated since 2.0.1 use connection_helper() insted.
-	 * @return EBConnectionHelper
-	 */
-	public function connectionHelper() {
-		return EBConnectionHelper::instance( $this->get_plugin_name(), $this->get_version() );
-	}
-
 
 
 	/**
@@ -1227,20 +1151,6 @@ class EdwiserBridge {
 		$this->loader->run();
 	}
 
-	/**
-	 * DEPRECATED FUNCTION
-	 *
-	 * The name of the plugin used to uniquely identify it within the context of
-	 * WordPress and to define internationalization functionality.
-	 *
-	 * @since     1.0.0
-	 *
-	 * @deprecated since 2.0.1 use get_plugin_name() insted.
-	 * @return string The name of the plugin.
-	 */
-	public function getPluginName() {
-		return $this->plugin_name;
-	}
 
 
 	/**
@@ -1257,20 +1167,6 @@ class EdwiserBridge {
 
 
 	/**
-	 * NOT USED FUNCTION
-	 * The reference to the class that orchestrates the hooks with the plugin.
-	 *
-	 * @since     1.0.0
-	 *
-	 * @deprecated since 2.0.1 use get_loader() insted.
-	 * @return Eb_Loader Orchestrates the hooks of the plugin.
-	 */
-	public function getLoader() {
-		return $this->loader;
-	}
-
-
-	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
@@ -1280,22 +1176,6 @@ class EdwiserBridge {
 	public function get_loader() {
 		return $this->loader;
 	}
-
-
-
-	/**
-	 * Retrieve the version number of the plugin.
-	 *
-	 * @since     1.0.0
-	 *
-	 * @deprecated since 2.0.1 use get_version() insted.
-	 * @return string The version number of the plugin.
-	 */
-	public function getVersion() {
-		return $this->version;
-	}
-
-
 
 
 	/**
@@ -1308,17 +1188,6 @@ class EdwiserBridge {
 	public function get_version() {
 		return $this->version;
 	}
-}
-
-/**
- * Returns the main instance of EDW to prevent the need to use globals.
- *
- * @since  1.0.0
- * @deprecated since 2.0.1 use edwiser_bridge_instance() insted.
- * @return EDW
- */
-function edwiserBridgeInstance() {
-	return EdwiserBridge::instance();
 }
 
 /**

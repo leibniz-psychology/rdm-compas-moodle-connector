@@ -800,10 +800,8 @@ button.ui-button::-moz-focus-inner {
 	background: none;
 	color: inherit;
 	padding: .222em 0;
-	margin: .2em 0;
 	vertical-align: middle;
-	margin-left: .4em;
-	margin-right: 2em;
+	margin: .2em 2em .2em .4em;
 }
 .ui-spinner-button {
 	width: 1.6em;
@@ -1306,6 +1304,6 @@ a.ui-button:active,
 	filter: Alpha(Opacity=30); /* support: IE8 */
 }
 .ui-widget-shadow {
-	-webkit-box-shadow: 0px 0px 5px #666666;
-	box-shadow: 0px 0px 5px #666666;
+	-webkit-box-shadow: 0 0 5px #666666;
+	box-shadow: 0 0 5px #666666;
 }

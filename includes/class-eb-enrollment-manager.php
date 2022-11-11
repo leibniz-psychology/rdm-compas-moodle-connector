@@ -101,20 +101,6 @@ class Eb_Enrollment_Manager {
 		$this->version     = $version;
 	}
 
-	/**
-	 * DEPRECATED FUNCTION.
-	 * Used to enroll user to course(s)
-	 * Enrolls user to course on moodle on course purchase as well as update enrollment data on WordPress.
-	 *
-	 * @deprecated since 2.0.1 use update_user_course_enrollment( $args, $role_id ) insted.
-	 * @param array $args arguments array.
-	 * @param bool  $role_id false.
-	 *
-	 * @return bool true / false
-	 */
-	public function updateUserCourseEnrollment( $args, $role_id = '5' ) {
-		return $this->update_user_course_enrollment( $args, $role_id );
-	}
 
 
 	/**
@@ -308,19 +294,6 @@ class Eb_Enrollment_Manager {
 		}
 	}
 
-	/**
-	 * We have to update our enrollment table on WordPress everytime a user is enrolled.
-	 * or unenrolled from moodle.
-	 *
-	 * @since  1.0.0
-	 *
-	 * @deprecated since 2.0.1 use update_enrollment_record_wordpress($args, $role_id) insted
-	 * @param array $args arguments array.
-	 * @param array $role_id role_id array.
-	 */
-	public function updateEnrollmentRecordWordpress( $args, $role_id = '5' ) {
-		$this->update_enrollment_record_wordpress( $args, $role_id );
-	}
 
 	/**
 	 * We have to update our enrollment table on WordPress everytime a user is enrolled
@@ -427,25 +400,6 @@ class Eb_Enrollment_Manager {
 			// update only DB column suspended as 1.
 		}
 	}
-
-
-
-	/**
-	 * DEPRECATED FUNCTION
-	 * used to update the count of users access to a course.
-	 *
-	 * @since  1.2.5
-	 *
-	 * @deprecated since 2.0.1 use update_user_course_access_count( $user_id, $course_id, $count ) insted.
-	 * @param int $user_id   WordPress user id of a user.
-	 * @param int $course_id WordPress course id of a course.
-	 * @param int $count WordPress course id of a course.
-	 */
-	public function updateUserCourseAccessCount( $user_id, $course_id, $count ) {
-		$this->update_user_course_access_count( $user_id, $course_id, $count );
-	}
-
-
 
 
 
@@ -576,43 +530,6 @@ class Eb_Enrollment_Manager {
 			edwiser_bridge_instance()->logger()->add( 'user', "Unenrolled user: {$user_id} from course {$course_id}" );  // add user log.
 		}
 	}
-
-
-
-	/**
-	 * DEPRECATED FUNCTION
-	 * Right now executes on user course synchronization action.
-	 *
-	 * This function just removes enrollment entry from enrollment table on WordPress,
-	 * only if a user has been unenrolled from a course on moodle
-	 *
-	 * @since  1.0.0
-	 *
-	 * @deprecated since 2.0.1 use delete_user_enrollment_record( $user_id, $course_id )  insted.
-	 * @param int $user_id   WordPress user id of a user.
-	 * @param int $course_id WordPress course id of a course.
-	 */
-	public function deleteUserEnrollmentRecord( $user_id, $course_id ) {
-		$this->delete_user_enrollment_record( $user_id, $course_id );
-	}
-
-
-	/**
-	 * Used to check if a user has access to a course.
-	 *
-	 * @since  1.0.0
-	 *
-	 * @deprecated since 2.0.1 use user_has_course_access( $user_id, $course_id ); insted.
-	 * @param int $user_id   WordPress user id of a user.
-	 * @param int $course_id WordPress course id of a course.
-	 *
-	 * @return bool true / false
-	 */
-	public function userHasCourseAccess( $user_id, $course_id ) {
-		return $this->user_has_course_access( $user_id, $course_id );
-	}
-
-
 
 
 	/**

@@ -21,8 +21,8 @@
 .wdm-btn.eb_primary_btn,
 .eb_primary_btn {
   font-style: normal;
-  margin: 0px;
-  letter-spacing: 0em;
+  margin: 0;
+  letter-spacing: 0;
   text-align: center;
   vertical-align: text-top;
 }
@@ -86,7 +86,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
   color: #00a1a8;
 }
@@ -97,11 +97,10 @@
 
 .eb-course-card-title.eb-course-title,
 .eb-course-card-title {
-  padding: 4px 0px;
+  padding: 4px 0;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  line-height: 20px;
   color: #00a1a8;
   white-space: normal;
   overflow: hidden;
@@ -137,7 +136,7 @@
 }
 
 .wdm-course-grid .wdm-caption h4 {
-  margin: 0rem 0;
+  margin: 0 0;
 }
 
 .eb-course-action-cont {
@@ -147,7 +146,7 @@
 
 .eb-course-action-btn {
   position: relative;
-  top: 0px;
+  top: 0;
 }
 
 /*Archive page filter and sorting*/
@@ -197,7 +196,7 @@
 }
 
 .eb-primary {
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 /*Divi theme compatibility*/
@@ -227,7 +226,7 @@
 .eb-course-action-btn-start,
 .eb-course-action-btn-resume,
 .eb-course-action-btn-completed {
-  bottom: 0px;
+  bottom: 0;
   position: absolute;
   width: 100%;
   border-radius: 2px;
@@ -325,7 +324,7 @@
 
 .wdm-flash-error {
   margin: 5px 0 15px;
-  background: none repeat scroll 0% 0% #fff;
+  background: none repeat scroll 0 0 #fff;
   border: 1px solid #ff7979;
   border-left: 6px solid #ff7979;
   padding: 10px;
@@ -334,7 +333,7 @@
 
 .wdm-flash-info {
   margin: 5px 0 15px;
-  background: none repeat scroll 0% 0% #fff;
+  background: none repeat scroll 0 0 #fff;
   border: 1px solid #7ad03a;
   border-left: 6px solid #7ad03a;
   padding: 10px;
@@ -350,14 +349,14 @@
  */
 
 .eb_admin_terms_dialog {
-  padding: 0px 0px !important;
+  padding: 0 0 !important;
 }
 
 .eb_admin_terms_dialog .ui-dialog-titlebar {
   font-size: 1.2em !important;
   color: white !important;
   background-color: #1564ae !important;
-  border: 0px solid grey !important;
+  border: 0 solid grey !important;
 }
 
 .eb_admin_terms_dialog .ui-dialog-content {
@@ -386,7 +385,7 @@
 }
 
 .ui-dialog-buttonpane {
-  padding-bottom: 0px !important;
+  padding-bottom: 0 !important;
 }
 
 .eb_terms_button_disagree {
@@ -415,14 +414,14 @@
 
 .eb-my-courses-wrapper .eb-my-course .hentry.wdm-col-3-2-1 {
   /*float: left;*/
-  margin: 0 0 1em 0em;
+  margin: 0 0 1em 0;
   padding: 0 0.5em;
   display: flex;
 }
 
 .hentry.wdm-col-3-2-1 {
   /*float: left;*/
-  margin: 1em 0em;
+  margin: 1em 0;
   padding: 0 0.5em;
 }
 
@@ -531,7 +530,7 @@
 
 .eb_single_course_price_wrapper {
   display: flex;
-  padding: 25px 0px;
+  padding: 25px 0;
 }
 
 .eb_single_course_price_wrapper .wdm-price {
@@ -542,7 +541,7 @@
   color: #444444;
   padding-right: 20px;
   line-height: 19px;
-  margin: auto 0px;
+  margin: auto 0;
 }
 
 .wdm-course-grid h4 {
@@ -585,7 +584,7 @@
 }
 
 p.read-more {
-  margin-top: 10;
+  margin-top: 10px;
   text-transform: uppercase;
   text-align: center;
 }
@@ -670,8 +669,7 @@ div.course-not-available {
 
 #eb-update-profile legend {
   text-transform: uppercase;
-  padding: 0;
-  padding-bottom: 1rem;
+  padding: 0 0 1rem;
   margin: unset;
   color: #999999;
   background: white;
@@ -713,12 +711,11 @@ div.course-not-available {
 }
 
 .eb-user-account-navigation div {
-  margin: 0px 3px;
+  margin: 0 3px;
 }
 
 .eb-user-account-navigation-link {
-  list-style: none;
-  list-style-type: none;
+  list-style: none none;
 }
 
 .eb-user-account-navigation-wrap {
@@ -729,8 +726,7 @@ div.course-not-available {
 }
 
 .eb-user-account-navigation-link {
-  list-style: none;
-  list-style-type: none;
+  list-style: none none;
 }
 .eb-user-account-navigation-link > a {
   text-decoration: none !important;
@@ -1000,7 +996,7 @@ nav.eb-pagination ul li {
 }
 
 .eb-validity-wrapper {
-  padding: 10px 0px;
+  padding: 10px 0;
   font-style: normal;
   font-size: 14px;
   display: flex;
@@ -1017,7 +1013,7 @@ nav.eb-pagination ul li {
 }
 
 .eb-cat-wrapper-new {
-  padding: 0px 0px 10px 0px;
+  padding: 0 0 10px 0;
   font-style: normal;
   font-size: 12px;
   line-height: 14px;
@@ -1034,7 +1030,7 @@ nav.eb-pagination ul li {
   font-size: 11px;
   text-transform: uppercase;
   color: #999999;
-  padding: 0px 0px 4px 0px;
+  padding: 0 0 4px 0;
 }
 
 @media (max-width: 530px) {
@@ -1086,9 +1082,8 @@ nav.eb-pagination ul li {
 
 .eb-my-courses-wrapper h2 {
   border-bottom: 2px solid #1a1a1a;
-  padding: 10px;
-  padding-top: 0px;
-  margin-top: 0px;
+  padding: 0 10px 10px;
+  margin-top: 0;
 }
 
 .eb-my-courses-wrapper {
@@ -1097,7 +1092,7 @@ nav.eb-pagination ul li {
 }
 
 .eb-my-courses-h2 {
-  margin-top: 0px !important;
+  margin-top: 0 !important;
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -1153,7 +1148,7 @@ nav.eb-pagination ul li {
 }
 
 .eb-user-account-navigation-link:first-child {
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .eb-error {
@@ -1211,7 +1206,6 @@ nav.eb-pagination ul li {
   z-index: 999;
   height: auto;
   padding: 0.5em 0.8em;
-  border: 0px;
   font-size: 1.7em;
   box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -1243,18 +1237,18 @@ nav.eb-pagination ul li {
 /*Old Template compatibility*/
 
 .eb-cat-courses-cont::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
 }
 
 .eb-cat-courses-cont::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
 }
 
 .eb-cat-courses-cont::-webkit-scrollbar-thumb {
   background: #000000;
-  border: 0px none #ffffff;
+  border: 0 none #ffffff;
   border-radius: 50px;
 }
 
@@ -1268,7 +1262,7 @@ nav.eb-pagination ul li {
 
 .eb-cat-courses-cont::-webkit-scrollbar-track {
   background: #eeeeee;
-  border: 0px none #ffffff;
+  border: 0 none #ffffff;
   border-radius: 13px;
 }
 
@@ -1333,7 +1327,6 @@ nav.eb-pagination ul li {
   flex-grow: 1;
   box-shadow: unset;
   border-radius: unset;
-  border: unset;
   border-right: 1px solid #ddd;
   background: white;
   max-width: 100%;
@@ -1408,7 +1401,7 @@ nav.eb-pagination ul li {
   margin-top: 20px;
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 .rdmcompas-moodle-connector {
@@ -1435,7 +1428,7 @@ text-decoration: none;
   .rdm-tc-course-summary img {
     width:100%;
     height: 100%;
-    margin-left: 0em;
+    margin-left: 0;
     margin-right: 4em;
 
   }

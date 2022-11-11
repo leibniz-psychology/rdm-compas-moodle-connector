@@ -48,17 +48,6 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 		/**
 		 * Add this page to settings
 		 *
-		 * @deprecated somce 2.0.0 use add_settings_page().
-		 * @param text $pages pages.
-		 * @since  1.0.0
-		 */
-		public function addSettingsPage( $pages ) {
-			return $this->add_settings_page( $pages );
-		}
-
-		/**
-		 * Add this page to settings
-		 *
 		 * @param text $pages pages.
 		 * @since  1.0.0
 		 */
@@ -79,19 +68,6 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 		}
 
 		/**
-		 * Deprecated Function
-		 *
-		 * @deprecated since 2.0.0 use get_settings()
-		 * Get settings array
-		 *
-		 * @since  1.0.0
-		 * @return array
-		 */
-		public function getSettings() {
-			return $this->get_settings();
-		}
-
-		/**
 		 * Get sections
 		 *
 		 * @since  1.0.0
@@ -102,18 +78,6 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 			return apply_filters_deprecated( 'eb_getSections_' . $this->_id, array( array() ), '2.0.1', 'eb_get_sections_' . $this->_id );
 		}
 
-		/**
-		 * Deprecated Function
-		 *
-		 * @deprecated since 2.0.0 use get_sections()
-		 * Get sections
-		 *
-		 * @since  1.0.0
-		 * @return array
-		 */
-		public function getSections() {
-			return $this->get_sections();
-		}
 
 		/**
 		 * Output sections
@@ -145,18 +109,6 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 			echo '</ul><br class="clear" />';
 		}
 
-		/**
-		 * Deprecated Function.
-		 *
-		 * @deprecated 2.0.0 Use output_sections().
-		 *
-		 * Output sections
-		 *
-		 * @since  1.0.0
-		 */
-		public function outputSections() {
-			$this->output_sections();
-		}
 
 		/**
 		 * Output the settings
