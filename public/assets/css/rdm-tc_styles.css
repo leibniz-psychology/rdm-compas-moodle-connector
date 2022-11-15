@@ -39,6 +39,10 @@
     .intro__top.topic-training-center {
         padding: 2em 0!important;
     }
+
+    .rdm-tc-category-wrapper {
+        padding: 0!important;
+    }
 }
 
 .rdm-tc-course-summary {
@@ -116,12 +120,12 @@
 
 #rdm-tc-sidebar {
     background-color: #F5F5F5;
-    padding: 0 2em;
+    /*padding: 0 2em;*/
     order: 3;
 }
 
-#rdm-tc-nav__container {
-
+.rdm-tc-nav__container {
+    padding: 2em 2em 0;
 }
 
 .rdm-tc-sidebar-list{
@@ -177,4 +181,5 @@
 .rdm-tc-category-wrapper {
     order: 2;
     max-width: 75%;
+    padding: 0 2em 1em;
 }

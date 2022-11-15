@@ -14,7 +14,7 @@
 
 namespace app\wisdmlabs\edwiserBridge;
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
@@ -49,34 +49,28 @@ if (have_posts()) {
     get_template_part('template-parts/breadcrumb'); ?>
     <!--intro-->
     <div style="padding-bottom: 1em; background-color: rgba(255,179,100,0.6)"></div>
-    <div id="course-<?php the_ID(); ?>" class="training-center-page rdmc-container-page-sidebar" style="column-gap:2em;justify-content: space-between;">
-<!--    <button type="button" class="sidebar-toggle show-medium" onclick="sidebarToggle()">-->
-<!--        <i class="fa fa-bars" aria-hidden="true"></i> --><?php //echo __('Category', 'rdm-compas-theme') ?>
-<!--    </button>-->
-    <div id="rdm-tc-sidebar">
-        <?php $template_loader->wp_get_template_part('navigation', 'back-button'); ?>
-        <?php $template_loader->wp_get_template_part( 'course-category', 'sidebar'); ?>
-    </div>
-    <!--content-->
-<?php        $template_loader->wp_get_template_part( 'content-single', get_post_type() ); ?>
-        <!---->
-        <!--        --><?php //if (is_singular('post') && (get_previous_post_link() || get_next_post_link())) { ?>
-        <!---->
-        <!--            <section class="section">-->
-        <!---->
-        <!--                <div class="section__inner-container container">-->
-        <!---->
-        <!--                    --><?php //previous_post_link() ?>
-        <!--                    --><?php //next_post_link() ?>
-        <!---->
-        <!--                </div>-->
-        <!---->
-        <!--            </section>-->
-        <!---->
-        <!--        --><?php //} ?>
+    <div id="course-<?php the_ID(); ?>" class="training-center-page rdmc-container-page-sidebar"
+         style="column-gap:2em;justify-content: space-between;">
+            <button type="button" class="sidebar-toggle show-large" onclick="sidebarToggle()">
+                <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Category', 'rdm-compas-theme') ?>
+            </button>
+        <div id="rdmc-sidebar">
+            <?php $template_loader->wp_get_template_part('navigation', 'back-button'); ?>
+            <div style="margin: 0.5rem 2rem 0"><?php get_search_form(); ?></div>
+            <?php $template_loader->wp_get_template_part('course-category', 'sidebar'); ?>
+        </div>
+        <!--content-->
+        <?php $template_loader->wp_get_template_part('content-single', get_post_type()); ?>
 
-<!--    </div>-->
+<!--        --><?php //if (is_singular('eb_course') && (get_previous_post_link() || get_next_post_link())) { ?>
+    <!--            <section class="section">-->
+    <!--                <div class="section__inner-container container">-->
+    <!--                    --><?php //previous_post_link() ?>
+    <!--                    --><?php //next_post_link() ?>
+    <!--                </div>-->
+    <!--            </section>-->
+    <!--        --><?php //} ?>
 <?php } ?>
     </div>
-<?php
+    <?php
 get_footer();

@@ -46,7 +46,6 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
     <div class="rdm-tc-course-overview">
         <h4><?php echo __("Overview", 'rdmcompas-moodle-connector') ?></h4>
         <?php
-
         if (!is_search()) {
             echo '<p><strong>' . __('Target', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_target_group'] . '</p>';
             echo '<p><strong>' . __('Discipline', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
