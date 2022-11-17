@@ -24,16 +24,16 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 		/**
 		 * Id.
 		 *
-		 * @var text $_id Id
+		 * @var string $_id Id
 		 */
-		protected $_id = '';
+		protected string $_id = '';
 
 		/**
 		 * Label.
 		 *
-		 * @var text $label label
+		 * @var string $label label
 		 */
-		protected $label = '';
+		protected string $label = '';
 
 		/**
 		 * Constructor
@@ -48,10 +48,11 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 		/**
 		 * Add this page to settings
 		 *
-		 * @param text $pages pages.
+		 * @param array $pages pages.
 		 * @since  1.0.0
 		 */
-		public function add_settings_page( $pages ) {
+		public function add_settings_page(array $pages ): array
+        {
 			$pages[ $this->_id ] = $this->label;
 			return $pages;
 		}
@@ -86,7 +87,7 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 		 */
 		public function output_sections() {
 			global $current_section;
-			$sections = $this->getSections();
+			$sections = $this->get_sections();
 			if ( empty( $sections ) ) {
 				return;
 			}
@@ -116,10 +117,10 @@ if ( ! class_exists( 'ESettingsPage' ) ) :
 		 * @since  1.0.0
 		 */
 		public function output() {
-			$settings = $this->getSettings();
-			if ( empty( $settings ) ) {
-				$settings = $this->get_settings();
-			}
+			$settings = $this->get_settings();
+//			if ( empty( $settings ) ) {
+//				$settings = $this->get_settings();
+//			}
 
 			EbAdminSettings::output_fields( $settings );
 		}

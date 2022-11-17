@@ -25,7 +25,7 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		/**
 		 * Addon licensing.
 		 *
-		 * @var text $addon_licensing addon licensing
+		 * @var string $addon_licensing addon licensing
 		 */
 		public $addon_licensing;
 
@@ -62,22 +62,22 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		 */
 		private function get_edwiser_envirment( $plugin_path ) {
 //			$response   = wp_remote_get( 'https://example.com/edwiserdemoimporter/bridge-free-plugin-info.json' );
-            $response   = wp_remote_get( '' );
-			$fetch_data = false;
-			if ( isset( $_GET['fetch_data'] ) && 'true' === $_GET['fetch_data'] ) { // WPCS: CSRF ok, input var ok. @codingStandardsIgnoreLine
-				$fetch_data = true;
-			}
-			$free_plugin_data = array();
-			if ( 200 === wp_remote_retrieve_response_code( $response ) ) {
-				$responce = json_decode( wp_remote_retrieve_body( $response ) );
-				foreach ( $responce as $key => $value ) {
-					$free_plugin_data[ $key ] = array(
-						'name'    => $value->name,
-						'version' => $value->version,
-						'url'     => $value->url,
-					);
-				}
-			}
+//            $response   = wp_remote_get( '' );
+//			$fetch_data = false;
+//			if ( isset( $_GET['fetch_data'] ) && 'true' === $_GET['fetch_data'] ) { // WPCS: CSRF ok, input var ok. @codingStandardsIgnoreLine
+//				$fetch_data = true;
+//			}
+//			$free_plugin_data = array();
+//			if ( 200 === wp_remote_retrieve_response_code( $response ) ) {
+//				$responce = json_decode( wp_remote_retrieve_body( $response ) );
+//				foreach ( $responce as $key => $value ) {
+//					$free_plugin_data[ $key ] = array(
+//						'name'    => $value->name,
+//						'version' => $value->version,
+//						'url'     => $value->url,
+//					);
+//				}
+//			}
 			$data = array(
 				array(
 					'<span class="eb-summary-lbl-heading">' . __( 'Wordpress Plugins', 'rdmcompas-moodle-connector' ) . '</span>',
@@ -85,26 +85,26 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 					'',
 				),
 				array(
-					'<span class="eb-summary-lbl-text">' . __( 'RDM Compas Moodle Connector :', 'rdmcompas-moodle-connector' ) . '</span>',
-					$free_plugin_data['edwiser_bridge']['version'],
-					$this->show_plugin_version( $free_plugin_data['edwiser_bridge'], wdm_get_plugin_version( 'rdmcompas-moodle-connector/rdmcompas-moodle-connector.php' ) ),
+					'<span class="eb-summary-lbl-text">' . __( 'RDM Compas Moodle Connector:', 'rdmcompas-moodle-connector' ) . '</span>',
+                    'Installed',
+                    '<a href="https://github.com/leibniz-psychology/rdmcompas-moodle-connector">Github repository</a>',
 				),
 			);
 			if ( ! class_exists( 'Eb_Licensing_Manager' ) ) {
 				include_once $plugin_path . 'licensing/class-eb-licensing-manager.php';
 			}
-			$products_data = Eb_Licensing_Manager::get_plugin_data();
-
-			foreach ( $products_data as $product ) {
-				$version_info = wdm_get_plugin_version( $product['path'] );
-				$remote_data  = $this->get_plugin_remote_version( $product, $fetch_data );
-				$data[]       = array(
-					'<span class="eb-summary-lbl-text">' . $product['item_name'] . ' :</span>',
-					$version_info,
-					$this->show_plugin_version( $remote_data, $version_info ),
-				);
-
-			}
+//			$products_data = Eb_Licensing_Manager::get_plugin_data();
+//
+//			foreach ( $products_data as $product ) {
+//				$version_info = wdm_get_plugin_version( $product['path'] );
+//				$remote_data  = $this->get_plugin_remote_version( $product, $fetch_data );
+//				$data[]       = array(
+//					'<span class="eb-summary-lbl-text">' . $product['item_name'] . ' :</span>',
+//					$version_info,
+//					$this->show_plugin_version( $remote_data, $version_info ),
+//				);
+//
+//			}
 			$data           = array_merge(
 				$data,
 				array(
@@ -114,20 +114,20 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 						'',
 					),
 					array(
-						'<span class="eb-summary-lbl-text">' . __( 'Moodle RDM Compas Moodle Connector :', 'rdmcompas-moodle-connector' ) . '</span>',
-						'---',
-						$this->show_plugin_version( $free_plugin_data['moodle_edwiser_bridge'] ),
+						'<span class="eb-summary-lbl-text">' . __( 'Moodle RDM Compas Moodle Connector:', 'rdmcompas-moodle-connector' ) . '</span>',
+						'<a href="https://trainingcenter.rdm-compas.org/admin/plugins.php">Check installation</a>',
+						'<a href="https://edwiser.org/documentation/edwiser-bridge/moodle-website-configuration-for-v1-4-3-only/">Download plugin</a>',
 					),
-					array(
-						'<span class="eb-summary-lbl-text">' . __( 'Moodle Edwiser Single Sign On :', 'rdmcompas-moodle-connector' ) . '</span>',
-						'---',
-						$this->show_plugin_version( $free_plugin_data['moodle_edwiser_bridge_sso'] ),
-					),
-					array(
-						'<span class="eb-summary-lbl-text">' . __( 'Moodle Edwiser Bulk Purchase :', 'rdmcompas-moodle-connector' ) . '</span>',
-						'---',
-						$this->show_plugin_version( $free_plugin_data['moodle_edwiser_bridge_bp'] ),
-					),
+//					array(
+//						'<span class="eb-summary-lbl-text">' . __( 'Moodle Edwiser Single Sign On :', 'rdmcompas-moodle-connector' ) . '</span>',
+//						'---',
+//						$this->show_plugin_version( $free_plugin_data['moodle_edwiser_bridge_sso'] ),
+//					),
+//					array(
+//						'<span class="eb-summary-lbl-text">' . __( 'Moodle Edwiser Bulk Purchase :', 'rdmcompas-moodle-connector' ) . '</span>',
+//						'---',
+//						$this->show_plugin_version( $free_plugin_data['moodle_edwiser_bridge_bp'] ),
+//					),
 				)
 			);
 			$refresh_url    = admin_url( '/admin.php?page=eb-settings&tab=summary&fetch_data=true' );
@@ -267,7 +267,7 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		 * Get settings array.
 		 *
 		 * @since  1.0.0
-		 * @param text $current_section current section.
+		 * @param string $current_section current section.
 		 * @return array
 		 */
 		public function get_settings( $current_section = '' ) {
