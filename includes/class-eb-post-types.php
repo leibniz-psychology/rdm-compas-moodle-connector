@@ -302,13 +302,6 @@ class Eb_Post_Types
                     'placeholder' => '',
                     'attr' => 'readonly',
                 ),
-                'moodle_course_number_participants' => array( //moodle custom field
-                    'label' => __('Number of participants', 'rdmcompas-moodle-connector'),
-                    'description' => __('Number of participants', 'rdmcompas-moodle-connector'),
-                    'type' => 'text',
-                    'placeholder' => '',
-                    'attr' => 'readonly',
-                ),
                 'moodle_course_duration' => array( //moodle custom field
                     'label' => __('Duration', 'rdmcompas-moodle-connector'),
                     'description' => __('Duration', 'rdmcompas-moodle-connector'),
@@ -319,6 +312,13 @@ class Eb_Post_Types
                 'moodle_course_required_material' => array( //moodle custom field
                     'label' => __('Required Material', 'rdmcompas-moodle-connector'),
                     'description' => __('Required Material', 'rdmcompas-moodle-connector'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
+                'moodle_course_previous_experience' => array( //moodle custom field
+                    'label' => __('Previous experience', 'rdmcompas-moodle-connector'),
+                    'description' => __('Previous experience', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',
@@ -342,6 +342,13 @@ class Eb_Post_Types
                 'moodle_course_contact_person' => array( //moodle custom field
                     'label' => __('Contact person', 'rdmcompas-moodle-connector'),
                     'description' => __('Contact person', 'rdmcompas-moodle-connector'),
+                    'type' => 'text',
+                    'placeholder' => '',
+                    'attr' => 'readonly',
+                ),
+                'moodle_course_contact_person_email' => array( //moodle custom field
+                    'label' => __('Contact person Email', 'rdmcompas-moodle-connector'),
+                    'description' => __('Contact person Email', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',

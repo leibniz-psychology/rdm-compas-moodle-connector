@@ -118,8 +118,6 @@ class Eb_Course_Manager
     public function course_synchronization_handler($sync_options = array())
     {
         edwiser_bridge_instance()->logger()->add('user', 'Initiating course & category sync process....'); // add course log.
-        $moodle_course_resp = array(); // contains course response from moodle.
-        $moodle_category_resp = array(); // contains category response from moodle.
         $response_array = array(); // contains response message to be displayed to user.
         $courses_updated = array(); // store updated course ids ( WordPress course ids ).
         $courses_created = array(); // store newely created course ids ( WordPress course ids ).
@@ -141,7 +139,7 @@ class Eb_Course_Manager
 
                 $moodle_category_resp = $this->get_moodle_course_categories(); // get categories from moodle.
 
-                // creating categories based on recieved data.
+                // creating categories based on received data.
                 if (1 === $moodle_category_resp['success']) {
 
                     $this->create_course_categories_on_wordpress($moodle_category_resp['response_data']);
@@ -159,7 +157,7 @@ class Eb_Course_Manager
 
             if ((isset($sync_options['eb_synchronize_draft'])) || (isset($sync_options['eb_synchronize_previous']) && '1' === $sync_options['eb_synchronize_previous'])) {
 
-                // creating courses based on recieved data.
+                // creating courses based on received data.
                 if (1 === $moodle_course_resp['success']) {
                     foreach ($moodle_course_resp['response_data'] as $course_data) {
                         /*
@@ -931,7 +929,8 @@ class Eb_Course_Manager
         return array(
             'moodle_course_id'                  => $course_data->id,
             'moodle_course_institution'         => $custom_fields['institution'],
-            'moodle_course_contact_person'      => array($custom_fields['contact_person_name'],$custom_fields['contact_person_email']),
+            'moodle_course_contact_person'      => $custom_fields['contact_person_name'],
+            'moodle_course_contact_person_email'=> $custom_fields['contact_person_email'],
             'moodle_course_date_start'          => date('M j, Y', intval($course_data->startdate)),
             'moodle_course_date_modified'       => date('M j, Y', intval($course_data->timemodified)),
             'moodle_course_format'              => $custom_fields['course_format'],
@@ -939,7 +938,8 @@ class Eb_Course_Manager
             'moodle_course_discipline'          => $custom_fields['discipline'],
             'moodle_course_number_participants' => $custom_fields['number_participants'],
             'moodle_course_duration'            => $custom_fields['duration'],
-            'moodle_course_required_material'   => esc_html($custom_fields['required_material']),
+            'moodle_course_required_material'   => $custom_fields['required_material'],
+            'moodle_course_previous_experience' => $custom_fields['previous_experience'],
             'moodle_course_persistent_identifier' => $custom_fields['persistent_identifier'],
             'moodle_course_license'             => $custom_fields['license'],
         );

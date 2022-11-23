@@ -49,15 +49,18 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
         if (!is_search()) {
             echo '<p><strong>' . __('Target', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_target_group'] . '</p>';
             echo '<p><strong>' . __('Discipline', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
-            echo '<p><strong>' . __('Duration', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
             echo '<p><strong>' . __('License', 'rdmcompas-moodle-connector') . '</strong>: ' . getCCLicense('CC BY 4.0') . '</p>';
             if ($single_course_data['course_required_material']) {
                 echo '<p><strong>' . __('Required Material', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_required_material'] . '</p>';
             }
+            echo '<p><strong>' . __('Previous experience', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_previous_experience'] . '</p>';
             if ($single_course_data['course_persistent_identifier']) {
                 echo '<p><strong>' . __('Persistent Identifier', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_persistent_identifier'] . '</p>';
             }
             echo '<p><strong>' . __('Duration', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_duration'] . '</p>';
+            if ($single_course_data['course_format'] == "Webinar blended-learning") {
+                echo '<p><strong>' . __('Number of participants', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_number_participants'] . '</p>';
+            }
             echo '<p><strong>' . __('Last modified', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_date_modified'] . '</p>';
         }
         ?>
@@ -77,7 +80,8 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
     //                echo '<img src="' . esc_html($single_course_data['eb_plugin_url']) . 'images/no-image.jpg" />';
     //            }
     //
-//    ?>
+    //
+    ?>
     <!--        </div>-->
     <!--    </div>-->
     <?php
@@ -95,21 +99,28 @@ $single_course_data = apply_filters('eb_content_single_course_before', $post->ID
         <?php
         the_content();
     } ?>
-    <p> <?php __('This course is offered by','rdmcompas-moodle-connector') . $single_course_data['course_institution']; ?> </p>
+    <p> <?php __('This course is offered by', 'rdmcompas-moodle-connector') . $single_course_data['course_institution']; ?> </p>
     <?php if ($single_course_data['course_format'] == "Webinar blended-learning") { ?>
-        <div class="eb-validity-wrapper">
-            <div>
-                <span class="dashicons dashicons-clock"></span>
+            <div class="rdmc-tc-contact">
+                <p><?php echo __('For further questions write to', 'rdmcompas-moodle-connector') . " " . $single_course_data['course_contact_person']?>,
+                    <a href="mailto:<?php echo $single_course_data['course_contact_person_email']; ?>">
+                        <?php echo $single_course_data['course_contact_person_email']; ?></a>
+                </p>
             </div>
-            <div>
-                <?php echo $single_course_data['course_date_start']; ?>
-            </div> ?>
-            <?php echo '<p><strong>' . __('Contact person', 'rdmcompas-moodle-connector') . '</strong>: ' . $single_course_data['course_contact_person'][0] . '</p>'; ?>
+        <div class="eb-validity-wrapper">
+            <div class="rdm-tc-course-button">
+                <a class="rdm-tc-button rdm-tc-button-blue"
+                   href="<?php echo esc_url($single_course_data['moodle_course_url']); ?>" target="_blank"
+                   rel="noopener"><?php echo __('Register now', 'rdmcompas-moodle-connector'); ?>!</a>
+            </div>
+            <span class="dashicons dashicons-clock"></span>
+            <?php echo __('Starts', 'rdmcompas-moodle-connector') . " " . $single_course_data['course_date_start']; ?>
         </div>
     <?php } else { ?>
         <div class="rdm-tc-course-button">
-            <a class="rdm-tc-button rdm-tc-button-blue" href="<?php echo esc_url( $single_course_data['moodle_course_url'] ); ?>" target="_blank"
-               rel="noopener"><?php echo __('Start now!', 'rdmcompas-moodle-connector'); ?></a>
+            <a class="rdm-tc-button rdm-tc-button-blue"
+               href="<?php echo esc_url($single_course_data['moodle_course_url']); ?>" target="_blank"
+               rel="noopener"><?php echo __('Start now', 'rdmcompas-moodle-connector'); ?>!</a>
         </div>
     <?php } ?>
 </div>
