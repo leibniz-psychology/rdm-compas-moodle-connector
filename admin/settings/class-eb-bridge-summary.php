@@ -25,7 +25,7 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		/**
 		 * Addon licensing.
 		 *
-		 * @var string $addon_licensing addon licensing
+		 * @var text $addon_licensing addon licensing
 		 */
 		public $addon_licensing;
 
@@ -267,7 +267,7 @@ if ( ! class_exists( 'Eb_Bridge_Summary' ) ) :
 		 * Get settings array.
 		 *
 		 * @since  1.0.0
-		 * @param string $current_section current section.
+		 * @param text $current_section current section.
 		 * @return array
 		 */
 		public function get_settings( $current_section = '' ) {

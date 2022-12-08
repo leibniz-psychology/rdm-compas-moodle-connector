@@ -578,6 +578,7 @@
   color: #666666;
   white-space: normal;
   overflow: hidden;
+  line-height: 20px;
   height: 44px;
   margin-bottom: 10px;
 }
@@ -700,14 +701,14 @@ div.course-not-available {
   margin-bottom: 10px;
 }
 
-/*.eb-profile-txt-field input[type="email"],*/
-/*.eb-profile-txt-field input[type="text"],*/
-/*.eb-profile-txt-field input[type="password"] {*/
-/*  !* width: 100%; *!*/
-/*  width: -webkit-fill-available;*/
-/*  padding: 0.75em;*/
-/*  height: auto;*/
-/*}*/
+.eb-profile-txt-field input[type="email"],
+.eb-profile-txt-field input[type="text"],
+.eb-profile-txt-field input[type="password"] {
+  /* width: 100%; */
+  width: -webkit-fill-available;
+  padding: 0.75em;
+  height: auto;
+}
 
 .eb-user-account-navigation div {
   margin: 0 3px;
@@ -800,10 +801,10 @@ div#user_login label {
   letter-spacing: 0.1em;
 }
 
-/*.form-row,*/
-/*.input-text {*/
-/*  width: -webkit-fill-available;*/
-/*}*/
+.form-row,
+.input-text {
+  width: -webkit-fill-available;
+}
 
 .eb-user-reg-form,
 .eb-wrap-login-form {

@@ -48,7 +48,14 @@ $term = $wp_query->get_queried_object();
 get_header();
 get_template_part('template-parts/breadcrumb'); ?>
     <!--intro-->
+    <!--intro-->
     <div style="padding-bottom: 1em; background-color: rgba(255,179,100,0.6)"></div>
+    <!--    <div class="intro intro__top topic-training-center">-->
+    <!--        <div class="intro__inner-container">-->
+    <!--            <h1 class="intro__title">--><?php //echo $term->name;
+    ?><!--</h1>-->
+    <!--        </div>-->
+    <!--    </div>-->
     <div id="curse-cat-<?php echo $term->term_id ?>" class="training-center-page rdmc-container-page-sidebar">
         <button type="button" class="sidebar-toggle show-large" onclick="sidebarToggle()">
             <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Navigation', 'rdm-compas-theme') ?>
