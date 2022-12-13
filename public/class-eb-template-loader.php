@@ -72,7 +72,7 @@ class EbTemplateLoader {
 			$find[] = $file;
 			$find[] = $eb_templ_path . $file;
 		} elseif ( is_post_type_archive( 'eb_course' ) ) {
-			$file   = 'archive-eb_course.php';
+			$file   = 'search.php';
 			$find[] = $file;
 			$find[] = $eb_templ_path . $file;
 		} elseif (is_tax('eb_course_cat')) {

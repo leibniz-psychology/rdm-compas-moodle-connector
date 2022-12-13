@@ -40,8 +40,8 @@ $template_loader = new \app\wisdmlabs\edwiserBridge\EbTemplateLoader(
 	 * --------------------------------------
 	 **/
 
-	$template_loader->wp_get_template( 'global/wrapper-start.php', $wrapper_args );
-
+//	$template_loader->wp_get_template( 'global/wrapper-start.php', $wrapper_args );
+get_header();
 
 	/*
 	 * -------------------------------------
@@ -108,7 +108,7 @@ $template_loader = new \app\wisdmlabs\edwiserBridge\EbTemplateLoader(
 	 *--------------------------------------
 	 */
 
-	$template_loader->wp_get_template( 'global/wrapper-end.php', $wrapper_args );
+	//$template_loader->wp_get_template( 'global/wrapper-end.php', $wrapper_args );
 	?>
 <?php
 \app\wisdmlabs\edwiserBridge\wdm_eb_get_footer();
