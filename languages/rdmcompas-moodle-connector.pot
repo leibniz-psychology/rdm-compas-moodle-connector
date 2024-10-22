@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: RDM Compas Moodle Connector - WordPress Moodle LMS "
 "Integration\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-18 10:43+0000\n"
+"POT-Creation-Date: 2024-10-22 14:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -775,6 +775,11 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
+#: includes/class-eb-post-types.php:299 includes/class-eb-post-types.php:300
+#: public/templates/content-single-eb_course.php:51
+msgid "Data Curation Lifecycle steps"
+msgstr ""
+
 #: includes/class-eb-post-types.php:285 includes/class-eb-post-types.php:286
 msgid "Date Modified"
 msgstr ""
@@ -815,11 +820,6 @@ msgstr ""
 
 #: admin/settings/class-eb-settings-general.php:136
 msgid "Disable SSL certificate check"
-msgstr ""
-
-#: includes/class-eb-post-types.php:299 includes/class-eb-post-types.php:300
-#: public/templates/content-single-eb_course.php:51
-msgid "Discipline"
 msgstr ""
 
 #: includes/class-eb-manage-enrollment.php:216

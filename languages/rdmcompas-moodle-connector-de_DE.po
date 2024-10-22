@@ -4,7 +4,7 @@ msgstr ""
 "Integration\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-01 09:51:00+00:00\n"
-"PO-Revision-Date: 2024-10-18 10:52+0000\n"
+"PO-Revision-Date: 2024-10-22 14:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -847,6 +847,11 @@ msgstr "Dänische Krone (DKK)"
 msgid "Dashboard"
 msgstr "Instrumententafel"
 
+#: includes/class-eb-post-types.php:299 includes/class-eb-post-types.php:300
+#: public/templates/content-single-eb_course.php:51
+msgid "Data Curation Lifecycle steps"
+msgstr "Schritte im Datenkurationszyklus"
+
 #: includes/class-eb-post-types.php:285 includes/class-eb-post-types.php:286
 msgid "Date Modified"
 msgstr "Änderungsdatum"
@@ -888,11 +893,6 @@ msgstr "Einzelheiten "
 #: admin/settings/class-eb-settings-general.php:136
 msgid "Disable SSL certificate check"
 msgstr "Disable SSL certificate check"
-
-#: includes/class-eb-post-types.php:299 includes/class-eb-post-types.php:300
-#: public/templates/content-single-eb_course.php:51
-msgid "Discipline"
-msgstr "Disziplin"
 
 #: includes/class-eb-manage-enrollment.php:216
 #: includes/class-eb-manage-enrollment.php:233
