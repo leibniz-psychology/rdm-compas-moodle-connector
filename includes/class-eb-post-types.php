@@ -296,8 +296,8 @@ class Eb_Post_Types
                     'attr' => 'readonly',
                 ),
                 'moodle_course_discipline' => array( //moodle custom field
-                    'label' => __('Discipline', 'rdmcompas-moodle-connector'),
-                    'description' => __('Discipline', 'rdmcompas-moodle-connector'),
+                    'label' => __('Data Curation Lifecycle steps', 'rdmcompas-moodle-connector'),
+                    'description' => __('Data Curation Lifecycle steps', 'rdmcompas-moodle-connector'),
                     'type' => 'text',
                     'placeholder' => '',
                     'attr' => 'readonly',

@@ -48,7 +48,7 @@ $single_course_data = apply_filters( 'eb_content_single_course_before', $post->I
 		<?php
 		if ( ! is_search() ) {
 			echo '<p><strong>' . __( 'Target', 'rdmcompas-moodle-connector' ) . '</strong>: ' . $single_course_data['course_target_group'] . '</p>';
-			echo '<p><strong>' . __( 'Discipline', 'rdmcompas-moodle-connector' ) . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
+			echo '<p><strong>' . __( 'Data Curation Lifecycle steps', 'rdmcompas-moodle-connector' ) . '</strong>: ' . $single_course_data['course_discipline'] . '</p>';
 			echo '<p><strong>' . __( 'License', 'rdmcompas-moodle-connector' ) . '</strong>: ' . getCCLicense( 'CC BY 4.0' ) . '</p>';
 			if ( $single_course_data['course_required_material'] ) {
 				echo '<p><strong>' . __( 'Required Material', 'rdmcompas-moodle-connector' ) . '</strong>: ' . $single_course_data['course_required_material'] . '</p>';
