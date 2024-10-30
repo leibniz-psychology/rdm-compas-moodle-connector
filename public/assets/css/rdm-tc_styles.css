@@ -86,6 +86,7 @@
 
 .rdm-tc-course-button {
     display: flex;
+    margin-bottom: 4em;
 }
 
 .rdm-tc-course-button.rdm-tc-button {
