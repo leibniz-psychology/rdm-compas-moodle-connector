@@ -26,6 +26,10 @@ if ( ! function_exists( 'getCCLicense' ) ) {
             'CC0 1.0 Universal' => '<i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-zero"></i> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0 Universal</a>',
             'CC BY 4.0' => '<i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i> <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>',
             'CC BY-SA 4.0' => '<i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i class="fa-brands fa-creative-commons-sa"></i> <a href="http://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>',
+            'CC BY 3.0' => '<i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i> <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>',
+            'CC BY-SA 3.0' => '<i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i><i class="fa-brands fa-creative-commons-sa"></i> <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>',
+
+
         );
         return $licenses[$var];
     }
