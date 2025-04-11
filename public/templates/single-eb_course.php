@@ -50,6 +50,7 @@ if (have_posts()) {
     <!--intro-->
     <div style="padding-bottom: 1em; background-color: rgba(255,179,100,0.6)"></div>
     <div id="course-<?php the_ID(); ?>" class="training-center-page rdmc-container-page-sidebar"
+         itemscope itemtype="http://schema.org/Course"
          style="column-gap:2em;justify-content: space-between;">
             <button type="button" class="sidebar-toggle show-large" onclick="sidebarToggle()">
                 <i class="fa fa-bars" aria-hidden="true"></i> <?php echo __('Category', 'rdm-compas-theme') ?>
