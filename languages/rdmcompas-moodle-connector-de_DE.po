@@ -4,8 +4,8 @@ msgstr ""
 "Integration\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-01 09:51:00+00:00\n"
-"PO-Revision-Date: 2024-10-22 14:08+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2025-01-29 14:48+0000\n"
+"Last-Translator: Joel Beckmann\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Loco-Target-Locale: de_DE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-SearchPath-0: ..\n"
-"X-Loco-Version: 2.6.11; wp-6.6.2"
+"X-Loco-Version: 2.7.1; wp-6.7.1"
 
 #: admin/class-eb-admin.php:157
 msgid "  Click"
@@ -2912,11 +2912,11 @@ msgstr "Diesen Kurs nehmen"
 
 #: public/templates/content-single-eb_course.php:50
 msgid "Target"
-msgstr ""
+msgstr "Zielgruppe"
 
 #: includes/class-eb-post-types.php:292 includes/class-eb-post-types.php:293
 msgid "Target Group"
-msgstr ""
+msgstr "Zielgruppe"
 
 #: admin/class-eb-email-template.php:201
 msgid "Template Constants"
